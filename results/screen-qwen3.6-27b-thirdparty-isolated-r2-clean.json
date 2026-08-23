@@ -1,0 +1,612 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-08-23T07:00:28.391Z",
+  "finishedAt": null,
+  "options": {
+    "stage": "screen",
+    "repeats": 1,
+    "context": 8192,
+    "manageModels": true,
+    "caseTimeoutMs": 180000,
+    "tokenScale": 4,
+    "lms": "lms.exe",
+    "apiPath": "/api/v0/chat/completions",
+    "models": [
+      "qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp"
+    ],
+    "restore": "google/gemma-4-e4b",
+    "output": "results/screen-qwen3.6-27b-thirdparty-isolated-r2-clean.json"
+  },
+  "environment": {
+    "platform": "win32",
+    "release": "10.0.26200",
+    "arch": "x64",
+    "cpu": "AMD Ryzen 5 7600X 6-Core Processor             ",
+    "node": "v24.19.0",
+    "apiBase": "http://127.0.0.1:1234",
+    "apiPath": "/api/v0/chat/completions"
+  },
+  "taskSuite": {
+    "hashSha256": "a0308ecc0a9eeba08de236ff65c3d5a756aaf9c568cfe721687fb9df26189ea2",
+    "stage": "screen",
+    "taskIds": [
+      "instruction_exact_token",
+      "director_dependency_envelope",
+      "native_tool_read_file",
+      "claim_grounding_matrix",
+      "gpu_residency_reasoning",
+      "code_review_immutable_sort",
+      "log_reconciliation",
+      "insufficient_evidence_abstention",
+      "long_context_recall",
+      "critic_candidate_selection"
+    ],
+    "repeats": 1
+  },
+  "inventory": [
+    {
+      "type": "llm",
+      "modelKey": "ibm/granite-4.1-8b",
+      "format": "gguf",
+      "displayName": "Granite 4.1 8B",
+      "publisher": "ibm",
+      "path": "ibm/granite-4.1-8b",
+      "sizeBytes": 5347959446,
+      "indexedModelIdentifier": "ibm/granite-4.1-8b",
+      "deviceIdentifier": null,
+      "paramsString": "8B",
+      "architecture": "granite",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "ibm/granite-4.1-8b@q4_k_m"
+      ],
+      "selectedVariant": "ibm/granite-4.1-8b@q4_k_m",
+      "vision": false,
+      "trainedForToolUse": true,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "mistralai_devstral-small-2-24b-instruct-2512",
+      "format": "gguf",
+      "displayName": "Mistralai Devstral Small 2 24B Instruct 2512",
+      "publisher": "bartowski",
+      "path": "bartowski/mistralai_Devstral-Small-2-24B-Instruct-2512-GGUF/mistralai_Devstral-Small-2-24B-Instruct-2512-Q3_K_M.gguf",
+      "sizeBytes": 11474611072,
+      "indexedModelIdentifier": "bartowski/mistralai_Devstral-Small-2-24B-Instruct-2512-GGUF/mistralai_Devstral-Small-2-24B-Instruct-2512-Q3_K_M.gguf",
+      "deviceIdentifier": null,
+      "paramsString": "24B",
+      "architecture": "mistral3",
+      "quantization": {
+        "name": "Q3_K_M",
+        "bits": 3
+      },
+      "vision": false,
+      "trainedForToolUse": true,
+      "maxContextLength": 393216
+    },
+    {
+      "type": "llm",
+      "modelKey": "ibm-granite/granite-4.1-8b",
+      "format": "gguf",
+      "displayName": "Granite 4.1 8B",
+      "publisher": "ibm-granite",
+      "path": "ibm-granite/granite-4.1-8b-GGUF/granite-4.1-8b-Q4_K_M.gguf",
+      "sizeBytes": 5347914400,
+      "indexedModelIdentifier": "ibm-granite/granite-4.1-8b-GGUF/granite-4.1-8b-Q4_K_M.gguf",
+      "deviceIdentifier": null,
+      "paramsString": "8B",
+      "architecture": "granite",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "vision": false,
+      "trainedForToolUse": true,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "microsoft/phi-4-reasoning-plus",
+      "format": "gguf",
+      "displayName": "Phi 4 Reasoning Plus",
+      "publisher": "microsoft",
+      "path": "microsoft/phi-4-reasoning-plus",
+      "sizeBytes": 9053139092,
+      "indexedModelIdentifier": "microsoft/phi-4-reasoning-plus",
+      "deviceIdentifier": null,
+      "paramsString": "15B",
+      "architecture": "phi3",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "microsoft/phi-4-reasoning-plus@q4_k_m"
+      ],
+      "selectedVariant": "microsoft/phi-4-reasoning-plus@q4_k_m",
+      "vision": false,
+      "trainedForToolUse": false,
+      "maxContextLength": 32768
+    },
+    {
+      "type": "llm",
+      "modelKey": "microsoft/phi-4-mini-reasoning",
+      "format": "gguf",
+      "displayName": "Phi 4 Mini Reasoning",
+      "publisher": "microsoft",
+      "path": "microsoft/phi-4-mini-reasoning",
+      "sizeBytes": 2491897541,
+      "indexedModelIdentifier": "microsoft/phi-4-mini-reasoning",
+      "deviceIdentifier": null,
+      "paramsString": "3B",
+      "architecture": "phi3",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "microsoft/phi-4-mini-reasoning@q4_k_m"
+      ],
+      "selectedVariant": "microsoft/phi-4-mini-reasoning@q4_k_m",
+      "vision": false,
+      "trainedForToolUse": false,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "qwen/qwen3-14b",
+      "format": "gguf",
+      "displayName": "Qwen3 14B",
+      "publisher": "qwen",
+      "path": "qwen/qwen3-14b",
+      "sizeBytes": 9001931568,
+      "indexedModelIdentifier": "qwen/qwen3-14b",
+      "deviceIdentifier": null,
+      "paramsString": "14B",
+      "architecture": "qwen3",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "qwen/qwen3-14b@q4_k_m"
+      ],
+      "selectedVariant": "qwen/qwen3-14b@q4_k_m",
+      "vision": false,
+      "trainedForToolUse": true,
+      "maxContextLength": 32768
+    },
+    {
+      "type": "llm",
+      "modelKey": "google/gemma-4-e2b",
+      "format": "gguf",
+      "displayName": "Gemma 4 E2B",
+      "publisher": "google",
+      "path": "google/gemma-4-e2b",
+      "sizeBytes": 4414810282,
+      "indexedModelIdentifier": "google/gemma-4-e2b",
+      "deviceIdentifier": null,
+      "paramsString": "4.6B",
+      "architecture": "gemma4",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "google/gemma-4-e2b@q4_k_m"
+      ],
+      "selectedVariant": "google/gemma-4-e2b@q4_k_m",
+      "vision": true,
+      "trainedForToolUse": false,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "google/gemma-4-e4b",
+      "format": "gguf",
+      "displayName": "Gemma 4 E4B",
+      "publisher": "google",
+      "path": "google/gemma-4-e4b",
+      "sizeBytes": 6326938154,
+      "indexedModelIdentifier": "google/gemma-4-e4b",
+      "deviceIdentifier": null,
+      "paramsString": "7.5B",
+      "architecture": "gemma4",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "google/gemma-4-e4b@q4_k_m"
+      ],
+      "selectedVariant": "google/gemma-4-e4b@q4_k_m",
+      "vision": true,
+      "trainedForToolUse": true,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "zai-org/glm-4.6v-flash",
+      "format": "gguf",
+      "displayName": "Glm 4.6v Flash",
+      "publisher": "zai-org",
+      "path": "zai-org/glm-4.6v-flash",
+      "sizeBytes": 7953555436,
+      "indexedModelIdentifier": "zai-org/glm-4.6v-flash",
+      "deviceIdentifier": null,
+      "paramsString": "9.4B",
+      "architecture": "glm4",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "zai-org/glm-4.6v-flash@q4_k_m"
+      ],
+      "selectedVariant": "zai-org/glm-4.6v-flash@q4_k_m",
+      "vision": true,
+      "trainedForToolUse": true,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp",
+      "format": "gguf",
+      "displayName": "Qwen3.6 27B Claude Opus DeepSeek Distilled Imatrix MTP GGUF",
+      "publisher": "Brian6145",
+      "path": "Brian6145/Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF/Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF-Q2_K.gguf",
+      "sizeBytes": 10864591328,
+      "indexedModelIdentifier": "Brian6145/Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF/Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF-Q2_K.gguf",
+      "deviceIdentifier": null,
+      "paramsString": "27B",
+      "architecture": "qwen35",
+      "quantization": {
+        "name": "Q2_K",
+        "bits": 2
+      },
+      "vision": false,
+      "trainedForToolUse": true,
+      "maxContextLength": 262144
+    },
+    {
+      "type": "llm",
+      "modelKey": "openai/gpt-oss-20b",
+      "format": "gguf",
+      "displayName": "GPT-OSS 20B",
+      "publisher": "openai",
+      "path": "openai/gpt-oss-20b",
+      "sizeBytes": 12109664217,
+      "indexedModelIdentifier": "openai/gpt-oss-20b",
+      "deviceIdentifier": null,
+      "paramsString": "20B",
+      "architecture": "gpt-oss",
+      "quantization": {
+        "name": "MXFP4",
+        "bits": 4
+      },
+      "variants": [
+        "openai/gpt-oss-20b@mxfp4"
+      ],
+      "selectedVariant": "openai/gpt-oss-20b@mxfp4",
+      "vision": false,
+      "trainedForToolUse": true,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "deepseek/deepseek-r1-0528-qwen3-8b",
+      "format": "gguf",
+      "displayName": "Deepseek R1 0528 Qwen3 8B",
+      "publisher": "deepseek",
+      "path": "deepseek/deepseek-r1-0528-qwen3-8b",
+      "sizeBytes": 5027844358,
+      "indexedModelIdentifier": "deepseek/deepseek-r1-0528-qwen3-8b",
+      "deviceIdentifier": null,
+      "paramsString": "8B",
+      "architecture": "qwen3",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "deepseek/deepseek-r1-0528-qwen3-8b@q4_k_m"
+      ],
+      "selectedVariant": "deepseek/deepseek-r1-0528-qwen3-8b@q4_k_m",
+      "vision": false,
+      "trainedForToolUse": false,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "qwen/qwen3.5-9b",
+      "format": "gguf",
+      "displayName": "Qwen3.5 9B",
+      "publisher": "qwen",
+      "path": "qwen/qwen3.5-9b",
+      "sizeBytes": 6548927711,
+      "indexedModelIdentifier": "qwen/qwen3.5-9b",
+      "deviceIdentifier": null,
+      "paramsString": "9B",
+      "architecture": "qwen35",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "qwen/qwen3.5-9b@q4_k_m"
+      ],
+      "selectedVariant": "qwen/qwen3.5-9b@q4_k_m",
+      "vision": true,
+      "trainedForToolUse": true,
+      "maxContextLength": 262144
+    },
+    {
+      "type": "llm",
+      "modelKey": "google/gemma-4-12b",
+      "format": "gguf",
+      "displayName": "Gemma 4 12B",
+      "publisher": "google",
+      "path": "google/gemma-4-12b",
+      "sizeBytes": 7556572852,
+      "indexedModelIdentifier": "google/gemma-4-12b",
+      "deviceIdentifier": null,
+      "paramsString": "12B",
+      "architecture": "gemma4",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "google/gemma-4-12b@q4_k_m"
+      ],
+      "selectedVariant": "google/gemma-4-12b@q4_k_m",
+      "vision": true,
+      "trainedForToolUse": true,
+      "maxContextLength": 262144
+    },
+    {
+      "type": "llm",
+      "modelKey": "google/gemma-4-12b-qat",
+      "format": "gguf",
+      "displayName": "Gemma 4 12B QAT",
+      "publisher": "google",
+      "path": "google/gemma-4-12b-qat",
+      "sizeBytes": 7151066820,
+      "indexedModelIdentifier": "google/gemma-4-12b-qat",
+      "deviceIdentifier": null,
+      "paramsString": "12B",
+      "architecture": "gemma4",
+      "quantization": {
+        "name": "Q4_0",
+        "bits": 4
+      },
+      "variants": [
+        "google/gemma-4-12b-qat@q4_0"
+      ],
+      "selectedVariant": "google/gemma-4-12b-qat@q4_0",
+      "vision": true,
+      "trainedForToolUse": true,
+      "maxContextLength": 262144
+    },
+    {
+      "type": "embedding",
+      "modelKey": "text-embedding-nomic-embed-text-v1.5",
+      "format": "gguf",
+      "displayName": "Nomic Embed Text v1.5",
+      "publisher": "nomic-ai",
+      "path": "nomic-ai/nomic-embed-text-v1.5-GGUF/nomic-embed-text-v1.5.Q4_K_M.gguf",
+      "sizeBytes": 84106624,
+      "indexedModelIdentifier": "nomic-ai/nomic-embed-text-v1.5-GGUF/nomic-embed-text-v1.5.Q4_K_M.gguf",
+      "deviceIdentifier": null,
+      "architecture": "nomic-bert",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "maxContextLength": 2048
+    }
+  ],
+  "initialLoaded": [],
+  "hardwareBefore": {
+    "sampledAt": "2026-08-23T07:00:28.456Z",
+    "totalRamGiB": 63.17,
+    "freeRamGiB": 39.34,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3070",
+        "totalMiB": 8192,
+        "usedMiB": 406,
+        "freeMiB": 7613,
+        "utilizationPercent": 22,
+        "powerWatts": 32.2
+      },
+      {
+        "index": 1,
+        "name": "NVIDIA GeForce GTX 1080",
+        "totalMiB": 8192,
+        "usedMiB": 5803,
+        "freeMiB": 2257,
+        "utilizationPercent": 0,
+        "powerWatts": 6.9
+      }
+    ]
+  },
+  "models": [
+    {
+      "model": "qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp",
+      "meta": {
+        "type": "llm",
+        "modelKey": "qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp",
+        "format": "gguf",
+        "displayName": "Qwen3.6 27B Claude Opus DeepSeek Distilled Imatrix MTP GGUF",
+        "publisher": "Brian6145",
+        "path": "Brian6145/Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF/Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF-Q2_K.gguf",
+        "sizeBytes": 10864591328,
+        "indexedModelIdentifier": "Brian6145/Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF/Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF-Q2_K.gguf",
+        "deviceIdentifier": null,
+        "paramsString": "27B",
+        "architecture": "qwen35",
+        "quantization": {
+          "name": "Q2_K",
+          "bits": 2
+        },
+        "vision": false,
+        "trainedForToolUse": true,
+        "maxContextLength": 262144
+      },
+      "status": "running",
+      "load": {
+        "wallSeconds": 20.44,
+        "stdout": "\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 0% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 0% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 0% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 2% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 2% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 4% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 4% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 4% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 6% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 6% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 7% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 7% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 9% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 9% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 9% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 11% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 11% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 12% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 12% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 14% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 14% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 14% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 15% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 15% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 17% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 17% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 18% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 18% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 18% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 19% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 19% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 21% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 21% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 22% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 22% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 22% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 23% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 23% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 24% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 24% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 26% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 26% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 26% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 27% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 27% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 28% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 28% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 28% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 29% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 29% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 30% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 30% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 31% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 31% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 31% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 32% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 32% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 33% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 33% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 34% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 34% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 34% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 34% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 34% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 35% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 35% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 36% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 36% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 36% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 37% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 37% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 38% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 38% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 38% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 38% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 38% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 39% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 39% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 40% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 40% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 41% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 41% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 41% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 41% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 41% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 42% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 42% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 43% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 43% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 43% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 43% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 43% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 44% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 44% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 45% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 45% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 45% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 45% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 45% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 46% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 46% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 46% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 46% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 46% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 47% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 47% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 48% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 48% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 48% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 48% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 48% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 49% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 49% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 49% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 49% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 50% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 50% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 50% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 50% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 50% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 51% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 51% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 51% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 51% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 51% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 52% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 52% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 52% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 52% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 53% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 53% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 53% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 53% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 53% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 53% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 53% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 53% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 54% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 54% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 54% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 54% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 55% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 55% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 55% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 55% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 55% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 56% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 56% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 56% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 56% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 56% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 56% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 56% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 57% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 57% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 57% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 57% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 57% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 57% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 57% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 58% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 58% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 58% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 58% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 58% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 58% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 58% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 59% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 59% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 59% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 59% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 59% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 59% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 59% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 60% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 60% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 60% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 60% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 60% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 60% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 60% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 61% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 61% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 61% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 61% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 61% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 61% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 61% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 62% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 62% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 62% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 62% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 62% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 62% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 62% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 63% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 63% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 63% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 63% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 63% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 63% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 63% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 63% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 63% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 64% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 64% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 64% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 64% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 64% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 64% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 64% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 64% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 64% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 64% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 65% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 65% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 65% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 65% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 65% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 65% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 65% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 65% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 65% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 66% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 66% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 66% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 66% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 66% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 66% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 66% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 66% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 66% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 66% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 67% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 67% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 67% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 67% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 67% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 67% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 67% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 67% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 67% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 67% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 67% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 67% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 68% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 68% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 68% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 68% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 68% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 68% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 68% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 68% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 68% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 68% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 68% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 68% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 69% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 69% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 69% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 69% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 69% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 69% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 69% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 69% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 69% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 69% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 69% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 70% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 70% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 70% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 70% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 70% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 70% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 70% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 70% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 70% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 70% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 70% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 70% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 71% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 71% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 71% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 71% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 71% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 71% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 71% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 71% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 71% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 71% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 71% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 71% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 71% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 71% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 72% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 72% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 72% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 72% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 72% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 72% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 72% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 72% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 72% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 72% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 72% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 72% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 72% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 72% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 72% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 72% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 73% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 73% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 73% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 73% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 73% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 73% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 73% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 73% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 73% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 73% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 73% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 73% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 73% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 73% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 73% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 73% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 73% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 74% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 74% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 74% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 74% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 74% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 74% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 74% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 74% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 74% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 74% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 74% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 74% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 74% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 74% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 74% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 74% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 75% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 75% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 75% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 75% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 75% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 75% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 75% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 75% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 75% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 75% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 75% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 75% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 75% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 75% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 75% ⠴\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 75% ⠦\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 75% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 75% ⠧\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 75% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 76% ⠇\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 76% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 76% ⠏\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 76% ⠋\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 76% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 76% ⠙\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 76% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 76% ⠹\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 76% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 76% ⠸\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 76% ⠼\u001b[?25l\rLoading qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp 100% ⠼\r\u001b[K\u001b[?25h",
+        "stderr": "Model loaded successfully in 20.16s.\n(10.12 GiB)\nTo use the model in the API/SDK, use the identifier \"qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp\"."
+      },
+      "hardwareLoaded": {
+        "sampledAt": "2026-08-23T07:00:49.233Z",
+        "totalRamGiB": 63.17,
+        "freeRamGiB": 30.67,
+        "gpus": [
+          {
+            "index": 0,
+            "name": "NVIDIA GeForce RTX 3070",
+            "totalMiB": 8192,
+            "usedMiB": 6171,
+            "freeMiB": 1848,
+            "utilizationPercent": 34,
+            "powerWatts": 54.67
+          },
+          {
+            "index": 1,
+            "name": "NVIDIA GeForce GTX 1080",
+            "totalMiB": 8192,
+            "usedMiB": 5803,
+            "freeMiB": 2257,
+            "utilizationPercent": 0,
+            "powerWatts": 6.9
+          }
+        ]
+      },
+      "cases": [
+        {
+          "taskId": "instruction_exact_token",
+          "category": "instruction",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "expected": "LOOP_OK"
+          },
+          "response": {
+            "text": "LOOP_OK",
+            "message": {
+              "role": "assistant",
+              "content": "LOOP_OK",
+              "reasoning_content": "The user wants me to return exactly \"LOOP_OK\" and nothing else. This is a simple instruction, so I will comply directly without adding any extra text or explanation.\n",
+              "tool_calls": []
+            },
+            "wallMs": 15635,
+            "reasoning": "",
+            "finishReason": "stop",
+            "usage": {
+              "prompt_tokens": 49,
+              "completion_tokens": 40,
+              "total_tokens": 89,
+              "completion_tokens_details": {
+                "reasoning_tokens": 35
+              },
+              "total_draft_tokens_count": 20,
+              "accepted_draft_tokens_count": 18,
+              "rejected_draft_tokens_count": 2
+            },
+            "stats": {
+              "tokens_per_second": 4.437027706132105,
+              "time_to_first_token": 6.571042,
+              "generation_time": 15.586086,
+              "stop_reason": "eosFound"
+            },
+            "modelInfo": {
+              "arch": "qwen35",
+              "quant": "Q2_K",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        }
+      ],
+      "summary": {
+        "score": 1,
+        "possible": 1,
+        "passRate": 1,
+        "completedCases": 1,
+        "failedCases": 0,
+        "meanTokensPerSecond": 4.44,
+        "meanTimeToFirstTokenSeconds": 6.571,
+        "totalWallSeconds": 15.63,
+        "categories": {
+          "instruction": {
+            "score": 1,
+            "possible": 1,
+            "passRate": 1
+          },
+          "planning": {
+            "score": 0,
+            "possible": 0,
+            "passRate": 0
+          },
+          "tool_use": {
+            "score": 0,
+            "possible": 0,
+            "passRate": 0
+          },
+          "grounding": {
+            "score": 0,
+            "possible": 0,
+            "passRate": 0
+          },
+          "reasoning": {
+            "score": 0,
+            "possible": 0,
+            "passRate": 0
+          },
+          "coding": {
+            "score": 0,
+            "possible": 0,
+            "passRate": 0
+          },
+          "extraction": {
+            "score": 0,
+            "possible": 0,
+            "passRate": 0
+          },
+          "safety": {
+            "score": 0,
+            "possible": 0,
+            "passRate": 0
+          },
+          "long_context": {
+            "score": 0,
+            "possible": 0,
+            "passRate": 0
+          },
+          "critique": {
+            "score": 0,
+            "possible": 0,
+            "passRate": 0
+          }
+        }
+      }
+    }
+  ],
+  "ranking": []
+}

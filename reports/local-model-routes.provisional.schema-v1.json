@@ -1,0 +1,324 @@
+{
+  "schemaVersion": 1,
+  "revision": "local-agent-research-provisional-2026-08-23-r2",
+  "proposalStatus": "provisional-not-human-reviewed-not-runtime-config",
+  "generatedAt": "2026-08-23T03:02:44.7756702-04:00",
+  "sourceWorkspace": "C:/AI/projects/LocalAgentResearch",
+  "proposalEvidence": {
+    "routingAudit": "reports/project-role-routing-audit.json",
+    "loopAblation": {
+      "path": "results/loop-ablation-e4b-granite-dual-resident-r2.json",
+      "sha256": "3e04735942d64d3feb666cc38b8a53c5413928fa6a82cd561d6d0a4947363597",
+      "validationReceipt": "reports/result-validation-loop-dual-resident.json",
+      "validationReceiptSha256": "9a50c93c643e8e8a638ff201040fe70039e19baac7d35408eb5b19ee388076bf"
+    },
+    "vision": {
+      "path": "results/vision-qwen3.5-isolated-r3-clean.json",
+      "sha256": "8deb55d8857bc22c9a73fbfecdcf67292c243545d9544e56de272792022855a2",
+      "validationReceipt": "reports/result-validation-vision-qwen-r3.json",
+      "validationReceiptSha256": "037470e4018605c466e70677723d66d09a46094398fff54155fb1b93bc48452a",
+      "admission": "provisional-because-gpt-oss-was-observed-temporarily-co-resident"
+    }
+  },
+  "proposalAudit": {
+    "projectCount": 16,
+    "registeredProjectAgentCount": 83,
+    "routedProjectAgentCount": 73,
+    "omittedFailClosedProjectAgentCount": 10,
+    "routeCountsByModel": {
+      "google/gemma-4-e4b": 32,
+      "granite-4.1-8b": 30,
+      "openai/gpt-oss-20b": 9,
+      "qwen/qwen3.5-9b": 2,
+      "mistralai_devstral-small-2-24b-instruct-2512": 0
+    },
+    "devstralUse": "Independent time-sliced code alternate exposed as a utility route; no project role is arbitrarily assigned to it over the measured GPT-OSS primary.",
+    "projectIds": [
+      "agentic-ai-research",
+      "dzyne",
+      "soccer-research",
+      "studio",
+      "loop-ops-supervisor",
+      "sports-play-llm",
+      "every-aircraft",
+      "rsc2",
+      "retainage-ready",
+      "internships-ai-software",
+      "internships-aerospace",
+      "internships",
+      "animerpg",
+      "junkluggers-internal-app",
+      "veritasium-second-brain",
+      "summer-2027-internship-research"
+    ],
+    "omittedAgentIds": [
+      "every-aircraft-producer",
+      "internships-ai-software-researcher",
+      "internships-aerospace-researcher",
+      "internships-agent",
+      "internships-sol-niche-applier",
+      "animerpg-engine-upgrade-sol",
+      "animerpg-rendering-tech-art",
+      "animerpg-audio-director",
+      "junkluggers-internal-app-inkling-small-auditor",
+      "veritasium-second-brain-av-analyst"
+    ],
+    "exactNoncanonicalAgentIds": [
+      "project-veritasium-second-brain-director",
+      "project-summer-2027-internship-research-director"
+    ],
+    "staticVerifierPolicy": {
+      "qaAfterGraniteOrGptOssProducer": "google/gemma-4-e4b",
+      "overseerAfterGemmaPlanner": "granite-4.1-8b",
+      "limitation": "Schema-v1 routing is static by project role and cannot select a verifier from the actual producer family at request time. A QA role may therefore receive Gemma-produced work and an overseer may receive Granite-produced work; those cases are same-family self-review, not independent acceptance, and must fail closed or receive a controller-selected different-family verifier."
+    }
+  },
+  "endpoints": [
+    {
+      "id": "gpu0-lmstudio-timesliced",
+      "baseUrl": "http://127.0.0.1:1234/v1",
+      "runtime": "lm_studio",
+      "device": "GPU0",
+      "gpuAffinity": [0],
+      "models": [
+        "google/gemma-4-e4b",
+        "openai/gpt-oss-20b",
+        "mistralai_devstral-small-2-24b-instruct-2512",
+        "qwen/qwen3.5-9b"
+      ],
+      "maxConcurrency": 1,
+      "exclusiveResidency": true,
+      "runtimeManagedContext": true,
+      "parallel": 1,
+      "enabled": true,
+      "projects": [
+        "agentic-ai-research",
+        "dzyne",
+        "soccer-research",
+        "studio",
+        "loop-ops-supervisor",
+        "sports-play-llm",
+        "every-aircraft",
+        "rsc2",
+        "retainage-ready",
+        "internships",
+        "animerpg",
+        "junkluggers-internal-app",
+        "veritasium-second-brain",
+        "summer-2027-internship-research"
+      ],
+      "note": "GPU0 proposal: one LM Studio LLM resident at a time. Bionic 1.0.1 ignored explicit context_length in both the native load API and lms load, so context is runtime-managed and observed in telemetry; switching must unload the prior admitted LLM and verify sole residency plus parallel=1 both before and after inference."
+    },
+    {
+      "id": "gpu1-llamacpp-granite-static",
+      "baseUrl": "http://127.0.0.1:1235/v1",
+      "runtime": "llama_cpp",
+      "device": "GPU1",
+      "gpuAffinity": [1],
+      "models": [
+        "granite-4.1-8b"
+      ],
+      "maxConcurrency": 1,
+      "exclusiveResidency": false,
+      "enabled": true,
+      "projects": [
+        "agentic-ai-research",
+        "dzyne",
+        "studio",
+        "loop-ops-supervisor",
+        "sports-play-llm",
+        "every-aircraft",
+        "rsc2",
+        "retainage-ready",
+        "internships",
+        "animerpg",
+        "junkluggers-internal-app",
+        "summer-2027-internship-research"
+      ],
+      "note": "GPU1 proposal: static llama.cpp Granite endpoint for research, grounding, and the preferred overseer after Gemma planning."
+    }
+  ],
+  "routing": {
+    "default": null,
+    "projects": {
+      "agentic-ai-research": {
+        "localOnly": true,
+        "default": null,
+        "roles": {
+          "lab-director": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "researcher": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" },
+          "overseer": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" }
+        }
+      },
+      "dzyne": {
+        "localOnly": true,
+        "default": null,
+        "roles": {
+          "lab-director": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "company-analyst": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" },
+          "research-scout": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" },
+          "agent": { "model": "openai/gpt-oss-20b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "qa": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" }
+        }
+      },
+      "soccer-research": {
+        "localOnly": true,
+        "default": null,
+        "roles": {
+          "lab-director": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "lab-tester": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "llm-tester": { "model": "qwen/qwen3.5-9b", "endpointId": "gpu0-lmstudio-timesliced" }
+        }
+      },
+      "studio": {
+        "localOnly": true,
+        "default": null,
+        "roles": {
+          "lab-director": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "researcher": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" },
+          "developer": { "model": "openai/gpt-oss-20b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "qa": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "overseer": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" }
+        }
+      },
+      "loop-ops-supervisor": {
+        "localOnly": true,
+        "default": null,
+        "roles": {
+          "lab-director": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "repair-agent": { "model": "openai/gpt-oss-20b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "research-agent": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" }
+        }
+      },
+      "sports-play-llm": {
+        "localOnly": true,
+        "default": null,
+        "roles": {
+          "lab-director": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "researcher": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" },
+          "developer": { "model": "openai/gpt-oss-20b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "qa": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" }
+        }
+      },
+      "every-aircraft": {
+        "localOnly": true,
+        "default": null,
+        "roles": {
+          "lab-director": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "researcher": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" },
+          "qa": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" }
+        }
+      },
+      "rsc2": {
+        "localOnly": true,
+        "default": null,
+        "roles": {
+          "lab-director": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "researcher": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" },
+          "developer": { "model": "openai/gpt-oss-20b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "qa": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "overseer": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" }
+        }
+      },
+      "retainage-ready": {
+        "localOnly": true,
+        "default": null,
+        "roles": {
+          "lab-director": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "revenue-scout": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" },
+          "intake-analyst": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" },
+          "packet-builder": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "qa-controller": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "client-success": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" }
+        }
+      },
+      "internships-ai-software": {
+        "localOnly": true,
+        "default": null,
+        "roles": {}
+      },
+      "internships-aerospace": {
+        "localOnly": true,
+        "default": null,
+        "roles": {}
+      },
+      "internships": {
+        "localOnly": true,
+        "default": null,
+        "roles": {
+          "lab-director": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "operations-supervisor": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "researcher": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" },
+          "developer": { "model": "openai/gpt-oss-20b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "qa": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "overseer": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" },
+          "nsf-reu-scout": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" },
+          "handshake-scout": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" },
+          "motorsport-racing-scout": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" },
+          "aerospace-autonomy-scout": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" },
+          "ai-research-labs-scout": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" },
+          "startups-scout": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" },
+          "big-tech-scout": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" },
+          "government-contractors-scout": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" },
+          "other-job-sites-scout": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" },
+          "experiment-controller": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" }
+        }
+      },
+      "animerpg": {
+        "localOnly": true,
+        "default": null,
+        "roles": {
+          "lab-director": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "developer": { "model": "openai/gpt-oss-20b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "engine-systems-developer": { "model": "openai/gpt-oss-20b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "engine-architect": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" },
+          "game-design": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "narrative-director": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "researcher": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" },
+          "qa": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "art-director": { "model": "qwen/qwen3.5-9b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "performance": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "overseer": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" }
+        }
+      },
+      "junkluggers-internal-app": {
+        "localOnly": true,
+        "default": null,
+        "roles": {
+          "lab-director": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "researcher": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" },
+          "developer": { "model": "openai/gpt-oss-20b", "endpointId": "gpu0-lmstudio-timesliced" },
+          "qa": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" }
+        }
+      },
+      "veritasium-second-brain": {
+        "localOnly": true,
+        "default": null,
+        "roles": {}
+      },
+      "summer-2027-internship-research": {
+        "localOnly": true,
+        "default": null,
+        "roles": {
+          "ai-software-researcher": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" },
+          "aerospace-researcher": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" },
+          "qa": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" }
+        }
+      }
+    },
+    "agents": {
+      "project-veritasium-second-brain-director": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" },
+      "project-summer-2027-internship-research-director": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" }
+    }
+  },
+  "reservedRoutes": {},
+  "utilityRoutes": {
+    "planner-synthesis": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" },
+    "research-grounding": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" },
+    "code-primary": { "model": "openai/gpt-oss-20b", "endpointId": "gpu0-lmstudio-timesliced" },
+    "code-independent-alternate": { "model": "mistralai_devstral-small-2-24b-instruct-2512", "endpointId": "gpu0-lmstudio-timesliced" },
+    "vision-provisional": { "model": "qwen/qwen3.5-9b", "endpointId": "gpu0-lmstudio-timesliced" },
+    "qa-after-granite-or-gpt-oss": { "model": "google/gemma-4-e4b", "endpointId": "gpu0-lmstudio-timesliced" },
+    "overseer-after-gemma": { "model": "granite-4.1-8b", "endpointId": "gpu1-llamacpp-granite-static" }
+  }
+}

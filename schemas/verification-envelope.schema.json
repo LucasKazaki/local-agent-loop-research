@@ -1,0 +1,400 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:local-agent-research:schema:verification-envelope:1.0",
+  "title": "Local Loop Verification Envelope",
+  "description": "Controller-consumed verification result for one worker attempt.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "protocol_version",
+    "envelope_type",
+    "task_id",
+    "attempt_id",
+    "artifact_hashes_verified",
+    "hard_checks",
+    "soft_rubric",
+    "policy_status",
+    "decision",
+    "repair_brief"
+  ],
+  "properties": {
+    "protocol_version": {
+      "const": "local-loop/1.0"
+    },
+    "envelope_type": {
+      "const": "verification"
+    },
+    "task_id": {
+      "$ref": "#/$defs/taskId"
+    },
+    "attempt_id": {
+      "$ref": "#/$defs/attemptId"
+    },
+    "artifact_hashes_verified": {
+      "type": "boolean"
+    },
+    "hard_checks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/hardCheckResult"
+      }
+    },
+    "soft_rubric": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/softRubricResult"
+        }
+      ]
+    },
+    "policy_status": {
+      "type": "string",
+      "enum": [
+        "pass",
+        "fail",
+        "not_applicable"
+      ]
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "accept",
+        "repair",
+        "block",
+        "fail"
+      ]
+    },
+    "repair_brief": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/repairBrief"
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "decision": {
+            "const": "accept"
+          }
+        },
+        "required": [
+          "decision"
+        ]
+      },
+      "then": {
+        "properties": {
+          "artifact_hashes_verified": {
+            "const": true
+          },
+          "hard_checks": {
+            "items": {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/hardCheckResult"
+                },
+                {
+                  "properties": {
+                    "status": {
+                      "const": "pass"
+                    },
+                    "failure_signature": {
+                      "type": "null"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "soft_rubric": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "allOf": [
+                  {
+                    "$ref": "#/$defs/softRubricResult"
+                  },
+                  {
+                    "properties": {
+                      "status": {
+                        "const": "pass"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "policy_status": {
+            "enum": [
+              "pass",
+              "not_applicable"
+            ]
+          },
+          "repair_brief": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "decision": {
+            "const": "repair"
+          }
+        },
+        "required": [
+          "decision"
+        ]
+      },
+      "then": {
+        "properties": {
+          "hard_checks": {
+            "contains": {
+              "properties": {
+                "status": {
+                  "enum": [
+                    "fail",
+                    "error"
+                  ]
+                }
+              },
+              "required": [
+                "status"
+              ]
+            },
+            "minContains": 1
+          },
+          "repair_brief": {
+            "$ref": "#/$defs/repairBrief"
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "repair_brief": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "policy_status": {
+            "const": "fail"
+          }
+        },
+        "required": [
+          "policy_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "decision": {
+            "enum": [
+              "block",
+              "fail"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "taskId": {
+      "type": "string",
+      "pattern": "^task_[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+    },
+    "attemptId": {
+      "type": "string",
+      "pattern": "^attempt_[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+    },
+    "checkId": {
+      "type": "string",
+      "pattern": "^check_[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+    },
+    "receiptId": {
+      "type": "string",
+      "pattern": "^receipt_[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+    },
+    "artifactId": {
+      "type": "string",
+      "pattern": "^artifact_[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "hardCheckResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "check_id",
+        "status",
+        "receipt_id",
+        "failure_signature",
+        "diagnostic_artifact_id"
+      ],
+      "properties": {
+        "check_id": {
+          "$ref": "#/$defs/checkId"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "pass",
+            "fail",
+            "error"
+          ]
+        },
+        "receipt_id": {
+          "$ref": "#/$defs/receiptId"
+        },
+        "failure_signature": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/sha256"
+            }
+          ]
+        },
+        "diagnostic_artifact_id": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/artifactId"
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "pass"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "failure_signature": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "failure_signature": {
+                "$ref": "#/$defs/sha256"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "softRubricResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rubric_id",
+        "score",
+        "minimum_score",
+        "status",
+        "evidence_artifact_ids"
+      ],
+      "properties": {
+        "rubric_id": {
+          "type": "string",
+          "pattern": "^rubric_[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+        },
+        "score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "minimum_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "pass",
+            "fail"
+          ]
+        },
+        "evidence_artifact_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifactId"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "repairBrief": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "failed_check_ids",
+        "diagnostic_artifact_ids",
+        "required_strategy_change",
+        "forbidden_repetition"
+      ],
+      "properties": {
+        "failed_check_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/checkId"
+          },
+          "uniqueItems": true
+        },
+        "diagnostic_artifact_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifactId"
+          },
+          "uniqueItems": true
+        },
+        "required_strategy_change": {
+          "type": "string",
+          "enum": [
+            "prompt",
+            "context",
+            "tool",
+            "model",
+            "decomposition",
+            "implementation"
+          ]
+        },
+        "forbidden_repetition": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4000
+        }
+      }
+    }
+  }
+}

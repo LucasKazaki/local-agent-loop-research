@@ -1,0 +1,130 @@
+{
+  "surface": "report",
+  "manifest": {
+    "version": 1,
+    "surface": "report",
+    "title": "Agent Studio: Startup Lessons",
+    "description": "A current comparative product study and recommended roadmap for Lucas Agent Studio.",
+    "generatedAt": "2026-08-22T19:41:15Z",
+    "filters": [],
+    "cards": [],
+    "charts": [
+      {
+        "id": "active-task-frontier",
+        "title": "Active task frontier",
+        "subtitle": "Review, blocked, or waiting tasks by active project on August 22, 2026.",
+        "showDescription": false,
+        "intent": "comparison",
+        "question": "Where is active Agent Studio work accumulating?",
+        "rationale": "A compact horizontal bar compares the unresolved frontier across the four active projects.",
+        "type": "horizontalBar",
+        "dataset": "active_task_frontier",
+        "source": {
+          "id": "studio_tasks",
+          "label": "Lucas Agent Studio active task frontier",
+          "query": {
+            "engine": "SQLite",
+            "language": "sql",
+            "executed_at": "2026-08-22T19:41:15Z",
+            "description": "Review, blocked, and waiting task counts aggregated for every active project.",
+            "sql": "SELECT p.name AS project, CASE p.name WHEN 'AnimeRPG · Astral Engine' THEN 'AnimeRPG' WHEN 'Sports Play LLM Research' THEN 'Sports Play' WHEN 'Summer 2027 Internship Research' THEN 'Summer 2027' ELSE p.name END AS display_project, COUNT(t.id) AS frontier_tasks FROM projects AS p LEFT JOIN tasks AS t ON t.project_id = p.id AND t.status IN ('review', 'blocked', 'waiting') WHERE p.desired = 1 AND p.archived_at IS NULL GROUP BY p.name ORDER BY frontier_tasks DESC, p.name ASC;",
+            "tables_used": ["projects", "tasks"],
+            "filters": ["projects.desired = 1", "projects.archived_at IS NULL", "tasks.status IN (review, blocked, waiting)"],
+            "metric_definitions": ["Frontier tasks are durable task rows currently in review, blocked, or waiting for one active project.", "The frontier is point-in-time operational state, not an estimate of unique user problems or business value."]
+          }
+        },
+        "encodings": {
+          "x": {"field": "display_project", "type": "nominal", "label": "Active project"},
+          "y": {"field": "frontier_tasks", "type": "quantitative", "label": "Tasks", "format": "number"},
+          "tooltip": [
+            {"field": "project", "type": "nominal", "label": "Project"},
+            {"field": "frontier_tasks", "type": "quantitative", "label": "Frontier tasks", "format": "number"}
+          ]
+        },
+        "xAxisTitle": "Active project",
+        "yAxisTitle": "Tasks",
+        "layout": "full",
+        "labels": {"values": "all"},
+        "palette": {"kind": "identity", "name": "blue"},
+        "settings": {"orientation": "horizontal", "groupMode": "single", "sort": "descending", "showValues": true},
+        "maxRows": 10
+      }
+    ],
+    "tables": [],
+    "sources": [],
+    "blocks": [
+      {
+        "id": "title",
+        "type": "markdown",
+        "body": "# Agent Studio: Startup Lessons"
+      },
+      {
+        "id": "executive-summary",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## Executive Summary\n\nBuild an **evidence-driven Project Operating System**; the **818-task frontier** makes review and promotion the first priority.\n\n**Findings:** [Code agents](https://cursor.com/blog/agent-best-practices) add bounded evidence, [vertical agents](https://decagon.ai/product/aop) add expert gates, and [creative/research agents](https://help.runwayml.com/hc/en-us/articles/53718574533395-Viewing-and-downloading-an-asset-s-lineage) add lineage and context.\n\n**Next steps:** Trust layer → Summer/Every pilots → reuse in Sports, AnimeRPG, and Retainage.\n\n**Further Questions:** Which tasks are stale; which pilot lifts acceptance fastest?\n\n**Caveats and Assumptions:** Design patterns, snapshot counts, and judgment—not causal impact or ROI."
+      },
+      {
+        "id": "runtime-chart-block",
+        "type": "chart",
+        "chartId": "active-task-frontier",
+        "layout": "full"
+      }
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "generatedAt": "2026-08-22T19:41:15Z",
+    "status": "ready",
+    "datasets": {
+      "active_task_frontier": [
+        {"project": "AnimeRPG · Astral Engine", "display_project": "AnimeRPG", "frontier_tasks": 351},
+        {"project": "Every Aircraft", "display_project": "Every Aircraft", "frontier_tasks": 296},
+        {"project": "Sports Play LLM Research", "display_project": "Sports Play", "frontier_tasks": 142},
+        {"project": "Summer 2027 Internship Research", "display_project": "Summer 2027", "frontier_tasks": 29}
+      ],
+      "priority_scores": [
+        {"pattern": "Artifact graph + explicit promotion", "display_pattern": "Lineage + promotion", "pain_now": 5, "cross_project_leverage": 5, "architecture_fit": 5, "trust_defensibility": 5, "delivery_ease": 3, "priority_score": 96},
+        {"pattern": "Versioned runbooks + eval gates", "display_pattern": "Runbooks + evals", "pain_now": 5, "cross_project_leverage": 5, "architecture_fit": 5, "trust_defensibility": 5, "delivery_ease": 2, "priority_score": 94},
+        {"pattern": "Native review workbench", "display_pattern": "Review workbench", "pain_now": 5, "cross_project_leverage": 5, "architecture_fit": 4, "trust_defensibility": 5, "delivery_ease": 3, "priority_score": 92},
+        {"pattern": "Outcome ledger", "display_pattern": "Outcome ledger", "pain_now": 4, "cross_project_leverage": 5, "architecture_fit": 5, "trust_defensibility": 5, "delivery_ease": 4, "priority_score": 92},
+        {"pattern": "Permissioned project context graph", "display_pattern": "Context graph", "pain_now": 4, "cross_project_leverage": 5, "architecture_fit": 4, "trust_defensibility": 5, "delivery_ease": 3, "priority_score": 86},
+        {"pattern": "Task-aware model routing + health", "display_pattern": "Model routing", "pain_now": 4, "cross_project_leverage": 5, "architecture_fit": 4, "trust_defensibility": 4, "delivery_ease": 2, "priority_score": 81},
+        {"pattern": "Signal radar + action packs", "display_pattern": "Signal radar", "pain_now": 4, "cross_project_leverage": 3, "architecture_fit": 5, "trust_defensibility": 4, "delivery_ease": 4, "priority_score": 79},
+        {"pattern": "Long-horizon proactive agents", "display_pattern": "Long-horizon agents", "pain_now": 3, "cross_project_leverage": 4, "architecture_fit": 5, "trust_defensibility": 3, "delivery_ease": 2, "priority_score": 71},
+        {"pattern": "Publish/export productization", "display_pattern": "Publish / export", "pain_now": 3, "cross_project_leverage": 5, "architecture_fit": 3, "trust_defensibility": 3, "delivery_ease": 3, "priority_score": 70},
+        {"pattern": "Generic agent marketplace", "display_pattern": "Agent marketplace", "pain_now": 1, "cross_project_leverage": 3, "architecture_fit": 3, "trust_defensibility": 1, "delivery_ease": 2, "priority_score": 40}
+      ],
+      "company_patterns": [
+        {"company": "JoinRunway", "archetype": "Opportunity agent", "proven_pattern": "Fresh source monitoring → fit score → action kit → outcome", "copy_decision": "Now", "primary_target": "Summer 2027", "main_risk": "Stale listings, score bias, off-platform outcome loss"},
+        {"company": "Cursor", "archetype": "Coding agent", "proven_pattern": "Editable plan → isolated run → test evidence → draft PR", "copy_decision": "Now", "primary_target": "Agent Studio / AnimeRPG", "main_risk": "Unattended internet and review overload"},
+        {"company": "Devin", "archetype": "Coding agent", "proven_pattern": "Versioned knowledge, playbooks, environment blueprints", "copy_decision": "Now", "primary_target": "Agent Studio", "main_risk": "Stale runbooks and opaque credit units"},
+        {"company": "Replit", "archetype": "AI builder", "proven_pattern": "Live preview, atomic checkpoints, explicit publish", "copy_decision": "Now", "primary_target": "All artifact-producing projects", "main_risk": "Over-broad surface and unsafe rollback scope"},
+        {"company": "LangChain / LangSmith", "archetype": "Agent infrastructure", "proven_pattern": "Durable state, traces, offline/online evals, interrupts", "copy_decision": "Now; do not rebuild runtime", "primary_target": "Agent Studio", "main_risk": "Observability cost and orchestration ceremony"},
+        {"company": "CrewAI", "archetype": "Agent framework", "proven_pattern": "Deterministic Flows with bounded agentic Crews", "copy_decision": "Next", "primary_target": "Agent Architect", "main_risk": "Persona proliferation and nondeterministic chatter"},
+        {"company": "Sierra", "archetype": "Vertical outcome agent", "proven_pattern": "Long-horizon context plus outcome-based operation", "copy_decision": "Next", "primary_target": "Retainage Ready / Summer 2027", "main_risk": "Ambiguous outcomes, privacy, proactive fatigue"},
+        {"company": "Decagon", "archetype": "Vertical CX agent", "proven_pattern": "Versioned operating procedures, simulations, staged fixes", "copy_decision": "Now", "primary_target": "Agent Studio / Retainage Ready", "main_risk": "Self-improvement that self-judges"},
+        {"company": "Glean", "archetype": "Enterprise context", "proven_pattern": "Permissioned graph shared by agents, search, and governance", "copy_decision": "Next", "primary_target": "Project context layer", "main_risk": "Mirroring bad permissions and overshared data"},
+        {"company": "Harvey", "archetype": "Legal AI", "proven_pattern": "Cited, review-ready artifacts from expert playbooks", "copy_decision": "Next", "primary_target": "Retainage Ready", "main_risk": "Plausible partial work mistaken for complete work"},
+        {"company": "Hebbia", "archetype": "Diligence AI", "proven_pattern": "Inspectable matrix of repeated claims, sources, and transformations", "copy_decision": "Now", "primary_target": "Sports / Retainage / research", "main_risk": "Costly fan-out and overstated reliability"},
+        {"company": "Abridge", "archetype": "Clinical AI", "proven_pattern": "AI draft + linked evidence + expert signoff", "copy_decision": "Now", "primary_target": "Sports / Retainage", "main_risk": "Automation-biased rubber-stamping"},
+        {"company": "RunwayML", "archetype": "Creative AI", "proven_pattern": "References, lineage, variants, frame comments, workflow apps", "copy_decision": "Now", "primary_target": "Every Aircraft / AnimeRPG", "main_risk": "Vendor lock-in and incomplete rights proof"},
+        {"company": "ElevenLabs", "archetype": "Audio/video AI", "proven_pattern": "Timeline segments, generation history, locks, review links", "copy_decision": "Now", "primary_target": "Every Aircraft", "main_risk": "Legacy-surface churn and credit complexity"},
+        {"company": "Perplexity", "archetype": "Research AI", "proven_pattern": "Persistent projects, source priorities, citations, inspectable memory", "copy_decision": "Now", "primary_target": "Summer 2027 / research", "main_risk": "Citation or domain label mistaken for proof"},
+        {"company": "Granola", "archetype": "Knowledge capture", "proven_pattern": "Human marks guide AI synthesis with jump-to-source evidence", "copy_decision": "Now", "primary_target": "Every Aircraft / Sports", "main_risk": "Incomplete export and weak revision lineage"},
+        {"company": "Gamma", "archetype": "AI publishing", "proven_pattern": "Reusable templates, polished output, live link, engagement", "copy_decision": "Later", "primary_target": "Reports and external briefs", "main_risk": "Format polish outruns evidence; destructive restore"},
+        {"company": "Suno", "archetype": "Generative audio", "proven_pattern": "Take lanes, personas, remix lineage, standard export", "copy_decision": "Later", "primary_target": "AnimeRPG / Every Aircraft", "main_risk": "Rights ambiguity and model/download-policy churn"}
+      ],
+      "project_applications": [
+        {"sequence": 1, "project": "Agent Studio core", "first_workflow": "Artifact graph, promotion pointer, review inbox, runbook/eval registry, outcome ledger", "pattern_sources": "Cursor, Devin, LangSmith, Decagon, RunwayML", "success_measure": "Accepted-output rate, evidence coverage, intervention reduction, repeat success"},
+        {"sequence": 2, "project": "Summer 2027", "first_workflow": "First-party opportunity radar with evidence card, fit explanation, action pack, approval, outcome", "pattern_sources": "JoinRunway, Perplexity, Sierra", "success_measure": "Alert precision, evidence completeness, time to review, interview yield"},
+        {"sequence": 3, "project": "Every Aircraft", "first_workflow": "Synchronized shot/narration/caption timeline with source rights, segment versions, comments, current master", "pattern_sources": "RunwayML, ElevenLabs, Granola, Suno", "success_measure": "Review-cycle time, superseded-master errors, approved-segment reuse"},
+        {"sequence": 4, "project": "Sports Play LLM", "first_workflow": "Claim/evidence grid linked to clip hash, time interval, frame/region, model, corruption, and adjudication", "pattern_sources": "Hebbia, Abridge, Harvey, LangSmith", "success_measure": "All-pass grounded accuracy, calibration, abstention quality, regression escape rate"},
+        {"sequence": 5, "project": "AnimeRPG", "first_workflow": "Character/environment/audio reference packs tied to build hashes, render comparisons, and visual promotion", "pattern_sources": "RunwayML, Replit, Suno, Cursor", "success_measure": "Reference consistency, accepted render rate, rollback and rework rate"},
+        {"sequence": 6, "project": "Retainage Ready", "first_workflow": "Cited requirement/exception grid leading to a named-human-approved release package", "pattern_sources": "Harvey, Hebbia, Abridge, Decagon, Sierra", "success_measure": "Review hours, exceptions caught, resubmissions, days and dollars accelerated"}
+      ]
+    },
+    "accessIssues": []
+  },
+  "sources": []
+}

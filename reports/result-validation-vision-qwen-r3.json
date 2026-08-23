@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "validatorVersion": "suite-aware/1.1",
+  "validatedAt": "2026-08-23T06:56:11.882Z",
+  "supportedFamilies": [
+    "text",
+    "code",
+    "vision",
+    "reasoning-profile",
+    "loop-ablation",
+    "llamacpp-placement"
+  ],
+  "results": [
+    {
+      "file": "results/vision-qwen3.5-isolated-r3-clean.json",
+      "artifactSha256": "8deb55d8857bc22c9a73fbfecdcf67292c243545d9544e56de272792022855a2",
+      "family": "vision",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": true,
+      "expectedCasesPerCompletedSubject": 6,
+      "subjectCount": 1,
+      "outcomeStatus": "completed",
+      "findings": []
+    }
+  ],
+  "receiptContentSha256": "7abcc448d692689e560c56e600f4463be289fed3165e490ee8742da05e10af16"
+}

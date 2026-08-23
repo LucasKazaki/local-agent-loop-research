@@ -1,0 +1,97 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-08-23T07:36:47.2506344Z",
+  "report": "Local Specialist Loops on a 3070 + 1080",
+  "input": "reports/local-specialist-loop-findings.artifact.json",
+  "output": "reports/local-specialist-loop-findings.html",
+  "builder": {
+    "workflow": "data-analytics:build-report",
+    "pluginVersion": "0.2.8-13ceeea1f599",
+    "canonicalBuilder": "skills/build-report/scripts/build_portable_artifact.mjs",
+    "canonicalDelivery": "skills/build-report/scripts/deliver_portable_artifact.mjs",
+    "reportAdapter": "reports/local-specialist-loop-findings.delivery.mjs",
+    "compatibilityCorrection": {
+      "scope": "shared-reader top bar only",
+      "from": "width: 100vw with viewport margins",
+      "to": "width: 100% with zero margins",
+      "reason": "The packaged shared reader otherwise extended eight pixels past the desktop content viewport when the vertical scrollbar was present. The report manifest and analytical content were not altered by this correction."
+    }
+  },
+  "delivery": {
+    "ok": true,
+    "stages": {
+      "validation": "passed",
+      "package": "passed",
+      "verification": "passed"
+    },
+    "counts": {
+      "blocks": 34,
+      "charts": 4,
+      "html": 0,
+      "metrics": 4,
+      "tables": 6
+    },
+    "sourceDialog": "passed",
+    "sourceInteraction": "keyboard_menu_semantic_click",
+    "viewports": [1440, 390],
+    "timingsMs": {
+      "validateAndPackage": 1611.7,
+      "staticChartExtraction": 1556.8,
+      "browserRun": 1278.6,
+      "readerReady": 88.4,
+      "contentChecks": 32,
+      "sourceDialog": 32,
+      "responsiveChecks": 32,
+      "verification": 1328.4,
+      "total": 2951.8
+    }
+  },
+  "sourceQueryReplay": {
+    "ok": true,
+    "engine": "Node.js node:sqlite DatabaseSync",
+    "queryCount": 8,
+    "results": [
+      {"id": "text_evidence", "rows": 4, "columns": 6},
+      {"id": "code_evidence", "rows": 4, "columns": 7},
+      {"id": "vision_evidence", "rows": 4, "columns": 7},
+      {"id": "loop_evidence", "rows": 3, "columns": 8},
+      {"id": "placement_evidence", "rows": 4, "columns": 8},
+      {"id": "residency_evidence", "rows": 2, "columns": 6},
+      {"id": "routing_inference_source", "rows": 7, "columns": 6},
+      {"id": "exclusion_evidence", "rows": 16, "columns": 3}
+    ]
+  },
+  "selectedArtifactHashCheck": {
+    "ok": true,
+    "artifactCount": 9,
+    "algorithm": "SHA-256",
+    "note": "Every selected raw benchmark artifact matched the hash recorded in the reviewed evidence extraction."
+  },
+  "files": [
+    {
+      "path": "reports/local-specialist-loop-findings.html",
+      "bytes": 680568,
+      "sha256": "b00bad7f121c32060169630e1041a9a8f944a2a58ae0118fdc6171edd018becb"
+    },
+    {
+      "path": "reports/local-specialist-loop-findings.artifact.json",
+      "bytes": 52751,
+      "sha256": "f299bca967c33a2223cfbb9135359da6a71b026bb53633bb3a30af23fd285a16"
+    },
+    {
+      "path": "reports/local-specialist-loop-findings.evidence.json",
+      "bytes": 18364,
+      "sha256": "73a5f403a5c03fdfa88c20d0d9cd4b372984b87856c7755a9eca6ad416d91012"
+    },
+    {
+      "path": "reports/local-specialist-loop-findings.notes.md",
+      "bytes": 6191,
+      "sha256": "5692dd8657840814fa571757cc86e4247e2ad0fe36963a296c7cc44d65a4f167"
+    },
+    {
+      "path": "reports/local-specialist-loop-findings.delivery.mjs",
+      "bytes": 2083,
+      "sha256": "063177f7ba8cb7051fa61c8e727120d6df2a9a7964f4883188c9aae15386b5fe"
+    }
+  ]
+}

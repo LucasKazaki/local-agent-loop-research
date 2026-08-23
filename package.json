@@ -1,0 +1,25 @@
+{
+  "name": "local-agent-research",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Evidence-first evaluation of local language models and bounded specialist-agent loops.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test --test-concurrency=1",
+    "code": "node benchmark/run-code-benchmark.mjs --output=results/code-latest.json",
+    "screen": "node benchmark/run-benchmark.mjs --stage=screen --repeats=1 --output=results/screen-latest.json",
+    "deep": "node benchmark/run-benchmark.mjs --stage=deep --repeats=3 --output=results/deep-latest.json",
+    "summarize": "node benchmark/summarize-results.mjs results/code-finalists-isolated-r2.json results/dual-resident-e4b.json results/dual-resident-granite.json results/screen-devstral-isolated-r1.json results/screen-finalists-isolated-r2.json results/screen-granite-isolated-r2.json results/vision-configured-finalists-r2.json --output-dir=results/derived",
+    "validate": "node benchmark/validate-results.mjs --output=reports/result-validation-selected.json results/code-finalists-isolated-r2.json results/dual-resident-e4b.json results/dual-resident-granite.json results/llamacpp-placement-devstral-b10566-r5-studio-closed.json results/loop-ablation-e4b-granite-dual-resident-r2.json results/screen-devstral-isolated-r1.json results/screen-finalists-isolated-r2.json results/screen-granite-isolated-r2.json results/vision-configured-finalists-r2.json",
+    "analysis": "python scripts/build-benchmark-analysis.py",
+    "notebook": "python scripts/execute-notebook-stdlib.py notebooks/benchmark-results-analysis.ipynb",
+    "inventory": "node scripts/inventory-legacy.mjs",
+    "inventory:models": "node scripts/inventory-models.mjs",
+    "bench:placement": "node benchmark/run-llamacpp-placement.mjs",
+    "routing:build": "node scripts/build-routing-manifest.mjs"
+  }
+}

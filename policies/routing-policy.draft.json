@@ -1,0 +1,325 @@
+{
+  "policy_version": "routing-policy/1.0",
+  "policy_id": "routing_policy_local_dual_gpu_draft_2026_08_23",
+  "review": {
+    "status": "draft_unreviewed",
+    "authority": null,
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "manifest": {
+    "manifest_id": "routing_local_dual_gpu_draft_2026_08_23",
+    "benchmark_snapshot_id": "bench_41533057ded00daff733a2022cd150b0",
+    "hardware_profile_id": "hardware_rtx3070_gtx1080_64gib"
+  },
+  "inputs": {
+    "model_inventory": {
+      "path": "results/model-inventory-final.json",
+      "sha256": "7ef11bb083b2dbb046248fad3fa6d7c2f49228f5fa3614972fe3b11adc5c5bb7",
+      "expectations": {
+        "minimum_model_count": 1,
+        "require_all_roots_present": true,
+        "require_zero_errors": true,
+        "require_zero_ignored_entries": true
+      }
+    },
+    "benchmark_results": [
+      {
+        "artifact_id": "artifact_screen_finalists_isolated_r2",
+        "kind": "text",
+        "path": "results/screen-finalists-isolated-r2.json",
+        "sha256": "34a51146a486e0b6f0ce5cd57b2f57c758a7a6130183ed5040060dcc72056823",
+        "suite_sha256": "a0308ecc0a9eeba08de236ff65c3d5a756aaf9c568cfe721687fb9df26189ea2"
+      },
+      {
+        "artifact_id": "artifact_code_finalists_isolated_r2",
+        "kind": "code",
+        "path": "results/code-finalists-isolated-r2.json",
+        "sha256": "deb4836c740d3fb9d8dcec09f14ceff13899125bdd6c600e25fed61b769c1277",
+        "suite_sha256": "8fa48ddb647ae2de83c6c30212dc67ca95bb9c153b3146a0622d10bcc068f654"
+      },
+      {
+        "artifact_id": "artifact_vision_finalists_isolated_r2",
+        "kind": "vision",
+        "path": "results/vision-finalists-isolated-r2.json",
+        "sha256": "07758ae9dc45b5a8aa3ce4f79d8b36e33847de648e3b29938ba4f4e1e189cdb5",
+        "suite_sha256": "a38575d2cf735cc15f67b71c861652315b1bc7c23d476a57d05048f383352a11"
+      }
+    ]
+  },
+  "bindings": {
+    "prompt_bundles": [],
+    "templates": [],
+    "runtime_settings": [],
+    "runtimes": []
+  },
+  "profiles": [
+    {
+      "profile_id": "planner",
+      "description": "Plans dependencies, budgets, stop conditions, and bounded specialist work.",
+      "roles": ["planner"],
+      "task_families": ["reasoning", "mixed"],
+      "required_capabilities": {
+        "tool_calling": false,
+        "schema_output": true,
+        "vision": false,
+        "reasoning_state": true,
+        "minimum_context_tokens": 8192
+      },
+      "minimum_thresholds": {
+        "role_score": 0.8,
+        "task_success_rate": 0.8,
+        "schema_success": 0.8,
+        "maximum_regression_rate": 0.1,
+        "maximum_median_seconds": 60,
+        "maximum_peak_vram_mib": 8192,
+        "maximum_peak_ram_mib": 32768
+      },
+      "operational_thresholds": {
+        "maximum_failure_rate": 0.05,
+        "minimum_evaluated_tasks": 2,
+        "minimum_repetitions": 2
+      },
+      "metric_selectors": {
+        "role_score": {"categories": ["planning", "reasoning"]},
+        "task_success_rate": {"categories": ["planning", "reasoning"]},
+        "schema_success": {"categories": ["planning"]},
+        "tool_semantic_success": null,
+        "citation_precision": null,
+        "regression_rate": {"categories": ["planning", "reasoning"]},
+        "latency": {"categories": ["planning", "reasoning"]},
+        "failure_rate": {"categories": ["planning", "reasoning"]}
+      },
+      "success_cutoff": 1,
+      "selection_policy": {
+        "order_by": [{"metric": "role_score", "direction": "higher"}],
+        "tie_breakers": [{"metric": "median_seconds", "direction": "lower"}]
+      },
+      "fallback_profile_id": null,
+      "candidates": []
+    },
+    {
+      "profile_id": "researcher_extractor",
+      "description": "Finds, grounds, and extracts evidence without expanding unsupported claims.",
+      "roles": ["researcher", "extractor"],
+      "task_families": ["research", "extraction"],
+      "required_capabilities": {
+        "tool_calling": true,
+        "schema_output": true,
+        "vision": false,
+        "reasoning_state": false,
+        "minimum_context_tokens": 16384
+      },
+      "minimum_thresholds": {
+        "role_score": 0.8,
+        "task_success_rate": 0.8,
+        "tool_semantic_success": 0.8,
+        "schema_success": 0.8,
+        "citation_precision": 0.8,
+        "maximum_regression_rate": 0.1,
+        "maximum_median_seconds": 60,
+        "maximum_peak_vram_mib": 8192,
+        "maximum_peak_ram_mib": 32768
+      },
+      "operational_thresholds": {
+        "maximum_failure_rate": 0.05,
+        "minimum_evaluated_tasks": 3,
+        "minimum_repetitions": 2
+      },
+      "metric_selectors": {
+        "role_score": {"categories": ["grounding", "extraction", "long_context"]},
+        "task_success_rate": {"categories": ["grounding", "extraction", "long_context"]},
+        "schema_success": {"categories": ["extraction"]},
+        "tool_semantic_success": {"categories": ["tool_use"]},
+        "citation_precision": {"categories": ["grounding"]},
+        "regression_rate": {"categories": ["grounding", "extraction", "long_context"]},
+        "latency": {"categories": ["grounding", "extraction", "long_context"]},
+        "failure_rate": {"categories": ["grounding", "extraction", "long_context", "tool_use"]}
+      },
+      "success_cutoff": 1,
+      "selection_policy": {
+        "order_by": [{"metric": "citation_precision", "direction": "higher"}],
+        "tie_breakers": [{"metric": "role_score", "direction": "higher"}, {"metric": "median_seconds", "direction": "lower"}]
+      },
+      "fallback_profile_id": null,
+      "candidates": []
+    },
+    {
+      "profile_id": "coder",
+      "description": "Implements bounded code changes and preserves runtime safety invariants.",
+      "roles": ["coder"],
+      "task_families": ["code_read", "code_write"],
+      "required_capabilities": {
+        "tool_calling": false,
+        "schema_output": true,
+        "vision": false,
+        "reasoning_state": false,
+        "minimum_context_tokens": 16384
+      },
+      "minimum_thresholds": {
+        "role_score": 0.8,
+        "task_success_rate": 0.8,
+        "schema_success": 0.8,
+        "maximum_regression_rate": 0.1,
+        "maximum_median_seconds": 90,
+        "maximum_peak_vram_mib": 8192,
+        "maximum_peak_ram_mib": 32768
+      },
+      "operational_thresholds": {
+        "maximum_failure_rate": 0.05,
+        "minimum_evaluated_tasks": 5,
+        "minimum_repetitions": 2
+      },
+      "metric_selectors": {
+        "role_score": {"categories": ["immutability", "concurrency_safety", "planning", "evidence", "safety"]},
+        "task_success_rate": {"categories": ["immutability", "concurrency_safety", "planning", "evidence", "safety"]},
+        "schema_success": {"categories": ["evidence"]},
+        "tool_semantic_success": null,
+        "citation_precision": null,
+        "regression_rate": {"categories": ["immutability", "concurrency_safety", "planning", "evidence", "safety"]},
+        "latency": {"categories": ["immutability", "concurrency_safety", "planning", "evidence", "safety"]},
+        "failure_rate": {"categories": ["immutability", "concurrency_safety", "planning", "evidence", "safety"]}
+      },
+      "success_cutoff": 0.8,
+      "selection_policy": {
+        "order_by": [{"metric": "task_success_rate", "direction": "higher"}],
+        "tie_breakers": [{"metric": "role_score", "direction": "higher"}, {"metric": "median_seconds", "direction": "lower"}]
+      },
+      "fallback_profile_id": null,
+      "candidates": []
+    },
+    {
+      "profile_id": "verifier_critic",
+      "description": "Independently checks artifacts, evidence, regressions, and acceptance criteria.",
+      "roles": ["verifier", "critic"],
+      "task_families": ["code_read", "reasoning", "mixed"],
+      "required_capabilities": {
+        "tool_calling": false,
+        "schema_output": true,
+        "vision": false,
+        "reasoning_state": true,
+        "minimum_context_tokens": 16384
+      },
+      "minimum_thresholds": {
+        "role_score": 0.85,
+        "task_success_rate": 0.85,
+        "schema_success": 0.8,
+        "maximum_regression_rate": 0.05,
+        "maximum_median_seconds": 90,
+        "maximum_peak_vram_mib": 8192,
+        "maximum_peak_ram_mib": 32768
+      },
+      "operational_thresholds": {
+        "maximum_failure_rate": 0.05,
+        "minimum_evaluated_tasks": 2,
+        "minimum_repetitions": 2
+      },
+      "metric_selectors": {
+        "role_score": {"categories": ["critique", "coding", "safety"]},
+        "task_success_rate": {"categories": ["critique", "coding", "safety"]},
+        "schema_success": {"categories": ["critique"]},
+        "tool_semantic_success": null,
+        "citation_precision": null,
+        "regression_rate": {"categories": ["critique", "coding", "safety"]},
+        "latency": {"categories": ["critique", "coding", "safety"]},
+        "failure_rate": {"categories": ["critique", "coding", "safety"]}
+      },
+      "success_cutoff": 1,
+      "selection_policy": {
+        "order_by": [{"metric": "role_score", "direction": "higher"}],
+        "tie_breakers": [{"metric": "regression_rate", "direction": "lower"}, {"metric": "median_seconds", "direction": "lower"}]
+      },
+      "fallback_profile_id": null,
+      "candidates": []
+    },
+    {
+      "profile_id": "synthesizer_policy",
+      "description": "Synthesizes accepted evidence and enforces policy and abstention boundaries.",
+      "roles": ["synthesizer", "policy_guard"],
+      "task_families": ["research", "reasoning", "mixed"],
+      "required_capabilities": {
+        "tool_calling": false,
+        "schema_output": true,
+        "vision": false,
+        "reasoning_state": true,
+        "minimum_context_tokens": 16384
+      },
+      "minimum_thresholds": {
+        "role_score": 0.85,
+        "task_success_rate": 0.85,
+        "schema_success": 0.85,
+        "citation_precision": 0.8,
+        "maximum_regression_rate": 0.05,
+        "maximum_median_seconds": 90,
+        "maximum_peak_vram_mib": 8192,
+        "maximum_peak_ram_mib": 32768
+      },
+      "operational_thresholds": {
+        "maximum_failure_rate": 0.05,
+        "minimum_evaluated_tasks": 3,
+        "minimum_repetitions": 2
+      },
+      "metric_selectors": {
+        "role_score": {"categories": ["grounding", "safety", "instruction"]},
+        "task_success_rate": {"categories": ["grounding", "safety", "instruction"]},
+        "schema_success": {"categories": ["instruction"]},
+        "tool_semantic_success": null,
+        "citation_precision": {"categories": ["grounding"]},
+        "regression_rate": {"categories": ["grounding", "safety", "instruction"]},
+        "latency": {"categories": ["grounding", "safety", "instruction"]},
+        "failure_rate": {"categories": ["grounding", "safety", "instruction"]}
+      },
+      "success_cutoff": 1,
+      "selection_policy": {
+        "order_by": [{"metric": "role_score", "direction": "higher"}],
+        "tie_breakers": [{"metric": "citation_precision", "direction": "higher"}, {"metric": "median_seconds", "direction": "lower"}]
+      },
+      "fallback_profile_id": null,
+      "candidates": []
+    },
+    {
+      "profile_id": "vision",
+      "description": "Performs bounded visual extraction and negative-grounding checks.",
+      "roles": ["vision"],
+      "task_families": ["vision", "extraction"],
+      "required_capabilities": {
+        "tool_calling": false,
+        "schema_output": true,
+        "vision": true,
+        "reasoning_state": false,
+        "minimum_context_tokens": 8192
+      },
+      "minimum_thresholds": {
+        "role_score": 0.8,
+        "task_success_rate": 0.8,
+        "schema_success": 0.8,
+        "maximum_regression_rate": 0.1,
+        "maximum_median_seconds": 60,
+        "maximum_peak_vram_mib": 8192,
+        "maximum_peak_ram_mib": 32768
+      },
+      "operational_thresholds": {
+        "maximum_failure_rate": 0.05,
+        "minimum_evaluated_tasks": 3,
+        "minimum_repetitions": 2
+      },
+      "metric_selectors": {
+        "role_score": {"categories": ["vision_spatial", "vision_counting", "vision_grounding"]},
+        "task_success_rate": {"categories": ["vision_spatial", "vision_counting", "vision_grounding"]},
+        "schema_success": {"categories": ["vision_spatial"]},
+        "tool_semantic_success": null,
+        "citation_precision": null,
+        "regression_rate": {"categories": ["vision_spatial", "vision_counting", "vision_grounding"]},
+        "latency": {"categories": ["vision_spatial", "vision_counting", "vision_grounding"]},
+        "failure_rate": {"categories": ["vision_spatial", "vision_counting", "vision_grounding"]}
+      },
+      "success_cutoff": 1,
+      "selection_policy": {
+        "order_by": [{"metric": "role_score", "direction": "higher"}],
+        "tie_breakers": [{"metric": "median_seconds", "direction": "lower"}]
+      },
+      "fallback_profile_id": null,
+      "candidates": []
+    }
+  ]
+}

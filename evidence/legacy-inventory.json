@@ -1,0 +1,973 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-23T04:13:18.314Z",
+  "generator": "scripts/inventory-legacy.mjs",
+  "pathBase": "C:/AI equivalent workspace root; paths are stored relative to this root",
+  "hashing": {
+    "algorithm": "sha256",
+    "maxFileBytes": 67108864,
+    "note": "Files larger than the cap are listed with size but are not hashed."
+  },
+  "summary": {
+    "sourceCount": 8,
+    "presentSourceCount": 8,
+    "missingSourceCount": 0,
+    "errorSourceCount": 0,
+    "fileCount": 124,
+    "totalBytes": 15331528,
+    "hashedFileCount": 124,
+    "skippedHashFileCount": 0,
+    "ignoredEntryCount": 11,
+    "errorCount": 0
+  },
+  "sources": [
+    {
+      "id": "legacy-agentic-ai-research",
+      "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research",
+      "scanMode": "recursive-files",
+      "classification": "archived-runtime-research",
+      "disposition": "Index for provenance; do not resume or append the retired standalone loop.",
+      "status": "present",
+      "summary": {
+        "fileCount": 59,
+        "totalBytes": 12055548,
+        "hashedFileCount": 59,
+        "skippedHashFileCount": 0,
+        "ignoredEntryCount": 0,
+        "errorCount": 0
+      },
+      "files": [
+        {
+          "path": "grand-document.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/grand-document.md",
+          "sizeBytes": 11325786,
+          "sha256": "e87168f6302d6bf3dd2ae72d69651bababe4f858f4940ab28ed65eb4b6c48697"
+        },
+        {
+          "path": "loop-state.json",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/loop-state.json",
+          "sizeBytes": 1272,
+          "sha256": "a3ad30543e5fb2eca57249580a04afd548b8f62423bc7f406a7babac0bd771ae"
+        },
+        {
+          "path": "next-frontier-research.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/next-frontier-research.md",
+          "sizeBytes": 11729,
+          "sha256": "d23a14649d0fb72fa51d6178ee21ebe69d50499529587810aa4fddfdec4cc996"
+        },
+        {
+          "path": "packets/2026-08-09-agentic-ai-evaluation-observability.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-09-agentic-ai-evaluation-observability.md",
+          "sizeBytes": 11079,
+          "sha256": "eb6ca4ef2b1da5f2045571662ccf86e3dc8a5ba9c108146ddb9e4b7d6b039e8b"
+        },
+        {
+          "path": "packets/2026-08-09-agentic-evaluation-observability-fixture-manifest-verification-receipt.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-09-agentic-evaluation-observability-fixture-manifest-verification-receipt.md",
+          "sizeBytes": 3034,
+          "sha256": "4747f7b3b038f14fe428d5a5719a49fb72f666236b573dc8430dfb1707057a8f"
+        },
+        {
+          "path": "packets/2026-08-09-agentic-evaluation-observability-fixture-manifest.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-09-agentic-evaluation-observability-fixture-manifest.md",
+          "sizeBytes": 16339,
+          "sha256": "9f365cb65b626013cdeaee92897c7ee6007dbd3935eb1a1915b7656a3a7874ff"
+        },
+        {
+          "path": "packets/2026-08-09-agentic-evaluation-observability-frontier.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-09-agentic-evaluation-observability-frontier.md",
+          "sizeBytes": 11271,
+          "sha256": "9a640dcfe5ee65ab49480bac53f8886c82749810c48640b0026e8114bb2edcb5"
+        },
+        {
+          "path": "packets/2026-08-09-agentic-research-frontier-readiness-review.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-09-agentic-research-frontier-readiness-review.md",
+          "sizeBytes": 12598,
+          "sha256": "cf78fada7ef466abb65c1532c0664457e1652f83e356831a334f50a16f457d40"
+        },
+        {
+          "path": "packets/2026-08-09-evidence-freshness-revalidation.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-09-evidence-freshness-revalidation.md",
+          "sizeBytes": 9966,
+          "sha256": "e7cb02652efe3be619546cbbfa02dc8bf8cc09e971e9790452577c057a687a51"
+        },
+        {
+          "path": "packets/2026-08-09-live-baseline-consistency-diagnostic.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-09-live-baseline-consistency-diagnostic.md",
+          "sizeBytes": 8679,
+          "sha256": "82d3452c0ea9e3e026ef989f7e6982df21faa4d65bf25f8ae9ff116c9cc23274"
+        },
+        {
+          "path": "packets/2026-08-09-overseer-curated-baseline.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-09-overseer-curated-baseline.md",
+          "sizeBytes": 10695,
+          "sha256": "bb014e230a4d6c761e9f4c34b4f5b53b8f4dee714ebf0c273d6431623065878e"
+        },
+        {
+          "path": "packets/2026-08-09-recovery-settlement-test-matrix.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-09-recovery-settlement-test-matrix.md",
+          "sizeBytes": 18760,
+          "sha256": "070fc35a10cf4e7d7147d88e5182c08fed140a4ac3d7a50fd6174a8afc8d40cc"
+        },
+        {
+          "path": "packets/2026-08-09-typed-evidence-acceptance-policy.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-09-typed-evidence-acceptance-policy.md",
+          "sizeBytes": 10769,
+          "sha256": "7c66250de0cef24be4e05b3566de7b09ca0835d5d0ea5b3314e3a666a958f9b2"
+        },
+        {
+          "path": "packets/2026-08-09-typed-evidence-claim-support.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-09-typed-evidence-claim-support.md",
+          "sizeBytes": 10298,
+          "sha256": "42591eb71afb334d26755b8e1c1b5392900a9b5be31da030e9fa27842a053318"
+        },
+        {
+          "path": "packets/2026-08-09-typed-evidence-settlement-comparison-repaired.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-09-typed-evidence-settlement-comparison-repaired.md",
+          "sizeBytes": 10436,
+          "sha256": "1f42c9351dc99ba85553d116dca11f41243371ebfeec3ce8d99f0d073b31ca8f"
+        },
+        {
+          "path": "packets/2026-08-09-typed-evidence-settlement-gap-evaluation.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-09-typed-evidence-settlement-gap-evaluation.md",
+          "sizeBytes": 11029,
+          "sha256": "698306deb92ee361962624381686a8eb3a30dd1d965c366d3bbb95cafe13afda"
+        },
+        {
+          "path": "packets/2026-08-09-typed-evidence-source-excerpts-recovery.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-09-typed-evidence-source-excerpts-recovery.md",
+          "sizeBytes": 7421,
+          "sha256": "646ff0892c70f03def46337a1fd67b74afef383e463bd443394f14de7eb68976"
+        },
+        {
+          "path": "packets/2026-08-09-typed-evidence-source-receipts.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-09-typed-evidence-source-receipts.md",
+          "sizeBytes": 10625,
+          "sha256": "6490b34030cee2100bdac9b88f3b27a7d0950cf3191dbc9626a8661166f45524"
+        },
+        {
+          "path": "packets/2026-08-10-acceptance-predicates-settlement-recovery.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-10-acceptance-predicates-settlement-recovery.md",
+          "sizeBytes": 10743,
+          "sha256": "278b5ede759fba2726e905b32991ee1e904ea598472da3e658fe0651b1af1e8d"
+        },
+        {
+          "path": "packets/2026-08-10-authoritative-receipt-readback-evidence-contract.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-10-authoritative-receipt-readback-evidence-contract.md",
+          "sizeBytes": 13733,
+          "sha256": "e1dfeeb30dcd0e7c2a076f9f9d8574f8b76e4f97a14f32dfffd62a82dba11f16"
+        },
+        {
+          "path": "packets/2026-08-10-authority-classification-ambiguity-escalation-matrix.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-10-authority-classification-ambiguity-escalation-matrix.md",
+          "sizeBytes": 18364,
+          "sha256": "06dc16fe7d92a6690d63056ec80e9558c2d688936fe6adf3299adb89b90b1317"
+        },
+        {
+          "path": "packets/2026-08-10-evidence-dependency-claim-invalidation-graph.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-10-evidence-dependency-claim-invalidation-graph.md",
+          "sizeBytes": 21615,
+          "sha256": "7f067e1472f69076dcc3f819b3b16e8ba353053824a6c400b4c1387b3c280c63"
+        },
+        {
+          "path": "packets/2026-08-10-evidence-envelope-canonicalization-frontier.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-10-evidence-envelope-canonicalization-frontier.md",
+          "sizeBytes": 17399,
+          "sha256": "8ea9d6c2acb4ceadaeef5cb0bed841529f01a6bb1524f6125b00620f68cd6aef"
+        },
+        {
+          "path": "packets/2026-08-10-freshness-locator-contradiction-recovery-gates.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-10-freshness-locator-contradiction-recovery-gates.md",
+          "sizeBytes": 18677,
+          "sha256": "a17949f9735074e4a955b589a97524cd871d173ee79b436aa3590ecf3860a60e"
+        },
+        {
+          "path": "packets/2026-08-10-freshness-locator-primary-frontier.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-10-freshness-locator-primary-frontier.md",
+          "sizeBytes": 13099,
+          "sha256": "3275eb8a528bbb5a1c471222de233f89fb15e03d6a61aa8aef3aa1e5181aec1c"
+        },
+        {
+          "path": "packets/2026-08-10-freshness-retention-revalidation-policy.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-10-freshness-retention-revalidation-policy.md",
+          "sizeBytes": 15302,
+          "sha256": "a7551e763e9e2fcc939c93efc0fe8c5e4f536e370bdd0620c29e2d700ce6fb70"
+        },
+        {
+          "path": "packets/2026-08-10-freshness-stable-locator-semantics.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-10-freshness-stable-locator-semantics.md",
+          "sizeBytes": 13099,
+          "sha256": "3275eb8a528bbb5a1c471222de233f89fb15e03d6a61aa8aef3aa1e5181aec1c"
+        },
+        {
+          "path": "packets/2026-08-10-graph-event-identity-cycle-safety-verifier-agreement.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-10-graph-event-identity-cycle-safety-verifier-agreement.md",
+          "sizeBytes": 20117,
+          "sha256": "f89e99ac417b3b47dbd9d7b9f11a94ee095074cc5df297d67c3ebe37a4606d68"
+        },
+        {
+          "path": "packets/2026-08-10-graph-event-metamorphic-evaluation-protocol.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-10-graph-event-metamorphic-evaluation-protocol.md",
+          "sizeBytes": 29765,
+          "sha256": "05203f38f1d49cf98786fe24cce54c50f2fcf0280979b677e43bb8ed3a689161"
+        },
+        {
+          "path": "packets/2026-08-10-idempotency-fencing-settlement-frontier.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-10-idempotency-fencing-settlement-frontier.md",
+          "sizeBytes": 18755,
+          "sha256": "3894808c0e7a8ac86c062ff1445050aad7d73c0ac65c24a2eafc913e6fe62dcf"
+        },
+        {
+          "path": "packets/2026-08-10-independent-verifier-evaluation-frontier.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-10-independent-verifier-evaluation-frontier.md",
+          "sizeBytes": 15660,
+          "sha256": "7cf120d6edcea4dfc7bed0a7723b49c95989adf02bd3bfc54265a4a71a600971"
+        },
+        {
+          "path": "packets/2026-08-10-replay-compatibility-impact-cones-frontier-recovery.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-10-replay-compatibility-impact-cones-frontier-recovery.md",
+          "sizeBytes": 13871,
+          "sha256": "8037119b0c184165bba9a6f19c8da86a085fd6a92ae57999c753568bc3cc46c8"
+        },
+        {
+          "path": "packets/2026-08-10-replay-compatibility-impact-cones-frontier.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-10-replay-compatibility-impact-cones-frontier.md",
+          "sizeBytes": 11061,
+          "sha256": "4f37a6202a1a29c94a56e9943fe610bb1caef7c34f1544fa7b0ba09af93afd78"
+        },
+        {
+          "path": "packets/2026-08-10-rule-set-evolution-replay-compatibility-invalidation.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-10-rule-set-evolution-replay-compatibility-invalidation.md",
+          "sizeBytes": 17890,
+          "sha256": "983e1714f2cfbc7bcdf3422e7482cc1d454da4977a596b3b6d6ace3aa3fb3e8b"
+        },
+        {
+          "path": "packets/2026-08-10-rule-set-identity-digest-policy-frontier.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-10-rule-set-identity-digest-policy-frontier.md",
+          "sizeBytes": 27020,
+          "sha256": "5669137e86697b942e6351e54caef623dd9bdd4c961d635536f8582725102fee"
+        },
+        {
+          "path": "packets/2026-08-10-rule-set-impact-cone-selective-reevaluation.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-10-rule-set-impact-cone-selective-reevaluation.md",
+          "sizeBytes": 18189,
+          "sha256": "ea88bf32bbb1972a72a008c28edc4fcac0e2e6676f95e490c41f967ba43dea42"
+        },
+        {
+          "path": "packets/2026-08-10-rule-set-impact-cones-selective-reevaluation.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-10-rule-set-impact-cones-selective-reevaluation.md",
+          "sizeBytes": 21845,
+          "sha256": "730de19d7b2efcc75b2589f8f59bbbf4d03e74588c1ceb462cd1b1d021efd9d9"
+        },
+        {
+          "path": "packets/2026-08-11-replay-compatibility-impact-cones-frontier-v2.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-11-replay-compatibility-impact-cones-frontier-v2.md",
+          "sizeBytes": 18629,
+          "sha256": "75557947d8b3b09e6f5c17d900e217dd2ea7d08065aa0afdae224625ec996a5e"
+        },
+        {
+          "path": "packets/2026-08-11-replay-frontier-bounded-excerpts-locators-recovered.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-11-replay-frontier-bounded-excerpts-locators-recovered.md",
+          "sizeBytes": 9839,
+          "sha256": "fe45e6888553175622ed145bba82a2161a88660477543c72e3b2b9013b9f7c33"
+        },
+        {
+          "path": "packets/2026-08-11-replay-frontier-bounded-excerpts-locators.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-11-replay-frontier-bounded-excerpts-locators.md",
+          "sizeBytes": 10208,
+          "sha256": "21afcbc9f20ac8ec8376c28b43c8a81e92f3f75d980f7a2f05b3ed2a1952400b"
+        },
+        {
+          "path": "packets/2026-08-11-replay-frontier-claim-evidence-re-evaluation-matrix.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-11-replay-frontier-claim-evidence-re-evaluation-matrix.md",
+          "sizeBytes": 16327,
+          "sha256": "fc9a9bde11262dccca3e92bc5ccea83dea19c3d69f625bad950b36e1aae59956"
+        },
+        {
+          "path": "packets/2026-08-11-replay-frontier-conservative-evidence-boundary-audit.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-11-replay-frontier-conservative-evidence-boundary-audit.md",
+          "sizeBytes": 9218,
+          "sha256": "edc79b9b7d1b612bfe0b55e0c9ccb84b71f94e47f4b4a652150d68324f1bad00"
+        },
+        {
+          "path": "packets/2026-08-11-replay-frontier-freshness-contradiction-recovery-decisions.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-11-replay-frontier-freshness-contradiction-recovery-decisions.md",
+          "sizeBytes": 19206,
+          "sha256": "bdf77bc06bc765abe65b370ef4c49d58056ff5fbf5a61e5badfe76cac580d25a"
+        },
+        {
+          "path": "packets/2026-08-11-replay-frontier-freshness-identity-classification-matrix.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-11-replay-frontier-freshness-identity-classification-matrix.md",
+          "sizeBytes": 15438,
+          "sha256": "f5e26bbe8e108dccc1bead9fce99b104760a3f064bd615877f9276fd6bc3ccde"
+        },
+        {
+          "path": "packets/2026-08-11-replay-frontier-independent-acceptance-audit.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-11-replay-frontier-independent-acceptance-audit.md",
+          "sizeBytes": 13049,
+          "sha256": "7b64873e6653e689b03cee414d51966c81b190bd23791af0378070d61a412db2"
+        },
+        {
+          "path": "packets/2026-08-11-replay-frontier-normalized-evidence-vocabulary-independent-audit-recovered.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-11-replay-frontier-normalized-evidence-vocabulary-independent-audit-recovered.md",
+          "sizeBytes": 9643,
+          "sha256": "c5f884c913e00d5dd09ae32c7245b61c1ca10b771b518eae63a2b545ffef8a83"
+        },
+        {
+          "path": "packets/2026-08-11-replay-frontier-normalized-evidence-vocabulary-independent-audit.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-11-replay-frontier-normalized-evidence-vocabulary-independent-audit.md",
+          "sizeBytes": 10150,
+          "sha256": "13f9020b985fa7a835c806e8bc8bbaed882ca0e0a45858acc3cac95c4a745c0b"
+        },
+        {
+          "path": "packets/2026-08-11-replay-frontier-normalized-evidence-vocabulary.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-11-replay-frontier-normalized-evidence-vocabulary.md",
+          "sizeBytes": 16507,
+          "sha256": "fb361f71bccb7275bfec8c166e37e5fcb3913a5016d79ff8a88b964a5ae22135"
+        },
+        {
+          "path": "packets/2026-08-11-replay-frontier-primary-source-receipts.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-11-replay-frontier-primary-source-receipts.md",
+          "sizeBytes": 6754,
+          "sha256": "6181b47b5ae5bea5137394359b1e94ac00ea7a0a1fd1b46b62e18ad7e5bed926"
+        },
+        {
+          "path": "packets/2026-08-11-replay-frontier-receipt-gate-evaluation.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-11-replay-frontier-receipt-gate-evaluation.md",
+          "sizeBytes": 9036,
+          "sha256": "e2b63a4008d3437a2c33e967d0cee124226c60427b4066bdeb9e44a68c4be4e1"
+        },
+        {
+          "path": "packets/2026-08-11-replay-frontier-receipt-only-audit.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-11-replay-frontier-receipt-only-audit.md",
+          "sizeBytes": 10064,
+          "sha256": "8d3d99b463285f03c3ad1ffbc17d841442f8ddcf4b26d78fa6171018397d07cc"
+        },
+        {
+          "path": "packets/2026-08-12-agentic-ai-research-task-scope-recovery.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/2026-08-12-agentic-ai-research-task-scope-recovery.md",
+          "sizeBytes": 7883,
+          "sha256": "f64bc74ea16e0c20afbe6d4304fd4444753eb77a3610dd41168a92352b3963f0"
+        },
+        {
+          "path": "packets/ceo-recovery-9ce588f0-task-scope.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/packets/ceo-recovery-9ce588f0-task-scope.md",
+          "sizeBytes": 9327,
+          "sha256": "b85edb601c21df27b8cdcf9a93dfc65fef0b37ddfe6fe07df8f46ab6c229dbca"
+        },
+        {
+          "path": "receipts/2026-08-09-agentic-evaluation-observability-fixture-manifest-verification-receipt.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/receipts/2026-08-09-agentic-evaluation-observability-fixture-manifest-verification-receipt.md",
+          "sizeBytes": 4045,
+          "sha256": "cbf21cc8491f66671e55933d01b7eb7abe03642ec3498a02bd799ec7ee2e18f6"
+        },
+        {
+          "path": "recovery-context-overflow-2026-08-07.md",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/recovery-context-overflow-2026-08-07.md",
+          "sizeBytes": 8526,
+          "sha256": "ce42c186294698279ce84647d4844c765c59be969d9bf0a6ace86806fda38880"
+        },
+        {
+          "path": "verifiers/__pycache__/verify_settlement_recovery_sr01.cpython-311.pyc",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/verifiers/__pycache__/verify_settlement_recovery_sr01.cpython-311.pyc",
+          "sizeBytes": 1640,
+          "sha256": "a311a002c27530d49af67aed45f8d007ddc471475942413f63fb342a13b3653d"
+        },
+        {
+          "path": "verifiers/__pycache__/verify-nine-outcome-fixture-manifest.cpython-311.pyc",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/verifiers/__pycache__/verify-nine-outcome-fixture-manifest.cpython-311.pyc",
+          "sizeBytes": 6613,
+          "sha256": "843be9b540188bcf5ca8634a012431394cec29f872b1d1d4e2f4a09724c788a5"
+        },
+        {
+          "path": "verifiers/verify_settlement_recovery_sr01.py",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/verifiers/verify_settlement_recovery_sr01.py",
+          "sizeBytes": 1392,
+          "sha256": "8da86f14173ae1c2c8d1fe53099afa70353cbd56b87fe13f977565bacdfedffe"
+        },
+        {
+          "path": "verifiers/verify-nine-outcome-fixture-manifest.py",
+          "workspacePath": "projects/LucasAgentStudio/data/agentic-ai-research/verifiers/verify-nine-outcome-fixture-manifest.py",
+          "sizeBytes": 4064,
+          "sha256": "68c0ed540d7908aeed8bd470a468ae267750dcf27b34afc3f54e6f266131aede"
+        }
+      ],
+      "ignoredEntries": [],
+      "errors": []
+    },
+    {
+      "id": "agent-studio-research-loop",
+      "workspacePath": "projects/LucasAgentStudio/data/research-loops/agent-studio",
+      "scanMode": "recursive-files",
+      "classification": "archived-runtime-research",
+      "disposition": "Retain as historical findings and state; curate claims into this repository.",
+      "status": "present",
+      "summary": {
+        "fileCount": 3,
+        "totalBytes": 71241,
+        "hashedFileCount": 3,
+        "skippedHashFileCount": 0,
+        "ignoredEntryCount": 0,
+        "errorCount": 0
+      },
+      "files": [
+        {
+          "path": "findings.md",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/agent-studio/findings.md",
+          "sizeBytes": 62415,
+          "sha256": "ea29e5fb6f6e99c4bc2b7be7056b10ff5f1751830a38133301f14159db657081"
+        },
+        {
+          "path": "latest-finding.json",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/agent-studio/latest-finding.json",
+          "sizeBytes": 5062,
+          "sha256": "1be1fa3a458f03ea15e24affe49d085ee66b0f6e414eea11c9713ce33aaba05a"
+        },
+        {
+          "path": "state.json",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/agent-studio/state.json",
+          "sizeBytes": 3764,
+          "sha256": "f89c93f186a48fb761d6e01053c3b11d5ef2e0c836ef6ee72aa2ec38365638f9"
+        }
+      ],
+      "ignoredEntries": [],
+      "errors": []
+    },
+    {
+      "id": "agent-studio-competing-loops",
+      "workspacePath": "projects/LucasAgentStudio/data/research-loops/agent-studio-competing",
+      "scanMode": "recursive-files",
+      "classification": "archived-runtime-research",
+      "disposition": "Retain as historical frontier-agent comparison material.",
+      "status": "present",
+      "summary": {
+        "fileCount": 12,
+        "totalBytes": 65498,
+        "hashedFileCount": 12,
+        "skippedHashFileCount": 0,
+        "ignoredEntryCount": 0,
+        "errorCount": 0
+      },
+      "files": [
+        {
+          "path": "luna/latest-finding.json",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/agent-studio-competing/luna/latest-finding.json",
+          "sizeBytes": 2741,
+          "sha256": "a7f37a3541dd7fff6c04e8f63dff40e881cf66bccede6c5dc81f68f24537b9d3"
+        },
+        {
+          "path": "luna/master-research.md",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/agent-studio-competing/luna/master-research.md",
+          "sizeBytes": 8989,
+          "sha256": "c88569aa8e93169bcc6de5dd61a279bd93df841e46f35608db96d419e063d753"
+        },
+        {
+          "path": "luna/state.json",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/agent-studio-competing/luna/state.json",
+          "sizeBytes": 1110,
+          "sha256": "d1e5cbc6d708d9671e7b913ebc1f10a3608f0548df64f800a1bda7d61e3611d7"
+        },
+        {
+          "path": "luna/usage.jsonl",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/agent-studio-competing/luna/usage.jsonl",
+          "sizeBytes": 2653,
+          "sha256": "d96b6cb994cec07ec731e81419e027aff606e9acb9787d062bb28a12dc5ec853"
+        },
+        {
+          "path": "README.md",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/agent-studio-competing/README.md",
+          "sizeBytes": 1456,
+          "sha256": "1a0af5f6755fb84b37e939087a2823faebb265b6283443ac21a39ea8a263706b"
+        },
+        {
+          "path": "sol/master-research.md",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/agent-studio-competing/sol/master-research.md",
+          "sizeBytes": 11035,
+          "sha256": "ecd95ba2ce5e4f797ea5331a282ed273cc12613a4f1683696fe47756582234be"
+        },
+        {
+          "path": "sol/state.json",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/agent-studio-competing/sol/state.json",
+          "sizeBytes": 3841,
+          "sha256": "cb47d1a83606049d93d33609da68bae488c8d73f0ca10d59f72eaee71ee9196e"
+        },
+        {
+          "path": "sol/usage.jsonl",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/agent-studio-competing/sol/usage.jsonl",
+          "sizeBytes": 686,
+          "sha256": "5cf0cc17345a50c757862231ec222f793816ad63c0ece600a05cf1f6eaa0f5c5"
+        },
+        {
+          "path": "terra/latest-finding.json",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/agent-studio-competing/terra/latest-finding.json",
+          "sizeBytes": 2763,
+          "sha256": "f032f884e215ad564ff25ba949a2fa2773f8978d6897f37c7eb1d4cfec1d7bfe"
+        },
+        {
+          "path": "terra/master-research.md",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/agent-studio-competing/terra/master-research.md",
+          "sizeBytes": 25300,
+          "sha256": "0f32cedff9a8e241f3892fd0388dde52b265882a533236d259b7eb529f0b9cf3"
+        },
+        {
+          "path": "terra/state.json",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/agent-studio-competing/terra/state.json",
+          "sizeBytes": 2023,
+          "sha256": "656fb6de9192ae96853604e3036a14d8d414f1bc408473da992b6bc177efa53e"
+        },
+        {
+          "path": "terra/usage.jsonl",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/agent-studio-competing/terra/usage.jsonl",
+          "sizeBytes": 2901,
+          "sha256": "f3ebb716901d9d6e3b1c6a7edd663758bea31c799bd5fdf2d21296acac963793"
+        }
+      ],
+      "ignoredEntries": [],
+      "errors": []
+    },
+    {
+      "id": "agentic-ai-research-reconciliation",
+      "workspacePath": "projects/LucasAgentStudio/data/research-loops/agentic-ai-research",
+      "scanMode": "recursive-files",
+      "classification": "archived-runtime-research",
+      "disposition": "Retain as historical overseer reconciliation evidence.",
+      "status": "present",
+      "summary": {
+        "fileCount": 1,
+        "totalBytes": 3923,
+        "hashedFileCount": 1,
+        "skippedHashFileCount": 0,
+        "ignoredEntryCount": 0,
+        "errorCount": 0
+      },
+      "files": [
+        {
+          "path": "overseer-reconciliation.json",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/agentic-ai-research/overseer-reconciliation.json",
+          "sizeBytes": 3923,
+          "sha256": "6b656110322f7373b64d08dd6c01360c67750a7fc755278ec667afe4ca2faa13"
+        }
+      ],
+      "ignoredEntries": [],
+      "errors": []
+    },
+    {
+      "id": "research-loop-root-receipts",
+      "workspacePath": "projects/LucasAgentStudio/data/research-loops",
+      "scanMode": "top-level-files",
+      "classification": "archived-orchestration-receipts",
+      "disposition": "Index only the shared root receipts; named research subdirectories are inventoried separately or remain domain-specific.",
+      "status": "present",
+      "summary": {
+        "fileCount": 19,
+        "totalBytes": 136470,
+        "hashedFileCount": 19,
+        "skippedHashFileCount": 0,
+        "ignoredEntryCount": 11,
+        "errorCount": 0
+      },
+      "files": [
+        {
+          "path": "final-pre-supervisor-probe.json",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/final-pre-supervisor-probe.json",
+          "sizeBytes": 8540,
+          "sha256": "0034a3ecdb53aa4b29d7848516ff3eeafe34e19cf9e0e2157c592c4ec1a04b2e"
+        },
+        {
+          "path": "final-supervisor-probe.json",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/final-supervisor-probe.json",
+          "sizeBytes": 8654,
+          "sha256": "1501065351a7ff5c71eb9d8c8683a102d6a69087a718d04b3d40fe8583fef8a2"
+        },
+        {
+          "path": "normalization-smoke.json",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/normalization-smoke.json",
+          "sizeBytes": 8745,
+          "sha256": "ef40e903313fce6581d52265b60ad2d683b440ca1133c05fcb6d7a03759df6f0"
+        },
+        {
+          "path": "post-final-normalization.json",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/post-final-normalization.json",
+          "sizeBytes": 8601,
+          "sha256": "ed9adc6894015dadf2fbe59b88ebaaa8480b1f85c385980ee9603d2af28a00cd"
+        },
+        {
+          "path": "probe-final-output.json",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/probe-final-output.json",
+          "sizeBytes": 8382,
+          "sha256": "12d5d75e14a568c9a70f7173345c10b16a7e25427fbd3d09d7603a1e1a60f426"
+        },
+        {
+          "path": "probe-m11-validation.json",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/probe-m11-validation.json",
+          "sizeBytes": 9224,
+          "sha256": "e50756ed033e54b118dc7b2f9feab3d9cf8fa918bd256c8f7a5bedb7f07fab99"
+        },
+        {
+          "path": "probe-run-output.json",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/probe-run-output.json",
+          "sizeBytes": 6815,
+          "sha256": "cd330970ba2595131aa15731f50b9b458b7e9b2f3aeec441e875bd77c0da138e"
+        },
+        {
+          "path": "probe-verification.json",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/probe-verification.json",
+          "sizeBytes": 8382,
+          "sha256": "3e912c1c2012b19cf7c27c6d33781876d197833a87549a5e2cfa5f9273244fe2"
+        },
+        {
+          "path": "probe.json",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/probe.json",
+          "sizeBytes": 12350,
+          "sha256": "2e6ac267f7d8ae926ed67da1c6cc0a693094296326034cc18823edd946d0b150"
+        },
+        {
+          "path": "README.md",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/README.md",
+          "sizeBytes": 947,
+          "sha256": "d01eeef900256f6b65f9e9a61b1e58a4003d7d3c6c65743361fa0eeeb558f127"
+        },
+        {
+          "path": "recovery-directives.json",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/recovery-directives.json",
+          "sizeBytes": 848,
+          "sha256": "3257a1f0c20fcbbc8e6ed68c71ac261d66025f0c60e836a31bba4fd1d3f678b8"
+        },
+        {
+          "path": "shared-lessons.json",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/shared-lessons.json",
+          "sizeBytes": 1550,
+          "sha256": "66c59e89b43814bdec26f396ca7aaacc01e9330345b348e75905669d3a34fbbc"
+        },
+        {
+          "path": "source-batch-smoke.json",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/source-batch-smoke.json",
+          "sizeBytes": 12193,
+          "sha256": "8da7c7e23251b5058d634bf2968bb740d07ffacc432917effc18446a95edcb1f"
+        },
+        {
+          "path": "supervisor-state-v2.json",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/supervisor-state-v2.json",
+          "sizeBytes": 222,
+          "sha256": "d232168d0ba8275ae904b54b30db4eefeba00f038878e2bb19f7dbbda4c4a4aa"
+        },
+        {
+          "path": "supervisor-state.json",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/supervisor-state.json",
+          "sizeBytes": 3487,
+          "sha256": "b75932824b8e464b8aec25ba135e61e3aa4d8eb73429f3523dba2d60bcc738ae"
+        },
+        {
+          "path": "verification-cross-probe.json",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/verification-cross-probe.json",
+          "sizeBytes": 8394,
+          "sha256": "37e062e7de4d3a4355667c5f382922bb6bd01db132f99b7027732c624822c4dc"
+        },
+        {
+          "path": "verification-probe-cross-final.json",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/verification-probe-cross-final.json",
+          "sizeBytes": 8494,
+          "sha256": "cf512d9fa03e532942f2b4f7f293c9170d2844dff1c08d51b83b828ac22260f7"
+        },
+        {
+          "path": "verification-probe-cross.json",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/verification-probe-cross.json",
+          "sizeBytes": 8449,
+          "sha256": "d3d8b97326d9216ab13776c74df8f4dbd0d56dadf57524bf08d263813515df68"
+        },
+        {
+          "path": "verification-source-batch.json",
+          "workspacePath": "projects/LucasAgentStudio/data/research-loops/verification-source-batch.json",
+          "sizeBytes": 12193,
+          "sha256": "0f1ef123593593726acc1f9a8c769fa8e6c1db09b0ad4fdb6ab1c51e3853c9d6"
+        }
+      ],
+      "ignoredEntries": [
+        {
+          "path": "agent-studio",
+          "reason": "non-regular-entry"
+        },
+        {
+          "path": "agent-studio-competing",
+          "reason": "non-regular-entry"
+        },
+        {
+          "path": "agentic-ai-research",
+          "reason": "non-regular-entry"
+        },
+        {
+          "path": "animerpg",
+          "reason": "non-regular-entry"
+        },
+        {
+          "path": "dzyne",
+          "reason": "non-regular-entry"
+        },
+        {
+          "path": "game-art",
+          "reason": "non-regular-entry"
+        },
+        {
+          "path": "game-art-character-vfx",
+          "reason": "non-regular-entry"
+        },
+        {
+          "path": "game-art-environment",
+          "reason": "non-regular-entry"
+        },
+        {
+          "path": "game-dev",
+          "reason": "non-regular-entry"
+        },
+        {
+          "path": "game-director",
+          "reason": "non-regular-entry"
+        },
+        {
+          "path": "game-implementation",
+          "reason": "non-regular-entry"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "legacy-local-model-benchmarks",
+      "workspacePath": "projects/LucasAgentStudio/data/company-runtime/model-benchmarks",
+      "scanMode": "recursive-files",
+      "classification": "archived-benchmark-evidence",
+      "disposition": "Retain as historical benchmark evidence; use the canonical repository runner for new results.",
+      "status": "present",
+      "summary": {
+        "fileCount": 2,
+        "totalBytes": 21682,
+        "hashedFileCount": 2,
+        "skippedHashFileCount": 0,
+        "ignoredEntryCount": 0,
+        "errorCount": 0
+      },
+      "files": [
+        {
+          "path": "2026-08-17T07-18-06-748Z.json",
+          "workspacePath": "projects/LucasAgentStudio/data/company-runtime/model-benchmarks/2026-08-17T07-18-06-748Z.json",
+          "sizeBytes": 10841,
+          "sha256": "f13cd1cd7981d708a0538a20b10e09d9db775734b9650569a31354158b925eff"
+        },
+        {
+          "path": "latest.json",
+          "workspacePath": "projects/LucasAgentStudio/data/company-runtime/model-benchmarks/latest.json",
+          "sizeBytes": 10841,
+          "sha256": "f13cd1cd7981d708a0538a20b10e09d9db775734b9650569a31354158b925eff"
+        }
+      ],
+      "ignoredEntries": [],
+      "errors": []
+    },
+    {
+      "id": "company-scan-source",
+      "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22",
+      "scanMode": "recursive-files",
+      "classification": "imported-source-evidence",
+      "disposition": "Use as provenance for the curated repository copy under evidence/company-scan-2026-08-22.",
+      "status": "present",
+      "summary": {
+        "fileCount": 28,
+        "totalBytes": 2977166,
+        "hashedFileCount": 28,
+        "skippedHashFileCount": 0,
+        "ignoredEntryCount": 0,
+        "errorCount": 0
+      },
+      "files": [
+        {
+          "path": "analysis.ipynb",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/analysis.ipynb",
+          "sizeBytes": 20974,
+          "sha256": "8730bc0dc9e62235bb5ac25ded665d90397ef8e285cca4cad428da8374e44f3e"
+        },
+        {
+          "path": "artifact.json",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/artifact.json",
+          "sizeBytes": 14031,
+          "sha256": "f33cf3e21deaa8c9320c6322f736b4df1033df7d25c8eac5c1a60a8436b2bceb"
+        },
+        {
+          "path": "debug-report.html",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/debug-report.html",
+          "sizeBytes": 390407,
+          "sha256": "8ef2e310fb21688989c909d75a97df737d6914eff2e055f87eafed23d1c5bb5e"
+        },
+        {
+          "path": "debug-report.verification-failure.png",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/debug-report.verification-failure.png",
+          "sizeBytes": 61812,
+          "sha256": "32a943b41f3bdc4c26e6563eb87d18fdd2d48be9aaed1dfd91061198840100f7"
+        },
+        {
+          "path": "debug-static.html",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/debug-static.html",
+          "sizeBytes": 437401,
+          "sha256": "751fca3c8456979bfe6d811ecb3e2bfcf7c2d391188c71e865a51c9a6f4a1bfa"
+        },
+        {
+          "path": "debug-static.verification-failure.png",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/debug-static.verification-failure.png",
+          "sizeBytes": 67654,
+          "sha256": "f1df231b3d4616f369397afb10c6cfa1082b95e9622b8666de5da829e8992197"
+        },
+        {
+          "path": "report-base.html",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/report-base.html",
+          "sizeBytes": 384415,
+          "sha256": "a0c02f69e81a9cbc2d056e2cd45bd2a0cfd2cf9ffe83aa4865f5ab93de41bf7d"
+        },
+        {
+          "path": "report.html",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/report.html",
+          "sizeBytes": 430513,
+          "sha256": "05a93ccb03467888d340d79ba6b72db55b89fb9e60389d14e44e46d586b2916c"
+        },
+        {
+          "path": "report.html.tmp-11268-482faad5-6f6c-4993-8de7-1bc075becd5c.verification-failure.png",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/report.html.tmp-11268-482faad5-6f6c-4993-8de7-1bc075becd5c.verification-failure.png",
+          "sizeBytes": 58966,
+          "sha256": "12633b69080ca560b590a11770fa3d36ab319d2c266f376276246b2aec07cba5"
+        },
+        {
+          "path": "report.html.tmp-12172-1882f058-1a96-42ec-a769-d39b9c7246a1.verification-failure.png",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/report.html.tmp-12172-1882f058-1a96-42ec-a769-d39b9c7246a1.verification-failure.png",
+          "sizeBytes": 98715,
+          "sha256": "4d40739ee034ab8d96ab9804e87ef804cfee1bcb7d7c90263340a40ad1076db7"
+        },
+        {
+          "path": "report.html.tmp-12400-3b250e18-4eea-412e-8c50-facd1da08aa6.verification-failure.png",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/report.html.tmp-12400-3b250e18-4eea-412e-8c50-facd1da08aa6.verification-failure.png",
+          "sizeBytes": 74798,
+          "sha256": "e4ddc9a7d1d9d695e6ccb2b6eda126fc6e225e532b8ec0eb9292018f2c46870b"
+        },
+        {
+          "path": "report.html.tmp-15868-453962a7-9403-4d9b-beb3-0cd222b382cf.verification-failure.png",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/report.html.tmp-15868-453962a7-9403-4d9b-beb3-0cd222b382cf.verification-failure.png",
+          "sizeBytes": 59193,
+          "sha256": "9dded375019c622a16d6f26baadac47d11e9c26f4e9af77ae0b01ac2175d9783"
+        },
+        {
+          "path": "report.html.tmp-16076-d9689c62-2e96-4990-8473-d1a22d5ea9a0.verification-failure.png",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/report.html.tmp-16076-d9689c62-2e96-4990-8473-d1a22d5ea9a0.verification-failure.png",
+          "sizeBytes": 44062,
+          "sha256": "ee44d19aa548c5c3d64ce07f907584d74ac47f1932f26da7bb3ca7ff8dc6ae82"
+        },
+        {
+          "path": "report.html.tmp-17264-d127908e-00c9-492c-9a17-2f45123b20be.verification-failure.png",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/report.html.tmp-17264-d127908e-00c9-492c-9a17-2f45123b20be.verification-failure.png",
+          "sizeBytes": 50758,
+          "sha256": "bcb9c6832931cebeec3c3cbce567db2a221a943af2e60fd4809b29b65452b89d"
+        },
+        {
+          "path": "report.html.tmp-19420-f37703ec-d562-4a85-b40a-7ec7888dca2c.verification-failure.png",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/report.html.tmp-19420-f37703ec-d562-4a85-b40a-7ec7888dca2c.verification-failure.png",
+          "sizeBytes": 39352,
+          "sha256": "953552433ad6d1f2571b0eac7a8278a0a32920a5ca4a46cb13982cb1d0ec550c"
+        },
+        {
+          "path": "report.html.tmp-23356-c804edc8-93b5-4faf-9ab5-97465513a1c6.verification-failure.png",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/report.html.tmp-23356-c804edc8-93b5-4faf-9ab5-97465513a1c6.verification-failure.png",
+          "sizeBytes": 104269,
+          "sha256": "5100d39dc2555fac8bb7cc9a386d042c812d6306fa95c997a4a80dd645859ba0"
+        },
+        {
+          "path": "report.html.tmp-24084-bcf46c20-d9c4-4143-8b4d-a4fad112211d.verification-failure.png",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/report.html.tmp-24084-bcf46c20-d9c4-4143-8b4d-a4fad112211d.verification-failure.png",
+          "sizeBytes": 79731,
+          "sha256": "81cde51bf3e8e15484794446f4e4bfe90a9c0a7b19de06805f6ef71a9db3a687"
+        },
+        {
+          "path": "report.html.tmp-24588-a93708f0-0a2a-4448-94dc-d7b58e0044f2.verification-failure.png",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/report.html.tmp-24588-a93708f0-0a2a-4448-94dc-d7b58e0044f2.verification-failure.png",
+          "sizeBytes": 67578,
+          "sha256": "f15a4f1b36b4af4efa5edafb4e39736017969aaef36ab6fff5b6cb6f4744e241"
+        },
+        {
+          "path": "report.html.tmp-24892-3b21f6c9-78f1-4ca1-aa87-dec9853a2e6e.verification-failure.png",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/report.html.tmp-24892-3b21f6c9-78f1-4ca1-aa87-dec9853a2e6e.verification-failure.png",
+          "sizeBytes": 58966,
+          "sha256": "12633b69080ca560b590a11770fa3d36ab319d2c266f376276246b2aec07cba5"
+        },
+        {
+          "path": "report.html.tmp-25020-63077834-f084-4538-ae13-8280a8291270.verification-failure.png",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/report.html.tmp-25020-63077834-f084-4538-ae13-8280a8291270.verification-failure.png",
+          "sizeBytes": 74798,
+          "sha256": "e4ddc9a7d1d9d695e6ccb2b6eda126fc6e225e532b8ec0eb9292018f2c46870b"
+        },
+        {
+          "path": "report.html.tmp-252-c2ab07b1-f946-401d-a311-f4adea58491a.verification-failure.png",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/report.html.tmp-252-c2ab07b1-f946-401d-a311-f4adea58491a.verification-failure.png",
+          "sizeBytes": 69480,
+          "sha256": "58ea148de1a910d2c597006ca30ae3ccbb1bc087467d2ffea01cc8623f2f7169"
+        },
+        {
+          "path": "report.html.tmp-5132-86d5c815-5c37-49ed-a725-b65d3efc85c1.verification-failure.png",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/report.html.tmp-5132-86d5c815-5c37-49ed-a725-b65d3efc85c1.verification-failure.png",
+          "sizeBytes": 45733,
+          "sha256": "b283d4aee2ba5a6cc7835434e6efa013100e1e8460fb13143e7ac80c71323d37"
+        },
+        {
+          "path": "report.html.tmp-7736-003407f6-bfa0-4f4f-9977-22b868012dff.verification-failure.png",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/report.html.tmp-7736-003407f6-bfa0-4f4f-9977-22b868012dff.verification-failure.png",
+          "sizeBytes": 69032,
+          "sha256": "e4fecc2237d6392a6a241a8b9d90cd0d1df474e8a219ea006ef0d40f6727258c"
+        },
+        {
+          "path": "report.html.tmp-8308-eb8963ec-119e-41bc-8924-7514c7cb36c3.verification-failure.png",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/report.html.tmp-8308-eb8963ec-119e-41bc-8924-7514c7cb36c3.verification-failure.png",
+          "sizeBytes": 50758,
+          "sha256": "bcb9c6832931cebeec3c3cbce567db2a221a943af2e60fd4809b29b65452b89d"
+        },
+        {
+          "path": "report.html.tmp-9108-5d88596d-2d94-44fa-b8bf-8afb29e02a61.verification-failure.png",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/report.html.tmp-9108-5d88596d-2d94-44fa-b8bf-8afb29e02a61.verification-failure.png",
+          "sizeBytes": 75006,
+          "sha256": "acb04f706004ed0ef97006504eb34017e33b39045fcded4994783fd384690d2b"
+        },
+        {
+          "path": "report.html.tmp-9960-9277fd1f-dff4-48f0-acf6-c4d52d413cfe.verification-failure.png",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/report.html.tmp-9960-9277fd1f-dff4-48f0-acf6-c4d52d413cfe.verification-failure.png",
+          "sizeBytes": 41266,
+          "sha256": "37ab4ff9785030afe1a56fc47ead128e64c0f98b32f0925c059a19bafafb1b21"
+        },
+        {
+          "path": "source-notes.md",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/source-notes.md",
+          "sizeBytes": 5446,
+          "sha256": "58509514ae6325fb3277e05da49f1cf92505861c1c084866cb0ad55cb19f8f0f"
+        },
+        {
+          "path": "validation-report.md",
+          "workspacePath": "evidence/agent-studio-ai-company-scan-2026-08-22/validation-report.md",
+          "sizeBytes": 2052,
+          "sha256": "60cd64b4e117d3c4670a53df6d4df28e5c9567294f83d5d3c74108f490d4b7d0"
+        }
+      ],
+      "ignoredEntries": [],
+      "errors": []
+    },
+    {
+      "id": "legacy-research-placeholder",
+      "workspacePath": "projects/LucasAgentStudio/research",
+      "scanMode": "recursive-files",
+      "classification": "legacy-placeholder",
+      "disposition": "Reference only; this empty placeholder is not the canonical research workspace.",
+      "status": "present",
+      "summary": {
+        "fileCount": 0,
+        "totalBytes": 0,
+        "hashedFileCount": 0,
+        "skippedHashFileCount": 0,
+        "ignoredEntryCount": 0,
+        "errorCount": 0
+      },
+      "files": [],
+      "ignoredEntries": [],
+      "errors": []
+    }
+  ]
+}

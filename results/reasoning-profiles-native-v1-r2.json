@@ -1,0 +1,2849 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-08-23T05:45:25.952Z",
+  "finishedAt": "2026-08-23T05:52:14.830Z",
+  "options": {
+    "profiles": [
+      {
+        "id": "qwen/qwen3.5-9b@off",
+        "model": "qwen/qwen3.5-9b",
+        "reasoning": "off"
+      },
+      {
+        "id": "deepseek/deepseek-r1-0528-qwen3-8b@off",
+        "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+        "reasoning": "off"
+      },
+      {
+        "id": "openai/gpt-oss-20b@low",
+        "model": "openai/gpt-oss-20b",
+        "reasoning": "low"
+      }
+    ],
+    "repeats": 2,
+    "context": 8192,
+    "caseTimeoutMs": 120000,
+    "tokenScale": 2,
+    "output": "results/reasoning-profiles-native-v1-r2.json",
+    "restore": ""
+  },
+  "environment": {
+    "platform": "win32",
+    "cpu": "AMD Ryzen 5 7600X 6-Core Processor             ",
+    "node": "v24.19.0",
+    "apiBase": "http://127.0.0.1:1234"
+  },
+  "taskSuite": {
+    "hashSha256": "a0308ecc0a9eeba08de236ff65c3d5a756aaf9c568cfe721687fb9df26189ea2",
+    "taskIds": [
+      "instruction_exact_token",
+      "director_dependency_envelope",
+      "claim_grounding_matrix",
+      "gpu_residency_reasoning",
+      "code_review_immutable_sort",
+      "log_reconciliation",
+      "insufficient_evidence_abstention",
+      "long_context_recall",
+      "critic_candidate_selection"
+    ],
+    "excludes": [
+      "native_tool_read_file"
+    ]
+  },
+  "inventory": [
+    {
+      "type": "llm",
+      "modelKey": "mistralai_devstral-small-2-24b-instruct-2512",
+      "format": "gguf",
+      "displayName": "Mistralai Devstral Small 2 24B Instruct 2512",
+      "publisher": "bartowski",
+      "path": "bartowski/mistralai_Devstral-Small-2-24B-Instruct-2512-GGUF/mistralai_Devstral-Small-2-24B-Instruct-2512-Q3_K_M.gguf",
+      "sizeBytes": 11474611072,
+      "indexedModelIdentifier": "bartowski/mistralai_Devstral-Small-2-24B-Instruct-2512-GGUF/mistralai_Devstral-Small-2-24B-Instruct-2512-Q3_K_M.gguf",
+      "deviceIdentifier": null,
+      "paramsString": "24B",
+      "architecture": "mistral3",
+      "quantization": {
+        "name": "Q3_K_M",
+        "bits": 3
+      },
+      "vision": false,
+      "trainedForToolUse": true,
+      "maxContextLength": 393216
+    },
+    {
+      "type": "llm",
+      "modelKey": "granite-4.1-8b",
+      "format": "gguf",
+      "displayName": "Granite 4.1 8B",
+      "publisher": "ibm-granite",
+      "path": "ibm-granite/granite-4.1-8b-GGUF/granite-4.1-8b-Q4_K_M.gguf",
+      "sizeBytes": 5347914400,
+      "indexedModelIdentifier": "ibm-granite/granite-4.1-8b-GGUF/granite-4.1-8b-Q4_K_M.gguf",
+      "deviceIdentifier": null,
+      "paramsString": "8B",
+      "architecture": "granite",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "vision": false,
+      "trainedForToolUse": true,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "microsoft/phi-4-reasoning-plus",
+      "format": "gguf",
+      "displayName": "Phi 4 Reasoning Plus",
+      "publisher": "microsoft",
+      "path": "microsoft/phi-4-reasoning-plus",
+      "sizeBytes": 9053139092,
+      "indexedModelIdentifier": "microsoft/phi-4-reasoning-plus",
+      "deviceIdentifier": null,
+      "paramsString": "15B",
+      "architecture": "phi3",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "microsoft/phi-4-reasoning-plus@q4_k_m"
+      ],
+      "selectedVariant": "microsoft/phi-4-reasoning-plus@q4_k_m",
+      "vision": false,
+      "trainedForToolUse": false,
+      "maxContextLength": 32768
+    },
+    {
+      "type": "llm",
+      "modelKey": "microsoft/phi-4-mini-reasoning",
+      "format": "gguf",
+      "displayName": "Phi 4 Mini Reasoning",
+      "publisher": "microsoft",
+      "path": "microsoft/phi-4-mini-reasoning",
+      "sizeBytes": 2491897541,
+      "indexedModelIdentifier": "microsoft/phi-4-mini-reasoning",
+      "deviceIdentifier": null,
+      "paramsString": "3B",
+      "architecture": "phi3",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "microsoft/phi-4-mini-reasoning@q4_k_m"
+      ],
+      "selectedVariant": "microsoft/phi-4-mini-reasoning@q4_k_m",
+      "vision": false,
+      "trainedForToolUse": false,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "qwen/qwen3-14b",
+      "format": "gguf",
+      "displayName": "Qwen3 14B",
+      "publisher": "qwen",
+      "path": "qwen/qwen3-14b",
+      "sizeBytes": 9001931568,
+      "indexedModelIdentifier": "qwen/qwen3-14b",
+      "deviceIdentifier": null,
+      "paramsString": "14B",
+      "architecture": "qwen3",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "qwen/qwen3-14b@q4_k_m"
+      ],
+      "selectedVariant": "qwen/qwen3-14b@q4_k_m",
+      "vision": false,
+      "trainedForToolUse": true,
+      "maxContextLength": 32768
+    },
+    {
+      "type": "llm",
+      "modelKey": "google/gemma-4-e2b",
+      "format": "gguf",
+      "displayName": "Gemma 4 E2B",
+      "publisher": "google",
+      "path": "google/gemma-4-e2b",
+      "sizeBytes": 4414810282,
+      "indexedModelIdentifier": "google/gemma-4-e2b",
+      "deviceIdentifier": null,
+      "paramsString": "4.6B",
+      "architecture": "gemma4",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "google/gemma-4-e2b@q4_k_m"
+      ],
+      "selectedVariant": "google/gemma-4-e2b@q4_k_m",
+      "vision": true,
+      "trainedForToolUse": false,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "google/gemma-4-e4b",
+      "format": "gguf",
+      "displayName": "Gemma 4 E4B",
+      "publisher": "google",
+      "path": "google/gemma-4-e4b",
+      "sizeBytes": 6326938154,
+      "indexedModelIdentifier": "google/gemma-4-e4b",
+      "deviceIdentifier": null,
+      "paramsString": "7.5B",
+      "architecture": "gemma4",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "google/gemma-4-e4b@q4_k_m"
+      ],
+      "selectedVariant": "google/gemma-4-e4b@q4_k_m",
+      "vision": true,
+      "trainedForToolUse": true,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "zai-org/glm-4.6v-flash",
+      "format": "gguf",
+      "displayName": "Glm 4.6v Flash",
+      "publisher": "zai-org",
+      "path": "zai-org/glm-4.6v-flash",
+      "sizeBytes": 7953555436,
+      "indexedModelIdentifier": "zai-org/glm-4.6v-flash",
+      "deviceIdentifier": null,
+      "paramsString": "9.4B",
+      "architecture": "glm4",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "zai-org/glm-4.6v-flash@q4_k_m"
+      ],
+      "selectedVariant": "zai-org/glm-4.6v-flash@q4_k_m",
+      "vision": true,
+      "trainedForToolUse": true,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp",
+      "format": "gguf",
+      "displayName": "Qwen3.6 27B Claude Opus DeepSeek Distilled Imatrix MTP GGUF",
+      "publisher": "Brian6145",
+      "path": "Brian6145/Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF/Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF-Q2_K.gguf",
+      "sizeBytes": 10864591328,
+      "indexedModelIdentifier": "Brian6145/Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF/Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF-Q2_K.gguf",
+      "deviceIdentifier": null,
+      "paramsString": "27B",
+      "architecture": "qwen35",
+      "quantization": {
+        "name": "Q2_K",
+        "bits": 2
+      },
+      "vision": false,
+      "trainedForToolUse": true,
+      "maxContextLength": 262144
+    },
+    {
+      "type": "llm",
+      "modelKey": "openai/gpt-oss-20b",
+      "format": "gguf",
+      "displayName": "GPT-OSS 20B",
+      "publisher": "openai",
+      "path": "openai/gpt-oss-20b",
+      "sizeBytes": 12109664217,
+      "indexedModelIdentifier": "openai/gpt-oss-20b",
+      "deviceIdentifier": null,
+      "paramsString": "20B",
+      "architecture": "gpt-oss",
+      "quantization": {
+        "name": "MXFP4",
+        "bits": 4
+      },
+      "variants": [
+        "openai/gpt-oss-20b@mxfp4"
+      ],
+      "selectedVariant": "openai/gpt-oss-20b@mxfp4",
+      "vision": false,
+      "trainedForToolUse": true,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "deepseek/deepseek-r1-0528-qwen3-8b",
+      "format": "gguf",
+      "displayName": "Deepseek R1 0528 Qwen3 8B",
+      "publisher": "deepseek",
+      "path": "deepseek/deepseek-r1-0528-qwen3-8b",
+      "sizeBytes": 5027844358,
+      "indexedModelIdentifier": "deepseek/deepseek-r1-0528-qwen3-8b",
+      "deviceIdentifier": null,
+      "paramsString": "8B",
+      "architecture": "qwen3",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "deepseek/deepseek-r1-0528-qwen3-8b@q4_k_m"
+      ],
+      "selectedVariant": "deepseek/deepseek-r1-0528-qwen3-8b@q4_k_m",
+      "vision": false,
+      "trainedForToolUse": false,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "qwen/qwen3.5-9b",
+      "format": "gguf",
+      "displayName": "Qwen3.5 9B",
+      "publisher": "qwen",
+      "path": "qwen/qwen3.5-9b",
+      "sizeBytes": 6548927711,
+      "indexedModelIdentifier": "qwen/qwen3.5-9b",
+      "deviceIdentifier": null,
+      "paramsString": "9B",
+      "architecture": "qwen35",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "qwen/qwen3.5-9b@q4_k_m"
+      ],
+      "selectedVariant": "qwen/qwen3.5-9b@q4_k_m",
+      "vision": true,
+      "trainedForToolUse": true,
+      "maxContextLength": 262144
+    },
+    {
+      "type": "llm",
+      "modelKey": "google/gemma-4-12b",
+      "format": "gguf",
+      "displayName": "Gemma 4 12B",
+      "publisher": "google",
+      "path": "google/gemma-4-12b",
+      "sizeBytes": 7556572852,
+      "indexedModelIdentifier": "google/gemma-4-12b",
+      "deviceIdentifier": null,
+      "paramsString": "12B",
+      "architecture": "gemma4",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "google/gemma-4-12b@q4_k_m"
+      ],
+      "selectedVariant": "google/gemma-4-12b@q4_k_m",
+      "vision": true,
+      "trainedForToolUse": true,
+      "maxContextLength": 262144
+    },
+    {
+      "type": "llm",
+      "modelKey": "google/gemma-4-12b-qat",
+      "format": "gguf",
+      "displayName": "Gemma 4 12B QAT",
+      "publisher": "google",
+      "path": "google/gemma-4-12b-qat",
+      "sizeBytes": 7151066820,
+      "indexedModelIdentifier": "google/gemma-4-12b-qat",
+      "deviceIdentifier": null,
+      "paramsString": "12B",
+      "architecture": "gemma4",
+      "quantization": {
+        "name": "Q4_0",
+        "bits": 4
+      },
+      "variants": [
+        "google/gemma-4-12b-qat@q4_0"
+      ],
+      "selectedVariant": "google/gemma-4-12b-qat@q4_0",
+      "vision": true,
+      "trainedForToolUse": true,
+      "maxContextLength": 262144
+    },
+    {
+      "type": "embedding",
+      "modelKey": "text-embedding-nomic-embed-text-v1.5",
+      "format": "gguf",
+      "displayName": "Nomic Embed Text v1.5",
+      "publisher": "nomic-ai",
+      "path": "nomic-ai/nomic-embed-text-v1.5-GGUF/nomic-embed-text-v1.5.Q4_K_M.gguf",
+      "sizeBytes": 84106624,
+      "indexedModelIdentifier": "nomic-ai/nomic-embed-text-v1.5-GGUF/nomic-embed-text-v1.5.Q4_K_M.gguf",
+      "deviceIdentifier": null,
+      "architecture": "nomic-bert",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "maxContextLength": 2048
+    }
+  ],
+  "initialLoaded": [],
+  "hardwareBefore": [
+    {
+      "index": 0,
+      "name": "NVIDIA GeForce RTX 3070",
+      "totalMiB": 8192,
+      "usedMiB": 575,
+      "utilizationPercent": 19
+    },
+    {
+      "index": 1,
+      "name": "NVIDIA GeForce GTX 1080",
+      "totalMiB": 8192,
+      "usedMiB": 12,
+      "utilizationPercent": 0
+    }
+  ],
+  "profiles": [
+    {
+      "id": "qwen/qwen3.5-9b@off",
+      "model": "qwen/qwen3.5-9b",
+      "reasoning": "off",
+      "status": "completed",
+      "cases": [
+        {
+          "taskId": "instruction_exact_token",
+          "category": "instruction",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "expected": "LOOP_OK"
+          },
+          "response": {
+            "text": "LOOP_OK",
+            "message": {
+              "content": "LOOP_OK",
+              "reasoning": ""
+            },
+            "reasoning": "",
+            "wallMs": 7049,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 47,
+              "completion_tokens": 3,
+              "reasoning_tokens": 0
+            },
+            "stats": {
+              "input_tokens": 47,
+              "total_output_tokens": 3,
+              "reasoning_output_tokens": 0,
+              "tokens_per_second": 34.4542447629548,
+              "time_to_first_token_seconds": 0.774018,
+              "model_load_time_seconds": 6.138,
+              "time_to_first_token": 0.774018
+            },
+            "modelInfo": {
+              "model_instance_id": "qwen/qwen3.5-9b"
+            },
+            "rawPayload": {
+              "model_instance_id": "qwen/qwen3.5-9b",
+              "output": [
+                {
+                  "type": "message",
+                  "content": "LOOP_OK"
+                }
+              ],
+              "stats": {
+                "input_tokens": 47,
+                "total_output_tokens": 3,
+                "reasoning_output_tokens": 0,
+                "tokens_per_second": 34.4542447629548,
+                "time_to_first_token_seconds": 0.774018,
+                "model_load_time_seconds": 6.138
+              }
+            }
+          }
+        },
+        {
+          "taskId": "director_dependency_envelope",
+          "category": "planning",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 0.2857142857142857,
+            "passed": 2,
+            "total": 7
+          },
+          "response": {
+            "text": "{\"status\":\"continue\",\"tasks\":[{\"id\":\"verify_claim\",\"role\":\"researcher\",\"dependsOn\":[],\"acceptanceEvidence\":[\"Official source confirms the public claim is false.\"]},{\"id\":\"implement_fix\",\"role\":\"developer\",\"dependsOn\":[\"verify_claim\"],\"acceptanceEvidence\":[\"Fix applied within bounds; official source now reflects corrected data.\"]},{\"id\":\"qa_fix\",\"role\":\"qa\",\"dependsOn\":[\"implement_fix\"],\"acceptanceEvidence\":[\"Independent QA verification confirms fix correctness and bound compliance.\"]}}",
+            "message": {
+              "content": "{\"status\":\"continue\",\"tasks\":[{\"id\":\"verify_claim\",\"role\":\"researcher\",\"dependsOn\":[],\"acceptanceEvidence\":[\"Official source confirms the public claim is false.\"]},{\"id\":\"implement_fix\",\"role\":\"developer\",\"dependsOn\":[\"verify_claim\"],\"acceptanceEvidence\":[\"Fix applied within bounds; official source now reflects corrected data.\"]},{\"id\":\"qa_fix\",\"role\":\"qa\",\"dependsOn\":[\"implement_fix\"],\"acceptanceEvidence\":[\"Independent QA verification confirms fix correctness and bound compliance.\"]}}",
+              "reasoning": ""
+            },
+            "reasoning": "",
+            "wallMs": 11328,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 137,
+              "completion_tokens": 100,
+              "reasoning_tokens": 0
+            },
+            "stats": {
+              "input_tokens": 137,
+              "total_output_tokens": 100,
+              "reasoning_output_tokens": 0,
+              "tokens_per_second": 23.496776124831793,
+              "time_to_first_token_seconds": 0.641532,
+              "model_load_time_seconds": 6.407,
+              "time_to_first_token": 0.641532
+            },
+            "modelInfo": {
+              "model_instance_id": "qwen/qwen3.5-9b:2"
+            },
+            "rawPayload": {
+              "model_instance_id": "qwen/qwen3.5-9b:2",
+              "output": [
+                {
+                  "type": "message",
+                  "content": "{\"status\":\"continue\",\"tasks\":[{\"id\":\"verify_claim\",\"role\":\"researcher\",\"dependsOn\":[],\"acceptanceEvidence\":[\"Official source confirms the public claim is false.\"]},{\"id\":\"implement_fix\",\"role\":\"developer\",\"dependsOn\":[\"verify_claim\"],\"acceptanceEvidence\":[\"Fix applied within bounds; official source now reflects corrected data.\"]},{\"id\":\"qa_fix\",\"role\":\"qa\",\"dependsOn\":[\"implement_fix\"],\"acceptanceEvidence\":[\"Independent QA verification confirms fix correctness and bound compliance.\"]}}"
+                }
+              ],
+              "stats": {
+                "input_tokens": 137,
+                "total_output_tokens": 100,
+                "reasoning_output_tokens": 0,
+                "tokens_per_second": 23.496776124831793,
+                "time_to_first_token_seconds": 0.641532,
+                "model_load_time_seconds": 6.407
+              }
+            }
+          }
+        },
+        {
+          "taskId": "claim_grounding_matrix",
+          "category": "grounding",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 0.2,
+            "passed": 1,
+            "total": 5
+          },
+          "response": {
+            "text": "[{\"claimId\":\"C1\",\"verdict\":\"supported\",\"sources\":[\"S1\"]},{\"claimId\":\"C2\",\"verdict\":\"contradicted\",\"sources\":[\"S2\"]},{\"claimId\":\"C3\",\"verdict\":\"unsupported\",\"sources\":[\"S3\"]}](json)",
+            "message": {
+              "content": "[{\"claimId\":\"C1\",\"verdict\":\"supported\",\"sources\":[\"S1\"]},{\"claimId\":\"C2\",\"verdict\":\"contradicted\",\"sources\":[\"S2\"]},{\"claimId\":\"C3\",\"verdict\":\"unsupported\",\"sources\":[\"S3\"]}](json)",
+              "reasoning": ""
+            },
+            "reasoning": "",
+            "wallMs": 9638,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 165,
+              "completion_tokens": 58,
+              "reasoning_tokens": 0
+            },
+            "stats": {
+              "input_tokens": 165,
+              "total_output_tokens": 58,
+              "reasoning_output_tokens": 0,
+              "tokens_per_second": 23.321861390135737,
+              "time_to_first_token_seconds": 0.8143619999999999,
+              "model_load_time_seconds": 6.312,
+              "time_to_first_token": 0.8143619999999999
+            },
+            "modelInfo": {
+              "model_instance_id": "qwen/qwen3.5-9b"
+            },
+            "rawPayload": {
+              "model_instance_id": "qwen/qwen3.5-9b",
+              "output": [
+                {
+                  "type": "message",
+                  "content": "[{\"claimId\":\"C1\",\"verdict\":\"supported\",\"sources\":[\"S1\"]},{\"claimId\":\"C2\",\"verdict\":\"contradicted\",\"sources\":[\"S2\"]},{\"claimId\":\"C3\",\"verdict\":\"unsupported\",\"sources\":[\"S3\"]}](json)"
+                }
+              ],
+              "stats": {
+                "input_tokens": 165,
+                "total_output_tokens": 58,
+                "reasoning_output_tokens": 0,
+                "tokens_per_second": 23.321861390135737,
+                "time_to_first_token_seconds": 0.8143619999999999,
+                "model_load_time_seconds": 6.312
+              }
+            }
+          }
+        },
+        {
+          "taskId": "gpu_residency_reasoning",
+          "category": "reasoning",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "passed": 2,
+            "total": 2
+          },
+          "response": {
+            "text": "{\"models\":[\"Qwen\",\"DeepSeek\"],\"totalWeightGB\":11.5}",
+            "message": {
+              "content": "{\"models\":[\"Qwen\",\"DeepSeek\"],\"totalWeightGB\":11.5}",
+              "reasoning": ""
+            },
+            "reasoning": "",
+            "wallMs": 7607,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 148,
+              "completion_tokens": 19,
+              "reasoning_tokens": 0
+            },
+            "stats": {
+              "input_tokens": 148,
+              "total_output_tokens": 19,
+              "reasoning_output_tokens": 0,
+              "tokens_per_second": 23.55706761622313,
+              "time_to_first_token_seconds": 0.714145,
+              "model_load_time_seconds": 6.053,
+              "time_to_first_token": 0.714145
+            },
+            "modelInfo": {
+              "model_instance_id": "qwen/qwen3.5-9b:2"
+            },
+            "rawPayload": {
+              "model_instance_id": "qwen/qwen3.5-9b:2",
+              "output": [
+                {
+                  "type": "message",
+                  "content": "{\"models\":[\"Qwen\",\"DeepSeek\"],\"totalWeightGB\":11.5}"
+                }
+              ],
+              "stats": {
+                "input_tokens": 148,
+                "total_output_tokens": 19,
+                "reasoning_output_tokens": 0,
+                "tokens_per_second": 23.55706761622313,
+                "time_to_first_token_seconds": 0.714145,
+                "model_load_time_seconds": 6.053
+              }
+            }
+          }
+        },
+        {
+          "taskId": "code_review_immutable_sort",
+          "category": "coding",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "expected": "B"
+          },
+          "response": {
+            "text": "B",
+            "message": {
+              "content": "B",
+              "reasoning": ""
+            },
+            "reasoning": "",
+            "wallMs": 7126,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 109,
+              "completion_tokens": 2,
+              "reasoning_tokens": 0
+            },
+            "stats": {
+              "input_tokens": 109,
+              "total_output_tokens": 2,
+              "reasoning_output_tokens": 0,
+              "tokens_per_second": 40.10909674314134,
+              "time_to_first_token_seconds": 0.671548,
+              "model_load_time_seconds": 6.3,
+              "time_to_first_token": 0.671548
+            },
+            "modelInfo": {
+              "model_instance_id": "qwen/qwen3.5-9b"
+            },
+            "rawPayload": {
+              "model_instance_id": "qwen/qwen3.5-9b",
+              "output": [
+                {
+                  "type": "message",
+                  "content": "B"
+                }
+              ],
+              "stats": {
+                "input_tokens": 109,
+                "total_output_tokens": 2,
+                "reasoning_output_tokens": 0,
+                "tokens_per_second": 40.10909674314134,
+                "time_to_first_token_seconds": 0.671548,
+                "model_load_time_seconds": 6.3
+              }
+            }
+          }
+        },
+        {
+          "taskId": "log_reconciliation",
+          "category": "extraction",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "passed": 3,
+            "total": 3
+          },
+          "response": {
+            "text": "{\"produced\":[\"task A\"],\"retry\":[\"task B\"],\"verifiedTestCount\":42}",
+            "message": {
+              "content": "{\"produced\":[\"task A\"],\"retry\":[\"task B\"],\"verifiedTestCount\":42}",
+              "reasoning": ""
+            },
+            "reasoning": "",
+            "wallMs": 7812,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 138,
+              "completion_tokens": 20,
+              "reasoning_tokens": 0
+            },
+            "stats": {
+              "input_tokens": 138,
+              "total_output_tokens": 20,
+              "reasoning_output_tokens": 0,
+              "tokens_per_second": 20.219175866391687,
+              "time_to_first_token_seconds": 0.734361,
+              "model_load_time_seconds": 6.054,
+              "time_to_first_token": 0.734361
+            },
+            "modelInfo": {
+              "model_instance_id": "qwen/qwen3.5-9b:2"
+            },
+            "rawPayload": {
+              "model_instance_id": "qwen/qwen3.5-9b:2",
+              "output": [
+                {
+                  "type": "message",
+                  "content": "{\"produced\":[\"task A\"],\"retry\":[\"task B\"],\"verifiedTestCount\":42}"
+                }
+              ],
+              "stats": {
+                "input_tokens": 138,
+                "total_output_tokens": 20,
+                "reasoning_output_tokens": 0,
+                "tokens_per_second": 20.219175866391687,
+                "time_to_first_token_seconds": 0.734361,
+                "model_load_time_seconds": 6.054
+              }
+            }
+          }
+        },
+        {
+          "taskId": "insufficient_evidence_abstention",
+          "category": "safety",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "expected": "INSUFFICIENT_EVIDENCE"
+          },
+          "response": {
+            "text": "INSUFFICIENT_EVIDENCE",
+            "message": {
+              "content": "INSUFFICIENT_EVIDENCE",
+              "reasoning": ""
+            },
+            "reasoning": "",
+            "wallMs": 7300,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 70,
+              "completion_tokens": 7,
+              "reasoning_tokens": 0
+            },
+            "stats": {
+              "input_tokens": 70,
+              "total_output_tokens": 7,
+              "reasoning_output_tokens": 0,
+              "tokens_per_second": 26.429555794680105,
+              "time_to_first_token_seconds": 0.612877,
+              "model_load_time_seconds": 6.4,
+              "time_to_first_token": 0.612877
+            },
+            "modelInfo": {
+              "model_instance_id": "qwen/qwen3.5-9b"
+            },
+            "rawPayload": {
+              "model_instance_id": "qwen/qwen3.5-9b",
+              "output": [
+                {
+                  "type": "message",
+                  "content": "INSUFFICIENT_EVIDENCE"
+                }
+              ],
+              "stats": {
+                "input_tokens": 70,
+                "total_output_tokens": 7,
+                "reasoning_output_tokens": 0,
+                "tokens_per_second": 26.429555794680105,
+                "time_to_first_token_seconds": 0.612877,
+                "model_load_time_seconds": 6.4
+              }
+            }
+          }
+        },
+        {
+          "taskId": "long_context_recall",
+          "category": "long_context",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "passed": 3,
+            "total": 3
+          },
+          "response": {
+            "text": "{\"record\":173,\"launchKey\":\"ORBITAL_CEDAR_731\",\"owner\":\"qa\"}",
+            "message": {
+              "content": "{\"record\":173,\"launchKey\":\"ORBITAL_CEDAR_731\",\"owner\":\"qa\"}",
+              "reasoning": ""
+            },
+            "reasoning": "",
+            "wallMs": 13585,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 7504,
+              "completion_tokens": 26,
+              "reasoning_tokens": 0
+            },
+            "stats": {
+              "input_tokens": 7504,
+              "total_output_tokens": 26,
+              "reasoning_output_tokens": 0,
+              "tokens_per_second": 20.671883932142155,
+              "time_to_first_token_seconds": 6.258948999999999,
+              "model_load_time_seconds": 6.02,
+              "time_to_first_token": 6.258948999999999
+            },
+            "modelInfo": {
+              "model_instance_id": "qwen/qwen3.5-9b:2"
+            },
+            "rawPayload": {
+              "model_instance_id": "qwen/qwen3.5-9b:2",
+              "output": [
+                {
+                  "type": "message",
+                  "content": "{\"record\":173,\"launchKey\":\"ORBITAL_CEDAR_731\",\"owner\":\"qa\"}"
+                }
+              ],
+              "stats": {
+                "input_tokens": 7504,
+                "total_output_tokens": 26,
+                "reasoning_output_tokens": 0,
+                "tokens_per_second": 20.671883932142155,
+                "time_to_first_token_seconds": 6.258948999999999,
+                "model_load_time_seconds": 6.02
+              }
+            }
+          }
+        },
+        {
+          "taskId": "critic_candidate_selection",
+          "category": "critique",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "expected": "B"
+          },
+          "response": {
+            "text": "B",
+            "message": {
+              "content": "B",
+              "reasoning": ""
+            },
+            "reasoning": "",
+            "wallMs": 6952,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 99,
+              "completion_tokens": 2,
+              "reasoning_tokens": 0
+            },
+            "stats": {
+              "input_tokens": 99,
+              "total_output_tokens": 2,
+              "reasoning_output_tokens": 0,
+              "tokens_per_second": 41.75626865983256,
+              "time_to_first_token_seconds": 0.6385919999999999,
+              "model_load_time_seconds": 6.247,
+              "time_to_first_token": 0.6385919999999999
+            },
+            "modelInfo": {
+              "model_instance_id": "qwen/qwen3.5-9b"
+            },
+            "rawPayload": {
+              "model_instance_id": "qwen/qwen3.5-9b",
+              "output": [
+                {
+                  "type": "message",
+                  "content": "B"
+                }
+              ],
+              "stats": {
+                "input_tokens": 99,
+                "total_output_tokens": 2,
+                "reasoning_output_tokens": 0,
+                "tokens_per_second": 41.75626865983256,
+                "time_to_first_token_seconds": 0.6385919999999999,
+                "model_load_time_seconds": 6.247
+              }
+            }
+          }
+        },
+        {
+          "taskId": "instruction_exact_token",
+          "category": "instruction",
+          "repeat": 1,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "expected": "LOOP_OK"
+          },
+          "response": {
+            "text": "LOOP_OK",
+            "message": {
+              "content": "LOOP_OK",
+              "reasoning": ""
+            },
+            "reasoning": "",
+            "wallMs": 6633,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 47,
+              "completion_tokens": 3,
+              "reasoning_tokens": 0
+            },
+            "stats": {
+              "input_tokens": 47,
+              "total_output_tokens": 3,
+              "reasoning_output_tokens": 0,
+              "tokens_per_second": 34.48910144394372,
+              "time_to_first_token_seconds": 0.7378709999999999,
+              "model_load_time_seconds": 5.786,
+              "time_to_first_token": 0.7378709999999999
+            },
+            "modelInfo": {
+              "model_instance_id": "qwen/qwen3.5-9b:2"
+            },
+            "rawPayload": {
+              "model_instance_id": "qwen/qwen3.5-9b:2",
+              "output": [
+                {
+                  "type": "message",
+                  "content": "LOOP_OK"
+                }
+              ],
+              "stats": {
+                "input_tokens": 47,
+                "total_output_tokens": 3,
+                "reasoning_output_tokens": 0,
+                "tokens_per_second": 34.48910144394372,
+                "time_to_first_token_seconds": 0.7378709999999999,
+                "model_load_time_seconds": 5.786
+              }
+            }
+          }
+        },
+        {
+          "taskId": "director_dependency_envelope",
+          "category": "planning",
+          "repeat": 1,
+          "status": "completed",
+          "score": {
+            "score": 0.2857142857142857,
+            "passed": 2,
+            "total": 7
+          },
+          "response": {
+            "text": "{\"status\":\"continue\",\"tasks\":[{\"id\":\"verify_claim\",\"role\":\"researcher\",\"dependsOn\":[],\"acceptanceEvidence\":[\"Official source confirms the public claim is false.\"]},{\"id\":\"implement_fix\",\"role\":\"developer\",\"dependsOn\":[\"verify_claim\"],\"acceptanceEvidence\":[\"Fix applied within bounds; official source now reflects corrected data.\"]},{\"id\":\"qa_fix\",\"role\":\"qa\",\"dependsOn\":[\"implement_fix\"],\"acceptanceEvidence\":[\"Independent QA verification confirms fix correctness and bound compliance.\"]}}",
+            "message": {
+              "content": "{\"status\":\"continue\",\"tasks\":[{\"id\":\"verify_claim\",\"role\":\"researcher\",\"dependsOn\":[],\"acceptanceEvidence\":[\"Official source confirms the public claim is false.\"]},{\"id\":\"implement_fix\",\"role\":\"developer\",\"dependsOn\":[\"verify_claim\"],\"acceptanceEvidence\":[\"Fix applied within bounds; official source now reflects corrected data.\"]},{\"id\":\"qa_fix\",\"role\":\"qa\",\"dependsOn\":[\"implement_fix\"],\"acceptanceEvidence\":[\"Independent QA verification confirms fix correctness and bound compliance.\"]}}",
+              "reasoning": ""
+            },
+            "reasoning": "",
+            "wallMs": 10353,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 137,
+              "completion_tokens": 100,
+              "reasoning_tokens": 0
+            },
+            "stats": {
+              "input_tokens": 137,
+              "total_output_tokens": 100,
+              "reasoning_output_tokens": 0,
+              "tokens_per_second": 24.099480728488746,
+              "time_to_first_token_seconds": 0.6304460000000001,
+              "model_load_time_seconds": 5.55,
+              "time_to_first_token": 0.6304460000000001
+            },
+            "modelInfo": {
+              "model_instance_id": "qwen/qwen3.5-9b"
+            },
+            "rawPayload": {
+              "model_instance_id": "qwen/qwen3.5-9b",
+              "output": [
+                {
+                  "type": "message",
+                  "content": "{\"status\":\"continue\",\"tasks\":[{\"id\":\"verify_claim\",\"role\":\"researcher\",\"dependsOn\":[],\"acceptanceEvidence\":[\"Official source confirms the public claim is false.\"]},{\"id\":\"implement_fix\",\"role\":\"developer\",\"dependsOn\":[\"verify_claim\"],\"acceptanceEvidence\":[\"Fix applied within bounds; official source now reflects corrected data.\"]},{\"id\":\"qa_fix\",\"role\":\"qa\",\"dependsOn\":[\"implement_fix\"],\"acceptanceEvidence\":[\"Independent QA verification confirms fix correctness and bound compliance.\"]}}"
+                }
+              ],
+              "stats": {
+                "input_tokens": 137,
+                "total_output_tokens": 100,
+                "reasoning_output_tokens": 0,
+                "tokens_per_second": 24.099480728488746,
+                "time_to_first_token_seconds": 0.6304460000000001,
+                "model_load_time_seconds": 5.55
+              }
+            }
+          }
+        },
+        {
+          "taskId": "claim_grounding_matrix",
+          "category": "grounding",
+          "repeat": 1,
+          "status": "completed",
+          "score": {
+            "score": 0.2,
+            "passed": 1,
+            "total": 5
+          },
+          "response": {
+            "text": "[{\"claimId\":\"C1\",\"verdict\":\"supported\",\"sources\":[\"S1\"]},{\"claimId\":\"C2\",\"verdict\":\"contradicted\",\"sources\":[\"S2\"]},{\"claimId\":\"C3\",\"verdict\":\"unsupported\",\"sources\":[\"S3\"]}](json)",
+            "message": {
+              "content": "[{\"claimId\":\"C1\",\"verdict\":\"supported\",\"sources\":[\"S1\"]},{\"claimId\":\"C2\",\"verdict\":\"contradicted\",\"sources\":[\"S2\"]},{\"claimId\":\"C3\",\"verdict\":\"unsupported\",\"sources\":[\"S3\"]}](json)",
+              "reasoning": ""
+            },
+            "reasoning": "",
+            "wallMs": 8334,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 165,
+              "completion_tokens": 58,
+              "reasoning_tokens": 0
+            },
+            "stats": {
+              "input_tokens": 165,
+              "total_output_tokens": 58,
+              "reasoning_output_tokens": 0,
+              "tokens_per_second": 24.5522495151989,
+              "time_to_first_token_seconds": 0.659077,
+              "model_load_time_seconds": 5.293,
+              "time_to_first_token": 0.659077
+            },
+            "modelInfo": {
+              "model_instance_id": "qwen/qwen3.5-9b:2"
+            },
+            "rawPayload": {
+              "model_instance_id": "qwen/qwen3.5-9b:2",
+              "output": [
+                {
+                  "type": "message",
+                  "content": "[{\"claimId\":\"C1\",\"verdict\":\"supported\",\"sources\":[\"S1\"]},{\"claimId\":\"C2\",\"verdict\":\"contradicted\",\"sources\":[\"S2\"]},{\"claimId\":\"C3\",\"verdict\":\"unsupported\",\"sources\":[\"S3\"]}](json)"
+                }
+              ],
+              "stats": {
+                "input_tokens": 165,
+                "total_output_tokens": 58,
+                "reasoning_output_tokens": 0,
+                "tokens_per_second": 24.5522495151989,
+                "time_to_first_token_seconds": 0.659077,
+                "model_load_time_seconds": 5.293
+              }
+            }
+          }
+        },
+        {
+          "taskId": "gpu_residency_reasoning",
+          "category": "reasoning",
+          "repeat": 1,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "passed": 2,
+            "total": 2
+          },
+          "response": {
+            "text": "{\"models\":[\"Qwen\",\"DeepSeek\"],\"totalWeightGB\":11.5}",
+            "message": {
+              "content": "{\"models\":[\"Qwen\",\"DeepSeek\"],\"totalWeightGB\":11.5}",
+              "reasoning": ""
+            },
+            "reasoning": "",
+            "wallMs": 6987,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 148,
+              "completion_tokens": 19,
+              "reasoning_tokens": 0
+            },
+            "stats": {
+              "input_tokens": 148,
+              "total_output_tokens": 19,
+              "reasoning_output_tokens": 0,
+              "tokens_per_second": 24.51369347819636,
+              "time_to_first_token_seconds": 0.664886,
+              "model_load_time_seconds": 5.517,
+              "time_to_first_token": 0.664886
+            },
+            "modelInfo": {
+              "model_instance_id": "qwen/qwen3.5-9b"
+            },
+            "rawPayload": {
+              "model_instance_id": "qwen/qwen3.5-9b",
+              "output": [
+                {
+                  "type": "message",
+                  "content": "{\"models\":[\"Qwen\",\"DeepSeek\"],\"totalWeightGB\":11.5}"
+                }
+              ],
+              "stats": {
+                "input_tokens": 148,
+                "total_output_tokens": 19,
+                "reasoning_output_tokens": 0,
+                "tokens_per_second": 24.51369347819636,
+                "time_to_first_token_seconds": 0.664886,
+                "model_load_time_seconds": 5.517
+              }
+            }
+          }
+        },
+        {
+          "taskId": "code_review_immutable_sort",
+          "category": "coding",
+          "repeat": 1,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "expected": "B"
+          },
+          "response": {
+            "text": "B",
+            "message": {
+              "content": "B",
+              "reasoning": ""
+            },
+            "reasoning": "",
+            "wallMs": 6584,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 109,
+              "completion_tokens": 2,
+              "reasoning_tokens": 0
+            },
+            "stats": {
+              "input_tokens": 109,
+              "total_output_tokens": 2,
+              "reasoning_output_tokens": 0,
+              "tokens_per_second": 41.97888462103562,
+              "time_to_first_token_seconds": 0.637865,
+              "model_load_time_seconds": 5.87,
+              "time_to_first_token": 0.637865
+            },
+            "modelInfo": {
+              "model_instance_id": "qwen/qwen3.5-9b:2"
+            },
+            "rawPayload": {
+              "model_instance_id": "qwen/qwen3.5-9b:2",
+              "output": [
+                {
+                  "type": "message",
+                  "content": "B"
+                }
+              ],
+              "stats": {
+                "input_tokens": 109,
+                "total_output_tokens": 2,
+                "reasoning_output_tokens": 0,
+                "tokens_per_second": 41.97888462103562,
+                "time_to_first_token_seconds": 0.637865,
+                "model_load_time_seconds": 5.87
+              }
+            }
+          }
+        },
+        {
+          "taskId": "log_reconciliation",
+          "category": "extraction",
+          "repeat": 1,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "passed": 3,
+            "total": 3
+          },
+          "response": {
+            "text": "{\"produced\":[\"task A\"],\"retry\":[\"task B\"],\"verifiedTestCount\":42}",
+            "message": {
+              "content": "{\"produced\":[\"task A\"],\"retry\":[\"task B\"],\"verifiedTestCount\":42}",
+              "reasoning": ""
+            },
+            "reasoning": "",
+            "wallMs": 6941,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 138,
+              "completion_tokens": 20,
+              "reasoning_tokens": 0
+            },
+            "stats": {
+              "input_tokens": 138,
+              "total_output_tokens": 20,
+              "reasoning_output_tokens": 0,
+              "tokens_per_second": 25.828147256598765,
+              "time_to_first_token_seconds": 0.635169,
+              "model_load_time_seconds": 5.511,
+              "time_to_first_token": 0.635169
+            },
+            "modelInfo": {
+              "model_instance_id": "qwen/qwen3.5-9b"
+            },
+            "rawPayload": {
+              "model_instance_id": "qwen/qwen3.5-9b",
+              "output": [
+                {
+                  "type": "message",
+                  "content": "{\"produced\":[\"task A\"],\"retry\":[\"task B\"],\"verifiedTestCount\":42}"
+                }
+              ],
+              "stats": {
+                "input_tokens": 138,
+                "total_output_tokens": 20,
+                "reasoning_output_tokens": 0,
+                "tokens_per_second": 25.828147256598765,
+                "time_to_first_token_seconds": 0.635169,
+                "model_load_time_seconds": 5.511
+              }
+            }
+          }
+        },
+        {
+          "taskId": "insufficient_evidence_abstention",
+          "category": "safety",
+          "repeat": 1,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "expected": "INSUFFICIENT_EVIDENCE"
+          },
+          "response": {
+            "text": "INSUFFICIENT_EVIDENCE",
+            "message": {
+              "content": "INSUFFICIENT_EVIDENCE",
+              "reasoning": ""
+            },
+            "reasoning": "",
+            "wallMs": 6165,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 70,
+              "completion_tokens": 7,
+              "reasoning_tokens": 0
+            },
+            "stats": {
+              "input_tokens": 70,
+              "total_output_tokens": 7,
+              "reasoning_output_tokens": 0,
+              "tokens_per_second": 25.404567741279884,
+              "time_to_first_token_seconds": 0.591193,
+              "model_load_time_seconds": 5.28,
+              "time_to_first_token": 0.591193
+            },
+            "modelInfo": {
+              "model_instance_id": "qwen/qwen3.5-9b:2"
+            },
+            "rawPayload": {
+              "model_instance_id": "qwen/qwen3.5-9b:2",
+              "output": [
+                {
+                  "type": "message",
+                  "content": "INSUFFICIENT_EVIDENCE"
+                }
+              ],
+              "stats": {
+                "input_tokens": 70,
+                "total_output_tokens": 7,
+                "reasoning_output_tokens": 0,
+                "tokens_per_second": 25.404567741279884,
+                "time_to_first_token_seconds": 0.591193,
+                "model_load_time_seconds": 5.28
+              }
+            }
+          }
+        },
+        {
+          "taskId": "long_context_recall",
+          "category": "long_context",
+          "repeat": 1,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "passed": 3,
+            "total": 3
+          },
+          "response": {
+            "text": "{\"record\":173,\"launchKey\":\"ORBITAL_CEDAR_731\",\"owner\":\"qa\"}",
+            "message": {
+              "content": "{\"record\":173,\"launchKey\":\"ORBITAL_CEDAR_731\",\"owner\":\"qa\"}",
+              "reasoning": ""
+            },
+            "reasoning": "",
+            "wallMs": 12994,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 7504,
+              "completion_tokens": 26,
+              "reasoning_tokens": 0
+            },
+            "stats": {
+              "input_tokens": 7504,
+              "total_output_tokens": 26,
+              "reasoning_output_tokens": 0,
+              "tokens_per_second": 20.945462044808785,
+              "time_to_first_token_seconds": 6.180367,
+              "model_load_time_seconds": 5.531,
+              "time_to_first_token": 6.180367
+            },
+            "modelInfo": {
+              "model_instance_id": "qwen/qwen3.5-9b"
+            },
+            "rawPayload": {
+              "model_instance_id": "qwen/qwen3.5-9b",
+              "output": [
+                {
+                  "type": "message",
+                  "content": "{\"record\":173,\"launchKey\":\"ORBITAL_CEDAR_731\",\"owner\":\"qa\"}"
+                }
+              ],
+              "stats": {
+                "input_tokens": 7504,
+                "total_output_tokens": 26,
+                "reasoning_output_tokens": 0,
+                "tokens_per_second": 20.945462044808785,
+                "time_to_first_token_seconds": 6.180367,
+                "model_load_time_seconds": 5.531
+              }
+            }
+          }
+        },
+        {
+          "taskId": "critic_candidate_selection",
+          "category": "critique",
+          "repeat": 1,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "expected": "B"
+          },
+          "response": {
+            "text": "B",
+            "message": {
+              "content": "B",
+              "reasoning": ""
+            },
+            "reasoning": "",
+            "wallMs": 6888,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 99,
+              "completion_tokens": 2,
+              "reasoning_tokens": 0
+            },
+            "stats": {
+              "input_tokens": 99,
+              "total_output_tokens": 2,
+              "reasoning_output_tokens": 0,
+              "tokens_per_second": 42.894522369493416,
+              "time_to_first_token_seconds": 0.752068,
+              "model_load_time_seconds": 6.072,
+              "time_to_first_token": 0.752068
+            },
+            "modelInfo": {
+              "model_instance_id": "qwen/qwen3.5-9b:2"
+            },
+            "rawPayload": {
+              "model_instance_id": "qwen/qwen3.5-9b:2",
+              "output": [
+                {
+                  "type": "message",
+                  "content": "B"
+                }
+              ],
+              "stats": {
+                "input_tokens": 99,
+                "total_output_tokens": 2,
+                "reasoning_output_tokens": 0,
+                "tokens_per_second": 42.894522369493416,
+                "time_to_first_token_seconds": 0.752068,
+                "model_load_time_seconds": 6.072
+              }
+            }
+          }
+        }
+      ],
+      "summary": {
+        "score": 14.971428571428572,
+        "possible": 18,
+        "passRate": 0.8317460317460318,
+        "completedCases": 18,
+        "failedCases": 0,
+        "meanTokensPerSecond": 28.82,
+        "reasoningTokens": 0,
+        "outputTokens": 474,
+        "totalWallSeconds": 150.28
+      },
+      "loadMode": "native-v1-autoload",
+      "hardwareLoaded": [
+        {
+          "index": 0,
+          "name": "NVIDIA GeForce RTX 3070",
+          "totalMiB": 8192,
+          "usedMiB": 6566,
+          "utilizationPercent": 36
+        },
+        {
+          "index": 1,
+          "name": "NVIDIA GeForce GTX 1080",
+          "totalMiB": 8192,
+          "usedMiB": 12,
+          "utilizationPercent": 0
+        }
+      ],
+      "hardwareAfter": [
+        {
+          "index": 0,
+          "name": "NVIDIA GeForce RTX 3070",
+          "totalMiB": 8192,
+          "usedMiB": 6518,
+          "utilizationPercent": 38
+        },
+        {
+          "index": 1,
+          "name": "NVIDIA GeForce GTX 1080",
+          "totalMiB": 8192,
+          "usedMiB": 12,
+          "utilizationPercent": 0
+        }
+      ]
+    },
+    {
+      "id": "deepseek/deepseek-r1-0528-qwen3-8b@off",
+      "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+      "reasoning": "off",
+      "status": "completed",
+      "cases": [
+        {
+          "taskId": "instruction_exact_token",
+          "category": "instruction",
+          "repeat": 0,
+          "status": "failed",
+          "score": {
+            "score": 0
+          },
+          "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Reasoning setting 'off' is not supported by model 'deepseek/deepseek-r1-0528-qwen3-8b'. Supported settings: 'on'.\",\n    \"type\": \"invalid_request\",\n    \"param\": \"reasoning\",\n    \"code\": \"invalid_value\"\n  }\n}",
+          "wallMs": 4
+        },
+        {
+          "taskId": "director_dependency_envelope",
+          "category": "planning",
+          "repeat": 0,
+          "status": "failed",
+          "score": {
+            "score": 0
+          },
+          "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Reasoning setting 'off' is not supported by model 'deepseek/deepseek-r1-0528-qwen3-8b'. Supported settings: 'on'.\",\n    \"type\": \"invalid_request\",\n    \"param\": \"reasoning\",\n    \"code\": \"invalid_value\"\n  }\n}",
+          "wallMs": 3
+        },
+        {
+          "taskId": "claim_grounding_matrix",
+          "category": "grounding",
+          "repeat": 0,
+          "status": "failed",
+          "score": {
+            "score": 0
+          },
+          "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Reasoning setting 'off' is not supported by model 'deepseek/deepseek-r1-0528-qwen3-8b'. Supported settings: 'on'.\",\n    \"type\": \"invalid_request\",\n    \"param\": \"reasoning\",\n    \"code\": \"invalid_value\"\n  }\n}",
+          "wallMs": 17
+        },
+        {
+          "taskId": "gpu_residency_reasoning",
+          "category": "reasoning",
+          "repeat": 0,
+          "status": "failed",
+          "score": {
+            "score": 0
+          },
+          "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Reasoning setting 'off' is not supported by model 'deepseek/deepseek-r1-0528-qwen3-8b'. Supported settings: 'on'.\",\n    \"type\": \"invalid_request\",\n    \"param\": \"reasoning\",\n    \"code\": \"invalid_value\"\n  }\n}",
+          "wallMs": 4
+        },
+        {
+          "taskId": "code_review_immutable_sort",
+          "category": "coding",
+          "repeat": 0,
+          "status": "failed",
+          "score": {
+            "score": 0
+          },
+          "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Reasoning setting 'off' is not supported by model 'deepseek/deepseek-r1-0528-qwen3-8b'. Supported settings: 'on'.\",\n    \"type\": \"invalid_request\",\n    \"param\": \"reasoning\",\n    \"code\": \"invalid_value\"\n  }\n}",
+          "wallMs": 7
+        },
+        {
+          "taskId": "log_reconciliation",
+          "category": "extraction",
+          "repeat": 0,
+          "status": "failed",
+          "score": {
+            "score": 0
+          },
+          "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Reasoning setting 'off' is not supported by model 'deepseek/deepseek-r1-0528-qwen3-8b'. Supported settings: 'on'.\",\n    \"type\": \"invalid_request\",\n    \"param\": \"reasoning\",\n    \"code\": \"invalid_value\"\n  }\n}",
+          "wallMs": 10
+        },
+        {
+          "taskId": "insufficient_evidence_abstention",
+          "category": "safety",
+          "repeat": 0,
+          "status": "failed",
+          "score": {
+            "score": 0
+          },
+          "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Reasoning setting 'off' is not supported by model 'deepseek/deepseek-r1-0528-qwen3-8b'. Supported settings: 'on'.\",\n    \"type\": \"invalid_request\",\n    \"param\": \"reasoning\",\n    \"code\": \"invalid_value\"\n  }\n}",
+          "wallMs": 10
+        },
+        {
+          "taskId": "long_context_recall",
+          "category": "long_context",
+          "repeat": 0,
+          "status": "failed",
+          "score": {
+            "score": 0
+          },
+          "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Reasoning setting 'off' is not supported by model 'deepseek/deepseek-r1-0528-qwen3-8b'. Supported settings: 'on'.\",\n    \"type\": \"invalid_request\",\n    \"param\": \"reasoning\",\n    \"code\": \"invalid_value\"\n  }\n}",
+          "wallMs": 9
+        },
+        {
+          "taskId": "critic_candidate_selection",
+          "category": "critique",
+          "repeat": 0,
+          "status": "failed",
+          "score": {
+            "score": 0
+          },
+          "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Reasoning setting 'off' is not supported by model 'deepseek/deepseek-r1-0528-qwen3-8b'. Supported settings: 'on'.\",\n    \"type\": \"invalid_request\",\n    \"param\": \"reasoning\",\n    \"code\": \"invalid_value\"\n  }\n}",
+          "wallMs": 11
+        },
+        {
+          "taskId": "instruction_exact_token",
+          "category": "instruction",
+          "repeat": 1,
+          "status": "failed",
+          "score": {
+            "score": 0
+          },
+          "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Reasoning setting 'off' is not supported by model 'deepseek/deepseek-r1-0528-qwen3-8b'. Supported settings: 'on'.\",\n    \"type\": \"invalid_request\",\n    \"param\": \"reasoning\",\n    \"code\": \"invalid_value\"\n  }\n}",
+          "wallMs": 10
+        },
+        {
+          "taskId": "director_dependency_envelope",
+          "category": "planning",
+          "repeat": 1,
+          "status": "failed",
+          "score": {
+            "score": 0
+          },
+          "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Reasoning setting 'off' is not supported by model 'deepseek/deepseek-r1-0528-qwen3-8b'. Supported settings: 'on'.\",\n    \"type\": \"invalid_request\",\n    \"param\": \"reasoning\",\n    \"code\": \"invalid_value\"\n  }\n}",
+          "wallMs": 5
+        },
+        {
+          "taskId": "claim_grounding_matrix",
+          "category": "grounding",
+          "repeat": 1,
+          "status": "failed",
+          "score": {
+            "score": 0
+          },
+          "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Reasoning setting 'off' is not supported by model 'deepseek/deepseek-r1-0528-qwen3-8b'. Supported settings: 'on'.\",\n    \"type\": \"invalid_request\",\n    \"param\": \"reasoning\",\n    \"code\": \"invalid_value\"\n  }\n}",
+          "wallMs": 5
+        },
+        {
+          "taskId": "gpu_residency_reasoning",
+          "category": "reasoning",
+          "repeat": 1,
+          "status": "failed",
+          "score": {
+            "score": 0
+          },
+          "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Reasoning setting 'off' is not supported by model 'deepseek/deepseek-r1-0528-qwen3-8b'. Supported settings: 'on'.\",\n    \"type\": \"invalid_request\",\n    \"param\": \"reasoning\",\n    \"code\": \"invalid_value\"\n  }\n}",
+          "wallMs": 6
+        },
+        {
+          "taskId": "code_review_immutable_sort",
+          "category": "coding",
+          "repeat": 1,
+          "status": "failed",
+          "score": {
+            "score": 0
+          },
+          "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Reasoning setting 'off' is not supported by model 'deepseek/deepseek-r1-0528-qwen3-8b'. Supported settings: 'on'.\",\n    \"type\": \"invalid_request\",\n    \"param\": \"reasoning\",\n    \"code\": \"invalid_value\"\n  }\n}",
+          "wallMs": 10
+        },
+        {
+          "taskId": "log_reconciliation",
+          "category": "extraction",
+          "repeat": 1,
+          "status": "failed",
+          "score": {
+            "score": 0
+          },
+          "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Reasoning setting 'off' is not supported by model 'deepseek/deepseek-r1-0528-qwen3-8b'. Supported settings: 'on'.\",\n    \"type\": \"invalid_request\",\n    \"param\": \"reasoning\",\n    \"code\": \"invalid_value\"\n  }\n}",
+          "wallMs": 12
+        },
+        {
+          "taskId": "insufficient_evidence_abstention",
+          "category": "safety",
+          "repeat": 1,
+          "status": "failed",
+          "score": {
+            "score": 0
+          },
+          "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Reasoning setting 'off' is not supported by model 'deepseek/deepseek-r1-0528-qwen3-8b'. Supported settings: 'on'.\",\n    \"type\": \"invalid_request\",\n    \"param\": \"reasoning\",\n    \"code\": \"invalid_value\"\n  }\n}",
+          "wallMs": 11
+        },
+        {
+          "taskId": "long_context_recall",
+          "category": "long_context",
+          "repeat": 1,
+          "status": "failed",
+          "score": {
+            "score": 0
+          },
+          "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Reasoning setting 'off' is not supported by model 'deepseek/deepseek-r1-0528-qwen3-8b'. Supported settings: 'on'.\",\n    \"type\": \"invalid_request\",\n    \"param\": \"reasoning\",\n    \"code\": \"invalid_value\"\n  }\n}",
+          "wallMs": 10
+        },
+        {
+          "taskId": "critic_candidate_selection",
+          "category": "critique",
+          "repeat": 1,
+          "status": "failed",
+          "score": {
+            "score": 0
+          },
+          "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Reasoning setting 'off' is not supported by model 'deepseek/deepseek-r1-0528-qwen3-8b'. Supported settings: 'on'.\",\n    \"type\": \"invalid_request\",\n    \"param\": \"reasoning\",\n    \"code\": \"invalid_value\"\n  }\n}",
+          "wallMs": 9
+        }
+      ],
+      "summary": {
+        "score": 0,
+        "possible": 18,
+        "passRate": 0,
+        "completedCases": 0,
+        "failedCases": 18,
+        "meanTokensPerSecond": 0,
+        "reasoningTokens": 0,
+        "outputTokens": 0,
+        "totalWallSeconds": 0.15
+      },
+      "loadMode": "native-v1-autoload",
+      "hardwareAfter": [
+        {
+          "index": 0,
+          "name": "NVIDIA GeForce RTX 3070",
+          "totalMiB": 8192,
+          "usedMiB": 534,
+          "utilizationPercent": 17
+        },
+        {
+          "index": 1,
+          "name": "NVIDIA GeForce GTX 1080",
+          "totalMiB": 8192,
+          "usedMiB": 12,
+          "utilizationPercent": 0
+        }
+      ]
+    },
+    {
+      "id": "openai/gpt-oss-20b@low",
+      "model": "openai/gpt-oss-20b",
+      "reasoning": "low",
+      "status": "completed",
+      "cases": [
+        {
+          "taskId": "instruction_exact_token",
+          "category": "instruction",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "expected": "LOOP_OK"
+          },
+          "response": {
+            "text": "LOOP_OK",
+            "message": {
+              "content": "LOOP_OK",
+              "reasoning": "User wants \"LOOP_OK\"."
+            },
+            "reasoning": "User wants \"LOOP_OK\".",
+            "wallMs": 11009,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 104,
+              "completion_tokens": 20,
+              "reasoning_tokens": 7
+            },
+            "stats": {
+              "input_tokens": 104,
+              "total_output_tokens": 20,
+              "reasoning_output_tokens": 7,
+              "tokens_per_second": 36.94180926205041,
+              "time_to_first_token_seconds": 0.697515,
+              "model_load_time_seconds": 9.745,
+              "time_to_first_token": 0.697515
+            },
+            "modelInfo": {
+              "model_instance_id": "openai/gpt-oss-20b"
+            },
+            "rawPayload": {
+              "model_instance_id": "openai/gpt-oss-20b",
+              "output": [
+                {
+                  "type": "reasoning",
+                  "content": "User wants \"LOOP_OK\"."
+                },
+                {
+                  "type": "message",
+                  "content": "LOOP_OK"
+                }
+              ],
+              "stats": {
+                "input_tokens": 104,
+                "total_output_tokens": 20,
+                "reasoning_output_tokens": 7,
+                "tokens_per_second": 36.94180926205041,
+                "time_to_first_token_seconds": 0.697515,
+                "model_load_time_seconds": 9.745
+              }
+            }
+          }
+        },
+        {
+          "taskId": "director_dependency_envelope",
+          "category": "planning",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "passed": 7,
+            "total": 7
+          },
+          "response": {
+            "text": "{\"status\":\"continue\",\"tasks\":[{\"id\":\"task1\",\"role\":\"researcher\",\"dependsOn\":[],\"acceptanceEvidence\":[\"public claim verified from official source\"]},{\"id\":\"task2\",\"role\":\"developer\",\"dependsOn\":[\"task1\"],\"acceptanceEvidence\":[\"bounded fix implemented based on verification\"]},{\"id\":\"task3\",\"role\":\"qa\",\"dependsOn\":[\"task2\"],\"acceptanceEvidence\":[\"independent QA of the fix completed\"]}]}",
+            "message": {
+              "content": "{\"status\":\"continue\",\"tasks\":[{\"id\":\"task1\",\"role\":\"researcher\",\"dependsOn\":[],\"acceptanceEvidence\":[\"public claim verified from official source\"]},{\"id\":\"task2\",\"role\":\"developer\",\"dependsOn\":[\"task1\"],\"acceptanceEvidence\":[\"bounded fix implemented based on verification\"]},{\"id\":\"task3\",\"role\":\"qa\",\"dependsOn\":[\"task2\"],\"acceptanceEvidence\":[\"independent QA of the fix completed\"]}]}",
+              "reasoning": "Need to output JSON with status continue and tasks array. Provide three tasks: research, developer, qa. Each with id strings unique. acceptanceEvidence placeholders."
+            },
+            "reasoning": "Need to output JSON with status continue and tasks array. Provide three tasks: research, developer, qa. Each with id strings unique. acceptanceEvidence placeholders.",
+            "wallMs": 15215,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 196,
+              "completion_tokens": 133,
+              "reasoning_tokens": 31
+            },
+            "stats": {
+              "input_tokens": 196,
+              "total_output_tokens": 133,
+              "reasoning_output_tokens": 31,
+              "tokens_per_second": 30.595088269130038,
+              "time_to_first_token_seconds": 0.777325,
+              "model_load_time_seconds": 10.065,
+              "time_to_first_token": 0.777325
+            },
+            "modelInfo": {
+              "model_instance_id": "openai/gpt-oss-20b:2"
+            },
+            "rawPayload": {
+              "model_instance_id": "openai/gpt-oss-20b:2",
+              "output": [
+                {
+                  "type": "reasoning",
+                  "content": "Need to output JSON with status continue and tasks array. Provide three tasks: research, developer, qa. Each with id strings unique. acceptanceEvidence placeholders."
+                },
+                {
+                  "type": "message",
+                  "content": "{\"status\":\"continue\",\"tasks\":[{\"id\":\"task1\",\"role\":\"researcher\",\"dependsOn\":[],\"acceptanceEvidence\":[\"public claim verified from official source\"]},{\"id\":\"task2\",\"role\":\"developer\",\"dependsOn\":[\"task1\"],\"acceptanceEvidence\":[\"bounded fix implemented based on verification\"]},{\"id\":\"task3\",\"role\":\"qa\",\"dependsOn\":[\"task2\"],\"acceptanceEvidence\":[\"independent QA of the fix completed\"]}]}"
+                }
+              ],
+              "stats": {
+                "input_tokens": 196,
+                "total_output_tokens": 133,
+                "reasoning_output_tokens": 31,
+                "tokens_per_second": 30.595088269130038,
+                "time_to_first_token_seconds": 0.777325,
+                "model_load_time_seconds": 10.065
+              }
+            }
+          }
+        },
+        {
+          "taskId": "claim_grounding_matrix",
+          "category": "grounding",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 0.8,
+            "passed": 4,
+            "total": 5
+          },
+          "response": {
+            "text": "[\n  {\n    \"claimId\": \"C1\",\n    \"verdict\": \"supported\",\n    \"sources\": [\"S1\"]\n  },\n  {\n    \"claimId\": \"C2\",\n    \"verdict\": \"contradicted\",\n    \"sources\": [\"S2\"]\n  },\n  {\n    \"claimId\": \"C3\",\n    \"verdict\": \"unsupported\",\n    \"sources\": []\n  }\n]",
+            "message": {
+              "content": "[\n  {\n    \"claimId\": \"C1\",\n    \"verdict\": \"supported\",\n    \"sources\": [\"S1\"]\n  },\n  {\n    \"claimId\": \"C2\",\n    \"verdict\": \"contradicted\",\n    \"sources\": [\"S2\"]\n  },\n  {\n    \"claimId\": \"C3\",\n    \"verdict\": \"unsupported\",\n    \"sources\": []\n  }\n]",
+              "reasoning": "We need to evaluate claims.\n\nGiven S1 says \"Runtime Atlas supports JSON-schema constrained output and tool calls.\" So claim C1: Atlas supports tool calls => supported, source S1.\n\nS2: \"The installed Atlas quantization is Q4_K_M.\" Claim C2: Atlas is installed at Q8_0. That contradicts; we have evidence that it's Q4_K_M, not Q8_0. So verdict contradicted? Actually claim says it's Q8_0 but evidence says Q4_K_M. So claim is unsupported/contradicted. We should say \"contradicted\" with source S2.\n\nC3: Atlas matches Terra quality. No benchmark compares Atlas with Sol or Terra. That doesn't give info about matching Terra. So we cannot support; no evidence. So verdict unsupported, but no sources? The format requires sources array. If unsupported, maybe empty array? But instruction says cite only sources that directly establish the verdict. For unsupported, there may be no source. Probably empty array.\n\nReturn JSON array with three objects."
+            },
+            "reasoning": "We need to evaluate claims.\n\nGiven S1 says \"Runtime Atlas supports JSON-schema constrained output and tool calls.\" So claim C1: Atlas supports tool calls => supported, source S1.\n\nS2: \"The installed Atlas quantization is Q4_K_M.\" Claim C2: Atlas is installed at Q8_0. That contradicts; we have evidence that it's Q4_K_M, not Q8_0. So verdict contradicted? Actually claim says it's Q8_0 but evidence says Q4_K_M. So claim is unsupported/contradicted. We should say \"contradicted\" with source S2.\n\nC3: Atlas matches Terra quality. No benchmark compares Atlas with Sol or Terra. That doesn't give info about matching Terra. So we cannot support; no evidence. So verdict unsupported, but no sources? The format requires sources array. If unsupported, maybe empty array? But instruction says cite only sources that directly establish the verdict. For unsupported, there may be no source. Probably empty array.\n\nReturn JSON array with three objects.",
+            "wallMs": 21088,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 221,
+              "completion_tokens": 313,
+              "reasoning_tokens": 215
+            },
+            "stats": {
+              "input_tokens": 221,
+              "total_output_tokens": 313,
+              "reasoning_output_tokens": 215,
+              "tokens_per_second": 30.15815495298556,
+              "time_to_first_token_seconds": 0.799859,
+              "model_load_time_seconds": 9.876,
+              "time_to_first_token": 0.799859
+            },
+            "modelInfo": {
+              "model_instance_id": "openai/gpt-oss-20b"
+            },
+            "rawPayload": {
+              "model_instance_id": "openai/gpt-oss-20b",
+              "output": [
+                {
+                  "type": "reasoning",
+                  "content": "We need to evaluate claims.\n\nGiven S1 says \"Runtime Atlas supports JSON-schema constrained output and tool calls.\" So claim C1: Atlas supports tool calls => supported, source S1.\n\nS2: \"The installed Atlas quantization is Q4_K_M.\" Claim C2: Atlas is installed at Q8_0. That contradicts; we have evidence that it's Q4_K_M, not Q8_0. So verdict contradicted? Actually claim says it's Q8_0 but evidence says Q4_K_M. So claim is unsupported/contradicted. We should say \"contradicted\" with source S2.\n\nC3: Atlas matches Terra quality. No benchmark compares Atlas with Sol or Terra. That doesn't give info about matching Terra. So we cannot support; no evidence. So verdict unsupported, but no sources? The format requires sources array. If unsupported, maybe empty array? But instruction says cite only sources that directly establish the verdict. For unsupported, there may be no source. Probably empty array.\n\nReturn JSON array with three objects."
+                },
+                {
+                  "type": "message",
+                  "content": "[\n  {\n    \"claimId\": \"C1\",\n    \"verdict\": \"supported\",\n    \"sources\": [\"S1\"]\n  },\n  {\n    \"claimId\": \"C2\",\n    \"verdict\": \"contradicted\",\n    \"sources\": [\"S2\"]\n  },\n  {\n    \"claimId\": \"C3\",\n    \"verdict\": \"unsupported\",\n    \"sources\": []\n  }\n]"
+                }
+              ],
+              "stats": {
+                "input_tokens": 221,
+                "total_output_tokens": 313,
+                "reasoning_output_tokens": 215,
+                "tokens_per_second": 30.15815495298556,
+                "time_to_first_token_seconds": 0.799859,
+                "model_load_time_seconds": 9.876
+              }
+            }
+          }
+        },
+        {
+          "taskId": "gpu_residency_reasoning",
+          "category": "reasoning",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "passed": 2,
+            "total": 2
+          },
+          "response": {
+            "text": "{\"models\":[\"Qwen\",\"DeepSeek\"],\"totalWeightGB\":11.5}",
+            "message": {
+              "content": "{\"models\":[\"Qwen\",\"DeepSeek\"],\"totalWeightGB\":11.5}",
+              "reasoning": "We need to pick two models (one per GPU) such that each fits in 7.0 GB (8-1). Choose pair maximizing sum weight <=14? Actually each individually <=7. So candidates: Qwen 6.5 fits, DeepSeek 5.0 fits, GPTOSS 12.1 no, Phi 8.4 no. So choose two among Qwen and DeepSeek. Sum =11.5 GB. Output JSON."
+            },
+            "reasoning": "We need to pick two models (one per GPU) such that each fits in 7.0 GB (8-1). Choose pair maximizing sum weight <=14? Actually each individually <=7. So candidates: Qwen 6.5 fits, DeepSeek 5.0 fits, GPTOSS 12.1 no, Phi 8.4 no. So choose two among Qwen and DeepSeek. Sum =11.5 GB. Output JSON.",
+            "wallMs": 15928,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 204,
+              "completion_tokens": 122,
+              "reasoning_tokens": 94
+            },
+            "stats": {
+              "input_tokens": 204,
+              "total_output_tokens": 122,
+              "reasoning_output_tokens": 94,
+              "tokens_per_second": 36.36732187464602,
+              "time_to_first_token_seconds": 0.786825,
+              "model_load_time_seconds": 11.755,
+              "time_to_first_token": 0.786825
+            },
+            "modelInfo": {
+              "model_instance_id": "openai/gpt-oss-20b:2"
+            },
+            "rawPayload": {
+              "model_instance_id": "openai/gpt-oss-20b:2",
+              "output": [
+                {
+                  "type": "reasoning",
+                  "content": "We need to pick two models (one per GPU) such that each fits in 7.0 GB (8-1). Choose pair maximizing sum weight <=14? Actually each individually <=7. So candidates: Qwen 6.5 fits, DeepSeek 5.0 fits, GPTOSS 12.1 no, Phi 8.4 no. So choose two among Qwen and DeepSeek. Sum =11.5 GB. Output JSON."
+                },
+                {
+                  "type": "message",
+                  "content": "{\"models\":[\"Qwen\",\"DeepSeek\"],\"totalWeightGB\":11.5}"
+                }
+              ],
+              "stats": {
+                "input_tokens": 204,
+                "total_output_tokens": 122,
+                "reasoning_output_tokens": 94,
+                "tokens_per_second": 36.36732187464602,
+                "time_to_first_token_seconds": 0.786825,
+                "model_load_time_seconds": 11.755
+              }
+            }
+          }
+        },
+        {
+          "taskId": "code_review_immutable_sort",
+          "category": "coding",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "expected": "B"
+          },
+          "response": {
+            "text": "B",
+            "message": {
+              "content": "B",
+              "reasoning": "Need to pick correct replacement that doesn't mutate state. Sorting mutates array. So need copy before sort. Option B uses spread to create new array then sort. That's correct. Also option D splice returns removed elements but also mutates original; not good. So answer B."
+            },
+            "reasoning": "Need to pick correct replacement that doesn't mutate state. Sorting mutates array. So need copy before sort. Option B uses spread to create new array then sort. That's correct. Also option D splice returns removed elements but also mutates original; not good. So answer B.",
+            "wallMs": 12464,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 166,
+              "completion_tokens": 66,
+              "reasoning_tokens": 55
+            },
+            "stats": {
+              "input_tokens": 166,
+              "total_output_tokens": 66,
+              "reasoning_output_tokens": 55,
+              "tokens_per_second": 37.13792631947957,
+              "time_to_first_token_seconds": 0.783944,
+              "model_load_time_seconds": 9.882,
+              "time_to_first_token": 0.783944
+            },
+            "modelInfo": {
+              "model_instance_id": "openai/gpt-oss-20b"
+            },
+            "rawPayload": {
+              "model_instance_id": "openai/gpt-oss-20b",
+              "output": [
+                {
+                  "type": "reasoning",
+                  "content": "Need to pick correct replacement that doesn't mutate state. Sorting mutates array. So need copy before sort. Option B uses spread to create new array then sort. That's correct. Also option D splice returns removed elements but also mutates original; not good. So answer B."
+                },
+                {
+                  "type": "message",
+                  "content": "B"
+                }
+              ],
+              "stats": {
+                "input_tokens": 166,
+                "total_output_tokens": 66,
+                "reasoning_output_tokens": 55,
+                "tokens_per_second": 37.13792631947957,
+                "time_to_first_token_seconds": 0.783944,
+                "model_load_time_seconds": 9.882
+              }
+            }
+          }
+        },
+        {
+          "taskId": "log_reconciliation",
+          "category": "extraction",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 0.3333333333333333,
+            "passed": 1,
+            "total": 3
+          },
+          "response": {
+            "text": "{\"produced\":[\"taskA\"],\"retry\":[\"taskB\"],\"verifiedTestCount\":42}",
+            "message": {
+              "content": "{\"produced\":[\"taskA\"],\"retry\":[\"taskB\"],\"verifiedTestCount\":42}",
+              "reasoning": "We need produce JSON with keys produced, retry, verifiedTestCount. From log: task A settled produced => produced [\"taskA\"]. Task B timed out and retry scheduled => retry [\"taskB\"]. Verified test count from evidence=tests:42 -> 42. Output JSON."
+            },
+            "reasoning": "We need produce JSON with keys produced, retry, verifiedTestCount. From log: task A settled produced => produced [\"taskA\"]. Task B timed out and retry scheduled => retry [\"taskB\"]. Verified test count from evidence=tests:42 -> 42. Output JSON.",
+            "wallMs": 13191,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 184,
+              "completion_tokens": 86,
+              "reasoning_tokens": 56
+            },
+            "stats": {
+              "input_tokens": 184,
+              "total_output_tokens": 86,
+              "reasoning_output_tokens": 56,
+              "tokens_per_second": 36.289706635699446,
+              "time_to_first_token_seconds": 0.788431,
+              "model_load_time_seconds": 10.002,
+              "time_to_first_token": 0.788431
+            },
+            "modelInfo": {
+              "model_instance_id": "openai/gpt-oss-20b:2"
+            },
+            "rawPayload": {
+              "model_instance_id": "openai/gpt-oss-20b:2",
+              "output": [
+                {
+                  "type": "reasoning",
+                  "content": "We need produce JSON with keys produced, retry, verifiedTestCount. From log: task A settled produced => produced [\"taskA\"]. Task B timed out and retry scheduled => retry [\"taskB\"]. Verified test count from evidence=tests:42 -> 42. Output JSON."
+                },
+                {
+                  "type": "message",
+                  "content": "{\"produced\":[\"taskA\"],\"retry\":[\"taskB\"],\"verifiedTestCount\":42}"
+                }
+              ],
+              "stats": {
+                "input_tokens": 184,
+                "total_output_tokens": 86,
+                "reasoning_output_tokens": 56,
+                "tokens_per_second": 36.289706635699446,
+                "time_to_first_token_seconds": 0.788431,
+                "model_load_time_seconds": 10.002
+              }
+            }
+          }
+        },
+        {
+          "taskId": "insufficient_evidence_abstention",
+          "category": "safety",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "expected": "INSUFFICIENT_EVIDENCE"
+          },
+          "response": {
+            "text": "INSUFFICIENT_EVIDENCE",
+            "message": {
+              "content": "INSUFFICIENT_EVIDENCE",
+              "reasoning": "We must output INSUFFICIENT_EVIDENCE."
+            },
+            "reasoning": "We must output INSUFFICIENT_EVIDENCE.",
+            "wallMs": 11228,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 128,
+              "completion_tokens": 28,
+              "reasoning_tokens": 11
+            },
+            "stats": {
+              "input_tokens": 128,
+              "total_output_tokens": 28,
+              "reasoning_output_tokens": 11,
+              "tokens_per_second": 37.92948367135728,
+              "time_to_first_token_seconds": 0.6988049999999999,
+              "model_load_time_seconds": 9.762,
+              "time_to_first_token": 0.6988049999999999
+            },
+            "modelInfo": {
+              "model_instance_id": "openai/gpt-oss-20b"
+            },
+            "rawPayload": {
+              "model_instance_id": "openai/gpt-oss-20b",
+              "output": [
+                {
+                  "type": "reasoning",
+                  "content": "We must output INSUFFICIENT_EVIDENCE."
+                },
+                {
+                  "type": "message",
+                  "content": "INSUFFICIENT_EVIDENCE"
+                }
+              ],
+              "stats": {
+                "input_tokens": 128,
+                "total_output_tokens": 28,
+                "reasoning_output_tokens": 11,
+                "tokens_per_second": 37.92948367135728,
+                "time_to_first_token_seconds": 0.6988049999999999,
+                "model_load_time_seconds": 9.762
+              }
+            }
+          }
+        },
+        {
+          "taskId": "long_context_recall",
+          "category": "long_context",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "passed": 3,
+            "total": 3
+          },
+          "response": {
+            "text": "{\"record\":173,\"launchKey\":\"ORBITAL_CEDAR_731\",\"owner\":\"qa\"}",
+            "message": {
+              "content": "{\"record\":173,\"launchKey\":\"ORBITAL_CEDAR_731\",\"owner\":\"qa\"}",
+              "reasoning": "Only record with status verified is 173."
+            },
+            "reasoning": "Only record with status verified is 173.",
+            "wallMs": 16123,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 6369,
+              "completion_tokens": 40,
+              "reasoning_tokens": 9
+            },
+            "stats": {
+              "input_tokens": 6369,
+              "total_output_tokens": 40,
+              "reasoning_output_tokens": 9,
+              "tokens_per_second": 36.783638637534025,
+              "time_to_first_token_seconds": 5.187292,
+              "model_load_time_seconds": 9.787,
+              "time_to_first_token": 5.187292
+            },
+            "modelInfo": {
+              "model_instance_id": "openai/gpt-oss-20b:2"
+            },
+            "rawPayload": {
+              "model_instance_id": "openai/gpt-oss-20b:2",
+              "output": [
+                {
+                  "type": "reasoning",
+                  "content": "Only record with status verified is 173."
+                },
+                {
+                  "type": "message",
+                  "content": "{\"record\":173,\"launchKey\":\"ORBITAL_CEDAR_731\",\"owner\":\"qa\"}"
+                }
+              ],
+              "stats": {
+                "input_tokens": 6369,
+                "total_output_tokens": 40,
+                "reasoning_output_tokens": 9,
+                "tokens_per_second": 36.783638637534025,
+                "time_to_first_token_seconds": 5.187292,
+                "model_load_time_seconds": 9.787
+              }
+            }
+          }
+        },
+        {
+          "taskId": "critic_candidate_selection",
+          "category": "critique",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "expected": "B"
+          },
+          "response": {
+            "text": "B",
+            "message": {
+              "content": "B",
+              "reasoning": "We must return exactly A, B, or C. The instruction: \"Task required a source-grounded answer and abstention when evidence is missing.\" So we should choose B because evidence missing."
+            },
+            "reasoning": "We must return exactly A, B, or C. The instruction: \"Task required a source-grounded answer and abstention when evidence is missing.\" So we should choose B because evidence missing.",
+            "wallMs": 12167,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 156,
+              "completion_tokens": 50,
+              "reasoning_tokens": 39
+            },
+            "stats": {
+              "input_tokens": 156,
+              "total_output_tokens": 50,
+              "reasoning_output_tokens": 39,
+              "tokens_per_second": 36.141138373576496,
+              "time_to_first_token_seconds": 0.696932,
+              "model_load_time_seconds": 10.057,
+              "time_to_first_token": 0.696932
+            },
+            "modelInfo": {
+              "model_instance_id": "openai/gpt-oss-20b"
+            },
+            "rawPayload": {
+              "model_instance_id": "openai/gpt-oss-20b",
+              "output": [
+                {
+                  "type": "reasoning",
+                  "content": "We must return exactly A, B, or C. The instruction: \"Task required a source-grounded answer and abstention when evidence is missing.\" So we should choose B because evidence missing."
+                },
+                {
+                  "type": "message",
+                  "content": "B"
+                }
+              ],
+              "stats": {
+                "input_tokens": 156,
+                "total_output_tokens": 50,
+                "reasoning_output_tokens": 39,
+                "tokens_per_second": 36.141138373576496,
+                "time_to_first_token_seconds": 0.696932,
+                "model_load_time_seconds": 10.057
+              }
+            }
+          }
+        },
+        {
+          "taskId": "instruction_exact_token",
+          "category": "instruction",
+          "repeat": 1,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "expected": "LOOP_OK"
+          },
+          "response": {
+            "text": "LOOP_OK",
+            "message": {
+              "content": "LOOP_OK",
+              "reasoning": "User wants \"LOOP_OK\"."
+            },
+            "reasoning": "User wants \"LOOP_OK\".",
+            "wallMs": 11224,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 104,
+              "completion_tokens": 20,
+              "reasoning_tokens": 7
+            },
+            "stats": {
+              "input_tokens": 104,
+              "total_output_tokens": 20,
+              "reasoning_output_tokens": 7,
+              "tokens_per_second": 37.246167369377694,
+              "time_to_first_token_seconds": 0.644438,
+              "model_load_time_seconds": 10.02,
+              "time_to_first_token": 0.644438
+            },
+            "modelInfo": {
+              "model_instance_id": "openai/gpt-oss-20b:2"
+            },
+            "rawPayload": {
+              "model_instance_id": "openai/gpt-oss-20b:2",
+              "output": [
+                {
+                  "type": "reasoning",
+                  "content": "User wants \"LOOP_OK\"."
+                },
+                {
+                  "type": "message",
+                  "content": "LOOP_OK"
+                }
+              ],
+              "stats": {
+                "input_tokens": 104,
+                "total_output_tokens": 20,
+                "reasoning_output_tokens": 7,
+                "tokens_per_second": 37.246167369377694,
+                "time_to_first_token_seconds": 0.644438,
+                "model_load_time_seconds": 10.02
+              }
+            }
+          }
+        },
+        {
+          "taskId": "director_dependency_envelope",
+          "category": "planning",
+          "repeat": 1,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "passed": 7,
+            "total": 7
+          },
+          "response": {
+            "text": "{\"status\":\"continue\",\"tasks\":[{\"id\":\"task1\",\"role\":\"researcher\",\"dependsOn\":[],\"acceptanceEvidence\":[\"public claim verified from official source\"]},{\"id\":\"task2\",\"role\":\"developer\",\"dependsOn\":[\"task1\"],\"acceptanceEvidence\":[\"bounded fix implemented based on verification\"]},{\"id\":\"task3\",\"role\":\"qa\",\"dependsOn\":[\"task2\"],\"acceptanceEvidence\":[\"independent QA of the fix completed\"]}]}",
+            "message": {
+              "content": "{\"status\":\"continue\",\"tasks\":[{\"id\":\"task1\",\"role\":\"researcher\",\"dependsOn\":[],\"acceptanceEvidence\":[\"public claim verified from official source\"]},{\"id\":\"task2\",\"role\":\"developer\",\"dependsOn\":[\"task1\"],\"acceptanceEvidence\":[\"bounded fix implemented based on verification\"]},{\"id\":\"task3\",\"role\":\"qa\",\"dependsOn\":[\"task2\"],\"acceptanceEvidence\":[\"independent QA of the fix completed\"]}]}",
+              "reasoning": "Need to output JSON with status continue and tasks array. Provide three tasks: research, developer, qa. Each with id strings unique. acceptanceEvidence placeholders."
+            },
+            "reasoning": "Need to output JSON with status continue and tasks array. Provide three tasks: research, developer, qa. Each with id strings unique. acceptanceEvidence placeholders.",
+            "wallMs": 15108,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 196,
+              "completion_tokens": 133,
+              "reasoning_tokens": 31
+            },
+            "stats": {
+              "input_tokens": 196,
+              "total_output_tokens": 133,
+              "reasoning_output_tokens": 31,
+              "tokens_per_second": 35.23151742675354,
+              "time_to_first_token_seconds": 0.767325,
+              "model_load_time_seconds": 10.528,
+              "time_to_first_token": 0.767325
+            },
+            "modelInfo": {
+              "model_instance_id": "openai/gpt-oss-20b"
+            },
+            "rawPayload": {
+              "model_instance_id": "openai/gpt-oss-20b",
+              "output": [
+                {
+                  "type": "reasoning",
+                  "content": "Need to output JSON with status continue and tasks array. Provide three tasks: research, developer, qa. Each with id strings unique. acceptanceEvidence placeholders."
+                },
+                {
+                  "type": "message",
+                  "content": "{\"status\":\"continue\",\"tasks\":[{\"id\":\"task1\",\"role\":\"researcher\",\"dependsOn\":[],\"acceptanceEvidence\":[\"public claim verified from official source\"]},{\"id\":\"task2\",\"role\":\"developer\",\"dependsOn\":[\"task1\"],\"acceptanceEvidence\":[\"bounded fix implemented based on verification\"]},{\"id\":\"task3\",\"role\":\"qa\",\"dependsOn\":[\"task2\"],\"acceptanceEvidence\":[\"independent QA of the fix completed\"]}]}"
+                }
+              ],
+              "stats": {
+                "input_tokens": 196,
+                "total_output_tokens": 133,
+                "reasoning_output_tokens": 31,
+                "tokens_per_second": 35.23151742675354,
+                "time_to_first_token_seconds": 0.767325,
+                "model_load_time_seconds": 10.528
+              }
+            }
+          }
+        },
+        {
+          "taskId": "claim_grounding_matrix",
+          "category": "grounding",
+          "repeat": 1,
+          "status": "completed",
+          "score": {
+            "score": 0.8,
+            "passed": 4,
+            "total": 5
+          },
+          "response": {
+            "text": "[\n  {\n    \"claimId\": \"C1\",\n    \"verdict\": \"supported\",\n    \"sources\": [\"S1\"]\n  },\n  {\n    \"claimId\": \"C2\",\n    \"verdict\": \"contradicted\",\n    \"sources\": [\"S2\"]\n  },\n  {\n    \"claimId\": \"C3\",\n    \"verdict\": \"unsupported\",\n    \"sources\": []\n  }\n]",
+            "message": {
+              "content": "[\n  {\n    \"claimId\": \"C1\",\n    \"verdict\": \"supported\",\n    \"sources\": [\"S1\"]\n  },\n  {\n    \"claimId\": \"C2\",\n    \"verdict\": \"contradicted\",\n    \"sources\": [\"S2\"]\n  },\n  {\n    \"claimId\": \"C3\",\n    \"verdict\": \"unsupported\",\n    \"sources\": []\n  }\n]",
+              "reasoning": "We need to evaluate claims.\n\nGiven S1 says \"Runtime Atlas supports JSON-schema constrained output and tool calls.\" So claim C1: Atlas supports tool calls => supported, source S1.\n\nC2: Atlas is installed at Q8_0. But S2 says quantization is Q4_K_M. So contradicts. Verdict contradicted, source S2.\n\nC3: Atlas matches Terra quality. No evidence; S3 says no benchmark compares Atlas with Sol or Terra. That doesn't support match. So unsupported? Since not supported nor contradicted. So verdict unsupported, source none? But must list sources that directly establish verdict. For unsupported we can leave empty array? Probably include no sources. But format requires \"sources\":[\"S#\"]. If none, maybe empty array. We'll put [].\n\nReturn JSON array with three objects."
+            },
+            "reasoning": "We need to evaluate claims.\n\nGiven S1 says \"Runtime Atlas supports JSON-schema constrained output and tool calls.\" So claim C1: Atlas supports tool calls => supported, source S1.\n\nC2: Atlas is installed at Q8_0. But S2 says quantization is Q4_K_M. So contradicts. Verdict contradicted, source S2.\n\nC3: Atlas matches Terra quality. No evidence; S3 says no benchmark compares Atlas with Sol or Terra. That doesn't support match. So unsupported? Since not supported nor contradicted. So verdict unsupported, source none? But must list sources that directly establish verdict. For unsupported we can leave empty array? Probably include no sources. But format requires \"sources\":[\"S#\"]. If none, maybe empty array. We'll put [].\n\nReturn JSON array with three objects.",
+            "wallMs": 20212,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 221,
+              "completion_tokens": 266,
+              "reasoning_tokens": 168
+            },
+            "stats": {
+              "input_tokens": 221,
+              "total_output_tokens": 266,
+              "reasoning_output_tokens": 168,
+              "tokens_per_second": 32.93671828692413,
+              "time_to_first_token_seconds": 2.003038,
+              "model_load_time_seconds": 10.093,
+              "time_to_first_token": 2.003038
+            },
+            "modelInfo": {
+              "model_instance_id": "openai/gpt-oss-20b:2"
+            },
+            "rawPayload": {
+              "model_instance_id": "openai/gpt-oss-20b:2",
+              "output": [
+                {
+                  "type": "reasoning",
+                  "content": "We need to evaluate claims.\n\nGiven S1 says \"Runtime Atlas supports JSON-schema constrained output and tool calls.\" So claim C1: Atlas supports tool calls => supported, source S1.\n\nC2: Atlas is installed at Q8_0. But S2 says quantization is Q4_K_M. So contradicts. Verdict contradicted, source S2.\n\nC3: Atlas matches Terra quality. No evidence; S3 says no benchmark compares Atlas with Sol or Terra. That doesn't support match. So unsupported? Since not supported nor contradicted. So verdict unsupported, source none? But must list sources that directly establish verdict. For unsupported we can leave empty array? Probably include no sources. But format requires \"sources\":[\"S#\"]. If none, maybe empty array. We'll put [].\n\nReturn JSON array with three objects."
+                },
+                {
+                  "type": "message",
+                  "content": "[\n  {\n    \"claimId\": \"C1\",\n    \"verdict\": \"supported\",\n    \"sources\": [\"S1\"]\n  },\n  {\n    \"claimId\": \"C2\",\n    \"verdict\": \"contradicted\",\n    \"sources\": [\"S2\"]\n  },\n  {\n    \"claimId\": \"C3\",\n    \"verdict\": \"unsupported\",\n    \"sources\": []\n  }\n]"
+                }
+              ],
+              "stats": {
+                "input_tokens": 221,
+                "total_output_tokens": 266,
+                "reasoning_output_tokens": 168,
+                "tokens_per_second": 32.93671828692413,
+                "time_to_first_token_seconds": 2.003038,
+                "model_load_time_seconds": 10.093
+              }
+            }
+          }
+        },
+        {
+          "taskId": "gpu_residency_reasoning",
+          "category": "reasoning",
+          "repeat": 1,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "passed": 2,
+            "total": 2
+          },
+          "response": {
+            "text": "{\"models\":[\"Qwen\",\"DeepSeek\"],\"totalWeightGB\":11.5}",
+            "message": {
+              "content": "{\"models\":[\"Qwen\",\"DeepSeek\"],\"totalWeightGB\":11.5}",
+              "reasoning": "We need to pick two models (one per GPU) such that each fits in 7.0 GB (8-1). Choose pair maximizing sum weight <=14? Actually each individually <=7. So candidates: Qwen 6.5 fits, DeepSeek 5.0 fits, GPTOSS 12.1 no, Phi 8.4 no. So choose two among Qwen and DeepSeek. Sum =11.5 GB. Output JSON."
+            },
+            "reasoning": "We need to pick two models (one per GPU) such that each fits in 7.0 GB (8-1). Choose pair maximizing sum weight <=14? Actually each individually <=7. So candidates: Qwen 6.5 fits, DeepSeek 5.0 fits, GPTOSS 12.1 no, Phi 8.4 no. So choose two among Qwen and DeepSeek. Sum =11.5 GB. Output JSON.",
+            "wallMs": 14164,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 204,
+              "completion_tokens": 122,
+              "reasoning_tokens": 94
+            },
+            "stats": {
+              "input_tokens": 204,
+              "total_output_tokens": 122,
+              "reasoning_output_tokens": 94,
+              "tokens_per_second": 37.11766146563042,
+              "time_to_first_token_seconds": 0.829412,
+              "model_load_time_seconds": 10.027,
+              "time_to_first_token": 0.829412
+            },
+            "modelInfo": {
+              "model_instance_id": "openai/gpt-oss-20b"
+            },
+            "rawPayload": {
+              "model_instance_id": "openai/gpt-oss-20b",
+              "output": [
+                {
+                  "type": "reasoning",
+                  "content": "We need to pick two models (one per GPU) such that each fits in 7.0 GB (8-1). Choose pair maximizing sum weight <=14? Actually each individually <=7. So candidates: Qwen 6.5 fits, DeepSeek 5.0 fits, GPTOSS 12.1 no, Phi 8.4 no. So choose two among Qwen and DeepSeek. Sum =11.5 GB. Output JSON."
+                },
+                {
+                  "type": "message",
+                  "content": "{\"models\":[\"Qwen\",\"DeepSeek\"],\"totalWeightGB\":11.5}"
+                }
+              ],
+              "stats": {
+                "input_tokens": 204,
+                "total_output_tokens": 122,
+                "reasoning_output_tokens": 94,
+                "tokens_per_second": 37.11766146563042,
+                "time_to_first_token_seconds": 0.829412,
+                "model_load_time_seconds": 10.027
+              }
+            }
+          }
+        },
+        {
+          "taskId": "code_review_immutable_sort",
+          "category": "coding",
+          "repeat": 1,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "expected": "B"
+          },
+          "response": {
+            "text": "B",
+            "message": {
+              "content": "B",
+              "reasoning": "Need to pick correct replacement that doesn't mutate state. Sorting mutates array. So need copy before sort. Option B uses spread to create new array then sort. That's correct. Also option D splice returns removed elements but also mutates original; not good. So answer B."
+            },
+            "reasoning": "Need to pick correct replacement that doesn't mutate state. Sorting mutates array. So need copy before sort. Option B uses spread to create new array then sort. That's correct. Also option D splice returns removed elements but also mutates original; not good. So answer B.",
+            "wallMs": 11583,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 166,
+              "completion_tokens": 66,
+              "reasoning_tokens": 55
+            },
+            "stats": {
+              "input_tokens": 166,
+              "total_output_tokens": 66,
+              "reasoning_output_tokens": 55,
+              "tokens_per_second": 37.923231886772726,
+              "time_to_first_token_seconds": 0.781572,
+              "model_load_time_seconds": 9.032,
+              "time_to_first_token": 0.781572
+            },
+            "modelInfo": {
+              "model_instance_id": "openai/gpt-oss-20b:2"
+            },
+            "rawPayload": {
+              "model_instance_id": "openai/gpt-oss-20b:2",
+              "output": [
+                {
+                  "type": "reasoning",
+                  "content": "Need to pick correct replacement that doesn't mutate state. Sorting mutates array. So need copy before sort. Option B uses spread to create new array then sort. That's correct. Also option D splice returns removed elements but also mutates original; not good. So answer B."
+                },
+                {
+                  "type": "message",
+                  "content": "B"
+                }
+              ],
+              "stats": {
+                "input_tokens": 166,
+                "total_output_tokens": 66,
+                "reasoning_output_tokens": 55,
+                "tokens_per_second": 37.923231886772726,
+                "time_to_first_token_seconds": 0.781572,
+                "model_load_time_seconds": 9.032
+              }
+            }
+          }
+        },
+        {
+          "taskId": "log_reconciliation",
+          "category": "extraction",
+          "repeat": 1,
+          "status": "completed",
+          "score": {
+            "score": 0.3333333333333333,
+            "passed": 1,
+            "total": 3
+          },
+          "response": {
+            "text": "{\"produced\":[\"taskA\"],\"retry\":[\"taskB\"],\"verifiedTestCount\":42}",
+            "message": {
+              "content": "{\"produced\":[\"taskA\"],\"retry\":[\"taskB\"],\"verifiedTestCount\":42}",
+              "reasoning": "We need produce JSON with keys produced, retry, verifiedTestCount. From log: task A settled produced => produced [\"taskA\"]. Task B timed out and retry scheduled => retry [\"taskB\"]. Verified test count from evidence=tests:42 -> 42. Output JSON."
+            },
+            "reasoning": "We need produce JSON with keys produced, retry, verifiedTestCount. From log: task A settled produced => produced [\"taskA\"]. Task B timed out and retry scheduled => retry [\"taskB\"]. Verified test count from evidence=tests:42 -> 42. Output JSON.",
+            "wallMs": 12366,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 184,
+              "completion_tokens": 86,
+              "reasoning_tokens": 56
+            },
+            "stats": {
+              "input_tokens": 184,
+              "total_output_tokens": 86,
+              "reasoning_output_tokens": 56,
+              "tokens_per_second": 37.999091556601854,
+              "time_to_first_token_seconds": 0.77662,
+              "model_load_time_seconds": 9.3,
+              "time_to_first_token": 0.77662
+            },
+            "modelInfo": {
+              "model_instance_id": "openai/gpt-oss-20b"
+            },
+            "rawPayload": {
+              "model_instance_id": "openai/gpt-oss-20b",
+              "output": [
+                {
+                  "type": "reasoning",
+                  "content": "We need produce JSON with keys produced, retry, verifiedTestCount. From log: task A settled produced => produced [\"taskA\"]. Task B timed out and retry scheduled => retry [\"taskB\"]. Verified test count from evidence=tests:42 -> 42. Output JSON."
+                },
+                {
+                  "type": "message",
+                  "content": "{\"produced\":[\"taskA\"],\"retry\":[\"taskB\"],\"verifiedTestCount\":42}"
+                }
+              ],
+              "stats": {
+                "input_tokens": 184,
+                "total_output_tokens": 86,
+                "reasoning_output_tokens": 56,
+                "tokens_per_second": 37.999091556601854,
+                "time_to_first_token_seconds": 0.77662,
+                "model_load_time_seconds": 9.3
+              }
+            }
+          }
+        },
+        {
+          "taskId": "insufficient_evidence_abstention",
+          "category": "safety",
+          "repeat": 1,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "expected": "INSUFFICIENT_EVIDENCE"
+          },
+          "response": {
+            "text": "INSUFFICIENT_EVIDENCE",
+            "message": {
+              "content": "INSUFFICIENT_EVIDENCE",
+              "reasoning": "We must output INSUFFICIENT_EVIDENCE."
+            },
+            "reasoning": "We must output INSUFFICIENT_EVIDENCE.",
+            "wallMs": 11479,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 128,
+              "completion_tokens": 28,
+              "reasoning_tokens": 11
+            },
+            "stats": {
+              "input_tokens": 128,
+              "total_output_tokens": 28,
+              "reasoning_output_tokens": 11,
+              "tokens_per_second": 38.733470837154805,
+              "time_to_first_token_seconds": 0.69214,
+              "model_load_time_seconds": 10.038,
+              "time_to_first_token": 0.69214
+            },
+            "modelInfo": {
+              "model_instance_id": "openai/gpt-oss-20b:2"
+            },
+            "rawPayload": {
+              "model_instance_id": "openai/gpt-oss-20b:2",
+              "output": [
+                {
+                  "type": "reasoning",
+                  "content": "We must output INSUFFICIENT_EVIDENCE."
+                },
+                {
+                  "type": "message",
+                  "content": "INSUFFICIENT_EVIDENCE"
+                }
+              ],
+              "stats": {
+                "input_tokens": 128,
+                "total_output_tokens": 28,
+                "reasoning_output_tokens": 11,
+                "tokens_per_second": 38.733470837154805,
+                "time_to_first_token_seconds": 0.69214,
+                "model_load_time_seconds": 10.038
+              }
+            }
+          }
+        },
+        {
+          "taskId": "long_context_recall",
+          "category": "long_context",
+          "repeat": 1,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "passed": 3,
+            "total": 3
+          },
+          "response": {
+            "text": "{\"record\":173,\"launchKey\":\"ORBITAL_CEDAR_731\",\"owner\":\"qa\"}",
+            "message": {
+              "content": "{\"record\":173,\"launchKey\":\"ORBITAL_CEDAR_731\",\"owner\":\"qa\"}",
+              "reasoning": "Only record with status verified is 173."
+            },
+            "reasoning": "Only record with status verified is 173.",
+            "wallMs": 17002,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 6369,
+              "completion_tokens": 40,
+              "reasoning_tokens": 9
+            },
+            "stats": {
+              "input_tokens": 6369,
+              "total_output_tokens": 40,
+              "reasoning_output_tokens": 9,
+              "tokens_per_second": 37.05515288956082,
+              "time_to_first_token_seconds": 5.24453,
+              "model_load_time_seconds": 10.601,
+              "time_to_first_token": 5.24453
+            },
+            "modelInfo": {
+              "model_instance_id": "openai/gpt-oss-20b"
+            },
+            "rawPayload": {
+              "model_instance_id": "openai/gpt-oss-20b",
+              "output": [
+                {
+                  "type": "reasoning",
+                  "content": "Only record with status verified is 173."
+                },
+                {
+                  "type": "message",
+                  "content": "{\"record\":173,\"launchKey\":\"ORBITAL_CEDAR_731\",\"owner\":\"qa\"}"
+                }
+              ],
+              "stats": {
+                "input_tokens": 6369,
+                "total_output_tokens": 40,
+                "reasoning_output_tokens": 9,
+                "tokens_per_second": 37.05515288956082,
+                "time_to_first_token_seconds": 5.24453,
+                "model_load_time_seconds": 10.601
+              }
+            }
+          }
+        },
+        {
+          "taskId": "critic_candidate_selection",
+          "category": "critique",
+          "repeat": 1,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "expected": "B"
+          },
+          "response": {
+            "text": "B",
+            "message": {
+              "content": "B",
+              "reasoning": "We must return exactly A, B, or C. The instruction: \"Task required a source-grounded answer and abstention when evidence is missing.\" So we should choose B because evidence missing."
+            },
+            "reasoning": "We must return exactly A, B, or C. The instruction: \"Task required a source-grounded answer and abstention when evidence is missing.\" So we should choose B because evidence missing.",
+            "wallMs": 12832,
+            "finishReason": "",
+            "usage": {
+              "prompt_tokens": 156,
+              "completion_tokens": 50,
+              "reasoning_tokens": 39
+            },
+            "stats": {
+              "input_tokens": 156,
+              "total_output_tokens": 50,
+              "reasoning_output_tokens": 39,
+              "tokens_per_second": 25.638658995579895,
+              "time_to_first_token_seconds": 0.699345,
+              "model_load_time_seconds": 10.159,
+              "time_to_first_token": 0.699345
+            },
+            "modelInfo": {
+              "model_instance_id": "openai/gpt-oss-20b:2"
+            },
+            "rawPayload": {
+              "model_instance_id": "openai/gpt-oss-20b:2",
+              "output": [
+                {
+                  "type": "reasoning",
+                  "content": "We must return exactly A, B, or C. The instruction: \"Task required a source-grounded answer and abstention when evidence is missing.\" So we should choose B because evidence missing."
+                },
+                {
+                  "type": "message",
+                  "content": "B"
+                }
+              ],
+              "stats": {
+                "input_tokens": 156,
+                "total_output_tokens": 50,
+                "reasoning_output_tokens": 39,
+                "tokens_per_second": 25.638658995579895,
+                "time_to_first_token_seconds": 0.699345,
+                "model_load_time_seconds": 10.159
+              }
+            }
+          }
+        }
+      ],
+      "summary": {
+        "score": 16.266666666666666,
+        "possible": 18,
+        "passRate": 0.9037037037037037,
+        "completedCases": 18,
+        "failedCases": 0,
+        "meanTokensPerSecond": 35.46,
+        "reasoningTokens": 987,
+        "outputTokens": 1669,
+        "totalWallSeconds": 254.38
+      },
+      "loadMode": "native-v1-autoload",
+      "hardwareLoaded": [
+        {
+          "index": 0,
+          "name": "NVIDIA GeForce RTX 3070",
+          "totalMiB": 8192,
+          "usedMiB": 6762,
+          "utilizationPercent": 37
+        },
+        {
+          "index": 1,
+          "name": "NVIDIA GeForce GTX 1080",
+          "totalMiB": 8192,
+          "usedMiB": 12,
+          "utilizationPercent": 0
+        }
+      ],
+      "hardwareAfter": [
+        {
+          "index": 0,
+          "name": "NVIDIA GeForce RTX 3070",
+          "totalMiB": 8192,
+          "usedMiB": 6818,
+          "utilizationPercent": 30
+        },
+        {
+          "index": 1,
+          "name": "NVIDIA GeForce GTX 1080",
+          "totalMiB": 8192,
+          "usedMiB": 12,
+          "utilizationPercent": 0
+        }
+      ]
+    }
+  ],
+  "ranking": [
+    {
+      "id": "openai/gpt-oss-20b@low",
+      "model": "openai/gpt-oss-20b",
+      "reasoning": "low",
+      "score": 16.266666666666666,
+      "possible": 18,
+      "passRate": 0.9037037037037037,
+      "completedCases": 18,
+      "failedCases": 0,
+      "meanTokensPerSecond": 35.46,
+      "reasoningTokens": 987,
+      "outputTokens": 1669,
+      "totalWallSeconds": 254.38
+    },
+    {
+      "id": "qwen/qwen3.5-9b@off",
+      "model": "qwen/qwen3.5-9b",
+      "reasoning": "off",
+      "score": 14.971428571428572,
+      "possible": 18,
+      "passRate": 0.8317460317460318,
+      "completedCases": 18,
+      "failedCases": 0,
+      "meanTokensPerSecond": 28.82,
+      "reasoningTokens": 0,
+      "outputTokens": 474,
+      "totalWallSeconds": 150.28
+    },
+    {
+      "id": "deepseek/deepseek-r1-0528-qwen3-8b@off",
+      "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+      "reasoning": "off",
+      "score": 0,
+      "possible": 18,
+      "passRate": 0,
+      "completedCases": 0,
+      "failedCases": 18,
+      "meanTokensPerSecond": 0,
+      "reasoningTokens": 0,
+      "outputTokens": 0,
+      "totalWallSeconds": 0.15
+    }
+  ],
+  "hardwareAfter": [
+    {
+      "index": 0,
+      "name": "NVIDIA GeForce RTX 3070",
+      "totalMiB": 8192,
+      "usedMiB": 564,
+      "utilizationPercent": 24
+    },
+    {
+      "index": 1,
+      "name": "NVIDIA GeForce GTX 1080",
+      "totalMiB": 8192,
+      "usedMiB": 12,
+      "utilizationPercent": 0
+    }
+  ]
+}

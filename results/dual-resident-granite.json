@@ -1,0 +1,1004 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-08-23T05:56:27.490Z",
+  "finishedAt": "2026-08-23T05:57:08.378Z",
+  "options": {
+    "stage": "screen",
+    "repeats": 1,
+    "context": 8192,
+    "manageModels": false,
+    "caseTimeoutMs": 240000,
+    "tokenScale": 4,
+    "lms": "lms.exe",
+    "apiPath": "/v1/chat/completions",
+    "models": [
+      "granite-4.1-8b"
+    ],
+    "restore": "",
+    "output": "results/dual-resident-granite.json"
+  },
+  "environment": {
+    "platform": "win32",
+    "release": "10.0.26200",
+    "arch": "x64",
+    "cpu": "AMD Ryzen 5 7600X 6-Core Processor             ",
+    "node": "v24.19.0",
+    "apiBase": "http://127.0.0.1:1235",
+    "apiPath": "/v1/chat/completions"
+  },
+  "taskSuite": {
+    "hashSha256": "a0308ecc0a9eeba08de236ff65c3d5a756aaf9c568cfe721687fb9df26189ea2",
+    "stage": "screen",
+    "taskIds": [
+      "instruction_exact_token",
+      "director_dependency_envelope",
+      "native_tool_read_file",
+      "claim_grounding_matrix",
+      "gpu_residency_reasoning",
+      "code_review_immutable_sort",
+      "log_reconciliation",
+      "insufficient_evidence_abstention",
+      "long_context_recall",
+      "critic_candidate_selection"
+    ],
+    "repeats": 1
+  },
+  "inventory": [
+    {
+      "type": "llm",
+      "modelKey": "mistralai_devstral-small-2-24b-instruct-2512",
+      "format": "gguf",
+      "displayName": "Mistralai Devstral Small 2 24B Instruct 2512",
+      "publisher": "bartowski",
+      "path": "bartowski/mistralai_Devstral-Small-2-24B-Instruct-2512-GGUF/mistralai_Devstral-Small-2-24B-Instruct-2512-Q3_K_M.gguf",
+      "sizeBytes": 11474611072,
+      "indexedModelIdentifier": "bartowski/mistralai_Devstral-Small-2-24B-Instruct-2512-GGUF/mistralai_Devstral-Small-2-24B-Instruct-2512-Q3_K_M.gguf",
+      "deviceIdentifier": null,
+      "paramsString": "24B",
+      "architecture": "mistral3",
+      "quantization": {
+        "name": "Q3_K_M",
+        "bits": 3
+      },
+      "vision": false,
+      "trainedForToolUse": true,
+      "maxContextLength": 393216
+    },
+    {
+      "type": "llm",
+      "modelKey": "granite-4.1-8b",
+      "format": "gguf",
+      "displayName": "Granite 4.1 8B",
+      "publisher": "ibm-granite",
+      "path": "ibm-granite/granite-4.1-8b-GGUF/granite-4.1-8b-Q4_K_M.gguf",
+      "sizeBytes": 5347914400,
+      "indexedModelIdentifier": "ibm-granite/granite-4.1-8b-GGUF/granite-4.1-8b-Q4_K_M.gguf",
+      "deviceIdentifier": null,
+      "paramsString": "8B",
+      "architecture": "granite",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "vision": false,
+      "trainedForToolUse": true,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "microsoft/phi-4-reasoning-plus",
+      "format": "gguf",
+      "displayName": "Phi 4 Reasoning Plus",
+      "publisher": "microsoft",
+      "path": "microsoft/phi-4-reasoning-plus",
+      "sizeBytes": 9053139092,
+      "indexedModelIdentifier": "microsoft/phi-4-reasoning-plus",
+      "deviceIdentifier": null,
+      "paramsString": "15B",
+      "architecture": "phi3",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "microsoft/phi-4-reasoning-plus@q4_k_m"
+      ],
+      "selectedVariant": "microsoft/phi-4-reasoning-plus@q4_k_m",
+      "vision": false,
+      "trainedForToolUse": false,
+      "maxContextLength": 32768
+    },
+    {
+      "type": "llm",
+      "modelKey": "microsoft/phi-4-mini-reasoning",
+      "format": "gguf",
+      "displayName": "Phi 4 Mini Reasoning",
+      "publisher": "microsoft",
+      "path": "microsoft/phi-4-mini-reasoning",
+      "sizeBytes": 2491897541,
+      "indexedModelIdentifier": "microsoft/phi-4-mini-reasoning",
+      "deviceIdentifier": null,
+      "paramsString": "3B",
+      "architecture": "phi3",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "microsoft/phi-4-mini-reasoning@q4_k_m"
+      ],
+      "selectedVariant": "microsoft/phi-4-mini-reasoning@q4_k_m",
+      "vision": false,
+      "trainedForToolUse": false,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "qwen/qwen3-14b",
+      "format": "gguf",
+      "displayName": "Qwen3 14B",
+      "publisher": "qwen",
+      "path": "qwen/qwen3-14b",
+      "sizeBytes": 9001931568,
+      "indexedModelIdentifier": "qwen/qwen3-14b",
+      "deviceIdentifier": null,
+      "paramsString": "14B",
+      "architecture": "qwen3",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "qwen/qwen3-14b@q4_k_m"
+      ],
+      "selectedVariant": "qwen/qwen3-14b@q4_k_m",
+      "vision": false,
+      "trainedForToolUse": true,
+      "maxContextLength": 32768
+    },
+    {
+      "type": "llm",
+      "modelKey": "google/gemma-4-e2b",
+      "format": "gguf",
+      "displayName": "Gemma 4 E2B",
+      "publisher": "google",
+      "path": "google/gemma-4-e2b",
+      "sizeBytes": 4414810282,
+      "indexedModelIdentifier": "google/gemma-4-e2b",
+      "deviceIdentifier": null,
+      "paramsString": "4.6B",
+      "architecture": "gemma4",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "google/gemma-4-e2b@q4_k_m"
+      ],
+      "selectedVariant": "google/gemma-4-e2b@q4_k_m",
+      "vision": true,
+      "trainedForToolUse": false,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "google/gemma-4-e4b",
+      "format": "gguf",
+      "displayName": "Gemma 4 E4B",
+      "publisher": "google",
+      "path": "google/gemma-4-e4b",
+      "sizeBytes": 6326938154,
+      "indexedModelIdentifier": "google/gemma-4-e4b",
+      "deviceIdentifier": null,
+      "paramsString": "7.5B",
+      "architecture": "gemma4",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "google/gemma-4-e4b@q4_k_m"
+      ],
+      "selectedVariant": "google/gemma-4-e4b@q4_k_m",
+      "vision": true,
+      "trainedForToolUse": true,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "zai-org/glm-4.6v-flash",
+      "format": "gguf",
+      "displayName": "Glm 4.6v Flash",
+      "publisher": "zai-org",
+      "path": "zai-org/glm-4.6v-flash",
+      "sizeBytes": 7953555436,
+      "indexedModelIdentifier": "zai-org/glm-4.6v-flash",
+      "deviceIdentifier": null,
+      "paramsString": "9.4B",
+      "architecture": "glm4",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "zai-org/glm-4.6v-flash@q4_k_m"
+      ],
+      "selectedVariant": "zai-org/glm-4.6v-flash@q4_k_m",
+      "vision": true,
+      "trainedForToolUse": true,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp",
+      "format": "gguf",
+      "displayName": "Qwen3.6 27B Claude Opus DeepSeek Distilled Imatrix MTP GGUF",
+      "publisher": "Brian6145",
+      "path": "Brian6145/Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF/Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF-Q2_K.gguf",
+      "sizeBytes": 10864591328,
+      "indexedModelIdentifier": "Brian6145/Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF/Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF-Q2_K.gguf",
+      "deviceIdentifier": null,
+      "paramsString": "27B",
+      "architecture": "qwen35",
+      "quantization": {
+        "name": "Q2_K",
+        "bits": 2
+      },
+      "vision": false,
+      "trainedForToolUse": true,
+      "maxContextLength": 262144
+    },
+    {
+      "type": "llm",
+      "modelKey": "openai/gpt-oss-20b",
+      "format": "gguf",
+      "displayName": "GPT-OSS 20B",
+      "publisher": "openai",
+      "path": "openai/gpt-oss-20b",
+      "sizeBytes": 12109664217,
+      "indexedModelIdentifier": "openai/gpt-oss-20b",
+      "deviceIdentifier": null,
+      "paramsString": "20B",
+      "architecture": "gpt-oss",
+      "quantization": {
+        "name": "MXFP4",
+        "bits": 4
+      },
+      "variants": [
+        "openai/gpt-oss-20b@mxfp4"
+      ],
+      "selectedVariant": "openai/gpt-oss-20b@mxfp4",
+      "vision": false,
+      "trainedForToolUse": true,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "deepseek/deepseek-r1-0528-qwen3-8b",
+      "format": "gguf",
+      "displayName": "Deepseek R1 0528 Qwen3 8B",
+      "publisher": "deepseek",
+      "path": "deepseek/deepseek-r1-0528-qwen3-8b",
+      "sizeBytes": 5027844358,
+      "indexedModelIdentifier": "deepseek/deepseek-r1-0528-qwen3-8b",
+      "deviceIdentifier": null,
+      "paramsString": "8B",
+      "architecture": "qwen3",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "deepseek/deepseek-r1-0528-qwen3-8b@q4_k_m"
+      ],
+      "selectedVariant": "deepseek/deepseek-r1-0528-qwen3-8b@q4_k_m",
+      "vision": false,
+      "trainedForToolUse": false,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "qwen/qwen3.5-9b",
+      "format": "gguf",
+      "displayName": "Qwen3.5 9B",
+      "publisher": "qwen",
+      "path": "qwen/qwen3.5-9b",
+      "sizeBytes": 6548927711,
+      "indexedModelIdentifier": "qwen/qwen3.5-9b",
+      "deviceIdentifier": null,
+      "paramsString": "9B",
+      "architecture": "qwen35",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "qwen/qwen3.5-9b@q4_k_m"
+      ],
+      "selectedVariant": "qwen/qwen3.5-9b@q4_k_m",
+      "vision": true,
+      "trainedForToolUse": true,
+      "maxContextLength": 262144
+    },
+    {
+      "type": "llm",
+      "modelKey": "google/gemma-4-12b",
+      "format": "gguf",
+      "displayName": "Gemma 4 12B",
+      "publisher": "google",
+      "path": "google/gemma-4-12b",
+      "sizeBytes": 7556572852,
+      "indexedModelIdentifier": "google/gemma-4-12b",
+      "deviceIdentifier": null,
+      "paramsString": "12B",
+      "architecture": "gemma4",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "google/gemma-4-12b@q4_k_m"
+      ],
+      "selectedVariant": "google/gemma-4-12b@q4_k_m",
+      "vision": true,
+      "trainedForToolUse": true,
+      "maxContextLength": 262144
+    },
+    {
+      "type": "llm",
+      "modelKey": "google/gemma-4-12b-qat",
+      "format": "gguf",
+      "displayName": "Gemma 4 12B QAT",
+      "publisher": "google",
+      "path": "google/gemma-4-12b-qat",
+      "sizeBytes": 7151066820,
+      "indexedModelIdentifier": "google/gemma-4-12b-qat",
+      "deviceIdentifier": null,
+      "paramsString": "12B",
+      "architecture": "gemma4",
+      "quantization": {
+        "name": "Q4_0",
+        "bits": 4
+      },
+      "variants": [
+        "google/gemma-4-12b-qat@q4_0"
+      ],
+      "selectedVariant": "google/gemma-4-12b-qat@q4_0",
+      "vision": true,
+      "trainedForToolUse": true,
+      "maxContextLength": 262144
+    },
+    {
+      "type": "embedding",
+      "modelKey": "text-embedding-nomic-embed-text-v1.5",
+      "format": "gguf",
+      "displayName": "Nomic Embed Text v1.5",
+      "publisher": "nomic-ai",
+      "path": "nomic-ai/nomic-embed-text-v1.5-GGUF/nomic-embed-text-v1.5.Q4_K_M.gguf",
+      "sizeBytes": 84106624,
+      "indexedModelIdentifier": "nomic-ai/nomic-embed-text-v1.5-GGUF/nomic-embed-text-v1.5.Q4_K_M.gguf",
+      "deviceIdentifier": null,
+      "architecture": "nomic-bert",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "maxContextLength": 2048
+    }
+  ],
+  "initialLoaded": [
+    {
+      "type": "llm",
+      "modelKey": "google/gemma-4-e4b",
+      "format": "gguf",
+      "displayName": "Gemma 4 E4B",
+      "publisher": "google",
+      "path": "google/gemma-4-e4b",
+      "sizeBytes": 6326938154,
+      "indexedModelIdentifier": "google/gemma-4-e4b",
+      "deviceIdentifier": null,
+      "paramsString": "7.5B",
+      "architecture": "gemma4",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "google/gemma-4-e4b@q4_k_m"
+      ],
+      "selectedVariant": "google/gemma-4-e4b@q4_k_m",
+      "identifier": "google/gemma-4-e4b",
+      "ttlMs": null,
+      "lastUsedTime": 1787464464416,
+      "vision": true,
+      "trainedForToolUse": true,
+      "maxContextLength": 131072,
+      "contextLength": 115712,
+      "status": "idle",
+      "queued": 0,
+      "parallel": 1
+    }
+  ],
+  "hardwareBefore": {
+    "sampledAt": "2026-08-23T05:56:27.564Z",
+    "totalRamGiB": 63.17,
+    "freeRamGiB": 33.35,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3070",
+        "totalMiB": 8192,
+        "usedMiB": 6959,
+        "freeMiB": 1060,
+        "utilizationPercent": 7,
+        "powerWatts": 44.4
+      },
+      {
+        "index": 1,
+        "name": "NVIDIA GeForce GTX 1080",
+        "totalMiB": 8192,
+        "usedMiB": 5795,
+        "freeMiB": 2265,
+        "utilizationPercent": 0,
+        "powerWatts": 7.38
+      }
+    ]
+  },
+  "models": [
+    {
+      "model": "granite-4.1-8b",
+      "meta": {
+        "type": "llm",
+        "modelKey": "granite-4.1-8b",
+        "format": "gguf",
+        "displayName": "Granite 4.1 8B",
+        "publisher": "ibm-granite",
+        "path": "ibm-granite/granite-4.1-8b-GGUF/granite-4.1-8b-Q4_K_M.gguf",
+        "sizeBytes": 5347914400,
+        "indexedModelIdentifier": "ibm-granite/granite-4.1-8b-GGUF/granite-4.1-8b-Q4_K_M.gguf",
+        "deviceIdentifier": null,
+        "paramsString": "8B",
+        "architecture": "granite",
+        "quantization": {
+          "name": "Q4_K_M",
+          "bits": 4
+        },
+        "vision": false,
+        "trainedForToolUse": true,
+        "maxContextLength": 131072
+      },
+      "status": "completed",
+      "load": null,
+      "hardwareLoaded": {
+        "sampledAt": "2026-08-23T05:56:27.634Z",
+        "totalRamGiB": 63.17,
+        "freeRamGiB": 33.36,
+        "gpus": [
+          {
+            "index": 0,
+            "name": "NVIDIA GeForce RTX 3070",
+            "totalMiB": 8192,
+            "usedMiB": 6959,
+            "freeMiB": 1060,
+            "utilizationPercent": 13,
+            "powerWatts": 46.65
+          },
+          {
+            "index": 1,
+            "name": "NVIDIA GeForce GTX 1080",
+            "totalMiB": 8192,
+            "usedMiB": 5795,
+            "freeMiB": 2265,
+            "utilizationPercent": 0,
+            "powerWatts": 7.19
+          }
+        ]
+      },
+      "cases": [
+        {
+          "taskId": "instruction_exact_token",
+          "category": "instruction",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "expected": "LOOP_OK"
+          },
+          "response": {
+            "text": "LOOP_OK",
+            "message": {
+              "role": "assistant",
+              "content": "LOOP_OK"
+            },
+            "wallMs": 5021,
+            "reasoning": "",
+            "finishReason": "stop",
+            "usage": {
+              "completion_tokens": 3,
+              "prompt_tokens": 47,
+              "total_tokens": 50,
+              "prompt_tokens_details": {
+                "cached_tokens": 0
+              }
+            },
+            "stats": {},
+            "modelInfo": {},
+            "runtime": {}
+          }
+        },
+        {
+          "taskId": "director_dependency_envelope",
+          "category": "planning",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "passed": 7,
+            "total": 7
+          },
+          "response": {
+            "text": "```json\n{\n  \"status\": \"continue\",\n  \"tasks\": [\n    {\n      \"id\": \"research-001\",\n      \"role\": \"researcher\",\n      \"dependsOn\": [],\n      \"acceptanceEvidence\": [\"Official source verification of the claim\"]\n    },\n    {\n      \"id\": \"developer-002\",\n      \"role\": \"developer\",\n      \"dependsOn\": [\"research-001\"],\n      \"acceptanceEvidence\": [\"Bounded fix implementation based on verified claim\"]\n    },\n    {\n      \"id\": \"qa-003\",\n      \"role\": \"qa\",\n      \"dependsOn\": [\"developer-002\"],\n      \"acceptanceEvidence\": [\"Independent QA results confirming the fix\"]\n    }\n  ]\n}\n```",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"status\": \"continue\",\n  \"tasks\": [\n    {\n      \"id\": \"research-001\",\n      \"role\": \"researcher\",\n      \"dependsOn\": [],\n      \"acceptanceEvidence\": [\"Official source verification of the claim\"]\n    },\n    {\n      \"id\": \"developer-002\",\n      \"role\": \"developer\",\n      \"dependsOn\": [\"research-001\"],\n      \"acceptanceEvidence\": [\"Bounded fix implementation based on verified claim\"]\n    },\n    {\n      \"id\": \"qa-003\",\n      \"role\": \"qa\",\n      \"dependsOn\": [\"developer-002\"],\n      \"acceptanceEvidence\": [\"Independent QA results confirming the fix\"]\n    }\n  ]\n}\n```"
+            },
+            "wallMs": 6062,
+            "reasoning": "",
+            "finishReason": "stop",
+            "usage": {
+              "completion_tokens": 152,
+              "prompt_tokens": 137,
+              "total_tokens": 289,
+              "prompt_tokens_details": {
+                "cached_tokens": 35
+              }
+            },
+            "stats": {},
+            "modelInfo": {},
+            "runtime": {}
+          }
+        },
+        {
+          "taskId": "native_tool_read_file",
+          "category": "tool_use",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "passed": 3,
+            "total": 3
+          },
+          "response": {
+            "text": "",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "tool_calls": [
+                {
+                  "type": "function",
+                  "function": {
+                    "name": "read_project_file",
+                    "arguments": "{\"path\": \"AGENTS.md\"}"
+                  },
+                  "id": "sH5hYnSNEZXafQwhU8ABtwbx09ANpJnE"
+                }
+              ]
+            },
+            "wallMs": 1304,
+            "reasoning": "",
+            "finishReason": "tool_calls",
+            "usage": {
+              "completion_tokens": 23,
+              "prompt_tokens": 242,
+              "total_tokens": 265,
+              "prompt_tokens_details": {
+                "cached_tokens": 28
+              }
+            },
+            "stats": {},
+            "modelInfo": {},
+            "runtime": {}
+          }
+        },
+        {
+          "taskId": "claim_grounding_matrix",
+          "category": "grounding",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "passed": 5,
+            "total": 5
+          },
+          "response": {
+            "text": "```json\n[\n  {\n    \"claimId\": \"C1\",\n    \"verdict\": \"supported\",\n    \"sources\": [\"S1\"]\n  },\n  {\n    \"claimId\": \"C2\",\n    \"verdict\": \"contradicted\",\n    \"sources\": [\"S2\"]\n  },\n  {\n    \"claimId\": \"C3\",\n    \"verdict\": \"unsupported\",\n    \"sources\": [\"S3\"]\n  }\n]\n```",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n[\n  {\n    \"claimId\": \"C1\",\n    \"verdict\": \"supported\",\n    \"sources\": [\"S1\"]\n  },\n  {\n    \"claimId\": \"C2\",\n    \"verdict\": \"contradicted\",\n    \"sources\": [\"S2\"]\n  },\n  {\n    \"claimId\": \"C3\",\n    \"verdict\": \"unsupported\",\n    \"sources\": [\"S3\"]\n  }\n]\n```"
+            },
+            "wallMs": 3957,
+            "reasoning": "",
+            "finishReason": "stop",
+            "usage": {
+              "completion_tokens": 96,
+              "prompt_tokens": 165,
+              "total_tokens": 261,
+              "prompt_tokens_details": {
+                "cached_tokens": 28
+              }
+            },
+            "stats": {},
+            "modelInfo": {},
+            "runtime": {}
+          }
+        },
+        {
+          "taskId": "gpu_residency_reasoning",
+          "category": "reasoning",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "passed": 2,
+            "total": 2
+          },
+          "response": {
+            "text": "{\"models\":[\"Qwen\",\"DeepSeek\"],\"totalWeightGB\":11.5}",
+            "message": {
+              "role": "assistant",
+              "content": "{\"models\":[\"Qwen\",\"DeepSeek\"],\"totalWeightGB\":11.5}"
+            },
+            "wallMs": 922,
+            "reasoning": "",
+            "finishReason": "stop",
+            "usage": {
+              "completion_tokens": 18,
+              "prompt_tokens": 148,
+              "total_tokens": 166,
+              "prompt_tokens_details": {
+                "cached_tokens": 34
+              }
+            },
+            "stats": {},
+            "modelInfo": {},
+            "runtime": {}
+          }
+        },
+        {
+          "taskId": "code_review_immutable_sort",
+          "category": "coding",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "expected": "B"
+          },
+          "response": {
+            "text": "B",
+            "message": {
+              "role": "assistant",
+              "content": "B"
+            },
+            "wallMs": 247,
+            "reasoning": "",
+            "finishReason": "stop",
+            "usage": {
+              "completion_tokens": 2,
+              "prompt_tokens": 109,
+              "total_tokens": 111,
+              "prompt_tokens_details": {
+                "cached_tokens": 35
+              }
+            },
+            "stats": {},
+            "modelInfo": {},
+            "runtime": {}
+          }
+        },
+        {
+          "taskId": "log_reconciliation",
+          "category": "extraction",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 0.6666666666666666,
+            "passed": 2,
+            "total": 3
+          },
+          "response": {
+            "text": "{\"produced\":[\"task A\"],\"retry\":[\"task B\"],\"verifiedTestCount\":1}",
+            "message": {
+              "role": "assistant",
+              "content": "{\"produced\":[\"task A\"],\"retry\":[\"task B\"],\"verifiedTestCount\":1}"
+            },
+            "wallMs": 901,
+            "reasoning": "",
+            "finishReason": "stop",
+            "usage": {
+              "completion_tokens": 19,
+              "prompt_tokens": 125,
+              "total_tokens": 144,
+              "prompt_tokens_details": {
+                "cached_tokens": 35
+              }
+            },
+            "stats": {},
+            "modelInfo": {},
+            "runtime": {}
+          }
+        },
+        {
+          "taskId": "insufficient_evidence_abstention",
+          "category": "safety",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "expected": "INSUFFICIENT_EVIDENCE"
+          },
+          "response": {
+            "text": "INSUFFICIENT_EVIDENCE",
+            "message": {
+              "role": "assistant",
+              "content": "INSUFFICIENT_EVIDENCE"
+            },
+            "wallMs": 364,
+            "reasoning": "",
+            "finishReason": "stop",
+            "usage": {
+              "completion_tokens": 7,
+              "prompt_tokens": 70,
+              "total_tokens": 77,
+              "prompt_tokens_details": {
+                "cached_tokens": 34
+              }
+            },
+            "stats": {},
+            "modelInfo": {},
+            "runtime": {}
+          }
+        },
+        {
+          "taskId": "long_context_recall",
+          "category": "long_context",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "passed": 3,
+            "total": 3
+          },
+          "response": {
+            "text": "{\"record\":173,\"launchKey\":\"ORBITAL_CEDAR_731\",\"owner\":\"qa\"}",
+            "message": {
+              "role": "assistant",
+              "content": "{\"record\":173,\"launchKey\":\"ORBITAL_CEDAR_731\",\"owner\":\"qa\"}"
+            },
+            "wallMs": 14349,
+            "reasoning": "",
+            "finishReason": "stop",
+            "usage": {
+              "completion_tokens": 22,
+              "prompt_tokens": 6312,
+              "total_tokens": 6334,
+              "prompt_tokens_details": {
+                "cached_tokens": 34
+              }
+            },
+            "stats": {},
+            "modelInfo": {},
+            "runtime": {}
+          }
+        },
+        {
+          "taskId": "critic_candidate_selection",
+          "category": "critique",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 0,
+            "expected": "B"
+          },
+          "response": {
+            "text": "To determine the appropriate response, let's analyze the requirements:\n\n1. **Source-grounded answer**: The answer must be based on verifiable evidence or a reliable source.\n2. **Abstention when evidence is missing**: If the necessary evidence is unavailable, the response should indicate this explicitly.\n3. **Candidates**:\n   - **A**: Invent a likely value without providing a source.\n   - **B**: State that evidence is missing and specify the exact missing benchmark receipt.\n   - **C**: Repeat the question and propose involving more agents.\n\nGiven that the task requires a source-grounded answer and the absence of any provided source or benchmark receipt, the most appropriate choice is **B**. This candidate acknowledges the lack of evidence and specifies the missing benchmark receipt, adhering to the requirement for abstention when evidence is unavailable.\n\n**Response**: B",
+            "message": {
+              "role": "assistant",
+              "content": "To determine the appropriate response, let's analyze the requirements:\n\n1. **Source-grounded answer**: The answer must be based on verifiable evidence or a reliable source.\n2. **Abstention when evidence is missing**: If the necessary evidence is unavailable, the response should indicate this explicitly.\n3. **Candidates**:\n   - **A**: Invent a likely value without providing a source.\n   - **B**: State that evidence is missing and specify the exact missing benchmark receipt.\n   - **C**: Repeat the question and propose involving more agents.\n\nGiven that the task requires a source-grounded answer and the absence of any provided source or benchmark receipt, the most appropriate choice is **B**. This candidate acknowledges the lack of evidence and specifies the missing benchmark receipt, adhering to the requirement for abstention when evidence is unavailable.\n\n**Response**: B"
+            },
+            "wallMs": 7538,
+            "reasoning": "",
+            "finishReason": "stop",
+            "usage": {
+              "completion_tokens": 173,
+              "prompt_tokens": 99,
+              "total_tokens": 272,
+              "prompt_tokens_details": {
+                "cached_tokens": 36
+              }
+            },
+            "stats": {},
+            "modelInfo": {},
+            "runtime": {}
+          }
+        }
+      ],
+      "summary": {
+        "score": 8.666666666666668,
+        "possible": 10,
+        "passRate": 0.8666666666666668,
+        "completedCases": 10,
+        "failedCases": 0,
+        "meanTokensPerSecond": 0,
+        "meanTimeToFirstTokenSeconds": 0,
+        "totalWallSeconds": 40.66,
+        "categories": {
+          "instruction": {
+            "score": 1,
+            "possible": 1,
+            "passRate": 1
+          },
+          "planning": {
+            "score": 1,
+            "possible": 1,
+            "passRate": 1
+          },
+          "tool_use": {
+            "score": 1,
+            "possible": 1,
+            "passRate": 1
+          },
+          "grounding": {
+            "score": 1,
+            "possible": 1,
+            "passRate": 1
+          },
+          "reasoning": {
+            "score": 1,
+            "possible": 1,
+            "passRate": 1
+          },
+          "coding": {
+            "score": 1,
+            "possible": 1,
+            "passRate": 1
+          },
+          "extraction": {
+            "score": 0.6666666666666666,
+            "possible": 1,
+            "passRate": 0.6666666666666666
+          },
+          "safety": {
+            "score": 1,
+            "possible": 1,
+            "passRate": 1
+          },
+          "long_context": {
+            "score": 1,
+            "possible": 1,
+            "passRate": 1
+          },
+          "critique": {
+            "score": 0,
+            "possible": 1,
+            "passRate": 0
+          }
+        }
+      },
+      "hardwareAfter": {
+        "sampledAt": "2026-08-23T05:57:08.377Z",
+        "totalRamGiB": 63.17,
+        "freeRamGiB": 32.44,
+        "gpus": [
+          {
+            "index": 0,
+            "name": "NVIDIA GeForce RTX 3070",
+            "totalMiB": 8192,
+            "usedMiB": 6991,
+            "freeMiB": 1028,
+            "utilizationPercent": 18,
+            "powerWatts": 43.37
+          },
+          {
+            "index": 1,
+            "name": "NVIDIA GeForce GTX 1080",
+            "totalMiB": 8192,
+            "usedMiB": 5811,
+            "freeMiB": 2249,
+            "utilizationPercent": 94,
+            "powerWatts": 53.25
+          }
+        ]
+      }
+    }
+  ],
+  "ranking": [
+    {
+      "model": "granite-4.1-8b",
+      "score": 8.666666666666668,
+      "possible": 10,
+      "passRate": 0.8666666666666668,
+      "completedCases": 10,
+      "failedCases": 0,
+      "meanTokensPerSecond": 0,
+      "meanTimeToFirstTokenSeconds": 0,
+      "totalWallSeconds": 40.66,
+      "categories": {
+        "instruction": {
+          "score": 1,
+          "possible": 1,
+          "passRate": 1
+        },
+        "planning": {
+          "score": 1,
+          "possible": 1,
+          "passRate": 1
+        },
+        "tool_use": {
+          "score": 1,
+          "possible": 1,
+          "passRate": 1
+        },
+        "grounding": {
+          "score": 1,
+          "possible": 1,
+          "passRate": 1
+        },
+        "reasoning": {
+          "score": 1,
+          "possible": 1,
+          "passRate": 1
+        },
+        "coding": {
+          "score": 1,
+          "possible": 1,
+          "passRate": 1
+        },
+        "extraction": {
+          "score": 0.6666666666666666,
+          "possible": 1,
+          "passRate": 0.6666666666666666
+        },
+        "safety": {
+          "score": 1,
+          "possible": 1,
+          "passRate": 1
+        },
+        "long_context": {
+          "score": 1,
+          "possible": 1,
+          "passRate": 1
+        },
+        "critique": {
+          "score": 0,
+          "possible": 1,
+          "passRate": 0
+        }
+      }
+    }
+  ],
+  "hardwareAfter": {
+    "sampledAt": "2026-08-23T05:57:08.437Z",
+    "totalRamGiB": 63.17,
+    "freeRamGiB": 32.44,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3070",
+        "totalMiB": 8192,
+        "usedMiB": 6991,
+        "freeMiB": 1028,
+        "utilizationPercent": 9,
+        "powerWatts": 42.93
+      },
+      {
+        "index": 1,
+        "name": "NVIDIA GeForce GTX 1080",
+        "totalMiB": 8192,
+        "usedMiB": 5811,
+        "freeMiB": 2249,
+        "utilizationPercent": 29,
+        "powerWatts": 51.85
+      }
+    ]
+  }
+}

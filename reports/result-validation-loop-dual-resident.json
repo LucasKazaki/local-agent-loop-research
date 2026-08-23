@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "validatorVersion": "suite-aware/1.1",
+  "validatedAt": "2026-08-23T06:53:21.644Z",
+  "supportedFamilies": [
+    "text",
+    "code",
+    "vision",
+    "reasoning-profile",
+    "loop-ablation",
+    "llamacpp-placement"
+  ],
+  "results": [
+    {
+      "file": "results/loop-ablation-e4b-granite-dual-resident-r2.json",
+      "artifactSha256": "3e04735942d64d3feb666cc38b8a53c5413928fa6a82cd561d6d0a4947363597",
+      "family": "loop-ablation",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": true,
+      "expectedCasesPerCompletedSubject": 12,
+      "subjectCount": 1,
+      "outcomeStatus": "completed",
+      "findings": []
+    }
+  ],
+  "receiptContentSha256": "3dd2943e15a797d713648c2031779edd5cef7453f1b44750792ddb474703ab00"
+}

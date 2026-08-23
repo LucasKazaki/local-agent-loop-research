@@ -1,0 +1,1157 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-08-23T05:24:34.975Z",
+  "finishedAt": "2026-08-23T05:30:53.877Z",
+  "options": {
+    "models": [
+      "zai-org/glm-4.6v-flash",
+      "google/gemma-4-e4b",
+      "qwen/qwen3.5-9b",
+      "google/gemma-4-12b"
+    ],
+    "repeats": 2,
+    "context": 8192,
+    "caseTimeoutMs": 120000,
+    "output": "results/vision-finalists-isolated-r2.json",
+    "restore": ""
+  },
+  "environment": {
+    "platform": "win32",
+    "cpu": "AMD Ryzen 5 7600X 6-Core Processor             ",
+    "node": "v24.19.0",
+    "apiBase": "http://127.0.0.1:1234"
+  },
+  "suite": {
+    "hashSha256": "a38575d2cf735cc15f67b71c861652315b1bc7c23d476a57d05048f383352a11",
+    "imageSha256": "a19b3bd998a17e6e3aa2bf365d0d136e410abada488f3bd1fb9b71f13f7c56e9",
+    "tasks": [
+      "vision_grid_localization",
+      "vision_counting",
+      "vision_negative_grounding"
+    ]
+  },
+  "models": [
+    {
+      "model": "zai-org/glm-4.6v-flash",
+      "status": "completed",
+      "cases": [
+        {
+          "taskId": "vision_grid_localization",
+          "category": "vision_spatial",
+          "repeat": 0,
+          "status": "completed",
+          "score": 0,
+          "response": {
+            "text": "",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "Got it, let's tackle this problem step by step. First, we need to identify the positions of each shape: red circle, green triangle, blue square.\n\nFirst, find the redCircle. Looking at the 3x3 grid:\n\n- Row 1 (top row) has columns. The third column (column 3) in row 1 is a red circle. So row=1, column=3.\n\nNext, greenTriangle. Let's check rows and columns. The middle row (row 2) has the green triangle in column 2. So row=2, column=2.\n\nThen blueSquare. Looking at row 3 (bottom row), first column (column 1). So row=3, column=1.\n\nNow we need to create the JSON object as specified. Let's verify each position:\n\n- RedCircle: top-right cell of the",
+              "tool_calls": []
+            },
+            "wallMs": 15761,
+            "usage": {
+              "prompt_tokens": 420,
+              "completion_tokens": 180,
+              "total_tokens": 600,
+              "completion_tokens_details": {
+                "reasoning_tokens": 179
+              }
+            },
+            "stats": {
+              "tokens_per_second": 12.124361189300144,
+              "time_to_first_token": 0.8425119999999999,
+              "generation_time": 15.688655,
+              "stop_reason": "maxPredictedTokensReached"
+            },
+            "modelInfo": {
+              "arch": "glm4",
+              "quant": "Q4_K_M",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "vision_counting",
+          "category": "vision_counting",
+          "repeat": 0,
+          "status": "completed",
+          "score": 1,
+          "response": {
+            "text": "5",
+            "message": {
+              "role": "assistant",
+              "content": "5",
+              "reasoning_content": "Got it, let's see. The question is to count the separate purple bars along the bottom of the image. Looking at the image description, there are five purple rectangles (bars) at the bottom. So we need to return that number as an integer.",
+              "tool_calls": []
+            },
+            "wallMs": 5400,
+            "usage": {
+              "prompt_tokens": 371,
+              "completion_tokens": 59,
+              "total_tokens": 430,
+              "completion_tokens_details": {
+                "reasoning_tokens": 52
+              }
+            },
+            "stats": {
+              "tokens_per_second": 14.15797371080251,
+              "time_to_first_token": 1.187891,
+              "generation_time": 5.355154000000001,
+              "stop_reason": "eosFound"
+            },
+            "modelInfo": {
+              "arch": "glm4",
+              "quant": "Q4_K_M",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "vision_negative_grounding",
+          "category": "vision_grounding",
+          "repeat": 0,
+          "status": "completed",
+          "score": 1,
+          "response": {
+            "text": "ABSENT",
+            "message": {
+              "role": "assistant",
+              "content": "ABSENT",
+              "reasoning_content": "Got it, let's check the image. The question is whether there's an orange star. Looking at all elements: red circle, green triangle, blue square, purple rectangles—no orange star. So answer is ABSENT.",
+              "tool_calls": []
+            },
+            "wallMs": 5422,
+            "usage": {
+              "prompt_tokens": 366,
+              "completion_tokens": 54,
+              "total_tokens": 420,
+              "completion_tokens_details": {
+                "reasoning_tokens": 46
+              }
+            },
+            "stats": {
+              "tokens_per_second": 13.127631451957367,
+              "time_to_first_token": 1.2551590000000001,
+              "generation_time": 5.368620000000001,
+              "stop_reason": "eosFound"
+            },
+            "modelInfo": {
+              "arch": "glm4",
+              "quant": "Q4_K_M",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "vision_grid_localization",
+          "category": "vision_spatial",
+          "repeat": 1,
+          "status": "completed",
+          "score": 0,
+          "response": {
+            "text": "{\"redCircle\":{\"row\":1,\"column\":",
+            "message": {
+              "role": "assistant",
+              "content": "{\"redCircle\":{\"row\":1,\"column\":",
+              "reasoning_content": "Got it, let's tackle this problem step by step. First, we need to identify the positions of each shape: red circle, green triangle, blue square.\n\nFirst, find the redCircle. Looking at the 3x3 grid:\n\n- Row 1 (top row), columns are 1,2,3. The third column (column 3) has a red circle. So row is 1, column is 3.\n\nNext, greenTriangle. Let's check rows and columns. The middle row (row 2) has the triangle in column 2. So row 2, column 2.\n\nThen blueSquare. Looking at row 3 (bottom row), first column (column 1). So row 3, column 1.\n\nNow we need to create the JSON object as specified.",
+              "tool_calls": []
+            },
+            "wallMs": 14080,
+            "usage": {
+              "prompt_tokens": 420,
+              "completion_tokens": 180,
+              "total_tokens": 600,
+              "completion_tokens_details": {
+                "reasoning_tokens": 167
+              }
+            },
+            "stats": {
+              "tokens_per_second": 12.90860670594947,
+              "time_to_first_token": 0.07623999999999999,
+              "generation_time": 14.020425,
+              "stop_reason": "maxPredictedTokensReached"
+            },
+            "modelInfo": {
+              "arch": "glm4",
+              "quant": "Q4_K_M",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "vision_counting",
+          "category": "vision_counting",
+          "repeat": 1,
+          "status": "completed",
+          "score": 1,
+          "response": {
+            "text": "5",
+            "message": {
+              "role": "assistant",
+              "content": "5",
+              "reasoning_content": "Got it, let's see. The question is to count the separate purple bars along the bottom of the image. Looking at the image description, there are five purple rectangles (bars) at the bottom. So we need to return that number as an integer.",
+              "tool_calls": []
+            },
+            "wallMs": 4644,
+            "usage": {
+              "prompt_tokens": 371,
+              "completion_tokens": 59,
+              "total_tokens": 430,
+              "completion_tokens_details": {
+                "reasoning_tokens": 52
+              }
+            },
+            "stats": {
+              "tokens_per_second": 13.095012975160314,
+              "time_to_first_token": 0.077816,
+              "generation_time": 4.583348,
+              "stop_reason": "eosFound"
+            },
+            "modelInfo": {
+              "arch": "glm4",
+              "quant": "Q4_K_M",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "vision_negative_grounding",
+          "category": "vision_grounding",
+          "repeat": 1,
+          "status": "completed",
+          "score": 1,
+          "response": {
+            "text": "ABSENT",
+            "message": {
+              "role": "assistant",
+              "content": "ABSENT",
+              "reasoning_content": "Got it, let's check the image. The question is whether there's an orange star. Looking at all elements: red circle, green triangle, blue square, purple rectangles—no orange star. So answer is ABSENT.",
+              "tool_calls": []
+            },
+            "wallMs": 13648,
+            "usage": {
+              "prompt_tokens": 366,
+              "completion_tokens": 54,
+              "total_tokens": 420,
+              "completion_tokens_details": {
+                "reasoning_tokens": 46
+              }
+            },
+            "stats": {
+              "tokens_per_second": 4.002202397156183,
+              "time_to_first_token": 0.092492,
+              "generation_time": 13.585063,
+              "stop_reason": "eosFound"
+            },
+            "modelInfo": {
+              "arch": "glm4",
+              "quant": "Q4_K_M",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        }
+      ],
+      "loadWallSeconds": 39.89,
+      "score": 4,
+      "possible": 6,
+      "passRate": 0.6666666666666666
+    },
+    {
+      "model": "google/gemma-4-e4b",
+      "status": "completed",
+      "cases": [
+        {
+          "taskId": "vision_grid_localization",
+          "category": "vision_spatial",
+          "repeat": 0,
+          "status": "completed",
+          "score": 0.6666666666666666,
+          "response": {
+            "text": "{\"redCircle\":{\"row\":2,\"column\":3},\"greenTriangle\":{\"row\":2,\"column\":2},\"blueSquare\":{\"row\":3,\"column\":1}}",
+            "message": {
+              "role": "assistant",
+              "content": "{\"redCircle\":{\"row\":2,\"column\":3},\"greenTriangle\":{\"row\":2,\"column\":2},\"blueSquare\":{\"row\":3,\"column\":1}}",
+              "reasoning_content": "",
+              "tool_calls": []
+            },
+            "wallMs": 2551,
+            "usage": {
+              "prompt_tokens": 226,
+              "completion_tokens": 35,
+              "total_tokens": 261,
+              "completion_tokens_details": {
+                "reasoning_tokens": 0
+              }
+            },
+            "stats": {
+              "tokens_per_second": 16.63627773267498,
+              "time_to_first_token": 0.41374700000000003,
+              "generation_time": 2.5175829999999997,
+              "stop_reason": "eosFound"
+            },
+            "modelInfo": {
+              "arch": "gemma4",
+              "quant": "Q4_K_M",
+              "format": "gguf",
+              "context_length": 115712
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "vision_counting",
+          "category": "vision_counting",
+          "repeat": 0,
+          "status": "completed",
+          "score": 0,
+          "response": {
+            "text": "",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "The user wants me to count the separate purple bars along the bottom of the image, ignoring any internal grid structure.\nI need to return exactly one integer.\n\nLooking at the image:\nThere is a row of purple bars at the very bottom.\nCounting them: 1, 2, 3, 4, 5.\n\nThe count is 5.",
+              "tool_calls": []
+            },
+            "wallMs": 11146,
+            "usage": {
+              "prompt_tokens": 177,
+              "completion_tokens": 80,
+              "total_tokens": 257,
+              "completion_tokens_details": {
+                "reasoning_tokens": 77
+              }
+            },
+            "stats": {
+              "tokens_per_second": 10.076609946268997,
+              "time_to_first_token": 3.172253,
+              "generation_time": 11.111431,
+              "stop_reason": "maxPredictedTokensReached"
+            },
+            "modelInfo": {
+              "arch": "gemma4",
+              "quant": "Q4_K_M",
+              "format": "gguf",
+              "context_length": 115712
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "vision_negative_grounding",
+          "category": "vision_grounding",
+          "repeat": 0,
+          "status": "completed",
+          "score": 0,
+          "response": {
+            "text": "",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "The user wants me to determine if the provided image contains an \"orange star\".\nI need to examine the image carefully for any object matching this description (color: orange, shape: star).\n\nImage analysis:\n1.  There is a grid structure.\n2.  In the top right corner of the grid, there is a red circle.\n3.  In the middle row, center column, there is a green triangle.\n4.  In the bottom",
+              "tool_calls": []
+            },
+            "wallMs": 7266,
+            "usage": {
+              "prompt_tokens": 171,
+              "completion_tokens": 100,
+              "total_tokens": 271,
+              "completion_tokens_details": {
+                "reasoning_tokens": 97
+              }
+            },
+            "stats": {
+              "tokens_per_second": 15.900700759783184,
+              "time_to_first_token": 0.801004,
+              "generation_time": 7.090034999999999,
+              "stop_reason": "maxPredictedTokensReached"
+            },
+            "modelInfo": {
+              "arch": "gemma4",
+              "quant": "Q4_K_M",
+              "format": "gguf",
+              "context_length": 115712
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "vision_grid_localization",
+          "category": "vision_spatial",
+          "repeat": 1,
+          "status": "completed",
+          "score": 0.6666666666666666,
+          "response": {
+            "text": "{\"redCircle\":{\"row\":2,\"column\":3},\"greenTriangle\":{\"row\":2,\"column\":2},\"blueSquare\":{\"row\":3,\"column\":1}}",
+            "message": {
+              "role": "assistant",
+              "content": "{\"redCircle\":{\"row\":2,\"column\":3},\"greenTriangle\":{\"row\":2,\"column\":2},\"blueSquare\":{\"row\":3,\"column\":1}}",
+              "reasoning_content": "",
+              "tool_calls": []
+            },
+            "wallMs": 4431,
+            "usage": {
+              "prompt_tokens": 226,
+              "completion_tokens": 35,
+              "total_tokens": 261,
+              "completion_tokens_details": {
+                "reasoning_tokens": 0
+              }
+            },
+            "stats": {
+              "tokens_per_second": 8.157507960562413,
+              "time_to_first_token": 0.08650400000000001,
+              "generation_time": 4.3770299999999995,
+              "stop_reason": "eosFound"
+            },
+            "modelInfo": {
+              "arch": "gemma4",
+              "quant": "Q4_K_M",
+              "format": "gguf",
+              "context_length": 115712
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "vision_counting",
+          "category": "vision_counting",
+          "repeat": 1,
+          "status": "completed",
+          "score": 0,
+          "response": {
+            "text": "",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "The user wants me to count the separate purple bars along the bottom of the image, ignoring any internal grid structure.\nI need to return exactly one integer.\n\nLooking at the image:\nThere is a row of purple bars at the very bottom.\nCounting them: 1, 2, 3, 4, 5.\n\nThe count is 5.",
+              "tool_calls": []
+            },
+            "wallMs": 10421,
+            "usage": {
+              "prompt_tokens": 177,
+              "completion_tokens": 80,
+              "total_tokens": 257,
+              "completion_tokens_details": {
+                "reasoning_tokens": 77
+              }
+            },
+            "stats": {
+              "tokens_per_second": 7.767013667711039,
+              "time_to_first_token": 0.073586,
+              "generation_time": 10.373554999999998,
+              "stop_reason": "maxPredictedTokensReached"
+            },
+            "modelInfo": {
+              "arch": "gemma4",
+              "quant": "Q4_K_M",
+              "format": "gguf",
+              "context_length": 115712
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "vision_negative_grounding",
+          "category": "vision_grounding",
+          "repeat": 1,
+          "status": "completed",
+          "score": 0,
+          "response": {
+            "text": "",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "The user wants me to determine if the provided image contains an \"orange star\".\nI need to examine the image carefully for any object matching this description (color: orange, shape: star).\n\nImage analysis:\n1.  There is a grid structure.\n2.  In the top right cell, there is a red circle.\n3.  In the middle row, middle column, there is a green triangle.\n4.  In the bottom left cell,",
+              "tool_calls": []
+            },
+            "wallMs": 13626,
+            "usage": {
+              "prompt_tokens": 171,
+              "completion_tokens": 100,
+              "total_tokens": 271,
+              "completion_tokens_details": {
+                "reasoning_tokens": 97
+              }
+            },
+            "stats": {
+              "tokens_per_second": 7.42966779280618,
+              "time_to_first_token": 0.116365,
+              "generation_time": 13.575916999999999,
+              "stop_reason": "maxPredictedTokensReached"
+            },
+            "modelInfo": {
+              "arch": "gemma4",
+              "quant": "Q4_K_M",
+              "format": "gguf",
+              "context_length": 115712
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        }
+      ],
+      "loadWallSeconds": 9.29,
+      "score": 1.3333333333333333,
+      "possible": 6,
+      "passRate": 0.2222222222222222
+    },
+    {
+      "model": "qwen/qwen3.5-9b",
+      "status": "completed",
+      "cases": [
+        {
+          "taskId": "vision_grid_localization",
+          "category": "vision_spatial",
+          "repeat": 0,
+          "status": "completed",
+          "score": 0,
+          "response": {
+            "text": "",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "The user wants me to identify the locations of specific shapes in a grid.\n\n**1. Analyze the input image:**\n- The image shows a 3x3 grid at the top.\n- Below the grid, there is a row of purple bars (irrelevant to the JSON output).\n- Inside the grid, there are three distinct colored shapes:\n    - A red circle.\n    - A green triangle.\n    - A blue square.\n\n**2. Determine coordinates for each shape:**\n- **Red Circle:** It is located in the top row, rightmost column.\n    - Row: 1 (top row)\n    - Column: 3 (rightmost column)\n    - So, `redCircle`: {\"row\": 1, \"column\": 3}\n\n- **Green Triangle:** It is located in the middle row",
+              "tool_calls": []
+            },
+            "wallMs": 7301,
+            "usage": {
+              "prompt_tokens": 359,
+              "completion_tokens": 180,
+              "total_tokens": 539,
+              "completion_tokens_details": {
+                "reasoning_tokens": 180
+              }
+            },
+            "stats": {
+              "tokens_per_second": 27.739644328444783,
+              "time_to_first_token": 0.7861319999999999,
+              "generation_time": 7.27504,
+              "stop_reason": "maxPredictedTokensReached"
+            },
+            "modelInfo": {
+              "arch": "qwen35",
+              "quant": "Q4_K_M",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "vision_counting",
+          "category": "vision_counting",
+          "repeat": 0,
+          "status": "completed",
+          "score": 0,
+          "response": {
+            "text": "",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "The user wants me to count the purple bars at the bottom of the image.\n1.  **Identify the region:** Look at the bottom part of the image, below the main grid.\n2.  **Identify the objects:** There are several rectangular shapes that look like bars or blocks. They are purple in color.\n3.  **Count the objects:**\n    *",
+              "tool_calls": []
+            },
+            "wallMs": 3712,
+            "usage": {
+              "prompt_tokens": 310,
+              "completion_tokens": 80,
+              "total_tokens": 390,
+              "completion_tokens_details": {
+                "reasoning_tokens": 80
+              }
+            },
+            "stats": {
+              "tokens_per_second": 26.727605607451657,
+              "time_to_first_token": 0.666882,
+              "generation_time": 3.660042,
+              "stop_reason": "maxPredictedTokensReached"
+            },
+            "modelInfo": {
+              "arch": "qwen35",
+              "quant": "Q4_K_M",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "vision_negative_grounding",
+          "category": "vision_grounding",
+          "repeat": 0,
+          "status": "completed",
+          "score": 0,
+          "response": {
+            "text": "",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "The user wants me to identify if there is an orange star in the image.\n\n1.  **Analyze the image:**\n    *   I see a grid of squares (3x3).\n    *   Top right square: Red circle.\n    *   Middle center square: Green triangle.\n    *   Bottom left square: Blue square.\n    *   Below the grid: Five purple squares arranged horizontally.\n\n2.  **Scan for \"orange star\":**",
+              "tool_calls": []
+            },
+            "wallMs": 4510,
+            "usage": {
+              "prompt_tokens": 305,
+              "completion_tokens": 100,
+              "total_tokens": 405,
+              "completion_tokens_details": {
+                "reasoning_tokens": 100
+              }
+            },
+            "stats": {
+              "tokens_per_second": 26.34534479074815,
+              "time_to_first_token": 0.641753,
+              "generation_time": 4.4374899999999995,
+              "stop_reason": "maxPredictedTokensReached"
+            },
+            "modelInfo": {
+              "arch": "qwen35",
+              "quant": "Q4_K_M",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "vision_grid_localization",
+          "category": "vision_spatial",
+          "repeat": 1,
+          "status": "completed",
+          "score": 0,
+          "response": {
+            "text": "",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "The user wants me to identify the locations of specific shapes in a grid.\n\n**1. Analyze the input image:**\n- The image shows a 3x3 grid at the top.\n- Below the grid, there is a row of purple bars (irrelevant to the JSON output).\n- Inside the grid, there are three distinct colored shapes:\n    - A red circle.\n    - A green triangle.\n    - A blue square.\n\n**2. Determine coordinates for each shape:**\n- **Red Circle:** It is located in the top row, rightmost column.\n    - Row: 1 (top row)\n    - Column: 3 (rightmost column)\n    - So, `redCircle`: {\"row\": 1, \"column\": 3}\n\n- **Green Triangle:** It is located in the middle row",
+              "tool_calls": []
+            },
+            "wallMs": 7131,
+            "usage": {
+              "prompt_tokens": 359,
+              "completion_tokens": 180,
+              "total_tokens": 539,
+              "completion_tokens_details": {
+                "reasoning_tokens": 180
+              }
+            },
+            "stats": {
+              "tokens_per_second": 25.835502199821246,
+              "time_to_first_token": 0.08368600000000001,
+              "generation_time": 7.0508429999999995,
+              "stop_reason": "maxPredictedTokensReached"
+            },
+            "modelInfo": {
+              "arch": "qwen35",
+              "quant": "Q4_K_M",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "vision_counting",
+          "category": "vision_counting",
+          "repeat": 1,
+          "status": "completed",
+          "score": 0,
+          "response": {
+            "text": "",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "The user wants me to count the purple bars at the bottom of the image.\n1.  **Identify the region:** Look at the bottom part of the image, below the main grid.\n2.  **Identify the objects:** There are several rectangular shapes that look like bars or blocks. They are purple in color.\n3.  **Count the objects:**\n    *",
+              "tool_calls": []
+            },
+            "wallMs": 3036,
+            "usage": {
+              "prompt_tokens": 310,
+              "completion_tokens": 80,
+              "total_tokens": 390,
+              "completion_tokens_details": {
+                "reasoning_tokens": 80
+              }
+            },
+            "stats": {
+              "tokens_per_second": 27.76397291346803,
+              "time_to_first_token": 0.081466,
+              "generation_time": 2.9628979999999996,
+              "stop_reason": "maxPredictedTokensReached"
+            },
+            "modelInfo": {
+              "arch": "qwen35",
+              "quant": "Q4_K_M",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "vision_negative_grounding",
+          "category": "vision_grounding",
+          "repeat": 1,
+          "status": "completed",
+          "score": 0,
+          "response": {
+            "text": "",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "The user wants me to identify if there is an orange star in the image.\n\n1.  **Analyze the image:**\n    *   I see a grid of squares (3x3).\n    *   Top right square: Red circle.\n    *   Middle center square: Green triangle.\n    *   Bottom left square: Blue square.\n    *   Below the grid: Five purple squares arranged horizontally.\n\n2.  **Scan for \"orange star\":**",
+              "tool_calls": []
+            },
+            "wallMs": 3697,
+            "usage": {
+              "prompt_tokens": 305,
+              "completion_tokens": 100,
+              "total_tokens": 405,
+              "completion_tokens_details": {
+                "reasoning_tokens": 100
+              }
+            },
+            "stats": {
+              "tokens_per_second": 28.242667779804343,
+              "time_to_first_token": 0.088659,
+              "generation_time": 3.629401,
+              "stop_reason": "maxPredictedTokensReached"
+            },
+            "modelInfo": {
+              "arch": "qwen35",
+              "quant": "Q4_K_M",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        }
+      ],
+      "loadWallSeconds": 43.04,
+      "score": 0,
+      "possible": 6,
+      "passRate": 0
+    },
+    {
+      "model": "google/gemma-4-12b",
+      "status": "completed",
+      "cases": [
+        {
+          "taskId": "vision_grid_localization",
+          "category": "vision_spatial",
+          "repeat": 0,
+          "status": "completed",
+          "score": 0,
+          "response": {
+            "text": "",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "The user wants me to identify the locations of three shapes in a 3x3 grid based on an image.\n\n1.  **Identify the objects and their positions:**\n    *   **redCircle**: There is a red circle in the top-right cell of the 3x3 grid. This corresponds to row 1, column 3.\n    .\n2.  **greenTriangle**: There is a green triangle in the center cell of the 3x3 grid. This corresponds to row 2, column 2.\n3.  **blueSquare**: There is a blue square in the bottom-left cell of the 3x3 grid. This corresponds to row 3, column 1.\n\n*   Row 1: [empty], [empty], [redCircle]\n*   Row 2: [empty],",
+              "tool_calls": []
+            },
+            "wallMs": 25248,
+            "usage": {
+              "prompt_tokens": 226,
+              "completion_tokens": 180,
+              "total_tokens": 406,
+              "completion_tokens_details": {
+                "reasoning_tokens": 177
+              }
+            },
+            "stats": {
+              "tokens_per_second": 7.778927714573509,
+              "time_to_first_token": 2.08202,
+              "generation_time": 25.221456000000003,
+              "stop_reason": "maxPredictedTokensReached"
+            },
+            "modelInfo": {
+              "arch": "gemma4",
+              "quant": "Q4_K_M",
+              "format": "gguf",
+              "context_length": 8192
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "vision_counting",
+          "category": "vision_counting",
+          "repeat": 0,
+          "status": "completed",
+          "score": 0,
+          "response": {
+            "text": "",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "The user wants me to count the number of separate purple bars at the bottom of the image.\n\n1.  **Identify the target objects:** The prompt specifies \"separate purple bars along the bottom\".\n2.  **Locate the area:** Looking at the bottom of the image, there is a row of vertical rectangles/bars.\n3.  **Count them:**\n",
+              "tool_calls": []
+            },
+            "wallMs": 12331,
+            "usage": {
+              "prompt_tokens": 177,
+              "completion_tokens": 80,
+              "total_tokens": 257,
+              "completion_tokens_details": {
+                "reasoning_tokens": 77
+              }
+            },
+            "stats": {
+              "tokens_per_second": 7.907587973151761,
+              "time_to_first_token": 2.104705,
+              "generation_time": 12.22157,
+              "stop_reason": "maxPredictedTokensReached"
+            },
+            "modelInfo": {
+              "arch": "gemma4",
+              "quant": "Q4_K_M",
+              "format": "gguf",
+              "context_length": 8192
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "vision_negative_grounding",
+          "category": "vision_grounding",
+          "repeat": 0,
+          "status": "completed",
+          "score": 0,
+          "response": {
+            "text": "",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "The user wants to know if there is an \"orange star\" in the provided image.\n\n1.  **Analyze the image:**\n    *   Top-right cell: A red/pink circle.\n    *   Middle-center cell: A green triangle.\n    *   Bottom-left cell: A blue square.\n    *   Bottom row: Five purple rectangles.\n2.  **Identify shapes and colors:**\n    *   Circle (red/",
+              "tool_calls": []
+            },
+            "wallMs": 14905,
+            "usage": {
+              "prompt_tokens": 171,
+              "completion_tokens": 100,
+              "total_tokens": 271,
+              "completion_tokens_details": {
+                "reasoning_tokens": 97
+              }
+            },
+            "stats": {
+              "tokens_per_second": 7.860451208764467,
+              "time_to_first_token": 2.109572,
+              "generation_time": 14.831488,
+              "stop_reason": "maxPredictedTokensReached"
+            },
+            "modelInfo": {
+              "arch": "gemma4",
+              "quant": "Q4_K_M",
+              "format": "gguf",
+              "context_length": 8192
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "vision_grid_localization",
+          "category": "vision_spatial",
+          "repeat": 1,
+          "status": "completed",
+          "score": 0,
+          "response": {
+            "text": "",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "The user wants me to identify the locations of three shapes in a 3x3 grid based on an image.\n\n1.  **Identify the objects and their positions:**\n    *   `redCircle`: There is a red circle in the top-right cell. This corresponds to row 1, column 3.\n    *   `greenTriangle`: There is a green triangle in the center cell. This corresponds to row 2, column 2.\n    *   `blueSquare`: There is a blue square in the bottom-left cell. This corresponds to row 3, column 1.\n\n2.  **Verify coordinates:**\n    *   Row 1: Top row. Column 3: Rightmost column. (redCircle)\n    *   Row 2: Middle row. Column 2: Middle column. (green",
+              "tool_calls": []
+            },
+            "wallMs": 22809,
+            "usage": {
+              "prompt_tokens": 226,
+              "completion_tokens": 180,
+              "total_tokens": 406,
+              "completion_tokens_details": {
+                "reasoning_tokens": 177
+              }
+            },
+            "stats": {
+              "tokens_per_second": 8.065228340728476,
+              "time_to_first_token": 0.406418,
+              "generation_time": 22.724447,
+              "stop_reason": "maxPredictedTokensReached"
+            },
+            "modelInfo": {
+              "arch": "gemma4",
+              "quant": "Q4_K_M",
+              "format": "gguf",
+              "context_length": 8192
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "vision_counting",
+          "category": "vision_counting",
+          "repeat": 1,
+          "status": "completed",
+          "score": 0,
+          "response": {
+            "text": "",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "The user wants me to count the number of separate purple bars at the bottom of the image.\n\n1.  **Identify the target objects:** The prompt specifies \"separate purple bars along the bottom\".\n2.  **Locate the area:** Looking at the bottom of the image, there is a row of vertical rectangles/bars.\n3.  **Determine color:** These",
+              "tool_calls": []
+            },
+            "wallMs": 19487,
+            "usage": {
+              "prompt_tokens": 177,
+              "completion_tokens": 80,
+              "total_tokens": 257,
+              "completion_tokens_details": {
+                "reasoning_tokens": 77
+              }
+            },
+            "stats": {
+              "tokens_per_second": 4.212348267266337,
+              "time_to_first_token": 0.37883999999999995,
+              "generation_time": 19.370622,
+              "stop_reason": "maxPredictedTokensReached"
+            },
+            "modelInfo": {
+              "arch": "gemma4",
+              "quant": "Q4_K_M",
+              "format": "gguf",
+              "context_length": 8192
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "vision_negative_grounding",
+          "category": "vision_grounding",
+          "repeat": 1,
+          "status": "completed",
+          "score": 0,
+          "response": {
+            "text": "",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "The user wants to know if there is an \"orange star\" in the provided image.\n\n1.  **Analyze the image:**\n    *   Top-right cell: A red/pink circle.\n    *   Middle-center cell: A green triangle.\n    *   Bottom-left cell: A blue square.\n    *   Bottom row: Five purple rectangles.\n2.  **Identify shapes and colors:**\n    *   Circle (red/",
+              "tool_calls": []
+            },
+            "wallMs": 12555,
+            "usage": {
+              "prompt_tokens": 171,
+              "completion_tokens": 100,
+              "total_tokens": 271,
+              "completion_tokens_details": {
+                "reasoning_tokens": 97
+              }
+            },
+            "stats": {
+              "tokens_per_second": 8.304555970755672,
+              "time_to_first_token": 0.407617,
+              "generation_time": 12.449200000000001,
+              "stop_reason": "maxPredictedTokensReached"
+            },
+            "modelInfo": {
+              "arch": "gemma4",
+              "quant": "Q4_K_M",
+              "format": "gguf",
+              "context_length": 8192
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        }
+      ],
+      "loadWallSeconds": 32.91,
+      "score": 0,
+      "possible": 6,
+      "passRate": 0
+    }
+  ],
+  "ranking": [
+    {
+      "model": "zai-org/glm-4.6v-flash",
+      "passRate": 0.6666666666666666,
+      "score": 4,
+      "possible": 6
+    },
+    {
+      "model": "google/gemma-4-e4b",
+      "passRate": 0.2222222222222222,
+      "score": 1.3333333333333333,
+      "possible": 6
+    },
+    {
+      "model": "qwen/qwen3.5-9b",
+      "passRate": 0,
+      "score": 0,
+      "possible": 6
+    },
+    {
+      "model": "google/gemma-4-12b",
+      "passRate": 0,
+      "score": 0,
+      "possible": 6
+    }
+  ]
+}

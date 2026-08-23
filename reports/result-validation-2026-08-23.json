@@ -1,0 +1,394 @@
+{
+  "schemaVersion": 1,
+  "validatorVersion": "suite-aware/1.1",
+  "validatedAt": "2026-08-23T06:46:25.296Z",
+  "supportedFamilies": [
+    "text",
+    "code",
+    "vision",
+    "reasoning-profile",
+    "loop-ablation",
+    "llamacpp-placement"
+  ],
+  "results": [
+    {
+      "file": "results/screen-configured-finalists.json",
+      "artifactSha256": "50e4f7f9c0cb3dca5a667a7e8238b76ead3796f0c2daae3742d0c45a981adc50",
+      "family": "text",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": true,
+      "expectedCasesPerCompletedSubject": 10,
+      "subjectCount": 5,
+      "outcomeStatus": "completed",
+      "findings": []
+    },
+    {
+      "file": "results/screen-devstral-isolated-r1.json",
+      "artifactSha256": "71ff8253fc603f826183706abf004471a35ce6a79d5c581f0ec56b18b2c37058",
+      "family": "text",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": true,
+      "expectedCasesPerCompletedSubject": 10,
+      "subjectCount": 1,
+      "outcomeStatus": "completed",
+      "findings": []
+    },
+    {
+      "file": "results/screen-finalists-isolated-r2.json",
+      "artifactSha256": "34a51146a486e0b6f0ce5cd57b2f57c758a7a6130183ed5040060dcc72056823",
+      "family": "text",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": true,
+      "expectedCasesPerCompletedSubject": 20,
+      "subjectCount": 3,
+      "outcomeStatus": "completed",
+      "findings": []
+    },
+    {
+      "file": "results/screen-granite-isolated-r2.json",
+      "artifactSha256": "6580436467ad507ce9e3995515bbfc95da748c9272d70f989ff1e6579b34168b",
+      "family": "text",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": true,
+      "expectedCasesPerCompletedSubject": 20,
+      "subjectCount": 1,
+      "outcomeStatus": "completed",
+      "findings": []
+    },
+    {
+      "file": "results/screen-installed-bounded.json",
+      "artifactSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+      "family": "text",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": true,
+      "expectedCasesPerCompletedSubject": 10,
+      "subjectCount": 10,
+      "outcomeStatus": "completed",
+      "findings": [
+        {
+          "severity": "warning",
+          "code": "suite.source.changed",
+          "message": "text: current suite source differs from the stored run hash; stored raw provenance remains authoritative."
+        }
+      ]
+    },
+    {
+      "file": "results/smoke-gpt-oss.json",
+      "artifactSha256": "0a56aa89bc70304fe100ad2f168ec6abb0a0a8efa06600a35e54a72ba7a08ed0",
+      "family": "text",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": true,
+      "expectedCasesPerCompletedSubject": 10,
+      "subjectCount": 1,
+      "outcomeStatus": "completed",
+      "findings": [
+        {
+          "severity": "warning",
+          "code": "suite.source.changed",
+          "message": "text: current suite source differs from the stored run hash; stored raw provenance remains authoritative."
+        }
+      ]
+    },
+    {
+      "file": "results/dual-resident-e4b.json",
+      "artifactSha256": "c7ea09edee201198362af8686fef7f082723716d037c51d561b5773d5547b476",
+      "family": "text",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": true,
+      "expectedCasesPerCompletedSubject": 10,
+      "subjectCount": 1,
+      "outcomeStatus": "completed",
+      "findings": []
+    },
+    {
+      "file": "results/dual-resident-granite.json",
+      "artifactSha256": "195110ae407c3301c6ac5571b5ab6b4dda2b0515a6e01adf5fe9d457df779d4a",
+      "family": "text",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": true,
+      "expectedCasesPerCompletedSubject": 10,
+      "subjectCount": 1,
+      "outcomeStatus": "completed",
+      "findings": []
+    },
+    {
+      "file": "results/code-finalists-isolated-r2.json",
+      "artifactSha256": "deb4836c740d3fb9d8dcec09f14ceff13899125bdd6c600e25fed61b769c1277",
+      "family": "code",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": true,
+      "expectedCasesPerCompletedSubject": 10,
+      "subjectCount": 4,
+      "outcomeStatus": "completed",
+      "findings": []
+    },
+    {
+      "file": "results/vision-configured-finalists-r2.json",
+      "artifactSha256": "8fc19cffc3a2e1f3e5ba265f16861c2ef1cc1daac2509b782389f67843283887",
+      "family": "vision",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": true,
+      "expectedCasesPerCompletedSubject": 6,
+      "subjectCount": 4,
+      "outcomeStatus": "completed",
+      "findings": []
+    },
+    {
+      "file": "results/vision-finalists-isolated-r2.json",
+      "artifactSha256": "07758ae9dc45b5a8aa3ce4f79d8b36e33847de648e3b29938ba4f4e1e189cdb5",
+      "family": "vision",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": true,
+      "expectedCasesPerCompletedSubject": 6,
+      "subjectCount": 4,
+      "outcomeStatus": "completed",
+      "findings": []
+    },
+    {
+      "file": "results/reasoning-profiles-native-v1-r2.json",
+      "artifactSha256": "576fd3021d8ffff72e273d9cee1a7c2ab54027230dfb2135f1e369b670ac820a",
+      "family": "reasoning-profile",
+      "valid": false,
+      "complete": true,
+      "comparisonEligible": false,
+      "expectedCasesPerCompletedSubject": 18,
+      "subjectCount": 3,
+      "outcomeStatus": "completed",
+      "findings": [
+        {
+          "severity": "error",
+          "code": "reasoning.instance_identity.mismatch",
+          "message": "qwen/qwen3.5-9b@off/director_dependency_envelope:0: response instance qwen/qwen3.5-9b:2 does not exactly match requested model qwen/qwen3.5-9b."
+        },
+        {
+          "severity": "error",
+          "code": "reasoning.instance_identity.mismatch",
+          "message": "qwen/qwen3.5-9b@off/gpu_residency_reasoning:0: response instance qwen/qwen3.5-9b:2 does not exactly match requested model qwen/qwen3.5-9b."
+        },
+        {
+          "severity": "error",
+          "code": "reasoning.instance_identity.mismatch",
+          "message": "qwen/qwen3.5-9b@off/log_reconciliation:0: response instance qwen/qwen3.5-9b:2 does not exactly match requested model qwen/qwen3.5-9b."
+        },
+        {
+          "severity": "error",
+          "code": "reasoning.instance_identity.mismatch",
+          "message": "qwen/qwen3.5-9b@off/long_context_recall:0: response instance qwen/qwen3.5-9b:2 does not exactly match requested model qwen/qwen3.5-9b."
+        },
+        {
+          "severity": "error",
+          "code": "reasoning.instance_identity.mismatch",
+          "message": "qwen/qwen3.5-9b@off/instruction_exact_token:1: response instance qwen/qwen3.5-9b:2 does not exactly match requested model qwen/qwen3.5-9b."
+        },
+        {
+          "severity": "error",
+          "code": "reasoning.instance_identity.mismatch",
+          "message": "qwen/qwen3.5-9b@off/claim_grounding_matrix:1: response instance qwen/qwen3.5-9b:2 does not exactly match requested model qwen/qwen3.5-9b."
+        },
+        {
+          "severity": "error",
+          "code": "reasoning.instance_identity.mismatch",
+          "message": "qwen/qwen3.5-9b@off/code_review_immutable_sort:1: response instance qwen/qwen3.5-9b:2 does not exactly match requested model qwen/qwen3.5-9b."
+        },
+        {
+          "severity": "error",
+          "code": "reasoning.instance_identity.mismatch",
+          "message": "qwen/qwen3.5-9b@off/insufficient_evidence_abstention:1: response instance qwen/qwen3.5-9b:2 does not exactly match requested model qwen/qwen3.5-9b."
+        },
+        {
+          "severity": "error",
+          "code": "reasoning.instance_identity.mismatch",
+          "message": "qwen/qwen3.5-9b@off/critic_candidate_selection:1: response instance qwen/qwen3.5-9b:2 does not exactly match requested model qwen/qwen3.5-9b."
+        },
+        {
+          "severity": "error",
+          "code": "reasoning.instance_identity.mismatch",
+          "message": "openai/gpt-oss-20b@low/director_dependency_envelope:0: response instance openai/gpt-oss-20b:2 does not exactly match requested model openai/gpt-oss-20b."
+        },
+        {
+          "severity": "error",
+          "code": "reasoning.instance_identity.mismatch",
+          "message": "openai/gpt-oss-20b@low/gpu_residency_reasoning:0: response instance openai/gpt-oss-20b:2 does not exactly match requested model openai/gpt-oss-20b."
+        },
+        {
+          "severity": "error",
+          "code": "reasoning.instance_identity.mismatch",
+          "message": "openai/gpt-oss-20b@low/log_reconciliation:0: response instance openai/gpt-oss-20b:2 does not exactly match requested model openai/gpt-oss-20b."
+        },
+        {
+          "severity": "error",
+          "code": "reasoning.instance_identity.mismatch",
+          "message": "openai/gpt-oss-20b@low/long_context_recall:0: response instance openai/gpt-oss-20b:2 does not exactly match requested model openai/gpt-oss-20b."
+        },
+        {
+          "severity": "error",
+          "code": "reasoning.instance_identity.mismatch",
+          "message": "openai/gpt-oss-20b@low/instruction_exact_token:1: response instance openai/gpt-oss-20b:2 does not exactly match requested model openai/gpt-oss-20b."
+        },
+        {
+          "severity": "error",
+          "code": "reasoning.instance_identity.mismatch",
+          "message": "openai/gpt-oss-20b@low/claim_grounding_matrix:1: response instance openai/gpt-oss-20b:2 does not exactly match requested model openai/gpt-oss-20b."
+        },
+        {
+          "severity": "error",
+          "code": "reasoning.instance_identity.mismatch",
+          "message": "openai/gpt-oss-20b@low/code_review_immutable_sort:1: response instance openai/gpt-oss-20b:2 does not exactly match requested model openai/gpt-oss-20b."
+        },
+        {
+          "severity": "error",
+          "code": "reasoning.instance_identity.mismatch",
+          "message": "openai/gpt-oss-20b@low/insufficient_evidence_abstention:1: response instance openai/gpt-oss-20b:2 does not exactly match requested model openai/gpt-oss-20b."
+        },
+        {
+          "severity": "error",
+          "code": "reasoning.instance_identity.mismatch",
+          "message": "openai/gpt-oss-20b@low/critic_candidate_selection:1: response instance openai/gpt-oss-20b:2 does not exactly match requested model openai/gpt-oss-20b."
+        }
+      ]
+    },
+    {
+      "file": "results/reasoning-profiles-isolated-r2.json",
+      "artifactSha256": "6115981993898bc1012ec56732ee55921e0716cefd2ce0d0b4f827d55648834e",
+      "family": "reasoning-profile",
+      "valid": true,
+      "complete": false,
+      "comparisonEligible": false,
+      "expectedCasesPerCompletedSubject": 18,
+      "subjectCount": 1,
+      "outcomeStatus": "incomplete",
+      "findings": [
+        {
+          "severity": "warning",
+          "code": "run.incomplete",
+          "message": "finishedAt is null; the run is incomplete."
+        }
+      ]
+    },
+    {
+      "file": "results/reasoning-profiles-isolated-clean-r2.json",
+      "artifactSha256": "f7d575a9995d759189b1a1052166634b6b5b6a413e75217e0bbddcd166ec5c94",
+      "family": "reasoning-profile",
+      "valid": true,
+      "complete": false,
+      "comparisonEligible": false,
+      "expectedCasesPerCompletedSubject": 18,
+      "subjectCount": 1,
+      "outcomeStatus": "incomplete",
+      "findings": [
+        {
+          "severity": "warning",
+          "code": "run.incomplete",
+          "message": "finishedAt is null; the run is incomplete."
+        }
+      ]
+    },
+    {
+      "file": "results/loop-ablation-e4b-granite-r2-clean.json",
+      "artifactSha256": "5bd4487d65290dbaed9ec7f2a209eaf8ad01f2cbcd793a180eccbba14c0489a8",
+      "family": "loop-ablation",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": true,
+      "expectedCasesPerCompletedSubject": 12,
+      "subjectCount": 1,
+      "outcomeStatus": "completed",
+      "findings": []
+    },
+    {
+      "file": "results/llamacpp-placement-devstral-b10566.json",
+      "artifactSha256": "1ace64d7f629aa60be0424c8b2338bde72454b21eed5e14a5dfe3543c29df1d2",
+      "family": "llamacpp-placement",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": false,
+      "expectedCasesPerCompletedSubject": 4,
+      "subjectCount": 1,
+      "outcomeStatus": "failed",
+      "findings": []
+    },
+    {
+      "file": "results/llamacpp-placement-devstral-b10566-r2.json",
+      "artifactSha256": "7435ec79b666b896f11d59e9d874ca269e2dfe99f6e782beed3fc8ed3d13dcbc",
+      "family": "llamacpp-placement",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": false,
+      "expectedCasesPerCompletedSubject": 4,
+      "subjectCount": 1,
+      "outcomeStatus": "failed",
+      "findings": []
+    },
+    {
+      "file": "results/llamacpp-placement-devstral-b10566-r3.json",
+      "artifactSha256": "e44039c9cce683a3ebbf76706092421926b02391aadaba87f494b02f32eb7542",
+      "family": "llamacpp-placement",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": true,
+      "expectedCasesPerCompletedSubject": 4,
+      "subjectCount": 1,
+      "outcomeStatus": "completed",
+      "findings": []
+    },
+    {
+      "file": "results/llamacpp-placement-devstral-b10566-r4-clean.json",
+      "artifactSha256": "e70126c1299802f6334c108aeafe1e02749ad5768fd1dcf630d1126f9149471a",
+      "family": "llamacpp-placement",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": true,
+      "expectedCasesPerCompletedSubject": 4,
+      "subjectCount": 1,
+      "outcomeStatus": "completed",
+      "findings": []
+    },
+    {
+      "file": "results/llamacpp-placement-devstral-b10566-r5-studio-closed.json",
+      "artifactSha256": "982d300f91bde5f363dd8a15ac5980a75c2432c3115d2c653c723d6827936640",
+      "family": "llamacpp-placement",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": true,
+      "expectedCasesPerCompletedSubject": 4,
+      "subjectCount": 1,
+      "outcomeStatus": "completed",
+      "findings": []
+    },
+    {
+      "file": "results/screen-all-installed.json",
+      "artifactSha256": "d8fed4ca0580e7079efccf693dcb11f4e4ed5d48694de4c377a7bd47cf079578",
+      "family": "text",
+      "valid": true,
+      "complete": false,
+      "comparisonEligible": false,
+      "expectedCasesPerCompletedSubject": 10,
+      "subjectCount": 3,
+      "outcomeStatus": "incomplete",
+      "findings": [
+        {
+          "severity": "warning",
+          "code": "run.incomplete",
+          "message": "finishedAt is null; the run is incomplete."
+        },
+        {
+          "severity": "warning",
+          "code": "suite.source.changed",
+          "message": "text: current suite source differs from the stored run hash; stored raw provenance remains authoritative."
+        }
+      ]
+    }
+  ],
+  "receiptContentSha256": "17a4cdba943b4a4626a5d460275e720ed65ba61f966302b44cba3f389fdc18d4"
+}

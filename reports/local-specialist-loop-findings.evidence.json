@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-23T07:10:41Z",
+  "purpose": "Reviewed, report-bounded extraction of validated local-model and specialist-loop evidence. This file does not replace the raw artifacts.",
+  "evidencePolicy": {
+    "measured": "Copied from retained benchmark summaries or deterministic placement receipts.",
+    "validated": "The raw artifact passed the suite-aware structural and reconciliation validator.",
+    "inference": "A routing or operating recommendation derived from measured evidence; not a production admission decision.",
+    "frontierParityEstablished": false
+  },
+  "validationReceipt": {
+    "path": "reports/result-validation-2026-08-23-final.json",
+    "receiptContentSha256": "c459341a7f8f01f05de2442a91a58b58a5eda0c9c595b188d59d89c1a5ea91dc",
+    "validatedAt": "2026-08-23T07:04:43.123Z",
+    "artifactCount": 25,
+    "validatorValidCount": 24,
+    "validatorCompleteCount": 20,
+    "validatorComparisonEligibleCount": 17,
+    "manuallySelectedForReportCount": 9
+  },
+  "inclusionPolicy": [
+    "Require valid=true, complete=true, comparisonEligible=true, and outcomeStatus=completed in the final validator receipt.",
+    "Then exclude known co-residency, process-interference, endpoint-failure, configuration-mismatch, smoke-only, or superseded-run confounds even when structural validation passes.",
+    "Use normalized score only within the named suite. Do not compare a text-suite score numerically with a code-, vision-, or loop-suite score.",
+    "Treat routing recommendations as provisional inference until project-specific held-out tests pass."
+  ],
+  "hardware": {
+    "cpu": "AMD Ryzen 5 7600X",
+    "systemRamGiB": 64,
+    "gpus": [
+      {"index": 0, "name": "NVIDIA GeForce RTX 3070", "memoryMiB": 8192},
+      {"index": 1, "name": "NVIDIA GeForce GTX 1080", "memoryMiB": 8192}
+    ],
+    "os": "Windows",
+    "measurementDate": "2026-08-23"
+  },
+  "selectedArtifacts": [
+    {"path": "results/code-finalists-isolated-r2.json", "sha256": "deb4836c740d3fb9d8dcec09f14ceff13899125bdd6c600e25fed61b769c1277", "use": "code comparison"},
+    {"path": "results/dual-resident-e4b.json", "sha256": "c7ea09edee201198362af8686fef7f082723716d037c51d561b5773d5547b476", "use": "dual-resident text check"},
+    {"path": "results/dual-resident-granite.json", "sha256": "195110ae407c3301c6ac5571b5ab6b4dda2b0515a6e01adf5fe9d457df779d4a", "use": "dual-resident text check"},
+    {"path": "results/loop-ablation-e4b-granite-dual-resident-r2.json", "sha256": "3e04735942d64d3feb666cc38b8a53c5413928fa6a82cd561d6d0a4947363597", "use": "loop ablation"},
+    {"path": "results/llamacpp-placement-devstral-b10566-r5-studio-closed.json", "sha256": "982d300f91bde5f363dd8a15ac5980a75c2432c3115d2c653c723d6827936640", "use": "single- versus dual-GPU placement"},
+    {"path": "results/screen-devstral-isolated-r1.json", "sha256": "71ff8253fc603f826183706abf004471a35ce6a79d5c581f0ec56b18b2c37058", "use": "text screen"},
+    {"path": "results/screen-finalists-isolated-r2.json", "sha256": "34a51146a486e0b6f0ce5cd57b2f57c758a7a6130183ed5040060dcc72056823", "use": "text screen"},
+    {"path": "results/screen-granite-isolated-r2.json", "sha256": "6580436467ad507ce9e3995515bbfc95da748c9272d70f989ff1e6579b34168b", "use": "text screen"},
+    {"path": "results/vision-configured-finalists-r2.json", "sha256": "8fc19cffc3a2e1f3e5ba265f16861c2ef1cc1daac2509b782389f67843283887", "use": "configured vision comparison"}
+  ],
+  "datasets": {
+    "headline_metrics": [
+      {"metric": "Highest clean text-screen normalized score", "model": "Devstral Small 2 24B", "value": 0.96, "comparison": "10 retained cases; 6.53 generated tokens/s"},
+      {"metric": "Highest isolated code normalized score", "model": "GPT-OSS 20B", "value": 0.88, "comparison": "10 cases; 48 of 52 executable checks passed"},
+      {"metric": "Configured vision models at full score", "model": "GLM-4.6V-Flash, Qwen3.5-9B, Gemma 4 12B", "value": 3, "comparison": "Each scored 6 of 6; clean isolated tie-break remains open"},
+      {"metric": "Direct loop normalized score", "model": "Gemma 4 E4B solver", "value": 0.5928571428571429, "comparison": "Cross-specialist 0.5869; self-refine 0.1921"}
+    ],
+    "text_screen": [
+      {"rank": 1, "model": "Devstral Small 2 24B", "modelId": "mistralai_devstral-small-2-24b-instruct-2512", "normalizedScore": 0.96, "score": 9.6, "possible": 10, "completedCases": 10, "failedCases": 0, "meanTokensPerSecond": 6.53, "meanTimeToFirstTokenSeconds": 2.282, "sourceArtifact": "results/screen-devstral-isolated-r1.json", "artifactSha256": "71ff8253fc603f826183706abf004471a35ce6a79d5c581f0ec56b18b2c37058"},
+      {"rank": 2, "model": "Gemma 4 E4B", "modelId": "google/gemma-4-e4b", "normalizedScore": 0.8857142857142858, "score": 17.714285714285715, "possible": 20, "completedCases": 20, "failedCases": 0, "meanTokensPerSecond": 67.94, "meanTimeToFirstTokenSeconds": 0.231, "sourceArtifact": "results/screen-finalists-isolated-r2.json", "artifactSha256": "34a51146a486e0b6f0ce5cd57b2f57c758a7a6130183ed5040060dcc72056823"},
+      {"rank": 3, "model": "Granite 4.1 8B", "modelId": "granite-4.1-8b", "normalizedScore": 0.8666666666666668, "score": 17.333333333333336, "possible": 20, "completedCases": 20, "failedCases": 0, "meanTokensPerSecond": 26.61, "meanTimeToFirstTokenSeconds": 0.324, "sourceArtifact": "results/screen-granite-isolated-r2.json", "artifactSha256": "6580436467ad507ce9e3995515bbfc95da748c9272d70f989ff1e6579b34168b"},
+      {"rank": 4, "model": "GPT-OSS 20B", "modelId": "openai/gpt-oss-20b", "normalizedScore": 0.8300000000000001, "score": 16.6, "possible": 20, "completedCases": 17, "failedCases": 3, "meanTokensPerSecond": 35.19, "meanTimeToFirstTokenSeconds": 0.62, "sourceArtifact": "results/screen-finalists-isolated-r2.json", "artifactSha256": "34a51146a486e0b6f0ce5cd57b2f57c758a7a6130183ed5040060dcc72056823"}
+    ],
+    "code_comparison": [
+      {"rank": 1, "model": "GPT-OSS 20B", "modelId": "openai/gpt-oss-20b", "normalizedScore": 0.88, "score": 8.8, "possible": 10, "fullyPassedCases": 8, "executedTests": 52, "passedTests": 48, "meanTokensPerSecond": 36.51, "sourceArtifact": "results/code-finalists-isolated-r2.json", "artifactSha256": "deb4836c740d3fb9d8dcec09f14ceff13899125bdd6c600e25fed61b769c1277"},
+      {"rank": 2, "model": "Devstral Small 2 24B", "modelId": "mistralai_devstral-small-2-24b-instruct-2512", "normalizedScore": 0.855, "score": 8.55, "possible": 10, "fullyPassedCases": 7, "executedTests": 52, "passedTests": 47, "meanTokensPerSecond": 5.09, "sourceArtifact": "results/code-finalists-isolated-r2.json", "artifactSha256": "deb4836c740d3fb9d8dcec09f14ceff13899125bdd6c600e25fed61b769c1277"},
+      {"rank": 3, "model": "Granite 4.1 8B", "modelId": "granite-4.1-8b", "normalizedScore": 0.8, "score": 8, "possible": 10, "fullyPassedCases": 7, "executedTests": 52, "passedTests": 44, "meanTokensPerSecond": 24.65, "sourceArtifact": "results/code-finalists-isolated-r2.json", "artifactSha256": "deb4836c740d3fb9d8dcec09f14ceff13899125bdd6c600e25fed61b769c1277"},
+      {"rank": 4, "model": "Gemma 4 E4B", "modelId": "google/gemma-4-e4b", "normalizedScore": 0.52, "score": 5.2, "possible": 10, "fullyPassedCases": 5, "executedTests": 52, "passedTests": 26, "meanTokensPerSecond": 66.72, "sourceArtifact": "results/code-finalists-isolated-r2.json", "artifactSha256": "deb4836c740d3fb9d8dcec09f14ceff13899125bdd6c600e25fed61b769c1277"}
+    ],
+    "vision_comparison": [
+      {"rank": 1, "model": "GLM-4.6V-Flash", "modelId": "zai-org/glm-4.6v-flash", "normalizedScore": 1, "score": 6, "possible": 6, "scope": "configured sequential comparison", "sourceArtifact": "results/vision-configured-finalists-r2.json", "artifactSha256": "8fc19cffc3a2e1f3e5ba265f16861c2ef1cc1daac2509b782389f67843283887"},
+      {"rank": 1, "model": "Qwen3.5 9B", "modelId": "qwen/qwen3.5-9b", "normalizedScore": 1, "score": 6, "possible": 6, "scope": "configured sequential comparison", "sourceArtifact": "results/vision-configured-finalists-r2.json", "artifactSha256": "8fc19cffc3a2e1f3e5ba265f16861c2ef1cc1daac2509b782389f67843283887"},
+      {"rank": 1, "model": "Gemma 4 12B", "modelId": "google/gemma-4-12b", "normalizedScore": 1, "score": 6, "possible": 6, "scope": "configured sequential comparison", "sourceArtifact": "results/vision-configured-finalists-r2.json", "artifactSha256": "8fc19cffc3a2e1f3e5ba265f16861c2ef1cc1daac2509b782389f67843283887"},
+      {"rank": 4, "model": "Gemma 4 E4B", "modelId": "google/gemma-4-e4b", "normalizedScore": 0.8888888888888888, "score": 5.333333333333333, "possible": 6, "scope": "configured sequential comparison", "sourceArtifact": "results/vision-configured-finalists-r2.json", "artifactSha256": "8fc19cffc3a2e1f3e5ba265f16861c2ef1cc1daac2509b782389f67843283887"}
+    ],
+    "loop_ablation": [
+      {"protocol": "Direct", "normalizedScore": 0.5928571428571429, "score": 7.114285714285714, "possible": 12, "completedCases": 12, "failedCases": 0, "calls": 12, "wallSeconds": 165.8, "completionTokens": 1895, "sourceArtifact": "results/loop-ablation-e4b-granite-dual-resident-r2.json", "artifactSha256": "3e04735942d64d3feb666cc38b8a53c5413928fa6a82cd561d6d0a4947363597"},
+      {"protocol": "Cross-specialist", "normalizedScore": 0.5869047619047619, "score": 7.042857142857143, "possible": 12, "completedCases": 12, "failedCases": 0, "calls": 36, "wallSeconds": 250.98, "completionTokens": 5042, "sourceArtifact": "results/loop-ablation-e4b-granite-dual-resident-r2.json", "artifactSha256": "3e04735942d64d3feb666cc38b8a53c5413928fa6a82cd561d6d0a4947363597"},
+      {"protocol": "Self-refine", "normalizedScore": 0.19206349206349208, "score": 2.304761904761905, "possible": 12, "completedCases": 12, "failedCases": 0, "calls": 36, "wallSeconds": 978.24, "completionTokens": 9335, "sourceArtifact": "results/loop-ablation-e4b-granite-dual-resident-r2.json", "artifactSha256": "3e04735942d64d3feb666cc38b8a53c5413928fa6a82cd561d6d0a4947363597"}
+    ],
+    "placement_comparison": [
+      {"case": "Single GPU · round 1", "placement": "RTX 3070 only", "round": 1, "promptTokensPerSecond": 234.566, "generationTokensPerSecond": 6.328, "peakGpu0MiB": 6878, "peakGpu1MiB": 12, "wallSeconds": 56.11, "sourceArtifact": "results/llamacpp-placement-devstral-b10566-r5-studio-closed.json", "artifactSha256": "982d300f91bde5f363dd8a15ac5980a75c2432c3115d2c653c723d6827936640"},
+      {"case": "Dual GPU · round 1", "placement": "5:4 layer split", "round": 1, "promptTokensPerSecond": 446.077, "generationTokensPerSecond": 14.573, "peakGpu0MiB": 6040, "peakGpu1MiB": 5571, "wallSeconds": 62.32, "sourceArtifact": "results/llamacpp-placement-devstral-b10566-r5-studio-closed.json", "artifactSha256": "982d300f91bde5f363dd8a15ac5980a75c2432c3115d2c653c723d6827936640"},
+      {"case": "Dual GPU · round 2", "placement": "5:4 layer split", "round": 2, "promptTokensPerSecond": 441.073, "generationTokensPerSecond": 14.561, "peakGpu0MiB": 6040, "peakGpu1MiB": 5571, "wallSeconds": 56.48, "sourceArtifact": "results/llamacpp-placement-devstral-b10566-r5-studio-closed.json", "artifactSha256": "982d300f91bde5f363dd8a15ac5980a75c2432c3115d2c653c723d6827936640"},
+      {"case": "Single GPU · round 2", "placement": "RTX 3070 only", "round": 2, "promptTokensPerSecond": 237.574, "generationTokensPerSecond": 1.704, "peakGpu0MiB": 6878, "peakGpu1MiB": 12, "wallSeconds": 124.2, "sourceArtifact": "results/llamacpp-placement-devstral-b10566-r5-studio-closed.json", "artifactSha256": "982d300f91bde5f363dd8a15ac5980a75c2432c3115d2c653c723d6827936640"}
+    ],
+    "dual_residency": [
+      {"endpoint": "GPU 0 · LM Studio", "model": "Gemma 4 E4B", "normalizedScore": 0.8857142857142858, "completedCases": 10, "failedCases": 0, "meanTokensPerSecond": 67.73, "wallSeconds": 31.26, "sourceArtifact": "results/dual-resident-e4b.json", "artifactSha256": "c7ea09edee201198362af8686fef7f082723716d037c51d561b5773d5547b476"},
+      {"endpoint": "GPU 1 · llama.cpp", "model": "Granite 4.1 8B", "normalizedScore": 0.8666666666666668, "completedCases": 10, "failedCases": 0, "meanTokensPerSecond": null, "wallSeconds": 40.66, "sourceArtifact": "results/dual-resident-granite.json", "artifactSha256": "195110ae407c3301c6ac5571b5ab6b4dda2b0515a6e01adf5fe9d457df779d4a"}
+    ],
+    "routing_inference": [
+      {"role": "Planner / synthesizer", "provisionalModel": "Gemma 4 E4B", "placement": "GPU 0, exclusive residency", "evidenceLabel": "Inference", "basis": "88.6% text screen, 100% critique category, 67.94 generated tokens/s; 0% coding category", "admissionGate": "Project-specific planning and synthesis repetitions"},
+      {"role": "Structured tool worker", "provisionalModel": "Granite 4.1 8B", "placement": "GPU 1, resident llama.cpp server", "evidenceLabel": "Inference", "basis": "86.7% text screen; full instruction, planning, tool, grounding, reasoning, coding, safety, and long-context categories; 0% critique", "admissionGate": "Tool-semantic and extraction suite for each project"},
+      {"role": "Default code worker", "provisionalModel": "GPT-OSS 20B", "placement": "GPU 0, exclusive residency", "evidenceLabel": "Inference", "basis": "Highest isolated code score at 88%; 48 of 52 executable checks; 36.51 generated tokens/s", "admissionGate": "Repository-specific tests, context, and edit protocol"},
+      {"role": "Slow code escalation", "provisionalModel": "Devstral Small 2 24B Q3_K_M", "placement": "Dual GPU 5:4 layer split", "evidenceLabel": "Inference", "basis": "85.5% code score and 96% text screen; dual placement generated 14.56–14.57 tokens/s", "admissionGate": "Invoke only after deterministic failure or high-complexity classification"},
+      {"role": "Vision worker", "provisionalModel": "Unresolved tie: GLM-4.6V-Flash / Qwen3.5 9B / Gemma 4 12B", "placement": "GPU 0, exclusive residency", "evidenceLabel": "Inference", "basis": "Each scored 6 of 6 in the configured comparison; the Qwen isolated run is excluded for co-residency", "admissionGate": "Clean isolated tie-break with latency and memory telemetry"},
+      {"role": "Judgment critic", "provisionalModel": "Gemma 4 E4B after Granite or GPT-OSS", "placement": "Fresh context on GPU 0", "evidenceLabel": "Inference", "basis": "Full text-suite critique category; cross-specialist aggregate did not beat direct, so do not call automatically", "admissionGate": "Use only after deterministic verifier produces a named defect"},
+      {"role": "Reasoning specialist", "provisionalModel": "Unresolved", "placement": "None admitted", "evidenceLabel": "Hypothesis", "basis": "Reasoning-profile runs were incomplete or identity-invalid", "admissionGate": "Complete clean native reasoning-profile benchmark"}
+    ]
+  },
+  "excludedArtifacts": [
+    {"path": "results/llamacpp-placement-devstral-b10566.json", "class": "validator ineligible", "reason": "terminal failed placement receipt"},
+    {"path": "results/llamacpp-placement-devstral-b10566-r2.json", "class": "validator ineligible", "reason": "terminal failed placement receipt"},
+    {"path": "results/reasoning-profiles-isolated-r2.json", "class": "validator ineligible", "reason": "unfinished run"},
+    {"path": "results/reasoning-profiles-isolated-clean-r2.json", "class": "validator ineligible", "reason": "unfinished run"},
+    {"path": "results/reasoning-profiles-native-v1-r2.json", "class": "validator ineligible", "reason": "requested and observed model-instance identities did not match"},
+    {"path": "results/screen-all-installed.json", "class": "validator ineligible", "reason": "unfinished run"},
+    {"path": "results/screen-qwen3.6-27b-thirdparty-isolated-r1.json", "class": "validator ineligible", "reason": "unfinished run and process interference"},
+    {"path": "results/screen-qwen3.6-27b-thirdparty-isolated-r2-clean.json", "class": "validator ineligible", "reason": "unfinished run; third-party Q2 merge remains unadmitted"},
+    {"path": "results/llamacpp-placement-devstral-b10566-r3.json", "class": "manual confound exclusion", "reason": "background runtime auto-loaded another model"},
+    {"path": "results/llamacpp-placement-devstral-b10566-r4-clean.json", "class": "manual confound exclusion", "reason": "background runtime auto-loaded another model"},
+    {"path": "results/vision-qwen3.5-isolated-r3-clean.json", "class": "manual confound exclusion", "reason": "another model was observed co-resident; semantic score retained only as diagnostic"},
+    {"path": "results/loop-ablation-e4b-granite-r2-clean.json", "class": "manual confound exclusion", "reason": "cross-specialist endpoint failed on 11 of 12 cases"},
+    {"path": "results/screen-installed-bounded.json", "class": "diagnostic exclusion", "reason": "broad screen with changed suite source; superseded by controlled finalist runs"},
+    {"path": "results/screen-configured-finalists.json", "class": "diagnostic exclusion", "reason": "configured screening run superseded by isolated finalist runs"},
+    {"path": "results/smoke-gpt-oss.json", "class": "diagnostic exclusion", "reason": "single-model smoke test, not a comparative admission run"},
+    {"path": "results/vision-finalists-isolated-r2.json", "class": "configuration exclusion", "reason": "stock output budget did not support a fair configured vision comparison"}
+  ],
+  "primaryOnlineSources": [
+    {"label": "Anthropic multi-agent research system", "href": "https://www.anthropic.com/engineering/multi-agent-research-system"},
+    {"label": "Anthropic long-running agent harnesses", "href": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents"},
+    {"label": "OpenAI agent orchestration", "href": "https://developers.openai.com/api/docs/guides/agents/orchestration"},
+    {"label": "Microsoft Magentic-One", "href": "https://www.microsoft.com/en-us/research/publication/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks/"},
+    {"label": "Google ADK graph workflows", "href": "https://adk.dev/graphs/"},
+    {"label": "LangGraph persistence", "href": "https://docs.langchain.com/oss/python/langgraph/persistence"},
+    {"label": "AFlow ICLR 2025 paper", "href": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/5492ecbce4439401798dcd2c90be94cd-Abstract-Conference.html"},
+    {"label": "llama.cpp multi-GPU documentation", "href": "https://github.com/ggml-org/llama.cpp/blob/master/docs/multi-gpu.md"}
+  ]
+}

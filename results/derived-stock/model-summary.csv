@@ -1,0 +1,11 @@
+source,stage,repeats,model,status,quantization,sizeGiB,score,possible,passRate,meanTokensPerSecond,meanTimeToFirstTokenSeconds,totalWallSeconds,loadWallSeconds,gpu0UsedMiBLoaded,gpu1UsedMiBLoaded,completedCases,failedCases,category_coding,category_critique,category_extraction,category_grounding,category_instruction,category_long_context,category_planning,category_reasoning,category_safety,category_tool_use
+screen-installed-bounded.json,screen,1,qwen/qwen3-14b,completed,Q4_K_M,8.384,0.4857,10,0.0486,5.5,0.584,571.17,4.41,6605,12,8,2,0,0,0,0.2,0,0,0.2857,0,0,0
+screen-installed-bounded.json,screen,1,google/gemma-4-e2b,completed,Q4_K_M,4.112,1.4857,10,0.1486,104.26,0.238,20.49,26.99,4303,12,10,0,0,0,0,0.2,0,0,0.2857,0,0,1
+screen-installed-bounded.json,screen,1,google/gemma-4-e4b,completed,Q4_K_M,5.892,6.0571,10,0.6057,70.57,0.378,18.45,20.03,6802,12,10,0,0,0,1,0.2,0,1,0.8571,1,1,1
+screen-installed-bounded.json,screen,1,zai-org/glm-4.6v-flash,completed,Q4_K_M,7.407,2.7238,10,0.2724,12.73,0.749,182.16,39.73,6714,12,10,0,0,1,0,0.2,0,0,0.8571,0,0,0.6667
+screen-installed-bounded.json,screen,1,qwen/qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp,load_failed,,0,,,,,,,,,,0,0,,,,,,,,,,
+screen-installed-bounded.json,screen,1,openai/gpt-oss-20b,completed,MXFP4,11.278,8.8,10,0.88,34.69,0.982,39.11,9.52,6752,12,9,1,1,1,1,0.8,1,1,0,1,1,1
+screen-installed-bounded.json,screen,1,deepseek/deepseek-r1-0528-qwen3-8b,completed,Q4_K_M,4.683,0.4857,10,0.0486,29.94,0.552,76.95,20.23,6724,12,10,0,0,0,0,0.2,0,0,0.2857,0,0,0
+screen-installed-bounded.json,screen,1,qwen/qwen3.5-9b,completed,Q4_K_M,6.099,1.4857,10,0.1486,27.29,0.745,76.37,39.22,6632,12,10,0,0,0,0,0.2,0,0,0.2857,0,0,1
+screen-installed-bounded.json,screen,1,google/gemma-4-12b,completed,Q4_K_M,7.038,1,10,0.1,4.4,2.938,462.74,36.41,7755,12,8,2,0,0,0,0,0,0,0,0,0,1
+screen-installed-bounded.json,screen,1,google/gemma-4-12b-qat,completed,Q4_0,6.66,0,10,0,13.85,0.78,2.61,35.5,6674,12,1,9,0,0,0,0,0,0,0,0,0,0

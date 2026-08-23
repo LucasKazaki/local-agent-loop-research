@@ -1,0 +1,293 @@
+{
+  "manifest_version": "routing-manifest/1.0",
+  "protocol_version": "local-loop/1.0",
+  "manifest_id": "routing_local_dual_gpu_draft_2026_08_23",
+  "status": "draft",
+  "generated_at": "2026-08-23T06:14:58.848Z",
+  "benchmark_snapshot_id": "bench_41533057ded00daff733a2022cd150b0",
+  "hardware_profile_id": "hardware_rtx3070_gtx1080_64gib",
+  "profiles": [
+    {
+      "profile_id": "planner",
+      "description": "Plans dependencies, budgets, stop conditions, and bounded specialist work.",
+      "roles": [
+        "planner"
+      ],
+      "task_families": [
+        "reasoning",
+        "mixed"
+      ],
+      "required_capabilities": {
+        "tool_calling": false,
+        "schema_output": true,
+        "vision": false,
+        "reasoning_state": true,
+        "minimum_context_tokens": 8192
+      },
+      "minimum_thresholds": {
+        "role_score": 0.8,
+        "task_success_rate": 0.8,
+        "schema_success": 0.8,
+        "maximum_regression_rate": 0.1,
+        "maximum_median_seconds": 60,
+        "maximum_peak_vram_mib": 8192,
+        "maximum_peak_ram_mib": 32768
+      },
+      "selection_policy": {
+        "order_by": [
+          {
+            "metric": "role_score",
+            "direction": "higher"
+          }
+        ],
+        "tie_breakers": [
+          {
+            "metric": "median_seconds",
+            "direction": "lower"
+          }
+        ]
+      },
+      "eligible_models": [],
+      "fallback_profile_id": null
+    },
+    {
+      "profile_id": "researcher_extractor",
+      "description": "Finds, grounds, and extracts evidence without expanding unsupported claims.",
+      "roles": [
+        "researcher",
+        "extractor"
+      ],
+      "task_families": [
+        "research",
+        "extraction"
+      ],
+      "required_capabilities": {
+        "tool_calling": true,
+        "schema_output": true,
+        "vision": false,
+        "reasoning_state": false,
+        "minimum_context_tokens": 16384
+      },
+      "minimum_thresholds": {
+        "role_score": 0.8,
+        "task_success_rate": 0.8,
+        "tool_semantic_success": 0.8,
+        "schema_success": 0.8,
+        "citation_precision": 0.8,
+        "maximum_regression_rate": 0.1,
+        "maximum_median_seconds": 60,
+        "maximum_peak_vram_mib": 8192,
+        "maximum_peak_ram_mib": 32768
+      },
+      "selection_policy": {
+        "order_by": [
+          {
+            "metric": "citation_precision",
+            "direction": "higher"
+          }
+        ],
+        "tie_breakers": [
+          {
+            "metric": "role_score",
+            "direction": "higher"
+          },
+          {
+            "metric": "median_seconds",
+            "direction": "lower"
+          }
+        ]
+      },
+      "eligible_models": [],
+      "fallback_profile_id": null
+    },
+    {
+      "profile_id": "coder",
+      "description": "Implements bounded code changes and preserves runtime safety invariants.",
+      "roles": [
+        "coder"
+      ],
+      "task_families": [
+        "code_read",
+        "code_write"
+      ],
+      "required_capabilities": {
+        "tool_calling": false,
+        "schema_output": true,
+        "vision": false,
+        "reasoning_state": false,
+        "minimum_context_tokens": 16384
+      },
+      "minimum_thresholds": {
+        "role_score": 0.8,
+        "task_success_rate": 0.8,
+        "schema_success": 0.8,
+        "maximum_regression_rate": 0.1,
+        "maximum_median_seconds": 90,
+        "maximum_peak_vram_mib": 8192,
+        "maximum_peak_ram_mib": 32768
+      },
+      "selection_policy": {
+        "order_by": [
+          {
+            "metric": "task_success_rate",
+            "direction": "higher"
+          }
+        ],
+        "tie_breakers": [
+          {
+            "metric": "role_score",
+            "direction": "higher"
+          },
+          {
+            "metric": "median_seconds",
+            "direction": "lower"
+          }
+        ]
+      },
+      "eligible_models": [],
+      "fallback_profile_id": null
+    },
+    {
+      "profile_id": "verifier_critic",
+      "description": "Independently checks artifacts, evidence, regressions, and acceptance criteria.",
+      "roles": [
+        "verifier",
+        "critic"
+      ],
+      "task_families": [
+        "code_read",
+        "reasoning",
+        "mixed"
+      ],
+      "required_capabilities": {
+        "tool_calling": false,
+        "schema_output": true,
+        "vision": false,
+        "reasoning_state": true,
+        "minimum_context_tokens": 16384
+      },
+      "minimum_thresholds": {
+        "role_score": 0.85,
+        "task_success_rate": 0.85,
+        "schema_success": 0.8,
+        "maximum_regression_rate": 0.05,
+        "maximum_median_seconds": 90,
+        "maximum_peak_vram_mib": 8192,
+        "maximum_peak_ram_mib": 32768
+      },
+      "selection_policy": {
+        "order_by": [
+          {
+            "metric": "role_score",
+            "direction": "higher"
+          }
+        ],
+        "tie_breakers": [
+          {
+            "metric": "regression_rate",
+            "direction": "lower"
+          },
+          {
+            "metric": "median_seconds",
+            "direction": "lower"
+          }
+        ]
+      },
+      "eligible_models": [],
+      "fallback_profile_id": null
+    },
+    {
+      "profile_id": "synthesizer_policy",
+      "description": "Synthesizes accepted evidence and enforces policy and abstention boundaries.",
+      "roles": [
+        "synthesizer",
+        "policy_guard"
+      ],
+      "task_families": [
+        "research",
+        "reasoning",
+        "mixed"
+      ],
+      "required_capabilities": {
+        "tool_calling": false,
+        "schema_output": true,
+        "vision": false,
+        "reasoning_state": true,
+        "minimum_context_tokens": 16384
+      },
+      "minimum_thresholds": {
+        "role_score": 0.85,
+        "task_success_rate": 0.85,
+        "schema_success": 0.85,
+        "citation_precision": 0.8,
+        "maximum_regression_rate": 0.05,
+        "maximum_median_seconds": 90,
+        "maximum_peak_vram_mib": 8192,
+        "maximum_peak_ram_mib": 32768
+      },
+      "selection_policy": {
+        "order_by": [
+          {
+            "metric": "role_score",
+            "direction": "higher"
+          }
+        ],
+        "tie_breakers": [
+          {
+            "metric": "citation_precision",
+            "direction": "higher"
+          },
+          {
+            "metric": "median_seconds",
+            "direction": "lower"
+          }
+        ]
+      },
+      "eligible_models": [],
+      "fallback_profile_id": null
+    },
+    {
+      "profile_id": "vision",
+      "description": "Performs bounded visual extraction and negative-grounding checks.",
+      "roles": [
+        "vision"
+      ],
+      "task_families": [
+        "vision",
+        "extraction"
+      ],
+      "required_capabilities": {
+        "tool_calling": false,
+        "schema_output": true,
+        "vision": true,
+        "reasoning_state": false,
+        "minimum_context_tokens": 8192
+      },
+      "minimum_thresholds": {
+        "role_score": 0.8,
+        "task_success_rate": 0.8,
+        "schema_success": 0.8,
+        "maximum_regression_rate": 0.1,
+        "maximum_median_seconds": 60,
+        "maximum_peak_vram_mib": 8192,
+        "maximum_peak_ram_mib": 32768
+      },
+      "selection_policy": {
+        "order_by": [
+          {
+            "metric": "role_score",
+            "direction": "higher"
+          }
+        ],
+        "tie_breakers": [
+          {
+            "metric": "median_seconds",
+            "direction": "lower"
+          }
+        ]
+      },
+      "eligible_models": [],
+      "fallback_profile_id": null
+    }
+  ]
+}

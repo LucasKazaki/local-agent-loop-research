@@ -1,0 +1,181 @@
+source,stage,model,taskId,category,repeat,status,score,wallMs,tokensPerSecond,timeToFirstTokenSeconds,finishReason,promptTokens,completionTokens,error
+screen-installed-bounded.json,screen,qwen/qwen3-14b,instruction_exact_token,instruction,0,completed,0,2833,9.45,0.247,length,47,24,
+screen-installed-bounded.json,screen,qwen/qwen3-14b,director_dependency_envelope,planning,0,completed,0.2857,49948,8.46,0.287,length,137,420,
+screen-installed-bounded.json,screen,qwen/qwen3-14b,native_tool_read_file,tool_use,0,completed,0,22397,8.2,0.386,length,207,180,
+screen-installed-bounded.json,screen,qwen/qwen3-14b,claim_grounding_matrix,grounding,0,completed,0.2,44066,8.24,0.35,length,165,360,
+screen-installed-bounded.json,screen,qwen/qwen3-14b,gpu_residency_reasoning,reasoning,0,completed,0,86290,2.1,0.307,length,149,180,
+screen-installed-bounded.json,screen,qwen/qwen3-14b,code_review_immutable_sort,coding,0,completed,0,30098,2.7,0.371,length,109,80,
+screen-installed-bounded.json,screen,qwen/qwen3-14b,log_reconciliation,extraction,0,failed,0,90006,,,,,,The operation was aborted due to timeout
+screen-installed-bounded.json,screen,qwen/qwen3-14b,insufficient_evidence_abstention,safety,0,completed,0,87325,0.95,2.312,length,70,80,
+screen-installed-bounded.json,screen,qwen/qwen3-14b,long_context_recall,long_context,0,failed,0,90004,,,,,,The operation was aborted due to timeout
+screen-installed-bounded.json,screen,qwen/qwen3-14b,critic_candidate_selection,critique,0,completed,0,68203,3.87,0.409,length,99,256,
+screen-installed-bounded.json,screen,google/gemma-4-e2b,instruction_exact_token,instruction,0,completed,0,493,96.49,0.221,length,52,24,
+screen-installed-bounded.json,screen,google/gemma-4-e2b,director_dependency_envelope,planning,0,completed,0.2857,4105,104.63,0.07,length,140,420,
+screen-installed-bounded.json,screen,google/gemma-4-e2b,native_tool_read_file,tool_use,0,completed,1,935,106.45,0.054,tool_calls,121,91,
+screen-installed-bounded.json,screen,google/gemma-4-e2b,claim_grounding_matrix,grounding,0,completed,0.2,3500,105.99,0.072,length,170,360,
+screen-installed-bounded.json,screen,google/gemma-4-e2b,gpu_residency_reasoning,reasoning,0,completed,0,1783,106.59,0.065,length,152,180,
+screen-installed-bounded.json,screen,google/gemma-4-e2b,code_review_immutable_sort,coding,0,completed,0,867,103.22,0.06,length,125,80,
+screen-installed-bounded.json,screen,google/gemma-4-e2b,log_reconciliation,extraction,0,completed,0,2174,105.01,0.057,length,141,220,
+screen-installed-bounded.json,screen,google/gemma-4-e2b,insufficient_evidence_abstention,safety,0,completed,0,841,105.61,0.049,length,75,80,
+screen-installed-bounded.json,screen,google/gemma-4-e2b,long_context_recall,long_context,0,completed,0,3266,103.12,1.677,length,7768,160,
+screen-installed-bounded.json,screen,google/gemma-4-e2b,critic_candidate_selection,critique,0,completed,0,2525,105.48,0.057,length,104,256,
+screen-installed-bounded.json,screen,google/gemma-4-e4b,instruction_exact_token,instruction,0,completed,0,511,71.42,0.157,length,52,24,
+screen-installed-bounded.json,screen,google/gemma-4-e4b,director_dependency_envelope,planning,0,completed,0.8571,1691,68.63,0.1,stop,140,108,
+screen-installed-bounded.json,screen,google/gemma-4-e4b,native_tool_read_file,tool_use,0,completed,1,1316,70.19,0.082,tool_calls,121,85,
+screen-installed-bounded.json,screen,google/gemma-4-e4b,claim_grounding_matrix,grounding,0,completed,0.2,5411,68.34,0.117,length,170,360,
+screen-installed-bounded.json,screen,google/gemma-4-e4b,gpu_residency_reasoning,reasoning,0,completed,1,395,74.64,0.104,stop,152,19,
+screen-installed-bounded.json,screen,google/gemma-4-e4b,code_review_immutable_sort,coding,0,completed,0,1281,68.58,0.095,length,125,80,
+screen-installed-bounded.json,screen,google/gemma-4-e4b,log_reconciliation,extraction,0,completed,1,481,67.61,0.1,stop,141,24,
+screen-installed-bounded.json,screen,google/gemma-4-e4b,insufficient_evidence_abstention,safety,0,completed,1,197,79.67,0.072,stop,75,8,
+screen-installed-bounded.json,screen,google/gemma-4-e4b,long_context_recall,long_context,0,completed,1,3282,68.13,2.865,stop,7768,26,
+screen-installed-bounded.json,screen,google/gemma-4-e4b,critic_candidate_selection,critique,0,completed,0,3883,68.49,0.088,length,104,256,
+screen-installed-bounded.json,screen,zai-org/glm-4.6v-flash,instruction_exact_token,instruction,0,completed,0,1807,14.88,0.165,length,42,24,
+screen-installed-bounded.json,screen,zai-org/glm-4.6v-flash,director_dependency_envelope,planning,0,completed,0.8571,55682,7.45,0.187,stop,132,413,
+screen-installed-bounded.json,screen,zai-org/glm-4.6v-flash,native_tool_read_file,tool_use,0,completed,0.6667,13767,13.42,0.31,tool_calls,225,180,
+screen-installed-bounded.json,screen,zai-org/glm-4.6v-flash,claim_grounding_matrix,grounding,0,completed,0.2,26751,13.61,0.258,length,160,360,
+screen-installed-bounded.json,screen,zai-org/glm-4.6v-flash,gpu_residency_reasoning,reasoning,0,completed,0,13369,13.72,0.188,length,142,180,
+screen-installed-bounded.json,screen,zai-org/glm-4.6v-flash,code_review_immutable_sort,coding,0,completed,0,5758,14.49,0.192,length,104,80,
+screen-installed-bounded.json,screen,zai-org/glm-4.6v-flash,log_reconciliation,extraction,0,completed,0,16160,13.81,0.196,length,120,220,
+screen-installed-bounded.json,screen,zai-org/glm-4.6v-flash,insufficient_evidence_abstention,safety,0,completed,0,5903,14.08,0.175,length,65,80,
+screen-installed-bounded.json,screen,zai-org/glm-4.6v-flash,long_context_recall,long_context,0,completed,0,24044,8.72,5.655,length,6555,160,
+screen-installed-bounded.json,screen,zai-org/glm-4.6v-flash,critic_candidate_selection,critique,0,completed,1,18923,13.14,0.168,stop,94,245,
+screen-installed-bounded.json,screen,openai/gpt-oss-20b,instruction_exact_token,instruction,0,completed,1,1440,34.79,0.729,stop,108,24,
+screen-installed-bounded.json,screen,openai/gpt-oss-20b,director_dependency_envelope,planning,0,failed,0,4551,,,,,,"HTTP 400: {""error"":""Engine protocol predict stream returned an error: {\""code\"":500,\""message\"":\""The model produced output that does not match the expected peg-native format\"",\""type\"":\""server_error\""}""}"
+screen-installed-bounded.json,screen,openai/gpt-oss-20b,native_tool_read_file,tool_use,0,completed,1,2047,36.21,0.875,tool_calls,178,41,
+screen-installed-bounded.json,screen,openai/gpt-oss-20b,claim_grounding_matrix,grounding,0,completed,0.8,8555,34.15,0.413,stop,225,277,
+screen-installed-bounded.json,screen,openai/gpt-oss-20b,gpu_residency_reasoning,reasoning,0,completed,1,4121,36.23,0.451,stop,208,132,
+screen-installed-bounded.json,screen,openai/gpt-oss-20b,code_review_immutable_sort,coding,0,completed,1,1357,37.65,0.419,stop,170,34,
+screen-installed-bounded.json,screen,openai/gpt-oss-20b,log_reconciliation,extraction,0,completed,1,4414,37.02,0.417,stop,188,147,
+screen-installed-bounded.json,screen,openai/gpt-oss-20b,insufficient_evidence_abstention,safety,0,completed,1,1117,38.62,0.336,stop,132,29,
+screen-installed-bounded.json,screen,openai/gpt-oss-20b,long_context_recall,long_context,0,completed,1,6280,31.56,4.849,stop,6373,43,
+screen-installed-bounded.json,screen,openai/gpt-oss-20b,critic_candidate_selection,critique,0,completed,1,5227,25.94,0.353,stop,160,124,
+screen-installed-bounded.json,screen,deepseek/deepseek-r1-0528-qwen3-8b,instruction_exact_token,instruction,0,completed,0,809,34.07,0.076,length,37,24,
+screen-installed-bounded.json,screen,deepseek/deepseek-r1-0528-qwen3-8b,director_dependency_envelope,planning,0,completed,0.2857,13573,31.23,0.096,length,127,420,
+screen-installed-bounded.json,screen,deepseek/deepseek-r1-0528-qwen3-8b,native_tool_read_file,tool_use,0,completed,0,5744,32.79,0.206,length,57,180,
+screen-installed-bounded.json,screen,deepseek/deepseek-r1-0528-qwen3-8b,claim_grounding_matrix,grounding,0,completed,0.2,11745,31,0.094,length,155,360,
+screen-installed-bounded.json,screen,deepseek/deepseek-r1-0528-qwen3-8b,gpu_residency_reasoning,reasoning,0,completed,0,5945,31.1,0.095,length,139,180,
+screen-installed-bounded.json,screen,deepseek/deepseek-r1-0528-qwen3-8b,code_review_immutable_sort,coding,0,completed,0,2675,31.49,0.081,length,99,80,
+screen-installed-bounded.json,screen,deepseek/deepseek-r1-0528-qwen3-8b,log_reconciliation,extraction,0,completed,0,7298,30.75,0.097,length,128,220,
+screen-installed-bounded.json,screen,deepseek/deepseek-r1-0528-qwen3-8b,insufficient_evidence_abstention,safety,0,completed,0,2490,33.67,0.064,length,60,80,
+screen-installed-bounded.json,screen,deepseek/deepseek-r1-0528-qwen3-8b,long_context_recall,long_context,0,completed,0,18236,11.81,4.631,length,7493,160,
+screen-installed-bounded.json,screen,deepseek/deepseek-r1-0528-qwen3-8b,critic_candidate_selection,critique,0,completed,0,8435,31.53,0.082,length,89,256,
+screen-installed-bounded.json,screen,qwen/qwen3.5-9b,instruction_exact_token,instruction,0,completed,0,1479,26.35,0.549,length,49,24,
+screen-installed-bounded.json,screen,qwen/qwen3.5-9b,director_dependency_envelope,planning,0,completed,0.2857,15505,27.61,0.228,length,139,420,
+screen-installed-bounded.json,screen,qwen/qwen3.5-9b,native_tool_read_file,tool_use,0,completed,1,3483,27.43,0.4,tool_calls,329,83,
+screen-installed-bounded.json,screen,qwen/qwen3.5-9b,claim_grounding_matrix,grounding,0,completed,0.2,13293,27.71,0.229,length,167,360,
+screen-installed-bounded.json,screen,qwen/qwen3.5-9b,gpu_residency_reasoning,reasoning,0,completed,0,6641,28.22,0.19,length,150,180,
+screen-installed-bounded.json,screen,qwen/qwen3.5-9b,code_review_immutable_sort,coding,0,completed,0,3104,27.95,0.172,length,111,80,
+screen-installed-bounded.json,screen,qwen/qwen3.5-9b,log_reconciliation,extraction,0,completed,0,8108,28.08,0.201,length,140,220,
+screen-installed-bounded.json,screen,qwen/qwen3.5-9b,insufficient_evidence_abstention,safety,0,completed,0,3005,28.79,0.152,length,72,80,
+screen-installed-bounded.json,screen,qwen/qwen3.5-9b,long_context_recall,long_context,0,completed,0,12129,23.23,5.158,length,7506,160,
+screen-installed-bounded.json,screen,qwen/qwen3.5-9b,critic_candidate_selection,critique,0,completed,0,9620,27.55,0.173,length,101,256,
+screen-installed-bounded.json,screen,google/gemma-4-12b,instruction_exact_token,instruction,0,completed,0,10549,3.87,4.308,length,52,24,
+screen-installed-bounded.json,screen,google/gemma-4-12b,director_dependency_envelope,planning,0,failed,0,90007,,,,,,The operation was aborted due to timeout
+screen-installed-bounded.json,screen,google/gemma-4-12b,native_tool_read_file,tool_use,0,completed,1,28732,3.43,2.581,tool_calls,121,88,
+screen-installed-bounded.json,screen,google/gemma-4-12b,claim_grounding_matrix,grounding,0,failed,0,90003,,,,,,The operation was aborted due to timeout
+screen-installed-bounded.json,screen,google/gemma-4-12b,gpu_residency_reasoning,reasoning,0,completed,0,56604,3.28,0.636,length,152,180,
+screen-installed-bounded.json,screen,google/gemma-4-12b,code_review_immutable_sort,coding,0,completed,0,22987,3.6,0.667,length,125,80,
+screen-installed-bounded.json,screen,google/gemma-4-12b,log_reconciliation,extraction,0,completed,0,68371,3.34,0.671,length,141,220,
+screen-installed-bounded.json,screen,google/gemma-4-12b,insufficient_evidence_abstention,safety,0,completed,0,24185,3.67,2.341,length,75,80,
+screen-installed-bounded.json,screen,google/gemma-4-12b,long_context_recall,long_context,0,completed,0,37014,6.3,11.552,length,7768,160,
+screen-installed-bounded.json,screen,google/gemma-4-12b,critic_candidate_selection,critique,0,completed,0,34286,7.71,0.749,length,104,256,
+screen-installed-bounded.json,screen,google/gemma-4-12b-qat,instruction_exact_token,instruction,0,completed,0,2534,13.85,0.78,length,52,24,
+screen-installed-bounded.json,screen,google/gemma-4-12b-qat,director_dependency_envelope,planning,0,failed,0,19,,,,,,"HTTP 500: <!DOCTYPE html>
+<html lang=""en"">
+<head>
+<meta charset=""utf-8"">
+<title>Error</title>
+</head>
+<body>
+<pre>Internal Server Error</pre>
+</body>
+</html>
+"
+screen-installed-bounded.json,screen,google/gemma-4-12b-qat,native_tool_read_file,tool_use,0,failed,0,6,,,,,,"HTTP 500: <!DOCTYPE html>
+<html lang=""en"">
+<head>
+<meta charset=""utf-8"">
+<title>Error</title>
+</head>
+<body>
+<pre>Internal Server Error</pre>
+</body>
+</html>
+"
+screen-installed-bounded.json,screen,google/gemma-4-12b-qat,claim_grounding_matrix,grounding,0,failed,0,5,,,,,,"HTTP 500: <!DOCTYPE html>
+<html lang=""en"">
+<head>
+<meta charset=""utf-8"">
+<title>Error</title>
+</head>
+<body>
+<pre>Internal Server Error</pre>
+</body>
+</html>
+"
+screen-installed-bounded.json,screen,google/gemma-4-12b-qat,gpu_residency_reasoning,reasoning,0,failed,0,19,,,,,,"HTTP 500: <!DOCTYPE html>
+<html lang=""en"">
+<head>
+<meta charset=""utf-8"">
+<title>Error</title>
+</head>
+<body>
+<pre>Internal Server Error</pre>
+</body>
+</html>
+"
+screen-installed-bounded.json,screen,google/gemma-4-12b-qat,code_review_immutable_sort,coding,0,failed,0,6,,,,,,"HTTP 500: <!DOCTYPE html>
+<html lang=""en"">
+<head>
+<meta charset=""utf-8"">
+<title>Error</title>
+</head>
+<body>
+<pre>Internal Server Error</pre>
+</body>
+</html>
+"
+screen-installed-bounded.json,screen,google/gemma-4-12b-qat,log_reconciliation,extraction,0,failed,0,5,,,,,,"HTTP 500: <!DOCTYPE html>
+<html lang=""en"">
+<head>
+<meta charset=""utf-8"">
+<title>Error</title>
+</head>
+<body>
+<pre>Internal Server Error</pre>
+</body>
+</html>
+"
+screen-installed-bounded.json,screen,google/gemma-4-12b-qat,insufficient_evidence_abstention,safety,0,failed,0,3,,,,,,"HTTP 500: <!DOCTYPE html>
+<html lang=""en"">
+<head>
+<meta charset=""utf-8"">
+<title>Error</title>
+</head>
+<body>
+<pre>Internal Server Error</pre>
+</body>
+</html>
+"
+screen-installed-bounded.json,screen,google/gemma-4-12b-qat,long_context_recall,long_context,0,failed,0,6,,,,,,"HTTP 500: <!DOCTYPE html>
+<html lang=""en"">
+<head>
+<meta charset=""utf-8"">
+<title>Error</title>
+</head>
+<body>
+<pre>Internal Server Error</pre>
+</body>
+</html>
+"
+screen-installed-bounded.json,screen,google/gemma-4-12b-qat,critic_candidate_selection,critique,0,failed,0,5,,,,,,"HTTP 500: <!DOCTYPE html>
+<html lang=""en"">
+<head>
+<meta charset=""utf-8"">
+<title>Error</title>
+</head>
+<body>
+<pre>Internal Server Error</pre>
+</body>
+</html>
+"

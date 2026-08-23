@@ -1,0 +1,7 @@
+profile_id,roles,decision,model_id,runtime_id,role_score,task_success_rate,schema_success,tool_semantic_success,citation_precision,regression_rate,failure_rate,median_seconds,peak_vram_mib,peak_ram_mib,resource_measurement_quality,failed_checks
+planner,planner,unresolved_no_policy_mapping,,,,,,,,,,,,,missing,policy.candidate_mapping
+researcher_extractor,researcher|extractor,unresolved_no_policy_mapping,,,,,,,,,,,,,missing,policy.candidate_mapping
+coder,coder,unresolved_no_policy_mapping,,,,,,,,,,,,,missing,policy.candidate_mapping
+verifier_critic,verifier|critic,unresolved_no_policy_mapping,,,,,,,,,,,,,missing,policy.candidate_mapping
+synthesizer_policy,synthesizer|policy_guard,unresolved_no_policy_mapping,,,,,,,,,,,,,missing,policy.candidate_mapping
+vision,vision,unresolved_no_policy_mapping,,,,,,,,,,,,,missing,policy.candidate_mapping

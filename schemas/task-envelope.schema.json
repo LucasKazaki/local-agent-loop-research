@@ -1,0 +1,570 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:local-agent-research:schema:task-envelope:1.0",
+  "title": "Local Loop Task Envelope",
+  "description": "Immutable, attempt-scoped work contract issued by the deterministic controller.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "protocol_version",
+    "envelope_type",
+    "run_id",
+    "task_id",
+    "task_version",
+    "attempt_id",
+    "attempt_number",
+    "envelope_sha256",
+    "role",
+    "model_profile",
+    "objective",
+    "why_this_task_exists",
+    "immutable_constraints",
+    "assumptions_allowed",
+    "inputs",
+    "capabilities",
+    "acceptance",
+    "budget",
+    "output_contract",
+    "retry_context"
+  ],
+  "properties": {
+    "protocol_version": {
+      "const": "local-loop/1.0"
+    },
+    "envelope_type": {
+      "const": "task"
+    },
+    "run_id": {
+      "$ref": "#/$defs/runId"
+    },
+    "task_id": {
+      "$ref": "#/$defs/taskId"
+    },
+    "task_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "attempt_id": {
+      "$ref": "#/$defs/attemptId"
+    },
+    "attempt_number": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "envelope_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "role": {
+      "$ref": "#/$defs/role"
+    },
+    "model_profile": {
+      "$ref": "#/$defs/profileId"
+    },
+    "objective": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 8000
+    },
+    "why_this_task_exists": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4000
+    },
+    "immutable_constraints": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 4000
+      },
+      "uniqueItems": true
+    },
+    "assumptions_allowed": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 4000
+      },
+      "uniqueItems": true
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/inputArtifact"
+      }
+    },
+    "capabilities": {
+      "$ref": "#/$defs/capabilities"
+    },
+    "acceptance": {
+      "$ref": "#/$defs/acceptance"
+    },
+    "budget": {
+      "$ref": "#/$defs/budget"
+    },
+    "output_contract": {
+      "$ref": "#/$defs/outputContract"
+    },
+    "retry_context": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/retryContext"
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "runId": {
+      "type": "string",
+      "pattern": "^run_[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+    },
+    "taskId": {
+      "type": "string",
+      "pattern": "^task_[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+    },
+    "attemptId": {
+      "type": "string",
+      "pattern": "^attempt_[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+    },
+    "artifactId": {
+      "type": "string",
+      "pattern": "^artifact_[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+    },
+    "checkId": {
+      "type": "string",
+      "pattern": "^check_[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+    },
+    "leaseId": {
+      "type": "string",
+      "pattern": "^lease_[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+    },
+    "profileId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "absolutePath": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 4096,
+      "pattern": "^(?:[A-Za-z]:[\\\\/]|/)"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "planner",
+        "researcher",
+        "coder",
+        "extractor",
+        "vision",
+        "verifier",
+        "critic",
+        "synthesizer",
+        "policy_guard"
+      ]
+    },
+    "inputArtifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "sha256",
+        "purpose",
+        "required"
+      ],
+      "properties": {
+        "artifact_id": {
+          "$ref": "#/$defs/artifactId"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "purpose": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "required": {
+          "type": "boolean"
+        }
+      }
+    },
+    "lease": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lease_id",
+        "task_id",
+        "attempt_id",
+        "owner",
+        "fencing_token",
+        "write_scope",
+        "issued_at",
+        "expires_at"
+      ],
+      "properties": {
+        "lease_id": {
+          "$ref": "#/$defs/leaseId"
+        },
+        "task_id": {
+          "$ref": "#/$defs/taskId"
+        },
+        "attempt_id": {
+          "$ref": "#/$defs/attemptId"
+        },
+        "owner": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "fencing_token": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "write_scope": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/absolutePath"
+          },
+          "uniqueItems": true
+        },
+        "issued_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tools",
+        "network",
+        "read_paths",
+        "write_paths",
+        "shell",
+        "lease"
+      ],
+      "properties": {
+        "tools": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+          },
+          "uniqueItems": true
+        },
+        "network": {
+          "type": "string",
+          "enum": [
+            "none",
+            "allowlisted",
+            "unrestricted_read"
+          ]
+        },
+        "read_paths": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/absolutePath"
+          },
+          "uniqueItems": true
+        },
+        "write_paths": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/absolutePath"
+          },
+          "uniqueItems": true
+        },
+        "shell": {
+          "type": "string",
+          "enum": [
+            "none",
+            "sandboxed_read",
+            "sandboxed_write"
+          ]
+        },
+        "lease": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/lease"
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "write_paths": {
+                "minItems": 1
+              }
+            },
+            "required": [
+              "write_paths"
+            ]
+          },
+          "then": {
+            "properties": {
+              "lease": {
+                "$ref": "#/$defs/lease"
+              },
+              "shell": {
+                "const": "sandboxed_write"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "lease": {
+                "type": "null"
+              },
+              "shell": {
+                "enum": [
+                  "none",
+                  "sandboxed_read"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "hardCheck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "check_id",
+        "type",
+        "specification"
+      ],
+      "properties": {
+        "check_id": {
+          "$ref": "#/$defs/checkId"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "schema",
+            "command",
+            "test",
+            "citation",
+            "hash",
+            "policy"
+          ]
+        },
+        "specification": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8000
+        }
+      }
+    },
+    "acceptance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "hard_checks",
+        "soft_rubric_id",
+        "minimum_soft_score"
+      ],
+      "properties": {
+        "hard_checks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/hardCheck"
+          }
+        },
+        "soft_rubric_id": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "pattern": "^rubric_[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+            }
+          ]
+        },
+        "minimum_soft_score": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "soft_rubric_id": {
+                "type": "null"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "minimum_soft_score": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "minimum_soft_score": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "deadline",
+        "max_wall_seconds",
+        "max_model_output_tokens",
+        "max_tool_calls",
+        "max_artifact_bytes"
+      ],
+      "properties": {
+        "deadline": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "max_wall_seconds": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_model_output_tokens": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_tool_calls": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max_artifact_bytes": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "outputContract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_id",
+        "required_artifact_kinds",
+        "must_report_unresolved",
+        "must_include_evidence_for_claims"
+      ],
+      "properties": {
+        "schema_id": {
+          "const": "result-envelope/1.0"
+        },
+        "required_artifact_kinds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "plan",
+              "source_snapshot",
+              "note",
+              "patch",
+              "file",
+              "report",
+              "test_log",
+              "trace",
+              "model_output"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "must_report_unresolved": {
+          "type": "boolean"
+        },
+        "must_include_evidence_for_claims": {
+          "type": "boolean"
+        }
+      }
+    },
+    "retryContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "prior_attempt_id",
+        "failed_check_ids",
+        "diagnostic_artifact_ids",
+        "prior_failure_signature",
+        "required_strategy_change",
+        "forbidden_repetition"
+      ],
+      "properties": {
+        "prior_attempt_id": {
+          "$ref": "#/$defs/attemptId"
+        },
+        "failed_check_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/checkId"
+          },
+          "uniqueItems": true
+        },
+        "diagnostic_artifact_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifactId"
+          },
+          "uniqueItems": true
+        },
+        "prior_failure_signature": {
+          "$ref": "#/$defs/sha256"
+        },
+        "required_strategy_change": {
+          "type": "string",
+          "enum": [
+            "prompt",
+            "context",
+            "tool",
+            "model",
+            "decomposition",
+            "implementation"
+          ]
+        },
+        "forbidden_repetition": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4000
+        }
+      }
+    }
+  }
+}

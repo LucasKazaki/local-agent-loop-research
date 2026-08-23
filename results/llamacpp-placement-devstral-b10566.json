@@ -1,0 +1,523 @@
+{
+  "schema_version": "llamacpp-placement-receipt/1.0",
+  "execution_mode": true,
+  "gpu_model_workload_started": false,
+  "status": "failed",
+  "started_at": "2026-08-23T05:58:12.223Z",
+  "finished_at": "2026-08-23T05:58:12.862Z",
+  "suite_sha256": "e39dd05da661d0922ac90d0fd8eb22195edda4f13fef8027be6bef4a7a311d8a",
+  "plan": {
+    "schema_version": "llamacpp-placement-plan/1.0",
+    "workload_launched": false,
+    "source_contract": {
+      "bench": "https://github.com/ggml-org/llama.cpp/blob/master/tools/llama-bench/llama-bench.cpp",
+      "cli": "https://github.com/ggml-org/llama.cpp/blob/master/tools/cli/README.md"
+    },
+    "suite_sha256": "e39dd05da661d0922ac90d0fd8eb22195edda4f13fef8027be6bef4a7a311d8a",
+    "model": {
+      "model_id": "mistralai_devstral-small-2-24b-instruct-2512",
+      "file_name": "mistralai_Devstral-Small-2-24B-Instruct-2512-Q3_K_M.gguf",
+      "size_bytes": 11474611072,
+      "modified_at": "2026-08-23T05:09:52.965Z",
+      "sha256": "b46c271d20e9268f94a52cb865374de9ba59c75d7466bf6bd6a240763282af22",
+      "absolute_path_persisted": false,
+      "gguf": {
+        "valid": true,
+        "version": 3,
+        "tensor_count": "363",
+        "metadata_key_value_count": "52"
+      }
+    },
+    "runtime": {
+      "kind": "llama-bench",
+      "file_name": "llama-bench.exe",
+      "size_bytes": 9216,
+      "modified_at": "2026-08-21T19:31:58.000Z",
+      "sha256": "f15dbd78bd1ed7ff51ca775250f00aba901dd79865b6613cb7aa09b87c969a7d",
+      "absolute_path_persisted": false,
+      "identity_basis": [
+        "executable-sha256",
+        "bounded-help-capability-probe"
+      ]
+    },
+    "requested_rounds": 2,
+    "telemetry": {
+      "provider": "nvidia-smi",
+      "selected_indices": [
+        0,
+        1
+      ],
+      "interval_ms": 500
+    },
+    "timeout_ms_per_case": 600000,
+    "cooldown_ms_between_cases": 3000,
+    "benchmark_parameters": {
+      "harness": "llamacpp-placement/1.0",
+      "model_sha256": "b46c271d20e9268f94a52cb865374de9ba59c75d7466bf6bd6a240763282af22",
+      "runtime_sha256": "f15dbd78bd1ed7ff51ca775250f00aba901dd79865b6613cb7aa09b87c969a7d",
+      "prompt_tokens": 512,
+      "generation_tokens": 128,
+      "threads": 8,
+      "batch_size": 512,
+      "ubatch_size": 128,
+      "gpu_layers": 999,
+      "cache_type_k": "f16",
+      "cache_type_v": "f16",
+      "flash_attention": "auto",
+      "load_mode": "mmap",
+      "warmup": true,
+      "requested_context_tokens": 640,
+      "fit_policy": {
+        "enabled": true,
+        "target_margin_mib_per_device": 768,
+        "minimum_context_tokens": 8192,
+        "same_policy_for_every_placement": true,
+        "actual_gpu_layers_must_come_from_llama_bench_output": true
+      },
+      "nvidia_telemetry_indices": [
+        0,
+        1
+      ],
+      "placements": [
+        {
+          "placement_id": "single_gpu",
+          "split_mode": "none",
+          "devices": [
+            "CUDA0"
+          ],
+          "tensor_split": null,
+          "main_gpu_within_device_list": 0
+        },
+        {
+          "placement_id": "dual_gpu_layer_split",
+          "split_mode": "layer",
+          "devices": [
+            "CUDA0",
+            "CUDA1"
+          ],
+          "tensor_split": [
+            5,
+            4
+          ],
+          "main_gpu_within_device_list": null
+        }
+      ],
+      "schedule": [
+        {
+          "case_id": "round_01_single_gpu",
+          "round": 1,
+          "placement_id": "single_gpu"
+        },
+        {
+          "case_id": "round_01_dual_gpu_layer_split",
+          "round": 1,
+          "placement_id": "dual_gpu_layer_split"
+        },
+        {
+          "case_id": "round_02_dual_gpu_layer_split",
+          "round": 2,
+          "placement_id": "dual_gpu_layer_split"
+        },
+        {
+          "case_id": "round_02_single_gpu",
+          "round": 2,
+          "placement_id": "single_gpu"
+        }
+      ]
+    },
+    "cases": [
+      {
+        "case_id": "round_01_single_gpu",
+        "round": 1,
+        "placement_id": "single_gpu",
+        "placement": {
+          "placement_id": "single_gpu",
+          "split_mode": "none",
+          "devices": [
+            "CUDA0"
+          ],
+          "tensor_split": null,
+          "main_gpu_within_device_list": 0
+        },
+        "command": {
+          "executable": "llama-bench.exe",
+          "working_directory": "<MODEL_DIRECTORY>",
+          "arguments": [
+            "--offline",
+            "-m",
+            "mistralai_Devstral-Small-2-24B-Instruct-2512-Q3_K_M.gguf",
+            "-p",
+            "512",
+            "-n",
+            "128",
+            "-r",
+            "1",
+            "-b",
+            "512",
+            "-ub",
+            "128",
+            "-t",
+            "8",
+            "-ctk",
+            "f16",
+            "-ctv",
+            "f16",
+            "-ngl",
+            "999",
+            "-sm",
+            "none",
+            "-dev",
+            "CUDA0",
+            "-fa",
+            "auto",
+            "-lm",
+            "mmap",
+            "-o",
+            "json",
+            "-mg",
+            "0",
+            "--fit-target",
+            "768",
+            "--fit-ctx",
+            "8192"
+          ]
+        }
+      },
+      {
+        "case_id": "round_01_dual_gpu_layer_split",
+        "round": 1,
+        "placement_id": "dual_gpu_layer_split",
+        "placement": {
+          "placement_id": "dual_gpu_layer_split",
+          "split_mode": "layer",
+          "devices": [
+            "CUDA0",
+            "CUDA1"
+          ],
+          "tensor_split": [
+            5,
+            4
+          ],
+          "main_gpu_within_device_list": null
+        },
+        "command": {
+          "executable": "llama-bench.exe",
+          "working_directory": "<MODEL_DIRECTORY>",
+          "arguments": [
+            "--offline",
+            "-m",
+            "mistralai_Devstral-Small-2-24B-Instruct-2512-Q3_K_M.gguf",
+            "-p",
+            "512",
+            "-n",
+            "128",
+            "-r",
+            "1",
+            "-b",
+            "512",
+            "-ub",
+            "128",
+            "-t",
+            "8",
+            "-ctk",
+            "f16",
+            "-ctv",
+            "f16",
+            "-ngl",
+            "999",
+            "-sm",
+            "layer",
+            "-dev",
+            "CUDA0/CUDA1",
+            "-fa",
+            "auto",
+            "-lm",
+            "mmap",
+            "-o",
+            "json",
+            "-ts",
+            "5/4",
+            "--fit-target",
+            "768",
+            "--fit-ctx",
+            "8192"
+          ]
+        }
+      },
+      {
+        "case_id": "round_02_dual_gpu_layer_split",
+        "round": 2,
+        "placement_id": "dual_gpu_layer_split",
+        "placement": {
+          "placement_id": "dual_gpu_layer_split",
+          "split_mode": "layer",
+          "devices": [
+            "CUDA0",
+            "CUDA1"
+          ],
+          "tensor_split": [
+            5,
+            4
+          ],
+          "main_gpu_within_device_list": null
+        },
+        "command": {
+          "executable": "llama-bench.exe",
+          "working_directory": "<MODEL_DIRECTORY>",
+          "arguments": [
+            "--offline",
+            "-m",
+            "mistralai_Devstral-Small-2-24B-Instruct-2512-Q3_K_M.gguf",
+            "-p",
+            "512",
+            "-n",
+            "128",
+            "-r",
+            "1",
+            "-b",
+            "512",
+            "-ub",
+            "128",
+            "-t",
+            "8",
+            "-ctk",
+            "f16",
+            "-ctv",
+            "f16",
+            "-ngl",
+            "999",
+            "-sm",
+            "layer",
+            "-dev",
+            "CUDA0/CUDA1",
+            "-fa",
+            "auto",
+            "-lm",
+            "mmap",
+            "-o",
+            "json",
+            "-ts",
+            "5/4",
+            "--fit-target",
+            "768",
+            "--fit-ctx",
+            "8192"
+          ]
+        }
+      },
+      {
+        "case_id": "round_02_single_gpu",
+        "round": 2,
+        "placement_id": "single_gpu",
+        "placement": {
+          "placement_id": "single_gpu",
+          "split_mode": "none",
+          "devices": [
+            "CUDA0"
+          ],
+          "tensor_split": null,
+          "main_gpu_within_device_list": 0
+        },
+        "command": {
+          "executable": "llama-bench.exe",
+          "working_directory": "<MODEL_DIRECTORY>",
+          "arguments": [
+            "--offline",
+            "-m",
+            "mistralai_Devstral-Small-2-24B-Instruct-2512-Q3_K_M.gguf",
+            "-p",
+            "512",
+            "-n",
+            "128",
+            "-r",
+            "1",
+            "-b",
+            "512",
+            "-ub",
+            "128",
+            "-t",
+            "8",
+            "-ctk",
+            "f16",
+            "-ctv",
+            "f16",
+            "-ngl",
+            "999",
+            "-sm",
+            "none",
+            "-dev",
+            "CUDA0",
+            "-fa",
+            "auto",
+            "-lm",
+            "mmap",
+            "-o",
+            "json",
+            "-mg",
+            "0",
+            "--fit-target",
+            "768",
+            "--fit-ctx",
+            "8192"
+          ]
+        }
+      }
+    ]
+  },
+  "environment": {
+    "platform": "win32",
+    "os_release": "10.0.26200",
+    "architecture": "x64",
+    "cpu_model": "AMD Ryzen 5 7600X 6-Core Processor             ",
+    "logical_cpu_count": 12,
+    "total_ram_bytes": 67823132672,
+    "node_version": "v24.19.0"
+  },
+  "child_environment_policy": {
+    "inherited_key_names": [
+      "LANG",
+      "LC_ALL",
+      "Path",
+      "PATHEXT",
+      "SystemRoot",
+      "TEMP",
+      "TMP"
+    ],
+    "performance_override_variables_inherited": false,
+    "provider_credential_variables_inherited": false
+  },
+  "privacy": {
+    "known_local_paths_replaced": true,
+    "recognized_secret_patterns_redacted": true,
+    "pre_redaction_stream_hashes_retained": true,
+    "raw_model_weights_published": false
+  },
+  "probes": {
+    "llama_bench_help": {
+      "started_at": "2026-08-23T05:58:12.251Z",
+      "finished_at": "2026-08-23T05:58:12.432Z",
+      "wall_ms": 181,
+      "exit_code": 0,
+      "signal": null,
+      "timed_out": false,
+      "aborted": false,
+      "output_limit_exceeded": false,
+      "spawn_error": null,
+      "stdout": "usage: <LOCAL_PATH_3> [options]\r\n\r\noptions:\r\n  -h, --help\r\n  --numa <distribute|isolate|numactl>         numa mode (default: disabled)\r\n  -r, --repetitions <n>                       number of times to repeat each test (default: 5)\r\n  --prio <-1|0|1|2|3>                         process/thread priority (default: 0)\r\n  --delay <0...N> (seconds)                   delay between each test (default: 0)\r\n  -o, --output <csv|json|jsonl|md|sql>        output format printed to stdout (default: md)\r\n  -oe, --output-err <csv|json|jsonl|md|sql>   output format printed to stderr (default: none)\r\n  --list-devices                              list available devices and exit\r\n  -v, --verbose                               verbose output\r\n  --progress                                  print test progress indicators\r\n  --no-warmup                                 skip warmup runs before benchmarking\r\n  -fitt, --fit-target <MiB>                   fit model to device memory with this margin per device in MiB (default: off)\r\n  -fitc, --fit-ctx <n>                        minimum ctx size for --fit-target (default: 4096)\r\n  -rpc, --rpc <rpc_servers>                   register RPC devices (comma separated)\r\n\r\ntest parameters:\r\n  -m, --model <filename>                            (default: models/7B/ggml-model-q4_0.gguf)\r\n  -hf, -hfr, --hf-repo <user>/<model>[:quant]       Hugging Face model repository; quant is optional, case-insensitive\r\n                                                    default to Q4_K_M, or falls back to the first file in the repo if Q4_K_M doesn't exist.\r\n                                                    example: ggml-org/GLM-4.7-Flash-GGUF:Q4_K_M\r\n                                                    (default: unused)\r\n  -hff, --hf-file <file>                            Hugging Face model file. If specified, it will override the quant in --hf-repo\r\n                                                    (default: unused)\r\n  -hft, --hf-token <token>                          Hugging Face access token\r\n                                                    (default: value from HF_TOKEN environment variable)\r\n  --offline                                         Offline mode: forces use of cache, prevents network access\r\n                                                    (default: disabled)\r\n  -p, --n-prompt <n>                                (default: 512)\r\n  -n, --n-gen <n>                                   (default: 128)\r\n  -pg <pp,tg>                                       (default: )\r\n  -d, --n-depth <n>                                 (default: 0)\r\n  -b, --batch-size <n>                              (default: 2048)\r\n  -ub, --ubatch-size <n>                            (default: 512)\r\n  -ctk, --cache-type-k <t>                          (default: f16)\r\n  -ctv, --cache-type-v <t>                          (default: f16)\r\n  -t, --threads <n>                                 (default: 6)\r\n  -C, --cpu-mask <hex,hex>                          (default: 0x0)\r\n  --cpu-strict <0|1>                                (default: 0)\r\n  --poll <0...100>                                  (default: 50)\r\n  -ngl, --n-gpu-layers <n>                          (default: -1)\r\n  -ncmoe, --n-cpu-moe <n>                           (default: 0)\r\n  -sm, --split-mode <none|layer|row|tensor>         (default: layer)\r\n  -mg, --main-gpu <i>                               (default: 0)\r\n  -nkvo, --no-kv-offload <0|1>                      (default: 0)\r\n  -fa, --flash-attn <on|off|auto>                   (default: auto)\r\n  -dev, --device <dev0/dev1/...>                    (default: auto)\r\n  -lm, --load-mode <auto|none|mmap|mlock|mmap+mlock|dio> (default: auto)\r\n  -mmp, --mmap <0|1>                                (DEPRECATED IN FAVOUR OF --load-mode)\r\n  -dio, --direct-io <0|1>                           (DEPRECATED IN FAVOUR OF --load-mode)\r\n  -embd, --embeddings <0|1>                         (default: 0)\r\n  -ts, --tensor-split <ts0/ts1/..>                  (default: 0)\r\n  -ot --override-tensor <tensor name pattern>=<buffer type>;...\r\n                                                    (default: disabled)\r\n  -nopo, --no-op-offload <0|1>                      (default: 0)\r\n  --no-host <0|1>                                   (default: 0)\r\n\r\nMultiple values can be given for each parameter by separating them with ','\r\nor by specifying the parameter multiple times. Ranges can be given as\r\n'first-last' or 'first-last+step' or 'first-last*mult'.\r\n",
+      "stderr": "ggml_cuda_init: found 2 CUDA devices (Total VRAM: 16383 MiB):\r\n  Device 0: NVIDIA GeForce RTX 3070, compute capability 8.6, VMM: yes, VRAM: 8191 MiB\r\n  Device 1: NVIDIA GeForce GTX 1080, compute capability 6.1, VMM: yes, VRAM: 8191 MiB\r\nload_backend: loaded CUDA backend from <LOCAL_PATH_4>\\ggml-cuda.dll\r\nload_backend: loaded RPC backend from <LOCAL_PATH_4>\\ggml-rpc.dll\r\nload_backend: loaded CPU backend from <LOCAL_PATH_4>\\ggml-cpu-zen4.dll\r\n",
+      "stdout_sha256_before_redaction": "1ef1e497be3ece45abad11dc74c75e6b50245c7184ca6fae792c6c0947cf96d2",
+      "stderr_sha256_before_redaction": "a0904bfe38a7bb7a1150c2691879330204e4518511af2e329c234de4c9a2d2c6",
+      "redactions": {
+        "stdout": [
+          {
+            "type": "local-path",
+            "count": 1
+          }
+        ],
+        "stderr": [
+          {
+            "type": "local-path",
+            "count": 3
+          }
+        ],
+        "spawn_error": []
+      },
+      "parsed_json": null,
+      "json_parse_error": "Unexpected token 'u', \"usage: C:\\\"... is not valid JSON",
+      "evaluation": {
+        "accepted": true,
+        "probe_argument": "--help",
+        "accepted_exit_codes": [
+          0,
+          1
+        ],
+        "observed_exit_code": 0,
+        "required_capabilities": [
+          "--model",
+          "--repetitions",
+          "--output",
+          "--n-gpu-layers",
+          "--split-mode",
+          "--device",
+          "--tensor-split",
+          "--fit-target",
+          "--fit-ctx"
+        ],
+        "missing_capabilities": [],
+        "process_issues": []
+      },
+      "identity_note": "Executable SHA-256 is authoritative; help output is a bounded capability/build fingerprint."
+    },
+    "llama_bench_devices": {
+      "started_at": "2026-08-23T05:58:12.433Z",
+      "finished_at": "2026-08-23T05:58:12.838Z",
+      "wall_ms": 405,
+      "exit_code": 0,
+      "signal": null,
+      "timed_out": false,
+      "aborted": false,
+      "output_limit_exceeded": false,
+      "spawn_error": null,
+      "stdout": "Available devices:\r\n  CUDA0: NVIDIA GeForce RTX 3070 (8191 MiB, 7100 MiB free)\r\n  CUDA1: NVIDIA GeForce GTX 1080 (8191 MiB, 7187 MiB free)\r\n",
+      "stderr": "ggml_cuda_init: found 2 CUDA devices (Total VRAM: 16383 MiB):\r\n  Device 0: NVIDIA GeForce RTX 3070, compute capability 8.6, VMM: yes, VRAM: 8191 MiB\r\n  Device 1: NVIDIA GeForce GTX 1080, compute capability 6.1, VMM: yes, VRAM: 8191 MiB\r\nload_backend: loaded CUDA backend from <LOCAL_PATH_4>\\ggml-cuda.dll\r\nload_backend: loaded RPC backend from <LOCAL_PATH_4>\\ggml-rpc.dll\r\nload_backend: loaded CPU backend from <LOCAL_PATH_4>\\ggml-cpu-zen4.dll\r\nload_backend: loaded CUDA backend from <LOCAL_PATH_4>\\ggml-cuda.dll\r\nload_backend: loaded RPC backend from <LOCAL_PATH_4>\\ggml-rpc.dll\r\nload_backend: loaded CPU backend from <LOCAL_PATH_4>\\ggml-cpu-zen4.dll\r\n",
+      "stdout_sha256_before_redaction": "8406fcb88e3ad6e21f2f0c31442185ae73c35c2cf5cfba719aad052491f49170",
+      "stderr_sha256_before_redaction": "071732599d0f16fb17c32129d23328ba2796a2063ee112cbf091e1b315a6ba44",
+      "redactions": {
+        "stdout": [],
+        "stderr": [
+          {
+            "type": "local-path",
+            "count": 6
+          }
+        ],
+        "spawn_error": []
+      },
+      "parsed_json": null,
+      "json_parse_error": "Unexpected token 'A', \"Available \"... is not valid JSON",
+      "evaluation": {
+        "accepted": true,
+        "probe_argument": "--list-devices",
+        "accepted_exit_codes": [
+          0,
+          1
+        ],
+        "observed_exit_code": 0,
+        "required_device_identifiers": [
+          "CUDA0",
+          "CUDA1"
+        ],
+        "missing_device_identifiers": [],
+        "process_issues": []
+      }
+    },
+    "nvidia_smi_version": {
+      "started_at": "2026-08-23T05:58:12.839Z",
+      "finished_at": "2026-08-23T05:58:12.862Z",
+      "wall_ms": 23,
+      "exit_code": 255,
+      "signal": null,
+      "timed_out": false,
+      "aborted": false,
+      "output_limit_exceeded": false,
+      "spawn_error": null,
+      "stdout": "Failed to initialize NVML: Unknown Error\r\n",
+      "stderr": "",
+      "stdout_sha256_before_redaction": "dc7f7417d9d99a7bf4e6a8c746ddcbb830e1471e03dbb088f05d2ec00c67cda9",
+      "stderr_sha256_before_redaction": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "redactions": {
+        "stdout": [],
+        "stderr": [],
+        "spawn_error": []
+      },
+      "parsed_json": null,
+      "json_parse_error": "Unexpected token 'F', \"Failed to \"... is not valid JSON"
+    }
+  },
+  "cases": [],
+  "failure": {
+    "type": "Error",
+    "message": "nvidia-smi --version failed.",
+    "redactions": []
+  },
+  "receipt_content_sha256": "b31c88fed5955de203819f323e3eea597954157419178b33d06bcfa2bc73d941"
+}

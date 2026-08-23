@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "validatorVersion": "suite-aware/1.1",
+  "validatedAt": "2026-08-23T07:34:52.125Z",
+  "supportedFamilies": [
+    "text",
+    "code",
+    "vision",
+    "reasoning-profile",
+    "loop-ablation",
+    "llamacpp-placement"
+  ],
+  "results": [
+    {
+      "file": "results/code-finalists-isolated-r2.json",
+      "artifactSha256": "deb4836c740d3fb9d8dcec09f14ceff13899125bdd6c600e25fed61b769c1277",
+      "family": "code",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": true,
+      "expectedCasesPerCompletedSubject": 10,
+      "subjectCount": 4,
+      "outcomeStatus": "completed",
+      "findings": []
+    },
+    {
+      "file": "results/dual-resident-e4b.json",
+      "artifactSha256": "c7ea09edee201198362af8686fef7f082723716d037c51d561b5773d5547b476",
+      "family": "text",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": true,
+      "expectedCasesPerCompletedSubject": 10,
+      "subjectCount": 1,
+      "outcomeStatus": "completed",
+      "findings": []
+    },
+    {
+      "file": "results/dual-resident-granite.json",
+      "artifactSha256": "195110ae407c3301c6ac5571b5ab6b4dda2b0515a6e01adf5fe9d457df779d4a",
+      "family": "text",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": true,
+      "expectedCasesPerCompletedSubject": 10,
+      "subjectCount": 1,
+      "outcomeStatus": "completed",
+      "findings": []
+    },
+    {
+      "file": "results/llamacpp-placement-devstral-b10566-r5-studio-closed.json",
+      "artifactSha256": "982d300f91bde5f363dd8a15ac5980a75c2432c3115d2c653c723d6827936640",
+      "family": "llamacpp-placement",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": true,
+      "expectedCasesPerCompletedSubject": 4,
+      "subjectCount": 1,
+      "outcomeStatus": "completed",
+      "findings": []
+    },
+    {
+      "file": "results/loop-ablation-e4b-granite-dual-resident-r2.json",
+      "artifactSha256": "3e04735942d64d3feb666cc38b8a53c5413928fa6a82cd561d6d0a4947363597",
+      "family": "loop-ablation",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": true,
+      "expectedCasesPerCompletedSubject": 12,
+      "subjectCount": 1,
+      "outcomeStatus": "completed",
+      "findings": []
+    },
+    {
+      "file": "results/screen-devstral-isolated-r1.json",
+      "artifactSha256": "71ff8253fc603f826183706abf004471a35ce6a79d5c581f0ec56b18b2c37058",
+      "family": "text",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": true,
+      "expectedCasesPerCompletedSubject": 10,
+      "subjectCount": 1,
+      "outcomeStatus": "completed",
+      "findings": []
+    },
+    {
+      "file": "results/screen-finalists-isolated-r2.json",
+      "artifactSha256": "34a51146a486e0b6f0ce5cd57b2f57c758a7a6130183ed5040060dcc72056823",
+      "family": "text",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": true,
+      "expectedCasesPerCompletedSubject": 20,
+      "subjectCount": 3,
+      "outcomeStatus": "completed",
+      "findings": []
+    },
+    {
+      "file": "results/screen-granite-isolated-r2.json",
+      "artifactSha256": "6580436467ad507ce9e3995515bbfc95da748c9272d70f989ff1e6579b34168b",
+      "family": "text",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": true,
+      "expectedCasesPerCompletedSubject": 20,
+      "subjectCount": 1,
+      "outcomeStatus": "completed",
+      "findings": []
+    },
+    {
+      "file": "results/vision-configured-finalists-r2.json",
+      "artifactSha256": "8fc19cffc3a2e1f3e5ba265f16861c2ef1cc1daac2509b782389f67843283887",
+      "family": "vision",
+      "valid": true,
+      "complete": true,
+      "comparisonEligible": true,
+      "expectedCasesPerCompletedSubject": 6,
+      "subjectCount": 4,
+      "outcomeStatus": "completed",
+      "findings": []
+    }
+  ],
+  "receiptContentSha256": "66ebe7aa0b2b09b542d69605f901d0c375d7bc47e80d31328d56d43fa504f87f"
+}

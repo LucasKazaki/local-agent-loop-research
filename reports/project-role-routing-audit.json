@@ -1,0 +1,454 @@
+{
+  "schemaVersion": 1,
+  "auditId": "lucas-agent-studio-project-role-routing-2026-08-23",
+  "generatedAt": "2026-08-23T03:02:44.7756702-04:00",
+  "status": "proposal-only-not-runtime-config",
+  "frontierParityEstablished": false,
+  "productionRoutingAuthorized": false,
+  "scope": {
+    "studioProjectCount": 16,
+    "studioProjectAgentCount": 83,
+    "globalCompatibilityAgentCountExcluded": 11,
+    "note": "This audit snapshots project topology and proposes benchmark-informed role classes. It does not change or authorize LucasAgentStudio runtime routing."
+  },
+  "provisionalRouteProposal": {
+    "path": "reports/local-model-routes.provisional.schema-v1.json",
+    "sha256": "75d8fadf50123ddc70facc6ba37e4554783d8b9a00d4df75b604eaff3d6166dc",
+    "schemaVersion": 1,
+    "sourceRevision": "local-agent-research-provisional-2026-08-23-r2",
+    "status": "provisional-not-human-reviewed-not-runtime-config",
+    "projectCount": 16,
+    "registeredProjectAgentCount": 83,
+    "routedProjectAgentCount": 73,
+    "omittedFailClosedProjectAgentCount": 10,
+    "localOnly": true,
+    "defaultRoutes": 0,
+    "gpu0RuntimeContract": {
+      "runtimeManagedContext": true,
+      "reason": "Bionic 1.0.1 ignored explicit context_length in both the native load API and lms load.",
+      "requiredChecks": [
+        "requested model is the sole loaded admitted LLM before inference",
+        "parallel equals 1 before inference",
+        "requested model remains the sole loaded admitted LLM after inference",
+        "parallel remains 1 after inference"
+      ]
+    },
+    "installedCopyObservation": {
+      "workspace": "C:/AI/projects/LucasAgentStudio",
+      "status": "provisional-runtime-enabled-by-explicit-user-request",
+      "productionAuthorized": false,
+      "note": "The installed copy is separate from this research source proposal and was not modified by this audit update."
+    },
+    "staticVerifierLimitation": "QA roles prefer Gemma E4B after Granite/GPT-OSS producers and overseers prefer Granite after Gemma planners, but schema-v1 cannot select a verifier from the actual producer family. Same-family cases require a controller-selected different-family verifier or must fail closed."
+  },
+  "sourceSnapshot": {
+    "lucasAgentStudio": [
+      {
+        "path": "C:/AI/projects/LucasAgentStudio/src/server/project-registry.js",
+        "sha256": "14b9803b45e6d067b56a5e1a706f2948d601c784d870c82da168de6bd503125c"
+      },
+      {
+        "path": "C:/AI/projects/LucasAgentStudio/src/server/agent-registry.js",
+        "sha256": "605e7b9d00232a6d9dfe0f59441ac79db29f2a35f6c18dd1b8d837287cfa5210"
+      },
+      {
+        "path": "C:/AI/projects/LucasAgentStudio/data/projects.json",
+        "sha256": "950ecfc23bf8503dc2e1ee1f2ae8346685538a13da9a112b6dcd69499019a783"
+      },
+      {
+        "path": "C:/AI/projects/LucasAgentStudio/data/agent-config.json",
+        "sha256": "0dae72c3dd6289d7da2a0a3d5f6b974c86bff97c1cf98a9e8c455675929d261a"
+      }
+    ],
+    "benchmarkArtifacts": [
+      {
+        "path": "results/screen-finalists-isolated-r2.json",
+        "sha256": "34a51146a486e0b6f0ce5cd57b2f57c758a7a6130183ed5040060dcc72056823"
+      },
+      {
+        "path": "results/screen-granite-isolated-r2.json",
+        "sha256": "6580436467ad507ce9e3995515bbfc95da748c9272d70f989ff1e6579b34168b"
+      },
+      {
+        "path": "results/code-finalists-isolated-r2.json",
+        "sha256": "deb4836c740d3fb9d8dcec09f14ceff13899125bdd6c600e25fed61b769c1277"
+      },
+      {
+        "path": "results/vision-configured-finalists-r2.json",
+        "sha256": "8fc19cffc3a2e1f3e5ba265f16861c2ef1cc1daac2509b782389f67843283887"
+      },
+      {
+        "path": "results/vision-finalists-isolated-r2.json",
+        "sha256": "07758ae9dc45b5a8aa3ce4f79d8b36e33847de648e3b29938ba4f4e1e189cdb5"
+      },
+      {
+        "path": "results/dual-resident-e4b.json",
+        "sha256": "c7ea09edee201198362af8686fef7f082723716d037c51d561b5773d5547b476"
+      },
+      {
+        "path": "results/dual-resident-granite.json",
+        "sha256": "195110ae407c3301c6ac5571b5ab6b4dda2b0515a6e01adf5fe9d457df779d4a"
+      },
+      {
+        "path": "results/loop-ablation-e4b-granite-r2-clean.json",
+        "sha256": "5bd4487d65290dbaed9ec7f2a209eaf8ad01f2cbcd793a180eccbba14c0489a8"
+      },
+      {
+        "path": "results/loop-ablation-e4b-granite-dual-resident-r2.json",
+        "sha256": "3e04735942d64d3feb666cc38b8a53c5413928fa6a82cd561d6d0a4947363597"
+      },
+      {
+        "path": "results/vision-qwen3.5-isolated-r3-clean.json",
+        "sha256": "8deb55d8857bc22c9a73fbfecdcf67292c243545d9544e56de272792022855a2"
+      }
+    ],
+    "modelInventory": {
+      "path": "results/model-inventory-final.json",
+      "sha256": "7ef11bb083b2dbb046248fad3fa6d7c2f49228f5fa3614972fe3b11adc5c5bb7",
+      "inventoryContentSha256": "f96b4b7ff66df8c3ea9df99decca11dac25b861af253ed551dde53396921aefc",
+      "ggufFileCount": 20,
+      "inventoryErrors": 0
+    },
+    "validationReceipt": {
+      "path": "reports/result-validation-2026-08-23.json",
+      "sha256": "2eeb60e15239c3f4b3f8201c3ac43b9cb27d692b08bb1f535897789c31212940",
+      "receiptContentSha256": "17a4cdba943b4a4626a5d460275e720ed65ba61f966302b44cba3f389fdc18d4",
+      "validatorVersion": "suite-aware/1.1"
+    },
+    "supplementalValidationReceipts": [
+      {
+        "path": "reports/result-validation-loop-dual-resident.json",
+        "sha256": "9a50c93c643e8e8a638ff201040fe70039e19baac7d35408eb5b19ee388076bf",
+        "receiptContentSha256": "3dd2943e15a797d713648c2031779edd5cef7453f1b44750792ddb474703ab00",
+        "validatorVersion": "suite-aware/1.1",
+        "valid": true,
+        "complete": true,
+        "comparisonEligible": true
+      },
+      {
+        "path": "reports/result-validation-vision-qwen-r3.json",
+        "sha256": "037470e4018605c466e70677723d66d09a46094398fff54155fb1b93bc48452a",
+        "receiptContentSha256": "7abcc448d692689e560c56e600f4463be289fed3165e490ee8742da05e10af16",
+        "validatorVersion": "suite-aware/1.1",
+        "valid": true,
+        "complete": true,
+        "comparisonEligible": true
+      }
+    ]
+  },
+  "routeClasses": {
+    "planner_synthesis_operational": {
+      "residency": "gpu0-time-sliced-exclusive",
+      "model": "google/gemma-4-e4b",
+      "family": "gemma",
+      "evidenceLabel": "Inference",
+      "basis": "Measured and suite-aware structurally Validated generic screen: 17.714/20, 0.886 pass rate, 20/20 requests completed, 67.94 tokens/s; planning 0.857 and critique 1.0. Coding was 0 and is excluded.",
+      "evidence": ["results/screen-finalists-isolated-r2.json", "results/dual-resident-e4b.json"]
+    },
+    "research_grounding_operational": {
+      "residency": "gpu1-static-llamacpp-candidate",
+      "model": "granite-4.1-8b",
+      "family": "granite",
+      "evidenceLabel": "Inference",
+      "basis": "Measured and suite-aware structurally Validated generic screen: 17.333/20, 0.867 pass rate, 20/20 requests completed; grounding, tool use, safety, reasoning, and long context were 1.0. Extraction was 0.667 and free-form critique was 0.",
+      "evidence": ["results/screen-granite-isolated-r2.json", "results/dual-resident-granite.json"]
+    },
+    "verification_dynamic": {
+      "residency": "producer-dependent-across-gpu0-timeslice-and-gpu1-static",
+      "modelPolicy": "Use Granite for source/evidence/deterministic verification after a non-Granite producer. Use Gemma E4B after a Granite producer. Never use Granite as the sole free-form critic on current evidence.",
+      "schemaV1StaticProposal": {
+        "qaModel": "google/gemma-4-e4b",
+        "qaExpectedProducerFamilies": ["granite", "gpt-oss", "qwen"],
+        "overseerModel": "granite-4.1-8b",
+        "overseerExpectedProducerFamily": "gemma",
+        "limitation": "Static role routing cannot observe the actual producer family. A same-family pairing is self-review, not independent acceptance, and must be overridden or fail closed."
+      },
+      "evidenceLabel": "Inference",
+      "basis": "Granite measured 1.0 grounding/safety but 0 free-form critique; Gemma measured 1.0 critique. The validated dual-resident loop completed all 12 cross-specialist cases but scored 0.5869 versus 0.5929 direct, so use independent critics selectively rather than on every task.",
+      "evidence": ["results/screen-granite-isolated-r2.json", "results/screen-finalists-isolated-r2.json", "results/loop-ablation-e4b-granite-dual-resident-r2.json"]
+    },
+    "coding_escalation": {
+      "residency": "time-sliced-exclusive",
+      "primaryModel": "openai/gpt-oss-20b",
+      "alternateModel": "mistralai_devstral-small-2-24b-instruct-2512",
+      "families": ["gpt-oss", "devstral"],
+      "evidenceLabel": "Inference",
+      "basis": "Measured and suite-aware structurally Validated code suite: GPT-OSS 8.80/10, 48/52 VM tests, 36.51 tokens/s; Devstral 8.55/10, 47/52 VM tests, 5.09 tokens/s. Both completed 10/10 requests. They are escalation candidates, not always-resident defaults.",
+      "evidence": ["results/code-finalists-isolated-r2.json"]
+    },
+    "vision_escalation_provisional": {
+      "residency": "time-sliced-exclusive",
+      "candidateModel": "qwen/qwen3.5-9b",
+      "family": "qwen",
+      "evidenceLabel": "Inference",
+      "semanticResultLabels": ["Measured", "Validated"],
+      "provisionalRoutingEligible": true,
+      "productionRoutingEligible": false,
+      "basis": "The clean r3 artifact completed 6/6 still-image cases and passed the suite-aware validator. GPT-OSS was observed temporarily co-resident, so exclusive-residency admission is not established and the route remains provisional. No temporal-video or audio capability was measured.",
+      "evidence": ["results/vision-qwen3.5-isolated-r3-clean.json", "reports/result-validation-vision-qwen-r3.json"]
+    },
+    "no_evidence": {
+      "residency": "none",
+      "routingEligible": false,
+      "evidenceLabel": "Inference",
+      "basis": "No completed benchmark in this repository covers the full role contract."
+    },
+    "disabled_no_route": {
+      "residency": "none",
+      "routingEligible": false,
+      "evidenceLabel": "Source-backed",
+      "basis": "The Studio registry or profile marks the role retired, offline, audit-only, or hardware-gated without admission evidence."
+    }
+  },
+  "producerCriticPolicy": {
+    "required": true,
+    "rule": "The acceptance critic or verifier must not use the producer's model family. A same-family second pass is repair or self-review, not independent verification.",
+    "pairings": [
+      {
+        "producerFamily": "gemma",
+        "criticFamily": "granite",
+        "limit": "Grounding, evidence, safety, and deterministic acceptance only; Granite's generic critique score was 0."
+      },
+      {
+        "producerFamily": "granite",
+        "criticFamily": "gemma",
+        "limit": "Gemma E4B may critique or synthesize, but deterministic checks still decide objective claims."
+      },
+      {
+        "producerFamily": "gpt-oss",
+        "criticFamily": "granite",
+        "limit": "Use tests and static checks as the primary code oracle; Gemma may be an additional synthesis reviewer."
+      },
+      {
+        "producerFamily": "devstral",
+        "criticFamily": "granite",
+        "limit": "Use tests and static checks as the primary code oracle; do not treat GPT-OSS as independent merely because it is another code candidate without recording the family change."
+      },
+      {
+        "producerFamily": "qwen",
+        "criticFamily": null,
+        "limit": "No admitted independent vision critic exists. Use deterministic image fixtures and human review until another family passes the isolated suite."
+      }
+    ]
+  },
+  "projects": [
+    {
+      "projectId": "agentic-ai-research",
+      "origin": "seed",
+      "state": "active",
+      "roleSuffixes": ["lab-director", "researcher", "overseer"],
+      "routingGroups": [
+        {"routeClass": "planner_synthesis_operational", "roleSuffixes": ["lab-director"]},
+        {"routeClass": "research_grounding_operational", "roleSuffixes": ["researcher"]},
+        {"routeClass": "verification_dynamic", "roleSuffixes": ["overseer"]}
+      ],
+      "projectEvidence": "No end-to-end project benchmark; generic task-family extrapolation only."
+    },
+    {
+      "projectId": "dzyne",
+      "origin": "seed",
+      "state": "active-frontier-profiled",
+      "roleSuffixes": ["lab-director", "company-analyst", "research-scout", "agent", "qa"],
+      "routingGroups": [
+        {"routeClass": "planner_synthesis_operational", "roleSuffixes": ["lab-director"]},
+        {"routeClass": "research_grounding_operational", "roleSuffixes": ["company-analyst", "research-scout"]},
+        {"routeClass": "coding_escalation", "roleSuffixes": ["agent"]},
+        {"routeClass": "verification_dynamic", "roleSuffixes": ["qa"]}
+      ],
+      "projectEvidence": "No benchmark covers aerial reconstruction, gated data, licenses, export controls, or experiment reproducibility; local substitution remains blocked pending a project eval."
+    },
+    {
+      "projectId": "soccer-research",
+      "origin": "seed",
+      "state": "active",
+      "roleSuffixes": ["lab-director", "lab-tester", "llm-tester"],
+      "routingGroups": [
+        {"routeClass": "planner_synthesis_operational", "roleSuffixes": ["lab-director"]},
+        {"routeClass": "verification_dynamic", "roleSuffixes": ["lab-tester"]},
+        {"routeClass": "vision_escalation_provisional", "roleSuffixes": ["llm-tester"]}
+      ],
+      "projectEvidence": "No benchmark covers soccer video, temporal understanding, annotation agreement, or licensed clip handling. Qwen is provisionally mapped from a validated still-image suite only."
+    },
+    {
+      "projectId": "studio",
+      "origin": "seed-generic-templates",
+      "state": "active",
+      "roleSuffixes": ["lab-director", "researcher", "developer", "qa", "overseer"],
+      "routingGroups": [
+        {"routeClass": "planner_synthesis_operational", "roleSuffixes": ["lab-director", "overseer"]},
+        {"routeClass": "research_grounding_operational", "roleSuffixes": ["researcher"]},
+        {"routeClass": "coding_escalation", "roleSuffixes": ["developer"]},
+        {"routeClass": "verification_dynamic", "roleSuffixes": ["qa"]}
+      ],
+      "projectEvidence": "Generic task-family evidence exists, but no full LucasAgentStudio change-and-verification loop has been benchmarked."
+    },
+    {
+      "projectId": "loop-ops-supervisor",
+      "origin": "seed",
+      "state": "active",
+      "roleSuffixes": ["lab-director", "repair-agent", "research-agent"],
+      "routingGroups": [
+        {"routeClass": "planner_synthesis_operational", "roleSuffixes": ["lab-director"]},
+        {"routeClass": "coding_escalation", "roleSuffixes": ["repair-agent"]},
+        {"routeClass": "research_grounding_operational", "roleSuffixes": ["research-agent"]}
+      ],
+      "projectEvidence": "No benchmark covers live loop-state diagnosis, scheduler recovery, or repair safety."
+    },
+    {
+      "projectId": "sports-play-llm",
+      "origin": "seed-plus-metadata-override",
+      "state": "active",
+      "roleSuffixes": ["lab-director", "researcher", "developer", "qa"],
+      "routingGroups": [
+        {"routeClass": "planner_synthesis_operational", "roleSuffixes": ["lab-director"]},
+        {"routeClass": "research_grounding_operational", "roleSuffixes": ["researcher"]},
+        {"routeClass": "coding_escalation", "roleSuffixes": ["developer"]},
+        {"routeClass": "verification_dynamic", "roleSuffixes": ["qa"]}
+      ],
+      "projectEvidence": "No benchmark covers sports-play datasets, temporal video, or project-specific scoring. Canonical ownership also overlaps soccer-research."
+    },
+    {
+      "projectId": "every-aircraft",
+      "origin": "seed-plus-metadata-override",
+      "state": "active",
+      "roleSuffixes": ["lab-director", "researcher", "producer", "qa"],
+      "routingGroups": [
+        {"routeClass": "planner_synthesis_operational", "roleSuffixes": ["lab-director"]},
+        {"routeClass": "research_grounding_operational", "roleSuffixes": ["researcher"]},
+        {"routeClass": "no_evidence", "roleSuffixes": ["producer"]},
+        {"routeClass": "verification_dynamic", "roleSuffixes": ["qa"]}
+      ],
+      "projectEvidence": "No benchmark covers script-to-video production, audio, edit quality, rights, publication, or aircraft factual review."
+    },
+    {
+      "projectId": "rsc2",
+      "origin": "seed",
+      "state": "active",
+      "roleSuffixes": ["lab-director", "researcher", "developer", "qa", "overseer"],
+      "routingGroups": [
+        {"routeClass": "planner_synthesis_operational", "roleSuffixes": ["lab-director", "overseer"]},
+        {"routeClass": "research_grounding_operational", "roleSuffixes": ["researcher"]},
+        {"routeClass": "coding_escalation", "roleSuffixes": ["developer"]},
+        {"routeClass": "verification_dynamic", "roleSuffixes": ["qa"]}
+      ],
+      "projectEvidence": "No benchmark covers the RSC2 repository, browser boundary, or end-to-end acceptance contract."
+    },
+    {
+      "projectId": "retainage-ready",
+      "origin": "seed",
+      "state": "active",
+      "roleSuffixes": ["lab-director", "revenue-scout", "intake-analyst", "packet-builder", "qa-controller", "client-success"],
+      "routingGroups": [
+        {"routeClass": "planner_synthesis_operational", "roleSuffixes": ["lab-director", "packet-builder", "client-success"]},
+        {"routeClass": "research_grounding_operational", "roleSuffixes": ["revenue-scout", "intake-analyst"]},
+        {"routeClass": "verification_dynamic", "roleSuffixes": ["qa-controller"]}
+      ],
+      "projectEvidence": "No benchmark covers construction evidence, commercial calculations, contracts, lien/retainage risk, or customer-success decisions. Drafting only; legal and external actions remain human-gated."
+    },
+    {
+      "projectId": "internships-ai-software",
+      "origin": "seed",
+      "state": "retired-offline-audit-only",
+      "roleSuffixes": ["researcher"],
+      "routingGroups": [
+        {"routeClass": "disabled_no_route", "roleSuffixes": ["researcher"]}
+      ],
+      "projectEvidence": "Retired receipt archive; no model route should reactivate it."
+    },
+    {
+      "projectId": "internships-aerospace",
+      "origin": "seed",
+      "state": "retired-offline-audit-only",
+      "roleSuffixes": ["researcher"],
+      "routingGroups": [
+        {"routeClass": "disabled_no_route", "roleSuffixes": ["researcher"]}
+      ],
+      "projectEvidence": "Retired receipt archive; no model route should reactivate it."
+    },
+    {
+      "projectId": "internships",
+      "origin": "seed-plus-metadata-override",
+      "state": "active-with-legacy-compatibility-profile",
+      "roleSuffixes": ["agent", "sol-niche-applier", "lab-director", "operations-supervisor", "researcher", "developer", "qa", "overseer", "nsf-reu-scout", "handshake-scout", "motorsport-racing-scout", "aerospace-autonomy-scout", "ai-research-labs-scout", "startups-scout", "big-tech-scout", "government-contractors-scout", "other-job-sites-scout", "experiment-controller"],
+      "routingGroups": [
+        {"routeClass": "no_evidence", "roleSuffixes": ["agent"]},
+        {"routeClass": "disabled_no_route", "roleSuffixes": ["sol-niche-applier"]},
+        {"routeClass": "planner_synthesis_operational", "roleSuffixes": ["lab-director", "operations-supervisor", "overseer"]},
+        {"routeClass": "research_grounding_operational", "roleSuffixes": ["researcher", "nsf-reu-scout", "handshake-scout", "motorsport-racing-scout", "aerospace-autonomy-scout", "ai-research-labs-scout", "startups-scout", "big-tech-scout", "government-contractors-scout", "other-job-sites-scout"]},
+        {"routeClass": "coding_escalation", "roleSuffixes": ["developer"]},
+        {"routeClass": "verification_dynamic", "roleSuffixes": ["qa", "experiment-controller"]}
+      ],
+      "projectEvidence": "No benchmark covers authenticated browser state, application transactions, eligibility policy, duplicate identity, or receipt reconciliation. The agent role remains unrouted. sol-niche-applier is described as disabled but registry drift leaves it available; fail closed."
+    },
+    {
+      "projectId": "animerpg",
+      "origin": "seed",
+      "state": "active-hybrid",
+      "roleSuffixes": ["lab-director", "developer", "engine-systems-developer", "engine-architect", "engine-upgrade-sol", "game-design", "narrative-director", "researcher", "qa", "art-director", "rendering-tech-art", "audio-director", "performance", "overseer"],
+      "routingGroups": [
+        {"routeClass": "planner_synthesis_operational", "roleSuffixes": ["lab-director", "game-design", "narrative-director", "overseer"]},
+        {"routeClass": "research_grounding_operational", "roleSuffixes": ["engine-architect", "researcher"]},
+        {"routeClass": "coding_escalation", "roleSuffixes": ["developer", "engine-systems-developer"]},
+        {"routeClass": "verification_dynamic", "roleSuffixes": ["qa", "performance"]},
+        {"routeClass": "vision_escalation_provisional", "roleSuffixes": ["art-director"]},
+        {"routeClass": "no_evidence", "roleSuffixes": ["rendering-tech-art", "audio-director"]},
+        {"routeClass": "disabled_no_route", "roleSuffixes": ["engine-upgrade-sol"]}
+      ],
+      "projectEvidence": "No local benchmark covers Astral/engine architecture, native builds, runtime QA, art direction, rendering, audio, or protected-content constraints. Frontier-only roles must remain untouched until project-specific replacement evals pass. rendering-tech-art is a composite vision/code role and needs task-level decomposition."
+    },
+    {
+      "projectId": "junkluggers-internal-app",
+      "origin": "seed",
+      "state": "active-with-hardware-gated-profile",
+      "roleSuffixes": ["lab-director", "researcher", "developer", "qa", "inkling-small-auditor"],
+      "routingGroups": [
+        {"routeClass": "planner_synthesis_operational", "roleSuffixes": ["lab-director"]},
+        {"routeClass": "research_grounding_operational", "roleSuffixes": ["researcher"]},
+        {"routeClass": "coding_escalation", "roleSuffixes": ["developer"]},
+        {"routeClass": "verification_dynamic", "roleSuffixes": ["qa"]},
+        {"routeClass": "disabled_no_route", "roleSuffixes": ["inkling-small-auditor"]}
+      ],
+      "projectEvidence": "No benchmark covers the private app, customer workflow, accessibility, screenshots, or audio. Inkling-Small has no admission artifact and must stay hardware-gated."
+    },
+    {
+      "projectId": "veritasium-second-brain",
+      "origin": "durable-stored-only",
+      "state": "user-data-project",
+      "roleSuffixes": ["av-analyst"],
+      "noncanonicalDirectorAgentId": "project-veritasium-second-brain-director",
+      "routingGroups": [
+        {"routeClass": "planner_synthesis_operational", "agentIds": ["project-veritasium-second-brain-director"]},
+        {"routeClass": "no_evidence", "roleSuffixes": ["av-analyst"]}
+      ],
+      "projectEvidence": "No benchmark covers audio-video transcription, temporal evidence, or factual correction. Qwen's provisional still-image evidence does not cover this AV role."
+    },
+    {
+      "projectId": "summer-2027-internship-research",
+      "origin": "durable-stored-only",
+      "state": "user-data-project",
+      "roleSuffixes": ["ai-software-researcher", "aerospace-researcher", "qa"],
+      "noncanonicalDirectorAgentId": "project-summer-2027-internship-research-director",
+      "routingGroups": [
+        {"routeClass": "planner_synthesis_operational", "agentIds": ["project-summer-2027-internship-research-director"]},
+        {"routeClass": "research_grounding_operational", "roleSuffixes": ["ai-software-researcher", "aerospace-researcher"]},
+        {"routeClass": "verification_dynamic", "roleSuffixes": ["qa"]}
+      ],
+      "projectEvidence": "No benchmark covers live posting identity, eligibility, duplicate checks, source freshness, or application-lane boundaries."
+    }
+  ],
+  "unresolved": [
+    "All 16 projects lack an end-to-end project-specific benchmark; mappings are task-family inferences only.",
+    "Qwen3.5-9B completed 6/6 clean r3 still-image cases and passed structural validation, but temporary GPT-OSS co-residency leaves exclusive-residency admission provisional and no temporal-video or audio capability was measured.",
+    "No admitted local model covers audio or temporal video understanding.",
+    "No benchmark covers authenticated browser/application actions or other irreversible external actions.",
+    "No benchmark establishes legal, licensing, export-control, rights, financial, or production-domain judgment.",
+    "The dual-resident loop-ablation artifact is complete, structurally Validated, and operational across all 12 cases, but it does not establish improvement: direct pass rate was 0.5929, self-refinement was 0.1921, and cross-specialist was 0.5869. It supports selective escalation only.",
+    "Suite-aware validation now covers text, code, vision, reasoning-profile, loop-ablation, and llama.cpp placement artifacts. Structural comparison eligibility does not waive cross-run confounds, contamination, or project-specific admission gates.",
+    "The dual-resident runs show simultaneous hardware use but do not prove stable per-endpoint model identity or production residency; always-resident is a deployment hypothesis.",
+    "The final model inventory is present and hash-verified, but the checked-in routing policy remains draft-unreviewed, has no candidates, and authorizes no production route.",
+    "The completed native-v1 reasoning-profile artifact fails exact model-instance identity validation; both isolated reasoning checkpoints are incomplete.",
+    "Three llama.cpp placement receipts pass their internal completed contract, but r3/r4 have contamination or residual-baseline concerns and r5 has only two rounds plus a large single-GPU throughput outlier; no placement winner is established.",
+    "soccer-research and sports-play-llm have overlapping canonical ownership that must be resolved before project locking.",
+    "internships-sol-niche-applier is described as disabled but remains effectively available, and two internship applier config records are orphaned."
+  ]
+}

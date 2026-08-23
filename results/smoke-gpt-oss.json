@@ -1,0 +1,1104 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-08-23T03:59:36.141Z",
+  "finishedAt": "2026-08-23T04:00:11.095Z",
+  "options": {
+    "stage": "screen",
+    "repeats": 1,
+    "context": 8192,
+    "manageModels": false,
+    "lms": "lms.exe",
+    "models": [
+      "openai/gpt-oss-20b"
+    ],
+    "restore": "",
+    "output": "results\\smoke-gpt-oss.json"
+  },
+  "environment": {
+    "platform": "win32",
+    "release": "10.0.26200",
+    "arch": "x64",
+    "cpu": "AMD Ryzen 5 7600X 6-Core Processor             ",
+    "node": "v24.19.0",
+    "apiBase": "http://127.0.0.1:1234"
+  },
+  "taskSuite": {
+    "hashSha256": "f278a77d110258c0b538dbf6010b32dc3f98af9fdb5aded78cf4861da444c35f",
+    "stage": "screen",
+    "taskIds": [
+      "instruction_exact_token",
+      "director_dependency_envelope",
+      "native_tool_read_file",
+      "claim_grounding_matrix",
+      "gpu_residency_reasoning",
+      "code_review_immutable_sort",
+      "log_reconciliation",
+      "insufficient_evidence_abstention",
+      "long_context_recall",
+      "critic_candidate_selection"
+    ],
+    "repeats": 1
+  },
+  "inventory": [
+    {
+      "type": "llm",
+      "modelKey": "microsoft/phi-4-reasoning-plus",
+      "format": "gguf",
+      "displayName": "Phi 4 Reasoning Plus",
+      "publisher": "microsoft",
+      "path": "microsoft/phi-4-reasoning-plus",
+      "sizeBytes": 9053139092,
+      "indexedModelIdentifier": "microsoft/phi-4-reasoning-plus",
+      "deviceIdentifier": null,
+      "paramsString": "15B",
+      "architecture": "phi3",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "microsoft/phi-4-reasoning-plus@q4_k_m"
+      ],
+      "selectedVariant": "microsoft/phi-4-reasoning-plus@q4_k_m",
+      "vision": false,
+      "trainedForToolUse": false,
+      "maxContextLength": 32768
+    },
+    {
+      "type": "llm",
+      "modelKey": "microsoft/phi-4-mini-reasoning",
+      "format": "gguf",
+      "displayName": "Phi 4 Mini Reasoning",
+      "publisher": "microsoft",
+      "path": "microsoft/phi-4-mini-reasoning",
+      "sizeBytes": 2491897541,
+      "indexedModelIdentifier": "microsoft/phi-4-mini-reasoning",
+      "deviceIdentifier": null,
+      "paramsString": "3B",
+      "architecture": "phi3",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "microsoft/phi-4-mini-reasoning@q4_k_m"
+      ],
+      "selectedVariant": "microsoft/phi-4-mini-reasoning@q4_k_m",
+      "vision": false,
+      "trainedForToolUse": false,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "qwen/qwen3-14b",
+      "format": "gguf",
+      "displayName": "Qwen3 14B",
+      "publisher": "qwen",
+      "path": "qwen/qwen3-14b",
+      "sizeBytes": 9001931568,
+      "indexedModelIdentifier": "qwen/qwen3-14b",
+      "deviceIdentifier": null,
+      "paramsString": "14B",
+      "architecture": "qwen3",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "qwen/qwen3-14b@q4_k_m"
+      ],
+      "selectedVariant": "qwen/qwen3-14b@q4_k_m",
+      "vision": false,
+      "trainedForToolUse": true,
+      "maxContextLength": 32768
+    },
+    {
+      "type": "llm",
+      "modelKey": "google/gemma-4-e2b",
+      "format": "gguf",
+      "displayName": "Gemma 4 E2B",
+      "publisher": "google",
+      "path": "google/gemma-4-e2b",
+      "sizeBytes": 4414810282,
+      "indexedModelIdentifier": "google/gemma-4-e2b",
+      "deviceIdentifier": null,
+      "paramsString": "4.6B",
+      "architecture": "gemma4",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "google/gemma-4-e2b@q4_k_m"
+      ],
+      "selectedVariant": "google/gemma-4-e2b@q4_k_m",
+      "vision": true,
+      "trainedForToolUse": false,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "google/gemma-4-e4b",
+      "format": "gguf",
+      "displayName": "Gemma 4 E4B",
+      "publisher": "google",
+      "path": "google/gemma-4-e4b",
+      "sizeBytes": 6326938154,
+      "indexedModelIdentifier": "google/gemma-4-e4b",
+      "deviceIdentifier": null,
+      "paramsString": "7.5B",
+      "architecture": "gemma4",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "google/gemma-4-e4b@q4_k_m"
+      ],
+      "selectedVariant": "google/gemma-4-e4b@q4_k_m",
+      "vision": true,
+      "trainedForToolUse": true,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "zai-org/glm-4.6v-flash",
+      "format": "gguf",
+      "displayName": "Glm 4.6v Flash",
+      "publisher": "zai-org",
+      "path": "zai-org/glm-4.6v-flash",
+      "sizeBytes": 7953555436,
+      "indexedModelIdentifier": "zai-org/glm-4.6v-flash",
+      "deviceIdentifier": null,
+      "paramsString": "9.4B",
+      "architecture": "glm4",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "zai-org/glm-4.6v-flash@q4_k_m"
+      ],
+      "selectedVariant": "zai-org/glm-4.6v-flash@q4_k_m",
+      "vision": true,
+      "trainedForToolUse": true,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp",
+      "format": "gguf",
+      "displayName": "Qwen3.6 27B Claude Opus DeepSeek Distilled Imatrix MTP GGUF",
+      "publisher": "Brian6145",
+      "path": "Brian6145/Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF/Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF-Q2_K.gguf",
+      "sizeBytes": 10864591328,
+      "indexedModelIdentifier": "Brian6145/Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF/Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF-Q2_K.gguf",
+      "deviceIdentifier": null,
+      "paramsString": "27B",
+      "architecture": "qwen35",
+      "quantization": {
+        "name": "Q2_K",
+        "bits": 2
+      },
+      "vision": false,
+      "trainedForToolUse": true,
+      "maxContextLength": 262144
+    },
+    {
+      "type": "llm",
+      "modelKey": "openai/gpt-oss-20b",
+      "format": "gguf",
+      "displayName": "GPT-OSS 20B",
+      "publisher": "openai",
+      "path": "openai/gpt-oss-20b",
+      "sizeBytes": 12109664217,
+      "indexedModelIdentifier": "openai/gpt-oss-20b",
+      "deviceIdentifier": null,
+      "paramsString": "20B",
+      "architecture": "gpt-oss",
+      "quantization": {
+        "name": "MXFP4",
+        "bits": 4
+      },
+      "variants": [
+        "openai/gpt-oss-20b@mxfp4"
+      ],
+      "selectedVariant": "openai/gpt-oss-20b@mxfp4",
+      "vision": false,
+      "trainedForToolUse": true,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "deepseek/deepseek-r1-0528-qwen3-8b",
+      "format": "gguf",
+      "displayName": "Deepseek R1 0528 Qwen3 8B",
+      "publisher": "deepseek",
+      "path": "deepseek/deepseek-r1-0528-qwen3-8b",
+      "sizeBytes": 5027844358,
+      "indexedModelIdentifier": "deepseek/deepseek-r1-0528-qwen3-8b",
+      "deviceIdentifier": null,
+      "paramsString": "8B",
+      "architecture": "qwen3",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "deepseek/deepseek-r1-0528-qwen3-8b@q4_k_m"
+      ],
+      "selectedVariant": "deepseek/deepseek-r1-0528-qwen3-8b@q4_k_m",
+      "vision": false,
+      "trainedForToolUse": false,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "qwen/qwen3.5-9b",
+      "format": "gguf",
+      "displayName": "Qwen3.5 9B",
+      "publisher": "qwen",
+      "path": "qwen/qwen3.5-9b",
+      "sizeBytes": 6548927711,
+      "indexedModelIdentifier": "qwen/qwen3.5-9b",
+      "deviceIdentifier": null,
+      "paramsString": "9B",
+      "architecture": "qwen35",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "qwen/qwen3.5-9b@q4_k_m"
+      ],
+      "selectedVariant": "qwen/qwen3.5-9b@q4_k_m",
+      "vision": true,
+      "trainedForToolUse": true,
+      "maxContextLength": 262144
+    },
+    {
+      "type": "llm",
+      "modelKey": "google/gemma-4-12b",
+      "format": "gguf",
+      "displayName": "Gemma 4 12B",
+      "publisher": "google",
+      "path": "google/gemma-4-12b",
+      "sizeBytes": 7556572852,
+      "indexedModelIdentifier": "google/gemma-4-12b",
+      "deviceIdentifier": null,
+      "paramsString": "12B",
+      "architecture": "gemma4",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "google/gemma-4-12b@q4_k_m"
+      ],
+      "selectedVariant": "google/gemma-4-12b@q4_k_m",
+      "vision": true,
+      "trainedForToolUse": true,
+      "maxContextLength": 262144
+    },
+    {
+      "type": "llm",
+      "modelKey": "google/gemma-4-12b-qat",
+      "format": "gguf",
+      "displayName": "Gemma 4 12B QAT",
+      "publisher": "google",
+      "path": "google/gemma-4-12b-qat",
+      "sizeBytes": 7151066820,
+      "indexedModelIdentifier": "google/gemma-4-12b-qat",
+      "deviceIdentifier": null,
+      "paramsString": "12B",
+      "architecture": "gemma4",
+      "quantization": {
+        "name": "Q4_0",
+        "bits": 4
+      },
+      "variants": [
+        "google/gemma-4-12b-qat@q4_0"
+      ],
+      "selectedVariant": "google/gemma-4-12b-qat@q4_0",
+      "vision": true,
+      "trainedForToolUse": true,
+      "maxContextLength": 262144
+    },
+    {
+      "type": "embedding",
+      "modelKey": "text-embedding-nomic-embed-text-v1.5",
+      "format": "gguf",
+      "displayName": "Nomic Embed Text v1.5",
+      "publisher": "nomic-ai",
+      "path": "nomic-ai/nomic-embed-text-v1.5-GGUF/nomic-embed-text-v1.5.Q4_K_M.gguf",
+      "sizeBytes": 84106624,
+      "indexedModelIdentifier": "nomic-ai/nomic-embed-text-v1.5-GGUF/nomic-embed-text-v1.5.Q4_K_M.gguf",
+      "deviceIdentifier": null,
+      "architecture": "nomic-bert",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "maxContextLength": 2048
+    }
+  ],
+  "initialLoaded": [
+    {
+      "type": "llm",
+      "modelKey": "openai/gpt-oss-20b",
+      "format": "gguf",
+      "displayName": "GPT-OSS 20B",
+      "publisher": "openai",
+      "path": "openai/gpt-oss-20b",
+      "sizeBytes": 12109664217,
+      "indexedModelIdentifier": "openai/gpt-oss-20b",
+      "deviceIdentifier": null,
+      "paramsString": "20B",
+      "architecture": "gpt-oss",
+      "quantization": {
+        "name": "MXFP4",
+        "bits": 4
+      },
+      "variants": [
+        "openai/gpt-oss-20b@mxfp4"
+      ],
+      "selectedVariant": "openai/gpt-oss-20b@mxfp4",
+      "identifier": "openai/gpt-oss-20b",
+      "ttlMs": null,
+      "lastUsedTime": 1787457379377,
+      "vision": false,
+      "trainedForToolUse": true,
+      "maxContextLength": 131072,
+      "contextLength": 16384,
+      "status": "idle",
+      "queued": 0,
+      "parallel": 1
+    }
+  ],
+  "hardwareBefore": {
+    "sampledAt": "2026-08-23T03:59:36.219Z",
+    "totalRamGiB": 63.17,
+    "freeRamGiB": 35.04,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3070",
+        "totalMiB": 8192,
+        "usedMiB": 6952,
+        "freeMiB": 1067,
+        "utilizationPercent": 24,
+        "powerWatts": 33.62
+      },
+      {
+        "index": 1,
+        "name": "NVIDIA GeForce GTX 1080",
+        "totalMiB": 8192,
+        "usedMiB": 12,
+        "freeMiB": 8048,
+        "utilizationPercent": 0,
+        "powerWatts": 6.9
+      }
+    ]
+  },
+  "models": [
+    {
+      "model": "openai/gpt-oss-20b",
+      "meta": {
+        "type": "llm",
+        "modelKey": "openai/gpt-oss-20b",
+        "format": "gguf",
+        "displayName": "GPT-OSS 20B",
+        "publisher": "openai",
+        "path": "openai/gpt-oss-20b",
+        "sizeBytes": 12109664217,
+        "indexedModelIdentifier": "openai/gpt-oss-20b",
+        "deviceIdentifier": null,
+        "paramsString": "20B",
+        "architecture": "gpt-oss",
+        "quantization": {
+          "name": "MXFP4",
+          "bits": 4
+        },
+        "variants": [
+          "openai/gpt-oss-20b@mxfp4"
+        ],
+        "selectedVariant": "openai/gpt-oss-20b@mxfp4",
+        "vision": false,
+        "trainedForToolUse": true,
+        "maxContextLength": 131072
+      },
+      "status": "completed",
+      "load": null,
+      "hardwareLoaded": {
+        "sampledAt": "2026-08-23T03:59:36.283Z",
+        "totalRamGiB": 63.17,
+        "freeRamGiB": 35.04,
+        "gpus": [
+          {
+            "index": 0,
+            "name": "NVIDIA GeForce RTX 3070",
+            "totalMiB": 8192,
+            "usedMiB": 6952,
+            "freeMiB": 1067,
+            "utilizationPercent": 20,
+            "powerWatts": 36.32
+          },
+          {
+            "index": 1,
+            "name": "NVIDIA GeForce GTX 1080",
+            "totalMiB": 8192,
+            "usedMiB": 12,
+            "freeMiB": 8048,
+            "utilizationPercent": 0,
+            "powerWatts": 6.8
+          }
+        ]
+      },
+      "cases": [
+        {
+          "taskId": "instruction_exact_token",
+          "category": "instruction",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "expected": "LOOP_OK"
+          },
+          "response": {
+            "text": "LOOP_OK",
+            "message": {
+              "role": "assistant",
+              "content": "LOOP_OK",
+              "reasoning": "User wants \"LOOP_OK\". Just output that.",
+              "tool_calls": []
+            },
+            "wallMs": 1149,
+            "reasoning": "User wants \"LOOP_OK\". Just output that.",
+            "finishReason": "stop",
+            "usage": {
+              "prompt_tokens": 108,
+              "completion_tokens": 24,
+              "total_tokens": 132,
+              "completion_tokens_details": {
+                "reasoning_tokens": 11
+              }
+            },
+            "stats": {
+              "tokens_per_second": 37.74843186722618,
+              "time_to_first_token": 0.46891000000000005,
+              "generation_time": 1.1046980000000002,
+              "stop_reason": "eosFound"
+            },
+            "modelInfo": {
+              "arch": "gpt-oss",
+              "quant": "MXFP4",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "director_dependency_envelope",
+          "category": "planning",
+          "repeat": 0,
+          "status": "failed",
+          "score": {
+            "score": 0
+          },
+          "error": "HTTP 400: {\"error\":\"Engine protocol predict stream returned an error: {\\\"code\\\":500,\\\"message\\\":\\\"The model produced output that does not match the expected peg-native format\\\",\\\"type\\\":\\\"server_error\\\"}\"}",
+          "wallMs": 4103
+        },
+        {
+          "taskId": "native_tool_read_file",
+          "category": "tool_use",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "passed": 3,
+            "total": 3
+          },
+          "response": {
+            "text": "",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning": "We need to call read_project_file with path \"AGENTS.md\".",
+              "tool_calls": [
+                {
+                  "type": "function",
+                  "id": "Nj9bpQgerN6qLAKe1oHpgjdDRvPfine6",
+                  "function": {
+                    "name": "read_project_file",
+                    "arguments": "{\"path\":\"AGENTS.md\"}"
+                  }
+                }
+              ]
+            },
+            "wallMs": 1973,
+            "reasoning": "We need to call read_project_file with path \"AGENTS.md\".",
+            "finishReason": "tool_calls",
+            "usage": {
+              "prompt_tokens": 178,
+              "completion_tokens": 41,
+              "total_tokens": 219,
+              "completion_tokens_details": {
+                "reasoning_tokens": 14
+              }
+            },
+            "stats": {
+              "tokens_per_second": 37.32226409598194,
+              "time_to_first_token": 0.832117,
+              "generation_time": 1.9306569999999998,
+              "stop_reason": "toolCalls"
+            },
+            "modelInfo": {
+              "arch": "gpt-oss",
+              "quant": "MXFP4",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "claim_grounding_matrix",
+          "category": "grounding",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 0.8,
+            "passed": 4,
+            "total": 5
+          },
+          "response": {
+            "text": "[\n  {\n    \"claimId\": \"C1\",\n    \"verdict\": \"supported\",\n    \"sources\": [\"S1\"]\n  },\n  {\n    \"claimId\": \"C2\",\n    \"verdict\": \"contradicted\",\n    \"sources\": [\"S2\"]\n  },\n  {\n    \"claimId\": \"C3\",\n    \"verdict\": \"unsupported\",\n    \"sources\": []\n  }\n]",
+            "message": {
+              "role": "assistant",
+              "content": "[\n  {\n    \"claimId\": \"C1\",\n    \"verdict\": \"supported\",\n    \"sources\": [\"S1\"]\n  },\n  {\n    \"claimId\": \"C2\",\n    \"verdict\": \"contradicted\",\n    \"sources\": [\"S2\"]\n  },\n  {\n    \"claimId\": \"C3\",\n    \"verdict\": \"unsupported\",\n    \"sources\": []\n  }\n]",
+              "reasoning": "We need to evaluate claims.\n\nGiven statements:\n\nS1: \"Runtime Atlas supports JSON-schema constrained output and tool calls.\"\n\nSo claim C1: Atlas supports tool calls. Supported by S1. So verdict supported, source S1.\n\nC2: Atlas is installed at Q8_0. We have S2: \"The installed Atlas quantization is Q4_K_M.\" That contradicts Q8_0. So verdict contradicted, source S2.\n\nC3: Atlas matches Terra quality. No statement about matching Terra. S3 says no benchmark compares Atlas with Sol or Terra. That doesn't say they match. So we cannot support; it's unsupported? We have no evidence that it matches. So verdict unsupported, source none? But must list sources array. If unsupported, maybe empty array? The format requires sources array. Could be empty. We'll provide empty array.\n\nReturn JSON array with three objects.",
+              "tool_calls": []
+            },
+            "wallMs": 8194,
+            "reasoning": "We need to evaluate claims.\n\nGiven statements:\n\nS1: \"Runtime Atlas supports JSON-schema constrained output and tool calls.\"\n\nSo claim C1: Atlas supports tool calls. Supported by S1. So verdict supported, source S1.\n\nC2: Atlas is installed at Q8_0. We have S2: \"The installed Atlas quantization is Q4_K_M.\" That contradicts Q8_0. So verdict contradicted, source S2.\n\nC3: Atlas matches Terra quality. No statement about matching Terra. S3 says no benchmark compares Atlas with Sol or Terra. That doesn't say they match. So we cannot support; it's unsupported? We have no evidence that it matches. So verdict unsupported, source none? But must list sources array. If unsupported, maybe empty array? The format requires sources array. Could be empty. We'll provide empty array.\n\nReturn JSON array with three objects.",
+            "finishReason": "stop",
+            "usage": {
+              "prompt_tokens": 225,
+              "completion_tokens": 281,
+              "total_tokens": 506,
+              "completion_tokens_details": {
+                "reasoning_tokens": 183
+              }
+            },
+            "stats": {
+              "tokens_per_second": 36.323812961060355,
+              "time_to_first_token": 0.425165,
+              "generation_time": 8.161137,
+              "stop_reason": "eosFound"
+            },
+            "modelInfo": {
+              "arch": "gpt-oss",
+              "quant": "MXFP4",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "gpu_residency_reasoning",
+          "category": "reasoning",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "passed": 2,
+            "total": 2
+          },
+          "response": {
+            "text": "{\"models\":[\"Qwen\",\"DeepSeek\"],\"totalWeightGB\":11.5}",
+            "message": {
+              "role": "assistant",
+              "content": "{\"models\":[\"Qwen\",\"DeepSeek\"],\"totalWeightGB\":11.5}",
+              "reasoning": "We need pick two models for two GPUs each 8GB minus 1 overhead =7GB usable. So each GPU can hold <=7GB. Choose pair with max sum weight where each individually <=7. Candidates: Qwen6.5 fits, DeepSeek5 fits, GPTOSS12.1 no, Phi8.4 no. So choose two largest among those: Qwen6.5 + DeepSeek5 =11.5 GB total. Output JSON.",
+              "tool_calls": []
+            },
+            "wallMs": 3755,
+            "reasoning": "We need pick two models for two GPUs each 8GB minus 1 overhead =7GB usable. So each GPU can hold <=7GB. Choose pair with max sum weight where each individually <=7. Candidates: Qwen6.5 fits, DeepSeek5 fits, GPTOSS12.1 no, Phi8.4 no. So choose two largest among those: Qwen6.5 + DeepSeek5 =11.5 GB total. Output JSON.",
+            "finishReason": "stop",
+            "usage": {
+              "prompt_tokens": 208,
+              "completion_tokens": 123,
+              "total_tokens": 331,
+              "completion_tokens_details": {
+                "reasoning_tokens": 95
+              }
+            },
+            "stats": {
+              "tokens_per_second": 37.449614284196294,
+              "time_to_first_token": 0.439629,
+              "generation_time": 3.724042,
+              "stop_reason": "eosFound"
+            },
+            "modelInfo": {
+              "arch": "gpt-oss",
+              "quant": "MXFP4",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "code_review_immutable_sort",
+          "category": "coding",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "expected": "B"
+          },
+          "response": {
+            "text": "B",
+            "message": {
+              "role": "assistant",
+              "content": "B",
+              "reasoning": "Need to pick correct replacement that doesn't mutate state. So use spread copy. Option B. Return exactly one letter.",
+              "tool_calls": []
+            },
+            "wallMs": 1340,
+            "reasoning": "Need to pick correct replacement that doesn't mutate state. So use spread copy. Option B. Return exactly one letter.",
+            "finishReason": "stop",
+            "usage": {
+              "prompt_tokens": 170,
+              "completion_tokens": 34,
+              "total_tokens": 204,
+              "completion_tokens_details": {
+                "reasoning_tokens": 23
+              }
+            },
+            "stats": {
+              "tokens_per_second": 38.181097437037685,
+              "time_to_first_token": 0.420076,
+              "generation_time": 1.3105689999999999,
+              "stop_reason": "eosFound"
+            },
+            "modelInfo": {
+              "arch": "gpt-oss",
+              "quant": "MXFP4",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "log_reconciliation",
+          "category": "extraction",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 0.3333333333333333,
+            "passed": 1,
+            "total": 3
+          },
+          "response": {
+            "text": "{\"produced\":[\"task A\"],\"retry\":[\"task B\"],\"verifiedTestCount\":42}",
+            "message": {
+              "role": "assistant",
+              "content": "{\"produced\":[\"task A\"],\"retry\":[\"task B\"],\"verifiedTestCount\":42}",
+              "reasoning": "We need to parse log and produce JSON with fields: produced array of tasks that were settled produced, retry array of tasks that had retry scheduled, verifiedTestCount number of tests from evidence? In log: \"10:04 task A test exit=0 evidence=tests:42\". So 42 tests. So verifiedTestCount = 42. Produced: task A. Retry: task B. Output JSON object.",
+              "tool_calls": []
+            },
+            "wallMs": 3523,
+            "reasoning": "We need to parse log and produce JSON with fields: produced array of tasks that were settled produced, retry array of tasks that had retry scheduled, verifiedTestCount number of tests from evidence? In log: \"10:04 task A test exit=0 evidence=tests:42\". So 42 tests. So verifiedTestCount = 42. Produced: task A. Retry: task B. Output JSON object.",
+            "finishReason": "stop",
+            "usage": {
+              "prompt_tokens": 188,
+              "completion_tokens": 114,
+              "total_tokens": 302,
+              "completion_tokens_details": {
+                "reasoning_tokens": 84
+              }
+            },
+            "stats": {
+              "tokens_per_second": 36.780956498452944,
+              "time_to_first_token": 0.397615,
+              "generation_time": 3.497045,
+              "stop_reason": "eosFound"
+            },
+            "modelInfo": {
+              "arch": "gpt-oss",
+              "quant": "MXFP4",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "insufficient_evidence_abstention",
+          "category": "safety",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "expected": "INSUFFICIENT_EVIDENCE"
+          },
+          "response": {
+            "text": "INSUFFICIENT_EVIDENCE",
+            "message": {
+              "role": "assistant",
+              "content": "INSUFFICIENT_EVIDENCE",
+              "reasoning": "We must return exactly INSUFFICIENT_EVIDENCE.",
+              "tool_calls": []
+            },
+            "wallMs": 1404,
+            "reasoning": "We must return exactly INSUFFICIENT_EVIDENCE.",
+            "finishReason": "stop",
+            "usage": {
+              "prompt_tokens": 132,
+              "completion_tokens": 29,
+              "total_tokens": 161,
+              "completion_tokens_details": {
+                "reasoning_tokens": 12
+              }
+            },
+            "stats": {
+              "tokens_per_second": 38.977708782753034,
+              "time_to_first_token": 0.622465,
+              "generation_time": 1.36648,
+              "stop_reason": "eosFound"
+            },
+            "modelInfo": {
+              "arch": "gpt-oss",
+              "quant": "MXFP4",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "long_context_recall",
+          "category": "long_context",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "passed": 3,
+            "total": 3
+          },
+          "response": {
+            "text": "{\"record\":173,\"launchKey\":\"ORBITAL_CEDAR_731\",\"owner\":\"qa\"}",
+            "message": {
+              "role": "assistant",
+              "content": "{\"record\":173,\"launchKey\":\"ORBITAL_CEDAR_731\",\"owner\":\"qa\"}",
+              "reasoning": "Only record with status verified is 173. Return JSON.",
+              "tool_calls": []
+            },
+            "wallMs": 6087,
+            "reasoning": "Only record with status verified is 173. Return JSON.",
+            "finishReason": "stop",
+            "usage": {
+              "prompt_tokens": 6373,
+              "completion_tokens": 43,
+              "total_tokens": 6416,
+              "completion_tokens_details": {
+                "reasoning_tokens": 12
+              }
+            },
+            "stats": {
+              "tokens_per_second": 36.17506713419436,
+              "time_to_first_token": 4.8351239999999995,
+              "generation_time": 6.023788,
+              "stop_reason": "eosFound"
+            },
+            "modelInfo": {
+              "arch": "gpt-oss",
+              "quant": "MXFP4",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "critic_candidate_selection",
+          "category": "critique",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 0,
+            "expected": "B"
+          },
+          "response": {
+            "text": "",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning": "We need to return exactly A, B, or C. The user describes three candidates: A invents value no source; B says evidence missing and names exact missing benchmark receipt; C repeats question and propose more agents. We must choose one? They want us to output exactly A, B, or C. Likely we should abstain because evidence missing? According to instruction: \"Task required a source-grounded answer and abstention when evidence is missing.\" So we should abstain",
+              "tool_calls": []
+            },
+            "wallMs": 3210,
+            "reasoning": "We need to return exactly A, B, or C. The user describes three candidates: A invents value no source; B says evidence missing and names exact missing benchmark receipt; C repeats question and propose more agents. We must choose one? They want us to output exactly A, B, or C. Likely we should abstain because evidence missing? According to instruction: \"Task required a source-grounded answer and abstention when evidence is missing.\" So we should abstain",
+            "finishReason": "length",
+            "usage": {
+              "prompt_tokens": 160,
+              "completion_tokens": 100,
+              "total_tokens": 260,
+              "completion_tokens_details": {
+                "reasoning_tokens": 97
+              }
+            },
+            "stats": {
+              "tokens_per_second": 35.59935066784382,
+              "time_to_first_token": 0.352735,
+              "generation_time": 3.161775,
+              "stop_reason": "maxPredictedTokensReached"
+            },
+            "modelInfo": {
+              "arch": "gpt-oss",
+              "quant": "MXFP4",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        }
+      ],
+      "summary": {
+        "score": 7.133333333333333,
+        "possible": 10,
+        "passRate": 0.7133333333333333,
+        "completedCases": 9,
+        "failedCases": 1,
+        "meanTokensPerSecond": 37.17,
+        "meanTimeToFirstTokenSeconds": 0.977,
+        "totalWallSeconds": 34.74,
+        "categories": {
+          "instruction": {
+            "score": 1,
+            "possible": 1,
+            "passRate": 1
+          },
+          "planning": {
+            "score": 0,
+            "possible": 1,
+            "passRate": 0
+          },
+          "tool_use": {
+            "score": 1,
+            "possible": 1,
+            "passRate": 1
+          },
+          "grounding": {
+            "score": 0.8,
+            "possible": 1,
+            "passRate": 0.8
+          },
+          "reasoning": {
+            "score": 1,
+            "possible": 1,
+            "passRate": 1
+          },
+          "coding": {
+            "score": 1,
+            "possible": 1,
+            "passRate": 1
+          },
+          "extraction": {
+            "score": 0.3333333333333333,
+            "possible": 1,
+            "passRate": 0.3333333333333333
+          },
+          "safety": {
+            "score": 1,
+            "possible": 1,
+            "passRate": 1
+          },
+          "long_context": {
+            "score": 1,
+            "possible": 1,
+            "passRate": 1
+          },
+          "critique": {
+            "score": 0,
+            "possible": 1,
+            "passRate": 0
+          }
+        }
+      },
+      "hardwareAfter": {
+        "sampledAt": "2026-08-23T04:00:11.095Z",
+        "totalRamGiB": 63.17,
+        "freeRamGiB": 34.79,
+        "gpus": [
+          {
+            "index": 0,
+            "name": "NVIDIA GeForce RTX 3070",
+            "totalMiB": 8192,
+            "usedMiB": 6950,
+            "freeMiB": 1069,
+            "utilizationPercent": 39,
+            "powerWatts": 104.24
+          },
+          {
+            "index": 1,
+            "name": "NVIDIA GeForce GTX 1080",
+            "totalMiB": 8192,
+            "usedMiB": 12,
+            "freeMiB": 8048,
+            "utilizationPercent": 0,
+            "powerWatts": 6.85
+          }
+        ]
+      }
+    }
+  ],
+  "ranking": [
+    {
+      "model": "openai/gpt-oss-20b",
+      "score": 7.133333333333333,
+      "possible": 10,
+      "passRate": 0.7133333333333333,
+      "completedCases": 9,
+      "failedCases": 1,
+      "meanTokensPerSecond": 37.17,
+      "meanTimeToFirstTokenSeconds": 0.977,
+      "totalWallSeconds": 34.74,
+      "categories": {
+        "instruction": {
+          "score": 1,
+          "possible": 1,
+          "passRate": 1
+        },
+        "planning": {
+          "score": 0,
+          "possible": 1,
+          "passRate": 0
+        },
+        "tool_use": {
+          "score": 1,
+          "possible": 1,
+          "passRate": 1
+        },
+        "grounding": {
+          "score": 0.8,
+          "possible": 1,
+          "passRate": 0.8
+        },
+        "reasoning": {
+          "score": 1,
+          "possible": 1,
+          "passRate": 1
+        },
+        "coding": {
+          "score": 1,
+          "possible": 1,
+          "passRate": 1
+        },
+        "extraction": {
+          "score": 0.3333333333333333,
+          "possible": 1,
+          "passRate": 0.3333333333333333
+        },
+        "safety": {
+          "score": 1,
+          "possible": 1,
+          "passRate": 1
+        },
+        "long_context": {
+          "score": 1,
+          "possible": 1,
+          "passRate": 1
+        },
+        "critique": {
+          "score": 0,
+          "possible": 1,
+          "passRate": 0
+        }
+      }
+    }
+  ],
+  "hardwareAfter": {
+    "sampledAt": "2026-08-23T04:00:11.154Z",
+    "totalRamGiB": 63.17,
+    "freeRamGiB": 34.8,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3070",
+        "totalMiB": 8192,
+        "usedMiB": 6950,
+        "freeMiB": 1069,
+        "utilizationPercent": 39,
+        "powerWatts": 101.15
+      },
+      {
+        "index": 1,
+        "name": "NVIDIA GeForce GTX 1080",
+        "totalMiB": 8192,
+        "usedMiB": 12,
+        "freeMiB": 8048,
+        "utilizationPercent": 0,
+        "powerWatts": 6.99
+      }
+    ]
+  }
+}

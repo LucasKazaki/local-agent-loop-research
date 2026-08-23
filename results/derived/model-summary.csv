@@ -1,0 +1,16 @@
+source,stage,repeats,model,status,quantization,sizeGiB,score,possible,passRate,meanTokensPerSecond,meanTimeToFirstTokenSeconds,totalWallSeconds,loadWallSeconds,gpu0UsedMiBLoaded,gpu1UsedMiBLoaded,completedCases,failedCases,category_coding,category_critique,category_extraction,category_grounding,category_instruction,category_long_context,category_planning,category_reasoning,category_safety,category_tool_use
+code-finalists-isolated-r2.json,,2,mistralai_devstral-small-2-24b-instruct-2512,completed,Q3_K_M,10.687,8.55,10,0.855,5.09,,,6.36,6652,12,10,0,,,,,,,,,,
+code-finalists-isolated-r2.json,,2,granite-4.1-8b,completed,Q4_K_M,4.981,8,10,0.8,24.65,,,2.62,6753,12,10,0,,,,,,,,,,
+code-finalists-isolated-r2.json,,2,google/gemma-4-e4b,completed,Q4_K_M,5.892,5.2,10,0.52,66.72,,,20.22,6871,12,10,0,,,,,,,,,,
+code-finalists-isolated-r2.json,,2,openai/gpt-oss-20b,completed,MXFP4,11.278,8.8,10,0.88,36.51,,,54.89,6765,12,10,0,,,,,,,,,,
+dual-resident-e4b.json,screen,1,google/gemma-4-e4b,completed,Q4_K_M,5.892,8.8571,10,0.8857,67.73,0.432,31.26,,6959,5795,10,0,0,1,1,1,1,1,0.8571,1,1,1
+dual-resident-granite.json,screen,1,granite-4.1-8b,completed,Q4_K_M,4.981,8.6667,10,0.8667,0,0,40.66,,6959,5795,10,0,1,0,0.6667,1,1,1,1,1,1,1
+screen-devstral-isolated-r1.json,screen,1,mistralai_devstral-small-2-24b-instruct-2512,completed,Q3_K_M,10.687,9.6,10,0.96,6.53,2.282,94.09,7.22,6652,12,10,0,1,1,1,0.6,1,1,1,1,1,1
+screen-finalists-isolated-r2.json,screen,2,openai/gpt-oss-20b,completed,MXFP4,11.278,16.6,20,0.83,35.19,0.62,69.17,10.61,6759,12,17,3,1,1,1,0.8,1,0.5,0,1,1,1
+screen-finalists-isolated-r2.json,screen,2,google/gemma-4-e4b,completed,Q4_K_M,5.892,17.7143,20,0.8857,67.94,0.231,59.08,88.89,6786,12,20,0,0,1,1,1,1,1,0.8571,1,1,1
+screen-finalists-isolated-r2.json,screen,2,google/gemma-4-e2b,completed,Q4_K_M,4.112,12,20,0.6,88.65,0.149,97.58,3.82,4303,12,18,2,0,0.5,1,1,0,0.5,1,0,1,1
+screen-granite-isolated-r2.json,screen,2,granite-4.1-8b,completed,Q4_K_M,4.981,17.3333,20,0.8667,26.61,0.324,61.48,2.81,6684,12,20,0,1,0,0.6667,1,1,1,1,1,1,1
+vision-configured-finalists-r2.json,,2,zai-org/glm-4.6v-flash,completed,,0,,,,,,,,,,0,0,,,,,,,,,,
+vision-configured-finalists-r2.json,,2,qwen/qwen3.5-9b,completed,,0,,,,,,,,,,0,0,,,,,,,,,,
+vision-configured-finalists-r2.json,,2,google/gemma-4-e4b,completed,,0,,,,,,,,,,0,0,,,,,,,,,,
+vision-configured-finalists-r2.json,,2,google/gemma-4-12b,completed,,0,,,,,,,,,,0,0,,,,,,,,,,

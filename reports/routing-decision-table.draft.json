@@ -1,0 +1,589 @@
+{
+  "decision_table_version": "routing-decision-table/1.0",
+  "generated_at": "2026-08-23T06:14:58.848Z",
+  "evidence_label": "draft-unresolved",
+  "frontier_parity_established": false,
+  "policy": {
+    "path": "policies/routing-policy.draft.json",
+    "sha256": "be232d304cc43306a90a8efd111c935652cc04f3fc0999368399b7baf983f5c6",
+    "policy_id": "routing_policy_local_dual_gpu_draft_2026_08_23",
+    "review": {
+      "status": "draft_unreviewed",
+      "authority": null,
+      "reviewed_by": null,
+      "reviewed_at": null
+    }
+  },
+  "manifest": {
+    "manifest_id": "routing_local_dual_gpu_draft_2026_08_23",
+    "status": "draft",
+    "benchmark_snapshot_id": "bench_41533057ded00daff733a2022cd150b0",
+    "expected_benchmark_snapshot_id": "bench_41533057ded00daff733a2022cd150b0",
+    "schema_path": "schemas/routing-manifest.schema.json",
+    "schema_sha256": "437b20b95a76235cad0f5c7206527450bf37a58b866dc35d01bc6e51cc806fb6",
+    "schema_valid": true,
+    "schema_errors": []
+  },
+  "sources": [
+    {
+      "id": "model_inventory",
+      "kind": "model_inventory",
+      "path": "results/model-inventory-final.json",
+      "expected_sha256": "7ef11bb083b2dbb046248fad3fa6d7c2f49228f5fa3614972fe3b11adc5c5bb7",
+      "actual_sha256": "7ef11bb083b2dbb046248fad3fa6d7c2f49228f5fa3614972fe3b11adc5c5bb7",
+      "verified": true,
+      "errors": []
+    },
+    {
+      "id": "artifact_screen_finalists_isolated_r2",
+      "kind": "text",
+      "path": "results/screen-finalists-isolated-r2.json",
+      "expected_sha256": "34a51146a486e0b6f0ce5cd57b2f57c758a7a6130183ed5040060dcc72056823",
+      "actual_sha256": "34a51146a486e0b6f0ce5cd57b2f57c758a7a6130183ed5040060dcc72056823",
+      "verified": true,
+      "errors": []
+    },
+    {
+      "id": "artifact_code_finalists_isolated_r2",
+      "kind": "code",
+      "path": "results/code-finalists-isolated-r2.json",
+      "expected_sha256": "deb4836c740d3fb9d8dcec09f14ceff13899125bdd6c600e25fed61b769c1277",
+      "actual_sha256": "deb4836c740d3fb9d8dcec09f14ceff13899125bdd6c600e25fed61b769c1277",
+      "verified": true,
+      "errors": []
+    },
+    {
+      "id": "artifact_vision_finalists_isolated_r2",
+      "kind": "vision",
+      "path": "results/vision-finalists-isolated-r2.json",
+      "expected_sha256": "07758ae9dc45b5a8aa3ce4f79d8b36e33847de648e3b29938ba4f4e1e189cdb5",
+      "actual_sha256": "07758ae9dc45b5a8aa3ce4f79d8b36e33847de648e3b29938ba4f4e1e189cdb5",
+      "verified": true,
+      "errors": []
+    }
+  ],
+  "global_checks": [
+    {
+      "id": "policy.human_review",
+      "status": "fail",
+      "expected": "reviewed human policy",
+      "actual": {
+        "status": "draft_unreviewed",
+        "authority": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "detail": null
+    },
+    {
+      "id": "snapshot.content_addressed_id",
+      "status": "pass",
+      "expected": "bench_41533057ded00daff733a2022cd150b0",
+      "actual": "bench_41533057ded00daff733a2022cd150b0",
+      "detail": null
+    },
+    {
+      "id": "source.model_inventory.sha256",
+      "status": "pass",
+      "expected": "7ef11bb083b2dbb046248fad3fa6d7c2f49228f5fa3614972fe3b11adc5c5bb7",
+      "actual": "7ef11bb083b2dbb046248fad3fa6d7c2f49228f5fa3614972fe3b11adc5c5bb7",
+      "detail": null
+    },
+    {
+      "id": "source.artifact_screen_finalists_isolated_r2.sha256",
+      "status": "pass",
+      "expected": "34a51146a486e0b6f0ce5cd57b2f57c758a7a6130183ed5040060dcc72056823",
+      "actual": "34a51146a486e0b6f0ce5cd57b2f57c758a7a6130183ed5040060dcc72056823",
+      "detail": null
+    },
+    {
+      "id": "source.artifact_code_finalists_isolated_r2.sha256",
+      "status": "pass",
+      "expected": "deb4836c740d3fb9d8dcec09f14ceff13899125bdd6c600e25fed61b769c1277",
+      "actual": "deb4836c740d3fb9d8dcec09f14ceff13899125bdd6c600e25fed61b769c1277",
+      "detail": null
+    },
+    {
+      "id": "source.artifact_vision_finalists_isolated_r2.sha256",
+      "status": "pass",
+      "expected": "07758ae9dc45b5a8aa3ce4f79d8b36e33847de648e3b29938ba4f4e1e189cdb5",
+      "actual": "07758ae9dc45b5a8aa3ce4f79d8b36e33847de648e3b29938ba4f4e1e189cdb5",
+      "detail": null
+    },
+    {
+      "id": "inventory.schema_version",
+      "status": "pass",
+      "expected": "model-inventory/1.0",
+      "actual": "model-inventory/1.0",
+      "detail": null
+    },
+    {
+      "id": "inventory.self_hash",
+      "status": "pass",
+      "expected": "f96b4b7ff66df8c3ea9df99decca11dac25b861af253ed551dde53396921aefc",
+      "actual": "f96b4b7ff66df8c3ea9df99decca11dac25b861af253ed551dde53396921aefc",
+      "detail": null
+    },
+    {
+      "id": "inventory.minimum_model_count",
+      "status": "pass",
+      "expected": 1,
+      "actual": 20,
+      "detail": null
+    },
+    {
+      "id": "inventory.model_count_reconciled",
+      "status": "pass",
+      "expected": 20,
+      "actual": 20,
+      "detail": null
+    },
+    {
+      "id": "inventory.byte_count_reconciled",
+      "status": "pass",
+      "expected": 105322544512,
+      "actual": 105322544512,
+      "detail": null
+    },
+    {
+      "id": "inventory.valid_headers",
+      "status": "pass",
+      "expected": true,
+      "actual": 20,
+      "detail": null
+    },
+    {
+      "id": "inventory.unique_artifact_ids",
+      "status": "pass",
+      "expected": 20,
+      "actual": 20,
+      "detail": null
+    },
+    {
+      "id": "inventory.all_roots_present",
+      "status": "pass",
+      "expected": "all roots status=present",
+      "actual": [
+        "lm-studio:present"
+      ],
+      "detail": null
+    },
+    {
+      "id": "inventory.zero_errors",
+      "status": "pass",
+      "expected": 0,
+      "actual": 0,
+      "detail": null
+    },
+    {
+      "id": "inventory.zero_ignored_entries",
+      "status": "pass",
+      "expected": 0,
+      "actual": 0,
+      "detail": null
+    },
+    {
+      "id": "inventory.all_artifacts_hashed",
+      "status": "pass",
+      "expected": true,
+      "actual": 20,
+      "detail": null
+    },
+    {
+      "id": "artifact_screen_finalists_isolated_r2.finished",
+      "status": "pass",
+      "expected": "completed report with finishedAt",
+      "actual": "2026-08-23T05:08:20.157Z",
+      "detail": null
+    },
+    {
+      "id": "artifact_screen_finalists_isolated_r2.time_order",
+      "status": "pass",
+      "expected": "finishedAt >= startedAt",
+      "actual": {
+        "startedAt": "2026-08-23T05:02:47.702Z",
+        "finishedAt": "2026-08-23T05:08:20.157Z"
+      },
+      "detail": null
+    },
+    {
+      "id": "artifact_screen_finalists_isolated_r2.suite_hash",
+      "status": "pass",
+      "expected": "a0308ecc0a9eeba08de236ff65c3d5a756aaf9c568cfe721687fb9df26189ea2",
+      "actual": "a0308ecc0a9eeba08de236ff65c3d5a756aaf9c568cfe721687fb9df26189ea2",
+      "detail": null
+    },
+    {
+      "id": "artifact_screen_finalists_isolated_r2.models_present",
+      "status": "pass",
+      "expected": "at least one model record",
+      "actual": 3,
+      "detail": null
+    },
+    {
+      "id": "artifact_code_finalists_isolated_r2.finished",
+      "status": "pass",
+      "expected": "completed report with finishedAt",
+      "actual": "2026-08-23T05:24:22.790Z",
+      "detail": null
+    },
+    {
+      "id": "artifact_code_finalists_isolated_r2.time_order",
+      "status": "pass",
+      "expected": "finishedAt >= startedAt",
+      "actual": {
+        "startedAt": "2026-08-23T05:14:02.112Z",
+        "finishedAt": "2026-08-23T05:24:22.790Z"
+      },
+      "detail": null
+    },
+    {
+      "id": "artifact_code_finalists_isolated_r2.suite_hash",
+      "status": "pass",
+      "expected": "8fa48ddb647ae2de83c6c30212dc67ca95bb9c153b3146a0622d10bcc068f654",
+      "actual": "8fa48ddb647ae2de83c6c30212dc67ca95bb9c153b3146a0622d10bcc068f654",
+      "detail": null
+    },
+    {
+      "id": "artifact_code_finalists_isolated_r2.models_present",
+      "status": "pass",
+      "expected": "at least one model record",
+      "actual": 4,
+      "detail": null
+    },
+    {
+      "id": "artifact_vision_finalists_isolated_r2.finished",
+      "status": "pass",
+      "expected": "completed report with finishedAt",
+      "actual": "2026-08-23T05:30:53.877Z",
+      "detail": null
+    },
+    {
+      "id": "artifact_vision_finalists_isolated_r2.time_order",
+      "status": "pass",
+      "expected": "finishedAt >= startedAt",
+      "actual": {
+        "startedAt": "2026-08-23T05:24:34.975Z",
+        "finishedAt": "2026-08-23T05:30:53.877Z"
+      },
+      "detail": null
+    },
+    {
+      "id": "artifact_vision_finalists_isolated_r2.suite_hash",
+      "status": "pass",
+      "expected": "a38575d2cf735cc15f67b71c861652315b1bc7c23d476a57d05048f383352a11",
+      "actual": "a38575d2cf735cc15f67b71c861652315b1bc7c23d476a57d05048f383352a11",
+      "detail": null
+    },
+    {
+      "id": "artifact_vision_finalists_isolated_r2.models_present",
+      "status": "pass",
+      "expected": "at least one model record",
+      "actual": 4,
+      "detail": null
+    },
+    {
+      "id": "routing.all_planned_profiles_eligible",
+      "status": "fail",
+      "expected": [
+        "planner",
+        "researcher_extractor",
+        "coder",
+        "verifier_critic",
+        "synthesizer_policy",
+        "vision"
+      ],
+      "actual": [],
+      "detail": null
+    }
+  ],
+  "rows": [
+    {
+      "profile_id": "planner",
+      "roles": [
+        "planner"
+      ],
+      "decision": "unresolved_no_policy_mapping",
+      "model_id": null,
+      "inventory_artifact_id": null,
+      "runtime_id": null,
+      "measurement_artifact_ids": [],
+      "resource_artifact_id": null,
+      "metrics": {
+        "role_score": null,
+        "task_success_rate": null,
+        "tool_semantic_success": null,
+        "schema_success": null,
+        "citation_precision": null,
+        "regression_rate": null,
+        "median_seconds": null,
+        "peak_vram_mib": null,
+        "peak_ram_mib": null,
+        "failure_rate": null,
+        "evaluated_tasks": 0,
+        "repetitions": 0,
+        "evaluated_cases": 0
+      },
+      "resource_measurement_quality": "missing",
+      "hashes": {
+        "model_artifact_sha256": null,
+        "prompt_bundle_sha256": null,
+        "template_sha256": null,
+        "runtime_build_sha256": null,
+        "runtime_settings_sha256": null,
+        "policy_sha256": "be232d304cc43306a90a8efd111c935652cc04f3fc0999368399b7baf983f5c6",
+        "routing_schema_sha256": "437b20b95a76235cad0f5c7206527450bf37a58b866dc35d01bc6e51cc806fb6"
+      },
+      "checks": [
+        {
+          "id": "policy.candidate_mapping",
+          "status": "fail",
+          "expected": "at least one explicitly reviewed model/runtime mapping",
+          "actual": 0,
+          "detail": null
+        }
+      ]
+    },
+    {
+      "profile_id": "researcher_extractor",
+      "roles": [
+        "researcher",
+        "extractor"
+      ],
+      "decision": "unresolved_no_policy_mapping",
+      "model_id": null,
+      "inventory_artifact_id": null,
+      "runtime_id": null,
+      "measurement_artifact_ids": [],
+      "resource_artifact_id": null,
+      "metrics": {
+        "role_score": null,
+        "task_success_rate": null,
+        "tool_semantic_success": null,
+        "schema_success": null,
+        "citation_precision": null,
+        "regression_rate": null,
+        "median_seconds": null,
+        "peak_vram_mib": null,
+        "peak_ram_mib": null,
+        "failure_rate": null,
+        "evaluated_tasks": 0,
+        "repetitions": 0,
+        "evaluated_cases": 0
+      },
+      "resource_measurement_quality": "missing",
+      "hashes": {
+        "model_artifact_sha256": null,
+        "prompt_bundle_sha256": null,
+        "template_sha256": null,
+        "runtime_build_sha256": null,
+        "runtime_settings_sha256": null,
+        "policy_sha256": "be232d304cc43306a90a8efd111c935652cc04f3fc0999368399b7baf983f5c6",
+        "routing_schema_sha256": "437b20b95a76235cad0f5c7206527450bf37a58b866dc35d01bc6e51cc806fb6"
+      },
+      "checks": [
+        {
+          "id": "policy.candidate_mapping",
+          "status": "fail",
+          "expected": "at least one explicitly reviewed model/runtime mapping",
+          "actual": 0,
+          "detail": null
+        }
+      ]
+    },
+    {
+      "profile_id": "coder",
+      "roles": [
+        "coder"
+      ],
+      "decision": "unresolved_no_policy_mapping",
+      "model_id": null,
+      "inventory_artifact_id": null,
+      "runtime_id": null,
+      "measurement_artifact_ids": [],
+      "resource_artifact_id": null,
+      "metrics": {
+        "role_score": null,
+        "task_success_rate": null,
+        "tool_semantic_success": null,
+        "schema_success": null,
+        "citation_precision": null,
+        "regression_rate": null,
+        "median_seconds": null,
+        "peak_vram_mib": null,
+        "peak_ram_mib": null,
+        "failure_rate": null,
+        "evaluated_tasks": 0,
+        "repetitions": 0,
+        "evaluated_cases": 0
+      },
+      "resource_measurement_quality": "missing",
+      "hashes": {
+        "model_artifact_sha256": null,
+        "prompt_bundle_sha256": null,
+        "template_sha256": null,
+        "runtime_build_sha256": null,
+        "runtime_settings_sha256": null,
+        "policy_sha256": "be232d304cc43306a90a8efd111c935652cc04f3fc0999368399b7baf983f5c6",
+        "routing_schema_sha256": "437b20b95a76235cad0f5c7206527450bf37a58b866dc35d01bc6e51cc806fb6"
+      },
+      "checks": [
+        {
+          "id": "policy.candidate_mapping",
+          "status": "fail",
+          "expected": "at least one explicitly reviewed model/runtime mapping",
+          "actual": 0,
+          "detail": null
+        }
+      ]
+    },
+    {
+      "profile_id": "verifier_critic",
+      "roles": [
+        "verifier",
+        "critic"
+      ],
+      "decision": "unresolved_no_policy_mapping",
+      "model_id": null,
+      "inventory_artifact_id": null,
+      "runtime_id": null,
+      "measurement_artifact_ids": [],
+      "resource_artifact_id": null,
+      "metrics": {
+        "role_score": null,
+        "task_success_rate": null,
+        "tool_semantic_success": null,
+        "schema_success": null,
+        "citation_precision": null,
+        "regression_rate": null,
+        "median_seconds": null,
+        "peak_vram_mib": null,
+        "peak_ram_mib": null,
+        "failure_rate": null,
+        "evaluated_tasks": 0,
+        "repetitions": 0,
+        "evaluated_cases": 0
+      },
+      "resource_measurement_quality": "missing",
+      "hashes": {
+        "model_artifact_sha256": null,
+        "prompt_bundle_sha256": null,
+        "template_sha256": null,
+        "runtime_build_sha256": null,
+        "runtime_settings_sha256": null,
+        "policy_sha256": "be232d304cc43306a90a8efd111c935652cc04f3fc0999368399b7baf983f5c6",
+        "routing_schema_sha256": "437b20b95a76235cad0f5c7206527450bf37a58b866dc35d01bc6e51cc806fb6"
+      },
+      "checks": [
+        {
+          "id": "policy.candidate_mapping",
+          "status": "fail",
+          "expected": "at least one explicitly reviewed model/runtime mapping",
+          "actual": 0,
+          "detail": null
+        }
+      ]
+    },
+    {
+      "profile_id": "synthesizer_policy",
+      "roles": [
+        "synthesizer",
+        "policy_guard"
+      ],
+      "decision": "unresolved_no_policy_mapping",
+      "model_id": null,
+      "inventory_artifact_id": null,
+      "runtime_id": null,
+      "measurement_artifact_ids": [],
+      "resource_artifact_id": null,
+      "metrics": {
+        "role_score": null,
+        "task_success_rate": null,
+        "tool_semantic_success": null,
+        "schema_success": null,
+        "citation_precision": null,
+        "regression_rate": null,
+        "median_seconds": null,
+        "peak_vram_mib": null,
+        "peak_ram_mib": null,
+        "failure_rate": null,
+        "evaluated_tasks": 0,
+        "repetitions": 0,
+        "evaluated_cases": 0
+      },
+      "resource_measurement_quality": "missing",
+      "hashes": {
+        "model_artifact_sha256": null,
+        "prompt_bundle_sha256": null,
+        "template_sha256": null,
+        "runtime_build_sha256": null,
+        "runtime_settings_sha256": null,
+        "policy_sha256": "be232d304cc43306a90a8efd111c935652cc04f3fc0999368399b7baf983f5c6",
+        "routing_schema_sha256": "437b20b95a76235cad0f5c7206527450bf37a58b866dc35d01bc6e51cc806fb6"
+      },
+      "checks": [
+        {
+          "id": "policy.candidate_mapping",
+          "status": "fail",
+          "expected": "at least one explicitly reviewed model/runtime mapping",
+          "actual": 0,
+          "detail": null
+        }
+      ]
+    },
+    {
+      "profile_id": "vision",
+      "roles": [
+        "vision"
+      ],
+      "decision": "unresolved_no_policy_mapping",
+      "model_id": null,
+      "inventory_artifact_id": null,
+      "runtime_id": null,
+      "measurement_artifact_ids": [],
+      "resource_artifact_id": null,
+      "metrics": {
+        "role_score": null,
+        "task_success_rate": null,
+        "tool_semantic_success": null,
+        "schema_success": null,
+        "citation_precision": null,
+        "regression_rate": null,
+        "median_seconds": null,
+        "peak_vram_mib": null,
+        "peak_ram_mib": null,
+        "failure_rate": null,
+        "evaluated_tasks": 0,
+        "repetitions": 0,
+        "evaluated_cases": 0
+      },
+      "resource_measurement_quality": "missing",
+      "hashes": {
+        "model_artifact_sha256": null,
+        "prompt_bundle_sha256": null,
+        "template_sha256": null,
+        "runtime_build_sha256": null,
+        "runtime_settings_sha256": null,
+        "policy_sha256": "be232d304cc43306a90a8efd111c935652cc04f3fc0999368399b7baf983f5c6",
+        "routing_schema_sha256": "437b20b95a76235cad0f5c7206527450bf37a58b866dc35d01bc6e51cc806fb6"
+      },
+      "checks": [
+        {
+          "id": "policy.candidate_mapping",
+          "status": "fail",
+          "expected": "at least one explicitly reviewed model/runtime mapping",
+          "actual": 0,
+          "detail": null
+        }
+      ]
+    }
+  ],
+  "unresolved_profiles": [
+    "planner",
+    "researcher_extractor",
+    "coder",
+    "verifier_critic",
+    "synthesizer_policy",
+    "vision"
+  ]
+}

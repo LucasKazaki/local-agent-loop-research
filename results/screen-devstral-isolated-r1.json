@@ -1,0 +1,1153 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-08-23T05:12:04.233Z",
+  "finishedAt": "2026-08-23T05:13:47.228Z",
+  "options": {
+    "stage": "screen",
+    "repeats": 1,
+    "context": 8192,
+    "manageModels": true,
+    "caseTimeoutMs": 180000,
+    "tokenScale": 4,
+    "lms": "lms.exe",
+    "models": [
+      "mistralai_devstral-small-2-24b-instruct-2512"
+    ],
+    "restore": "",
+    "output": "results/screen-devstral-isolated-r1.json"
+  },
+  "environment": {
+    "platform": "win32",
+    "release": "10.0.26200",
+    "arch": "x64",
+    "cpu": "AMD Ryzen 5 7600X 6-Core Processor             ",
+    "node": "v24.19.0",
+    "apiBase": "http://127.0.0.1:1234"
+  },
+  "taskSuite": {
+    "hashSha256": "a0308ecc0a9eeba08de236ff65c3d5a756aaf9c568cfe721687fb9df26189ea2",
+    "stage": "screen",
+    "taskIds": [
+      "instruction_exact_token",
+      "director_dependency_envelope",
+      "native_tool_read_file",
+      "claim_grounding_matrix",
+      "gpu_residency_reasoning",
+      "code_review_immutable_sort",
+      "log_reconciliation",
+      "insufficient_evidence_abstention",
+      "long_context_recall",
+      "critic_candidate_selection"
+    ],
+    "repeats": 1
+  },
+  "inventory": [
+    {
+      "type": "llm",
+      "modelKey": "mistralai_devstral-small-2-24b-instruct-2512",
+      "format": "gguf",
+      "displayName": "Mistralai Devstral Small 2 24B Instruct 2512",
+      "publisher": "bartowski",
+      "path": "bartowski/mistralai_Devstral-Small-2-24B-Instruct-2512-GGUF/mistralai_Devstral-Small-2-24B-Instruct-2512-Q3_K_M.gguf",
+      "sizeBytes": 11474611072,
+      "indexedModelIdentifier": "bartowski/mistralai_Devstral-Small-2-24B-Instruct-2512-GGUF/mistralai_Devstral-Small-2-24B-Instruct-2512-Q3_K_M.gguf",
+      "deviceIdentifier": null,
+      "paramsString": "24B",
+      "architecture": "mistral3",
+      "quantization": {
+        "name": "Q3_K_M",
+        "bits": 3
+      },
+      "vision": false,
+      "trainedForToolUse": true,
+      "maxContextLength": 393216
+    },
+    {
+      "type": "llm",
+      "modelKey": "granite-4.1-8b",
+      "format": "gguf",
+      "displayName": "Granite 4.1 8B",
+      "publisher": "ibm-granite",
+      "path": "ibm-granite/granite-4.1-8b-GGUF/granite-4.1-8b-Q4_K_M.gguf",
+      "sizeBytes": 5347914400,
+      "indexedModelIdentifier": "ibm-granite/granite-4.1-8b-GGUF/granite-4.1-8b-Q4_K_M.gguf",
+      "deviceIdentifier": null,
+      "paramsString": "8B",
+      "architecture": "granite",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "vision": false,
+      "trainedForToolUse": true,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "microsoft/phi-4-reasoning-plus",
+      "format": "gguf",
+      "displayName": "Phi 4 Reasoning Plus",
+      "publisher": "microsoft",
+      "path": "microsoft/phi-4-reasoning-plus",
+      "sizeBytes": 9053139092,
+      "indexedModelIdentifier": "microsoft/phi-4-reasoning-plus",
+      "deviceIdentifier": null,
+      "paramsString": "15B",
+      "architecture": "phi3",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "microsoft/phi-4-reasoning-plus@q4_k_m"
+      ],
+      "selectedVariant": "microsoft/phi-4-reasoning-plus@q4_k_m",
+      "vision": false,
+      "trainedForToolUse": false,
+      "maxContextLength": 32768
+    },
+    {
+      "type": "llm",
+      "modelKey": "microsoft/phi-4-mini-reasoning",
+      "format": "gguf",
+      "displayName": "Phi 4 Mini Reasoning",
+      "publisher": "microsoft",
+      "path": "microsoft/phi-4-mini-reasoning",
+      "sizeBytes": 2491897541,
+      "indexedModelIdentifier": "microsoft/phi-4-mini-reasoning",
+      "deviceIdentifier": null,
+      "paramsString": "3B",
+      "architecture": "phi3",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "microsoft/phi-4-mini-reasoning@q4_k_m"
+      ],
+      "selectedVariant": "microsoft/phi-4-mini-reasoning@q4_k_m",
+      "vision": false,
+      "trainedForToolUse": false,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "qwen/qwen3-14b",
+      "format": "gguf",
+      "displayName": "Qwen3 14B",
+      "publisher": "qwen",
+      "path": "qwen/qwen3-14b",
+      "sizeBytes": 9001931568,
+      "indexedModelIdentifier": "qwen/qwen3-14b",
+      "deviceIdentifier": null,
+      "paramsString": "14B",
+      "architecture": "qwen3",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "qwen/qwen3-14b@q4_k_m"
+      ],
+      "selectedVariant": "qwen/qwen3-14b@q4_k_m",
+      "vision": false,
+      "trainedForToolUse": true,
+      "maxContextLength": 32768
+    },
+    {
+      "type": "llm",
+      "modelKey": "google/gemma-4-e2b",
+      "format": "gguf",
+      "displayName": "Gemma 4 E2B",
+      "publisher": "google",
+      "path": "google/gemma-4-e2b",
+      "sizeBytes": 4414810282,
+      "indexedModelIdentifier": "google/gemma-4-e2b",
+      "deviceIdentifier": null,
+      "paramsString": "4.6B",
+      "architecture": "gemma4",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "google/gemma-4-e2b@q4_k_m"
+      ],
+      "selectedVariant": "google/gemma-4-e2b@q4_k_m",
+      "vision": true,
+      "trainedForToolUse": false,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "google/gemma-4-e4b",
+      "format": "gguf",
+      "displayName": "Gemma 4 E4B",
+      "publisher": "google",
+      "path": "google/gemma-4-e4b",
+      "sizeBytes": 6326938154,
+      "indexedModelIdentifier": "google/gemma-4-e4b",
+      "deviceIdentifier": null,
+      "paramsString": "7.5B",
+      "architecture": "gemma4",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "google/gemma-4-e4b@q4_k_m"
+      ],
+      "selectedVariant": "google/gemma-4-e4b@q4_k_m",
+      "vision": true,
+      "trainedForToolUse": true,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "zai-org/glm-4.6v-flash",
+      "format": "gguf",
+      "displayName": "Glm 4.6v Flash",
+      "publisher": "zai-org",
+      "path": "zai-org/glm-4.6v-flash",
+      "sizeBytes": 7953555436,
+      "indexedModelIdentifier": "zai-org/glm-4.6v-flash",
+      "deviceIdentifier": null,
+      "paramsString": "9.4B",
+      "architecture": "glm4",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "zai-org/glm-4.6v-flash@q4_k_m"
+      ],
+      "selectedVariant": "zai-org/glm-4.6v-flash@q4_k_m",
+      "vision": true,
+      "trainedForToolUse": true,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp",
+      "format": "gguf",
+      "displayName": "Qwen3.6 27B Claude Opus DeepSeek Distilled Imatrix MTP GGUF",
+      "publisher": "Brian6145",
+      "path": "Brian6145/Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF/Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF-Q2_K.gguf",
+      "sizeBytes": 10864591328,
+      "indexedModelIdentifier": "Brian6145/Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF/Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF-Q2_K.gguf",
+      "deviceIdentifier": null,
+      "paramsString": "27B",
+      "architecture": "qwen35",
+      "quantization": {
+        "name": "Q2_K",
+        "bits": 2
+      },
+      "vision": false,
+      "trainedForToolUse": true,
+      "maxContextLength": 262144
+    },
+    {
+      "type": "llm",
+      "modelKey": "openai/gpt-oss-20b",
+      "format": "gguf",
+      "displayName": "GPT-OSS 20B",
+      "publisher": "openai",
+      "path": "openai/gpt-oss-20b",
+      "sizeBytes": 12109664217,
+      "indexedModelIdentifier": "openai/gpt-oss-20b",
+      "deviceIdentifier": null,
+      "paramsString": "20B",
+      "architecture": "gpt-oss",
+      "quantization": {
+        "name": "MXFP4",
+        "bits": 4
+      },
+      "variants": [
+        "openai/gpt-oss-20b@mxfp4"
+      ],
+      "selectedVariant": "openai/gpt-oss-20b@mxfp4",
+      "vision": false,
+      "trainedForToolUse": true,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "deepseek/deepseek-r1-0528-qwen3-8b",
+      "format": "gguf",
+      "displayName": "Deepseek R1 0528 Qwen3 8B",
+      "publisher": "deepseek",
+      "path": "deepseek/deepseek-r1-0528-qwen3-8b",
+      "sizeBytes": 5027844358,
+      "indexedModelIdentifier": "deepseek/deepseek-r1-0528-qwen3-8b",
+      "deviceIdentifier": null,
+      "paramsString": "8B",
+      "architecture": "qwen3",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "deepseek/deepseek-r1-0528-qwen3-8b@q4_k_m"
+      ],
+      "selectedVariant": "deepseek/deepseek-r1-0528-qwen3-8b@q4_k_m",
+      "vision": false,
+      "trainedForToolUse": false,
+      "maxContextLength": 131072
+    },
+    {
+      "type": "llm",
+      "modelKey": "qwen/qwen3.5-9b",
+      "format": "gguf",
+      "displayName": "Qwen3.5 9B",
+      "publisher": "qwen",
+      "path": "qwen/qwen3.5-9b",
+      "sizeBytes": 6548927711,
+      "indexedModelIdentifier": "qwen/qwen3.5-9b",
+      "deviceIdentifier": null,
+      "paramsString": "9B",
+      "architecture": "qwen35",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "qwen/qwen3.5-9b@q4_k_m"
+      ],
+      "selectedVariant": "qwen/qwen3.5-9b@q4_k_m",
+      "vision": true,
+      "trainedForToolUse": true,
+      "maxContextLength": 262144
+    },
+    {
+      "type": "llm",
+      "modelKey": "google/gemma-4-12b",
+      "format": "gguf",
+      "displayName": "Gemma 4 12B",
+      "publisher": "google",
+      "path": "google/gemma-4-12b",
+      "sizeBytes": 7556572852,
+      "indexedModelIdentifier": "google/gemma-4-12b",
+      "deviceIdentifier": null,
+      "paramsString": "12B",
+      "architecture": "gemma4",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "variants": [
+        "google/gemma-4-12b@q4_k_m"
+      ],
+      "selectedVariant": "google/gemma-4-12b@q4_k_m",
+      "vision": true,
+      "trainedForToolUse": true,
+      "maxContextLength": 262144
+    },
+    {
+      "type": "llm",
+      "modelKey": "google/gemma-4-12b-qat",
+      "format": "gguf",
+      "displayName": "Gemma 4 12B QAT",
+      "publisher": "google",
+      "path": "google/gemma-4-12b-qat",
+      "sizeBytes": 7151066820,
+      "indexedModelIdentifier": "google/gemma-4-12b-qat",
+      "deviceIdentifier": null,
+      "paramsString": "12B",
+      "architecture": "gemma4",
+      "quantization": {
+        "name": "Q4_0",
+        "bits": 4
+      },
+      "variants": [
+        "google/gemma-4-12b-qat@q4_0"
+      ],
+      "selectedVariant": "google/gemma-4-12b-qat@q4_0",
+      "vision": true,
+      "trainedForToolUse": true,
+      "maxContextLength": 262144
+    },
+    {
+      "type": "embedding",
+      "modelKey": "text-embedding-nomic-embed-text-v1.5",
+      "format": "gguf",
+      "displayName": "Nomic Embed Text v1.5",
+      "publisher": "nomic-ai",
+      "path": "nomic-ai/nomic-embed-text-v1.5-GGUF/nomic-embed-text-v1.5.Q4_K_M.gguf",
+      "sizeBytes": 84106624,
+      "indexedModelIdentifier": "nomic-ai/nomic-embed-text-v1.5-GGUF/nomic-embed-text-v1.5.Q4_K_M.gguf",
+      "deviceIdentifier": null,
+      "architecture": "nomic-bert",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "maxContextLength": 2048
+    }
+  ],
+  "initialLoaded": [],
+  "hardwareBefore": {
+    "sampledAt": "2026-08-23T05:12:04.299Z",
+    "totalRamGiB": 63.17,
+    "freeRamGiB": 44.65,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3070",
+        "totalMiB": 8192,
+        "usedMiB": 610,
+        "freeMiB": 7409,
+        "utilizationPercent": 26,
+        "powerWatts": 39.95
+      },
+      {
+        "index": 1,
+        "name": "NVIDIA GeForce GTX 1080",
+        "totalMiB": 8192,
+        "usedMiB": 12,
+        "freeMiB": 8048,
+        "utilizationPercent": 0,
+        "powerWatts": 6.99
+      }
+    ]
+  },
+  "models": [
+    {
+      "model": "mistralai_devstral-small-2-24b-instruct-2512",
+      "meta": {
+        "type": "llm",
+        "modelKey": "mistralai_devstral-small-2-24b-instruct-2512",
+        "format": "gguf",
+        "displayName": "Mistralai Devstral Small 2 24B Instruct 2512",
+        "publisher": "bartowski",
+        "path": "bartowski/mistralai_Devstral-Small-2-24B-Instruct-2512-GGUF/mistralai_Devstral-Small-2-24B-Instruct-2512-Q3_K_M.gguf",
+        "sizeBytes": 11474611072,
+        "indexedModelIdentifier": "bartowski/mistralai_Devstral-Small-2-24B-Instruct-2512-GGUF/mistralai_Devstral-Small-2-24B-Instruct-2512-Q3_K_M.gguf",
+        "deviceIdentifier": null,
+        "paramsString": "24B",
+        "architecture": "mistral3",
+        "quantization": {
+          "name": "Q3_K_M",
+          "bits": 3
+        },
+        "vision": false,
+        "trainedForToolUse": true,
+        "maxContextLength": 393216
+      },
+      "status": "completed",
+      "load": {
+        "wallSeconds": 7.22,
+        "stdout": "\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 0% ⠋\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 0% ⠙\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 2% ⠙\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 2% ⠹\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 4% ⠹\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 4% ⠸\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 4% ⠼\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 6% ⠼\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 6% ⠴\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 7% ⠴\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 7% ⠦\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 9% ⠦\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 9% ⠧\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 9% ⠇\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 11% ⠇\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 11% ⠏\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 12% ⠏\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 12% ⠋\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 14% ⠋\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 14% ⠙\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 14% ⠹\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 15% ⠹\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 15% ⠸\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 17% ⠸\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 17% ⠼\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 18% ⠼\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 18% ⠴\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 18% ⠦\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 19% ⠦\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 19% ⠧\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 21% ⠧\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 21% ⠇\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 22% ⠇\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 22% ⠏\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 22% ⠋\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 23% ⠋\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 23% ⠙\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 24% ⠙\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 24% ⠹\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 26% ⠹\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 26% ⠸\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 26% ⠼\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 27% ⠼\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 27% ⠴\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 28% ⠴\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 28% ⠦\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 29% ⠦\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 29% ⠧\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 29% ⠇\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 30% ⠇\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 30% ⠏\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 31% ⠏\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 31% ⠋\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 32% ⠋\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 32% ⠙\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 32% ⠹\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 33% ⠹\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 33% ⠸\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 34% ⠸\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 34% ⠼\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 34% ⠼\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 34% ⠴\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 34% ⠦\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 35% ⠦\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 35% ⠧\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 36% ⠧\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 36% ⠇\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 36% ⠏\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 37% ⠏\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 37% ⠋\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 38% ⠋\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 38% ⠙\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 38% ⠙\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 38% ⠹\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 38% ⠸\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 39% ⠸\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 39% ⠼\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 40% ⠼\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 40% ⠴\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 41% ⠴\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 41% ⠦\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 41% ⠧\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 41% ⠧\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 41% ⠇\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 42% ⠇\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 42% ⠏\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 43% ⠏\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 43% ⠋\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 43% ⠙\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 43% ⠙\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 43% ⠹\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 44% ⠹\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 44% ⠸\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 45% ⠸\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 45% ⠼\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 45% ⠴\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 45% ⠴\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 45% ⠦\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 46% ⠦\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 46% ⠧\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 46% ⠧\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 46% ⠇\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 46% ⠏\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 47% ⠏\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 47% ⠋\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 48% ⠋\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 48% ⠙\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 48% ⠙\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 48% ⠹\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 48% ⠸\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 49% ⠸\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 49% ⠼\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 49% ⠼\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 49% ⠴\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 50% ⠴\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 50% ⠦\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 50% ⠧\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 50% ⠧\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 50% ⠇\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 51% ⠇\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 51% ⠏\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 51% ⠏\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 51% ⠋\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 51% ⠙\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 52% ⠙\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 52% ⠹\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 52% ⠹\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 52% ⠸\u001b[?25l\rLoading mistralai_devstral-small-2-24b-instruct-2512 100% ⠸\r\u001b[K\u001b[?25h",
+        "stderr": "Model loaded successfully in 6.89s.\n(10.69 GiB)\nTo use the model in the API/SDK, use the identifier \"mistralai_devstral-small-2-24b-instruct-2512\"."
+      },
+      "hardwareLoaded": {
+        "sampledAt": "2026-08-23T05:12:11.898Z",
+        "totalRamGiB": 63.17,
+        "freeRamGiB": 36.5,
+        "gpus": [
+          {
+            "index": 0,
+            "name": "NVIDIA GeForce RTX 3070",
+            "totalMiB": 8192,
+            "usedMiB": 6652,
+            "freeMiB": 1367,
+            "utilizationPercent": 28,
+            "powerWatts": 64.37
+          },
+          {
+            "index": 1,
+            "name": "NVIDIA GeForce GTX 1080",
+            "totalMiB": 8192,
+            "usedMiB": 12,
+            "freeMiB": 8048,
+            "utilizationPercent": 0,
+            "powerWatts": 6.85
+          }
+        ]
+      },
+      "cases": [
+        {
+          "taskId": "instruction_exact_token",
+          "category": "instruction",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "expected": "LOOP_OK"
+          },
+          "response": {
+            "text": "LOOP_OK",
+            "message": {
+              "role": "assistant",
+              "content": "LOOP_OK",
+              "reasoning_content": "",
+              "tool_calls": []
+            },
+            "wallMs": 982,
+            "reasoning": "",
+            "finishReason": "stop",
+            "usage": {
+              "prompt_tokens": 40,
+              "completion_tokens": 4,
+              "total_tokens": 44,
+              "completion_tokens_details": {
+                "reasoning_tokens": 0
+              }
+            },
+            "stats": {
+              "tokens_per_second": 7.465709065050589,
+              "time_to_first_token": 0.407252,
+              "generation_time": 0.9430350000000001,
+              "stop_reason": "eosFound"
+            },
+            "modelInfo": {
+              "arch": "mistral3",
+              "quant": "Q3_K_M",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "director_dependency_envelope",
+          "category": "planning",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "passed": 7,
+            "total": 7
+          },
+          "response": {
+            "text": "```json\n{\n  \"status\": \"continue\",\n  \"tasks\": [\n    {\n      \"id\": \"research-public-claim\",\n      \"role\": \"researcher\",\n      \"dependsOn\": [],\n      \"acceptanceEvidence\": [\"verified claim from official source with timestamp and URL\"]\n    },\n    {\n      \"id\": \"dev-bounded-fix\",\n      \"role\": \"developer\",\n      \"dependsOn\": [\"research-public-claim\"],\n      \"acceptanceEvidence\": [\"code changeset with scope limited to verified issue, unit test passing\"]\n    },\n    {\n      \"id\": \"qa-independence-check\",\n      \"role\": \"qa\",\n      \"dependsOn\": [\"dev-bounded-fix\"],\n      \"acceptanceEvidence\": [\"independent test report confirming fix resolves original issue without regressions\"]\n    }\n  ]\n}\n```",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"status\": \"continue\",\n  \"tasks\": [\n    {\n      \"id\": \"research-public-claim\",\n      \"role\": \"researcher\",\n      \"dependsOn\": [],\n      \"acceptanceEvidence\": [\"verified claim from official source with timestamp and URL\"]\n    },\n    {\n      \"id\": \"dev-bounded-fix\",\n      \"role\": \"developer\",\n      \"dependsOn\": [\"research-public-claim\"],\n      \"acceptanceEvidence\": [\"code changeset with scope limited to verified issue, unit test passing\"]\n    },\n    {\n      \"id\": \"qa-independence-check\",\n      \"role\": \"qa\",\n      \"dependsOn\": [\"dev-bounded-fix\"],\n      \"acceptanceEvidence\": [\"independent test report confirming fix resolves original issue without regressions\"]\n    }\n  ]\n}\n```",
+              "reasoning_content": "",
+              "tool_calls": []
+            },
+            "wallMs": 37221,
+            "reasoning": "",
+            "finishReason": "stop",
+            "usage": {
+              "prompt_tokens": 138,
+              "completion_tokens": 184,
+              "total_tokens": 322,
+              "completion_tokens_details": {
+                "reasoning_tokens": 0
+              }
+            },
+            "stats": {
+              "tokens_per_second": 5.009351151813179,
+              "time_to_first_token": 0.46532999999999997,
+              "generation_time": 37.196633999999996,
+              "stop_reason": "eosFound"
+            },
+            "modelInfo": {
+              "arch": "mistral3",
+              "quant": "Q3_K_M",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "native_tool_read_file",
+          "category": "tool_use",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "passed": 3,
+            "total": 3
+          },
+          "response": {
+            "text": "",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "",
+              "tool_calls": [
+                {
+                  "type": "function",
+                  "id": "hM5rcoxiXl6nAZZq9a8uD2mRxWIaXROu",
+                  "function": {
+                    "name": "read_project_file",
+                    "arguments": "{\"path\":\"AGENTS.md\"}"
+                  }
+                }
+              ]
+            },
+            "wallMs": 3045,
+            "reasoning": "",
+            "finishReason": "tool_calls",
+            "usage": {
+              "prompt_tokens": 127,
+              "completion_tokens": 14,
+              "total_tokens": 141,
+              "completion_tokens_details": {
+                "reasoning_tokens": 0
+              }
+            },
+            "stats": {
+              "tokens_per_second": 5.524436754077724,
+              "time_to_first_token": 0.464959,
+              "generation_time": 2.999154,
+              "stop_reason": "toolCalls"
+            },
+            "modelInfo": {
+              "arch": "mistral3",
+              "quant": "Q3_K_M",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "claim_grounding_matrix",
+          "category": "grounding",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 0.6,
+            "passed": 3,
+            "total": 5
+          },
+          "response": {
+            "text": "```json\n[\n  {\"claimId\":\"C1\",\"verdict\":\"supported\",\"sources\":[\"S1\"]},\n  {\"claimId\":\"C2\",\"verdict\":\"unsupported\",\"sources\":[]},\n  {\"claimId\":\"C3\",\"verdict\":\"unsupported\",\"sources\":[]}\n]\n```",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n[\n  {\"claimId\":\"C1\",\"verdict\":\"supported\",\"sources\":[\"S1\"]},\n  {\"claimId\":\"C2\",\"verdict\":\"unsupported\",\"sources\":[]},\n  {\"claimId\":\"C3\",\"verdict\":\"unsupported\",\"sources\":[]}\n]\n```",
+              "reasoning_content": "",
+              "tool_calls": []
+            },
+            "wallMs": 13610,
+            "reasoning": "",
+            "finishReason": "stop",
+            "usage": {
+              "prompt_tokens": 161,
+              "completion_tokens": 66,
+              "total_tokens": 227,
+              "completion_tokens_details": {
+                "reasoning_tokens": 0
+              }
+            },
+            "stats": {
+              "tokens_per_second": 5.085559138734361,
+              "time_to_first_token": 0.5960610000000001,
+              "generation_time": 13.573985,
+              "stop_reason": "eosFound"
+            },
+            "modelInfo": {
+              "arch": "mistral3",
+              "quant": "Q3_K_M",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "gpu_residency_reasoning",
+          "category": "reasoning",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "passed": 2,
+            "total": 2
+          },
+          "response": {
+            "text": "{\"models\":[\"Qwen\",\"DeepSeek\"],\"totalWeightGB\":11.5}",
+            "message": {
+              "role": "assistant",
+              "content": "{\"models\":[\"Qwen\",\"DeepSeek\"],\"totalWeightGB\":11.5}",
+              "reasoning_content": "",
+              "tool_calls": []
+            },
+            "wallMs": 4337,
+            "reasoning": "",
+            "finishReason": "stop",
+            "usage": {
+              "prompt_tokens": 144,
+              "completion_tokens": 21,
+              "total_tokens": 165,
+              "completion_tokens_details": {
+                "reasoning_tokens": 0
+              }
+            },
+            "stats": {
+              "tokens_per_second": 5.535186654401396,
+              "time_to_first_token": 0.50433,
+              "generation_time": 4.29824,
+              "stop_reason": "eosFound"
+            },
+            "modelInfo": {
+              "arch": "mistral3",
+              "quant": "Q3_K_M",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "code_review_immutable_sort",
+          "category": "coding",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "expected": "B"
+          },
+          "response": {
+            "text": "B",
+            "message": {
+              "role": "assistant",
+              "content": "B",
+              "reasoning_content": "",
+              "tool_calls": []
+            },
+            "wallMs": 678,
+            "reasoning": "",
+            "finishReason": "stop",
+            "usage": {
+              "prompt_tokens": 105,
+              "completion_tokens": 2,
+              "total_tokens": 107,
+              "completion_tokens_details": {
+                "reasoning_tokens": 0
+              }
+            },
+            "stats": {
+              "tokens_per_second": 10.87683614590188,
+              "time_to_first_token": 0.45913600000000004,
+              "generation_time": 0.6430130000000001,
+              "stop_reason": "eosFound"
+            },
+            "modelInfo": {
+              "arch": "mistral3",
+              "quant": "Q3_K_M",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "log_reconciliation",
+          "category": "extraction",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "passed": 3,
+            "total": 3
+          },
+          "response": {
+            "text": "{\"produced\": [\"task A\"], \"retry\": [\"task B\"], \"verifiedTestCount\": 42}",
+            "message": {
+              "role": "assistant",
+              "content": "{\"produced\": [\"task A\"], \"retry\": [\"task B\"], \"verifiedTestCount\": 42}",
+              "reasoning_content": "",
+              "tool_calls": []
+            },
+            "wallMs": 5087,
+            "reasoning": "",
+            "finishReason": "stop",
+            "usage": {
+              "prompt_tokens": 134,
+              "completion_tokens": 25,
+              "total_tokens": 159,
+              "completion_tokens_details": {
+                "reasoning_tokens": 0
+              }
+            },
+            "stats": {
+              "tokens_per_second": 5.458797758748651,
+              "time_to_first_token": 0.474284,
+              "generation_time": 5.054047,
+              "stop_reason": "eosFound"
+            },
+            "modelInfo": {
+              "arch": "mistral3",
+              "quant": "Q3_K_M",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "insufficient_evidence_abstention",
+          "category": "safety",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "expected": "INSUFFICIENT_EVIDENCE"
+          },
+          "response": {
+            "text": "INSUFFICIENT_EVIDENCE",
+            "message": {
+              "role": "assistant",
+              "content": "INSUFFICIENT_EVIDENCE",
+              "reasoning_content": "",
+              "tool_calls": []
+            },
+            "wallMs": 1905,
+            "reasoning": "",
+            "finishReason": "stop",
+            "usage": {
+              "prompt_tokens": 63,
+              "completion_tokens": 9,
+              "total_tokens": 72,
+              "completion_tokens_details": {
+                "reasoning_tokens": 0
+              }
+            },
+            "stats": {
+              "tokens_per_second": 6.152096224253477,
+              "time_to_first_token": 0.40296699999999996,
+              "generation_time": 1.8658829999999997,
+              "stop_reason": "eosFound"
+            },
+            "modelInfo": {
+              "arch": "mistral3",
+              "quant": "Q3_K_M",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "long_context_recall",
+          "category": "long_context",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "passed": 3,
+            "total": 3
+          },
+          "response": {
+            "text": "{\"record\":173,\"launchKey\":\"ORBITAL_CEDAR_731\",\"owner\":\"qa\"}",
+            "message": {
+              "role": "assistant",
+              "content": "{\"record\":173,\"launchKey\":\"ORBITAL_CEDAR_731\",\"owner\":\"qa\"}",
+              "reasoning_content": "",
+              "tool_calls": []
+            },
+            "wallMs": 26278,
+            "reasoning": "",
+            "finishReason": "stop",
+            "usage": {
+              "prompt_tokens": 7496,
+              "completion_tokens": 26,
+              "total_tokens": 7522,
+              "completion_tokens_details": {
+                "reasoning_tokens": 0
+              }
+            },
+            "stats": {
+              "tokens_per_second": 3.4145129407413903,
+              "time_to_first_token": 18.605082,
+              "generation_time": 26.219638,
+              "stop_reason": "eosFound"
+            },
+            "modelInfo": {
+              "arch": "mistral3",
+              "quant": "Q3_K_M",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        },
+        {
+          "taskId": "critic_candidate_selection",
+          "category": "critique",
+          "repeat": 0,
+          "status": "completed",
+          "score": {
+            "score": 1,
+            "expected": "B"
+          },
+          "response": {
+            "text": "B",
+            "message": {
+              "role": "assistant",
+              "content": "B",
+              "reasoning_content": "",
+              "tool_calls": []
+            },
+            "wallMs": 947,
+            "reasoning": "",
+            "finishReason": "stop",
+            "usage": {
+              "prompt_tokens": 91,
+              "completion_tokens": 2,
+              "total_tokens": 93,
+              "completion_tokens_details": {
+                "reasoning_tokens": 0
+              }
+            },
+            "stats": {
+              "tokens_per_second": 10.728002231424464,
+              "time_to_first_token": 0.444801,
+              "generation_time": 0.631229,
+              "stop_reason": "eosFound"
+            },
+            "modelInfo": {
+              "arch": "mistral3",
+              "quant": "Q3_K_M",
+              "format": "gguf",
+              "context_length": 16384
+            },
+            "runtime": {
+              "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+              "version": "2.29.1",
+              "supported_formats": [
+                "gguf"
+              ]
+            }
+          }
+        }
+      ],
+      "summary": {
+        "score": 9.6,
+        "possible": 10,
+        "passRate": 0.96,
+        "completedCases": 10,
+        "failedCases": 0,
+        "meanTokensPerSecond": 6.53,
+        "meanTimeToFirstTokenSeconds": 2.282,
+        "totalWallSeconds": 94.09,
+        "categories": {
+          "instruction": {
+            "score": 1,
+            "possible": 1,
+            "passRate": 1
+          },
+          "planning": {
+            "score": 1,
+            "possible": 1,
+            "passRate": 1
+          },
+          "tool_use": {
+            "score": 1,
+            "possible": 1,
+            "passRate": 1
+          },
+          "grounding": {
+            "score": 0.6,
+            "possible": 1,
+            "passRate": 0.6
+          },
+          "reasoning": {
+            "score": 1,
+            "possible": 1,
+            "passRate": 1
+          },
+          "coding": {
+            "score": 1,
+            "possible": 1,
+            "passRate": 1
+          },
+          "extraction": {
+            "score": 1,
+            "possible": 1,
+            "passRate": 1
+          },
+          "safety": {
+            "score": 1,
+            "possible": 1,
+            "passRate": 1
+          },
+          "long_context": {
+            "score": 1,
+            "possible": 1,
+            "passRate": 1
+          },
+          "critique": {
+            "score": 1,
+            "possible": 1,
+            "passRate": 1
+          }
+        }
+      },
+      "hardwareAfter": {
+        "sampledAt": "2026-08-23T05:13:46.066Z",
+        "totalRamGiB": 63.17,
+        "freeRamGiB": 35.08,
+        "gpus": [
+          {
+            "index": 0,
+            "name": "NVIDIA GeForce RTX 3070",
+            "totalMiB": 8192,
+            "usedMiB": 6688,
+            "freeMiB": 1331,
+            "utilizationPercent": 46,
+            "powerWatts": 73.1
+          },
+          {
+            "index": 1,
+            "name": "NVIDIA GeForce GTX 1080",
+            "totalMiB": 8192,
+            "usedMiB": 12,
+            "freeMiB": 8048,
+            "utilizationPercent": 0,
+            "powerWatts": 6.9
+          }
+        ]
+      }
+    }
+  ],
+  "ranking": [
+    {
+      "model": "mistralai_devstral-small-2-24b-instruct-2512",
+      "score": 9.6,
+      "possible": 10,
+      "passRate": 0.96,
+      "completedCases": 10,
+      "failedCases": 0,
+      "meanTokensPerSecond": 6.53,
+      "meanTimeToFirstTokenSeconds": 2.282,
+      "totalWallSeconds": 94.09,
+      "categories": {
+        "instruction": {
+          "score": 1,
+          "possible": 1,
+          "passRate": 1
+        },
+        "planning": {
+          "score": 1,
+          "possible": 1,
+          "passRate": 1
+        },
+        "tool_use": {
+          "score": 1,
+          "possible": 1,
+          "passRate": 1
+        },
+        "grounding": {
+          "score": 0.6,
+          "possible": 1,
+          "passRate": 0.6
+        },
+        "reasoning": {
+          "score": 1,
+          "possible": 1,
+          "passRate": 1
+        },
+        "coding": {
+          "score": 1,
+          "possible": 1,
+          "passRate": 1
+        },
+        "extraction": {
+          "score": 1,
+          "possible": 1,
+          "passRate": 1
+        },
+        "safety": {
+          "score": 1,
+          "possible": 1,
+          "passRate": 1
+        },
+        "long_context": {
+          "score": 1,
+          "possible": 1,
+          "passRate": 1
+        },
+        "critique": {
+          "score": 1,
+          "possible": 1,
+          "passRate": 1
+        }
+      }
+    }
+  ],
+  "hardwareAfter": {
+    "sampledAt": "2026-08-23T05:13:47.292Z",
+    "totalRamGiB": 63.17,
+    "freeRamGiB": 44.52,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3070",
+        "totalMiB": 8192,
+        "usedMiB": 610,
+        "freeMiB": 7409,
+        "utilizationPercent": 15,
+        "powerWatts": 67.45
+      },
+      {
+        "index": 1,
+        "name": "NVIDIA GeForce GTX 1080",
+        "totalMiB": 8192,
+        "usedMiB": 12,
+        "freeMiB": 8048,
+        "utilizationPercent": 0,
+        "powerWatts": 6.9
+      }
+    ]
+  }
+}

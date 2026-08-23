@@ -1,0 +1,424 @@
+{
+  "surface": "report",
+  "manifest": {
+    "version": 1,
+    "surface": "report",
+    "title": "Local Specialist Loops: Measured Findings and Operating Design",
+    "description": "A technical, evidence-bounded report on local model roles, loop behavior, and dual-GPU operation on an RTX 3070 plus GTX 1080 workstation.",
+    "generatedAt": "2026-08-23T07:10:41Z",
+    "filters": [],
+    "cards": [
+      {
+        "id": "text_leader_card",
+        "description": "Highest normalized score in the selected clean text screens; this run had one repeat and ten retained cases.",
+        "dataset": "text_screen",
+        "sourceId": "text_evidence",
+        "filter": {"model": "Devstral Small 2 24B"},
+        "metrics": [
+          {"label": "Text screen · Devstral", "field": "normalizedScore", "format": "percent"},
+          {"label": "Generated tokens/s", "field": "meanTokensPerSecond", "format": "number"}
+        ]
+      },
+      {
+        "id": "code_leader_card",
+        "description": "Highest normalized score in the isolated executable code comparison.",
+        "dataset": "code_comparison",
+        "sourceId": "code_evidence",
+        "filter": {"model": "GPT-OSS 20B"},
+        "metrics": [
+          {"label": "Code suite · GPT-OSS", "field": "normalizedScore", "format": "percent"},
+          {"label": "Executable checks passed", "field": "passedTests", "format": "number"}
+        ]
+      },
+      {
+        "id": "vision_ceiling_card",
+        "description": "Three models tied at this score in the configured six-case comparison; no clean isolated winner is declared.",
+        "dataset": "vision_comparison",
+        "sourceId": "vision_evidence",
+        "filter": {"model": "GLM-4.6V-Flash"},
+        "metrics": [
+          {"label": "Configured vision ceiling", "field": "normalizedScore", "format": "percent"},
+          {"label": "Models tied", "field": "modelsTied", "format": "number"}
+        ]
+      },
+      {
+        "id": "loop_direct_card",
+        "description": "The one-call direct condition remained slightly above the three-call cross-specialist condition.",
+        "dataset": "loop_ablation",
+        "sourceId": "loop_evidence",
+        "filter": {"protocol": "Direct"},
+        "metrics": [
+          {"label": "Direct-loop score", "field": "normalizedScore", "format": "percent"},
+          {"label": "Cross-specialist score", "field": "crossSpecialistScore", "format": "percent"}
+        ]
+      }
+    ],
+    "charts": [
+      {
+        "id": "text_score_chart",
+        "title": "Selected clean text-screen scores",
+        "subtitle": "Normalized earned score; Devstral has 10 retained cases, the other models have 20.",
+        "showDescription": true,
+        "description": "Scores are suite-specific and do not measure frontier parity.",
+        "intent": "comparison",
+        "question": "Which local model produced the strongest selected clean text-screen result?",
+        "rationale": "Horizontal bars support comparison across long model names while keeping unequal case counts visible in tooltips.",
+        "type": "horizontalBar",
+        "dataset": "text_screen",
+        "sourceId": "text_evidence",
+        "encodings": {
+          "x": {"field": "model", "type": "nominal", "label": "Model"},
+          "y": {"field": "normalizedScore", "type": "quantitative", "label": "Normalized score", "format": "percent"},
+          "tooltip": [
+            {"field": "completedCases", "type": "quantitative", "label": "Completed cases", "format": "number"},
+            {"field": "failedCases", "type": "quantitative", "label": "Request failures", "format": "number"},
+            {"field": "meanTokensPerSecond", "type": "quantitative", "label": "Generated tokens/s", "format": "number"}
+          ]
+        },
+        "xAxisTitle": "Model",
+        "yAxisTitle": "Normalized score",
+        "layout": "full",
+        "palette": {"kind": "identity", "name": "blue"},
+        "settings": {"orientation": "horizontal", "groupMode": "single", "sort": "descending", "showValues": false},
+        "maxRows": 8
+      },
+      {
+        "id": "code_score_chart",
+        "title": "Isolated executable-code scores",
+        "subtitle": "Ten cases per model; 52 deterministic checks were executed for each model.",
+        "showDescription": true,
+        "description": "The score combines case-level executable acceptance and partial credit defined by the code suite.",
+        "intent": "comparison",
+        "question": "Which selected model performed best on executable code tasks?",
+        "rationale": "Horizontal bars show the close GPT-OSS and Devstral result while preserving exact checks in tooltips.",
+        "type": "horizontalBar",
+        "dataset": "code_comparison",
+        "sourceId": "code_evidence",
+        "encodings": {
+          "x": {"field": "model", "type": "nominal", "label": "Model"},
+          "y": {"field": "normalizedScore", "type": "quantitative", "label": "Normalized score", "format": "percent"},
+          "tooltip": [
+            {"field": "fullyPassedCases", "type": "quantitative", "label": "Fully passed cases", "format": "number"},
+            {"field": "passedTests", "type": "quantitative", "label": "Executable checks passed", "format": "number"},
+            {"field": "meanTokensPerSecond", "type": "quantitative", "label": "Generated tokens/s", "format": "number"}
+          ]
+        },
+        "xAxisTitle": "Model",
+        "yAxisTitle": "Normalized score",
+        "layout": "full",
+        "palette": {"kind": "identity", "name": "gold"},
+        "settings": {"orientation": "horizontal", "groupMode": "single", "sort": "descending", "showValues": false},
+        "maxRows": 8
+      },
+      {
+        "id": "loop_score_chart",
+        "title": "Loop ablation scores",
+        "subtitle": "Twelve shared tasks per protocol; the direct draft is reused as the common starting point.",
+        "showDescription": true,
+        "description": "Cross-specialist uses Granite critique and Gemma finalization; self-refine uses Gemma for critique and finalization.",
+        "intent": "comparison",
+        "question": "Did automatic self-refinement or cross-specialist critique improve aggregate task score?",
+        "rationale": "A categorical bar comparison makes the negative result and the self-refine regression immediately visible.",
+        "type": "bar",
+        "dataset": "loop_ablation",
+        "sourceId": "loop_evidence",
+        "encodings": {
+          "x": {"field": "protocol", "type": "nominal", "label": "Protocol"},
+          "y": {"field": "normalizedScore", "type": "quantitative", "label": "Normalized score", "format": "percent"},
+          "tooltip": [
+            {"field": "calls", "type": "quantitative", "label": "Model calls", "format": "number"},
+            {"field": "wallSeconds", "type": "quantitative", "label": "Wall time, seconds", "format": "number"},
+            {"field": "completionTokens", "type": "quantitative", "label": "Completion tokens", "format": "number"}
+          ]
+        },
+        "xAxisTitle": "Protocol",
+        "yAxisTitle": "Normalized score",
+        "layout": "full",
+        "palette": {"kind": "identity", "name": "orange"},
+        "settings": {"orientation": "vertical", "groupMode": "single", "sort": "descending", "showValues": false},
+        "maxRows": 6
+      },
+      {
+        "id": "placement_generation_chart",
+        "title": "Devstral generation throughput by GPU placement",
+        "subtitle": "llama.cpp b10566, 128 generated tokens per case; two measured rounds per placement.",
+        "showDescription": true,
+        "description": "The single-GPU path was variable; the dual 5:4 layer split was stable across both rounds.",
+        "intent": "comparison",
+        "question": "Does using both GPUs improve Devstral generation throughput on this workstation?",
+        "rationale": "Four discrete placement-round observations are best shown as bars rather than an underpowered trend.",
+        "type": "bar",
+        "dataset": "placement_comparison",
+        "sourceId": "placement_evidence",
+        "encodings": {
+          "x": {"field": "case", "type": "nominal", "label": "Placement and round"},
+          "y": {"field": "generationTokensPerSecond", "type": "quantitative", "label": "Generated tokens/s", "format": "number"},
+          "tooltip": [
+            {"field": "promptTokensPerSecond", "type": "quantitative", "label": "Prompt tokens/s", "format": "number"},
+            {"field": "peakGpu0MiB", "type": "quantitative", "label": "Peak RTX 3070 MiB", "format": "number"},
+            {"field": "peakGpu1MiB", "type": "quantitative", "label": "Peak GTX 1080 MiB", "format": "number"}
+          ]
+        },
+        "xAxisTitle": "Placement and round",
+        "yAxisTitle": "Generated tokens/s",
+        "layout": "full",
+        "palette": {"kind": "identity", "name": "olive"},
+        "settings": {"orientation": "vertical", "groupMode": "single", "sort": "none", "showValues": false},
+        "maxRows": 8
+      }
+    ],
+    "tables": [
+      {
+        "id": "loop_detail_table",
+        "title": "Loop cost and outcome detail",
+        "subtitle": "Exact aggregate values for twelve completed cases per protocol.",
+        "dataset": "loop_ablation",
+        "sourceId": "loop_evidence",
+        "defaultSort": {"field": "normalizedScore", "direction": "desc"},
+        "columns": [
+          {"field": "protocol", "label": "Protocol", "type": "text"},
+          {"field": "normalizedScore", "label": "Normalized score", "format": "percent"},
+          {"field": "calls", "label": "Calls", "format": "number"},
+          {"field": "wallSeconds", "label": "Wall seconds", "format": "number"},
+          {"field": "completionTokens", "label": "Completion tokens", "format": "number"}
+        ],
+        "layout": "full",
+        "density": "spacious",
+        "maxRows": 10
+      },
+      {
+        "id": "placement_detail_table",
+        "title": "Placement throughput and memory detail",
+        "subtitle": "Two rounds per placement with measured generation, prompt processing, and peak device memory.",
+        "dataset": "placement_comparison",
+        "sourceId": "placement_evidence",
+        "defaultSort": {"field": "generationTokensPerSecond", "direction": "desc"},
+        "columns": [
+          {"field": "case", "label": "Case", "type": "text"},
+          {"field": "generationTokensPerSecond", "label": "Generation tokens/s", "format": "number"},
+          {"field": "peakGpu0MiB", "label": "Peak RTX 3070 MiB", "format": "number"},
+          {"field": "peakGpu1MiB", "label": "Peak GTX 1080 MiB", "format": "number"}
+        ],
+        "layout": "full",
+        "density": "spacious",
+        "maxRows": 10
+      },
+      {
+        "id": "vision_detail_table",
+        "title": "Configured vision comparison",
+        "subtitle": "Six scored cases per model; exact configured-run values, without using the confounded isolated Qwen rerun.",
+        "dataset": "vision_comparison",
+        "sourceId": "vision_evidence",
+        "defaultSort": {"field": "normalizedScore", "direction": "desc"},
+        "columns": [
+          {"field": "model", "label": "Model", "type": "text"},
+          {"field": "normalizedScore", "label": "Normalized score", "format": "percent"},
+          {"field": "score", "label": "Earned", "format": "number"},
+          {"field": "possible", "label": "Possible", "format": "number"}
+        ],
+        "layout": "full",
+        "density": "spacious",
+        "maxRows": 10
+      },
+      {
+        "id": "residency_detail_table",
+        "title": "Simultaneous resident endpoint check",
+        "subtitle": "Ten completed text cases on each endpoint while the other specialist remained loaded.",
+        "dataset": "dual_residency",
+        "sourceId": "residency_evidence",
+        "defaultSort": {"field": "normalizedScore", "direction": "desc"},
+        "columns": [
+          {"field": "endpoint", "label": "Endpoint", "type": "text"},
+          {"field": "model", "label": "Model", "type": "text"},
+          {"field": "normalizedScore", "label": "Normalized score", "format": "percent"},
+          {"field": "completedCases", "label": "Completed cases", "format": "number"},
+          {"field": "failedCases", "label": "Request failures", "format": "number"},
+          {"field": "wallSeconds", "label": "Wall seconds", "format": "number"}
+        ],
+        "layout": "full",
+        "density": "spacious",
+        "maxRows": 10
+      },
+      {
+        "id": "routing_table",
+        "title": "Provisional role routing",
+        "subtitle": "Inference from selected measurements; every row remains gated by project-specific held-out tests.",
+        "dataset": "routing_inference",
+        "sourceId": "routing_inference_source",
+        "defaultSort": {"field": "role", "direction": "asc"},
+        "columns": [
+          {"field": "role", "label": "Role", "type": "text"},
+          {"field": "provisionalModel", "label": "Provisional model", "type": "text"},
+          {"field": "placement", "label": "Placement", "type": "text"},
+          {"field": "admissionGate", "label": "Admission gate", "type": "text"}
+        ],
+        "layout": "full",
+        "density": "dense",
+        "maxRows": 20
+      },
+      {
+        "id": "exclusions_table",
+        "title": "Artifacts excluded from report claims",
+        "subtitle": "Validator-ineligible, confounded, diagnostic, or configuration-mismatched runs retained for audit but not used as leaderboard evidence.",
+        "dataset": "excluded_artifacts",
+        "sourceId": "exclusion_evidence",
+        "defaultSort": {"field": "artifact", "direction": "asc"},
+        "columns": [
+          {"field": "artifact", "label": "Artifact", "type": "text"},
+          {"field": "class", "label": "Exclusion class", "type": "text"},
+          {"field": "reason", "label": "Reason", "type": "text"}
+        ],
+        "layout": "full",
+        "density": "dense",
+        "maxRows": 30
+      }
+    ],
+    "sources": [
+      {"id": "report_evidence_overview", "label": "Reviewed report evidence extraction", "path": "reports/local-specialist-loop-findings.evidence.json"},
+      {"id": "validation_receipt", "label": "Final suite-aware validation receipt", "path": "reports/result-validation-2026-08-23-final.json"},
+      {"id": "text_evidence", "label": "Selected clean text-screen extraction", "path": "reports/local-specialist-loop-findings.evidence.json"},
+      {"id": "code_evidence", "label": "Isolated executable-code extraction", "path": "reports/local-specialist-loop-findings.evidence.json"},
+      {"id": "vision_evidence", "label": "Configured vision extraction", "path": "reports/local-specialist-loop-findings.evidence.json"},
+      {"id": "loop_evidence", "label": "Clean dual-resident loop ablation extraction", "path": "reports/local-specialist-loop-findings.evidence.json"},
+      {"id": "placement_evidence", "label": "Clean llama.cpp placement extraction", "path": "reports/local-specialist-loop-findings.evidence.json"},
+      {"id": "residency_evidence", "label": "Dual-resident endpoint extraction", "path": "reports/local-specialist-loop-findings.evidence.json"},
+      {"id": "routing_inference_source", "label": "Provisional routing inference table", "path": "reports/local-specialist-loop-findings.evidence.json"},
+      {"id": "exclusion_evidence", "label": "Reviewed report exclusions", "path": "reports/local-specialist-loop-findings.evidence.json"},
+      {"id": "repo_scope", "label": "Repository evidence and parity policy", "path": "README.md"},
+      {"id": "architecture_landscape", "label": "Local specialist-loop architecture landscape", "path": "docs/architecture-landscape.md"},
+      {"id": "operating_playbook", "label": "Local specialist-loop operating playbook", "path": "docs/local-loop-operating-playbook.md"},
+      {"id": "anthropic_multi_agent", "label": "Anthropic multi-agent research system", "href": "https://www.anthropic.com/engineering/multi-agent-research-system"},
+      {"id": "anthropic_long_running", "label": "Anthropic long-running agent harnesses", "href": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents"},
+      {"id": "openai_orchestration", "label": "OpenAI agent orchestration", "href": "https://developers.openai.com/api/docs/guides/agents/orchestration"},
+      {"id": "magentic_one", "label": "Microsoft Magentic-One", "href": "https://www.microsoft.com/en-us/research/publication/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks/"},
+      {"id": "google_adk", "label": "Google ADK graph workflows", "href": "https://adk.dev/graphs/"},
+      {"id": "langgraph_persistence", "label": "LangGraph persistence", "href": "https://docs.langchain.com/oss/python/langgraph/persistence"},
+      {"id": "aflow", "label": "AFlow, ICLR 2025", "href": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/5492ecbce4439401798dcd2c90be94cd-Abstract-Conference.html"},
+      {"id": "llamacpp_multi_gpu", "label": "llama.cpp multi-GPU documentation", "href": "https://github.com/ggml-org/llama.cpp/blob/master/docs/multi-gpu.md"}
+    ],
+    "blocks": [
+      {"id": "title", "type": "markdown", "body": "# Local Specialist Loops: Measured Findings and Operating Design"},
+      {"id": "technical_summary", "type": "markdown", "layout": "full", "body": "## The evidence supports role routing, not a frontier substitute\n\nA practical local system on this workstation should use **different models for different jobs**, keep control flow deterministic, and spend extra inference only when an explicit check fails. Throughout this report, *normalized score* means points earned divided by points possible inside one named suite; scores from different suites are not interchangeable."},
+      {"id": "technical_summary_loop", "type": "markdown", "layout": "full", "sourceId": "loop_evidence", "body": "**Measured:** automatic looping did not improve the aggregate loop-ablation result. Cross-specialist critique roughly matched the direct draft while using three calls per case; same-model self-refinement regressed sharply. The operating implication is to run deterministic checks first and request a critic only for a named defect."},
+      {"id": "technical_summary_parity", "type": "markdown", "layout": "full", "sourceId": "repo_scope", "body": "**Frontier parity is not established.** No matched Sol or Terra baseline was run, the local suites are small and task-specific, and model consensus is not independent evidence. These results support a slower, more inspectable local workflow—not a claim of general frontier equivalence."},
+      {"id": "headline_metrics", "type": "metric-strip", "cardIds": ["text_leader_card", "code_leader_card", "vision_ceiling_card", "loop_direct_card"]},
+      {"id": "text_finding", "type": "markdown", "layout": "full", "sourceId": "text_evidence", "body": "## Text roles split between quality, speed, and specialization\n\n**Measured:** Devstral led the selected clean text screens at **96.0%**, but generated only **6.53 tokens/s** and had one ten-case repeat. Gemma 4 E4B reached **88.6%** at **67.94 tokens/s**; Granite reached **86.7%** at **26.61 tokens/s**; GPT-OSS reached **83.0%** with three request failures. The denominators differ, so this is a routing signal rather than a definitive global ranking. Use E4B for fast planning/synthesis, Granite for bounded structured work, and reserve Devstral for slow escalation pending repeated tests."},
+      {"id": "text_chart_block", "type": "chart", "chartId": "text_score_chart", "layout": "full"},
+      {"id": "code_finding", "type": "markdown", "layout": "full", "sourceId": "code_evidence", "body": "## GPT-OSS is the measured default code worker; Devstral is the slower challenger\n\n**Measured:** GPT-OSS scored **88.0%** and passed **48 of 52** executable checks. Devstral scored **85.5%** and passed 47 checks, but its measured generation rate was about one-seventh of GPT-OSS in this run. Granite's **80.0%** makes it a credible bounded fallback. E4B's **52.0%** and five fully passed cases make it unsuitable as the default code producer despite its speed. These are small synthetic code tasks, not repository-level acceptance."},
+      {"id": "code_chart_block", "type": "chart", "chartId": "code_score_chart", "layout": "full"},
+      {"id": "loop_finding", "type": "markdown", "layout": "full", "sourceId": "loop_evidence", "body": "## More dialogue did not make the loop smarter\n\n**Measured:** direct generation scored **59.3%** with 12 calls and 166 seconds. Cross-specialist critique scored **58.7%** with 36 calls, 251 seconds, and 2.7× the completion tokens. Same-model self-refinement fell to **19.2%** while consuming 36 calls and 978 seconds. Cross-specialist review fixed one code case but damaged a planning case, which is exactly why a critic should receive a concrete failed check instead of an open-ended invitation to rewrite everything."},
+      {"id": "loop_chart_block", "type": "chart", "chartId": "loop_score_chart", "layout": "full"},
+      {"id": "loop_table_block", "type": "table", "tableId": "loop_detail_table", "layout": "full"},
+      {"id": "placement_finding", "type": "markdown", "layout": "full", "sourceId": "placement_evidence", "body": "## Both GPUs make the 24B escalation model practical, but not resident\n\n**Measured:** Devstral's 5:4 layer split generated **14.56–14.57 tokens/s** in two rounds, versus **1.70–6.33 tokens/s** on the RTX 3070 alone. The dual path peaked near **6,040 MiB** on the RTX 3070 and **5,571 MiB** on the GTX 1080; the single path peaked near 6,878 MiB on GPU 0. This two-round result supports deliberate dual-GPU escalation, not a universal speedup claim. Loading Devstral should temporarily displace resident specialists and be scheduled by the controller."},
+      {"id": "placement_chart_block", "type": "chart", "chartId": "placement_generation_chart", "layout": "full"},
+      {"id": "placement_table_block", "type": "table", "tableId": "placement_detail_table", "layout": "full"},
+      {"id": "vision_finding", "type": "markdown", "layout": "full", "sourceId": "vision_evidence", "body": "## Vision remains a three-way tie, not a declared winner\n\n**Measured:** GLM-4.6V-Flash, Qwen3.5 9B, and Gemma 4 12B each scored **6 of 6** under the configured comparison; E4B scored 5.33 of 6. The later Qwen isolated artifact is excluded because another model was observed co-resident. The honest route is therefore provisional: keep all three finalists eligible and run a clean isolated tie-break with latency, memory, OCR, UI, and document cases before pinning one."},
+      {"id": "vision_table_block", "type": "table", "tableId": "vision_detail_table", "layout": "full"},
+      {"id": "residency_finding", "type": "markdown", "layout": "full", "sourceId": "residency_evidence", "body": "## Two permanent specialists can stay responsive at once\n\n**Measured:** with Gemma 4 E4B on GPU 0 and Granite 4.1 8B on GPU 1, both endpoints completed ten text cases without request failures while the other model remained loaded. This supports a practical base topology: a fast judgment/planning model on the 3070 and a stable structured worker on the 1080. It does not prove concurrent high-load throughput or every context length."},
+      {"id": "residency_table_block", "type": "table", "tableId": "residency_detail_table", "layout": "full"},
+      {"id": "scope_definitions", "type": "markdown", "layout": "full", "sourceId": "report_evidence_overview", "body": "## Scope and metric definitions bound every conclusion\n\nThe measurement snapshot is **August 23, 2026** on Windows with an AMD Ryzen 5 7600X, 64 GiB system RAM, an 8 GiB RTX 3070, and an 8 GiB GTX 1080. Text, code, vision, loop, and placement are separate suites. A model's normalized score is earned points divided by possible points in that suite; `completed cases` excludes request failures only where the raw runner records them separately. Throughput is generated tokens per second reported by the runtime, except the placement benchmark, which reports prompt and generation throughput from llama-bench. Nine raw artifacts were selected for report claims after structural validation and manual confound review."},
+      {"id": "methodology", "type": "markdown", "layout": "full", "sourceId": "validation_receipt", "body": "## Validation was necessary, then manual confound review narrowed the evidence\n\nThe suite-aware validator reconciled case matrices, scores, summaries, hashes, identity fields, execution receipts, and family-specific telemetry. Its final receipt covers **25 artifacts**: 24 structurally valid, 20 complete, and 17 comparison-eligible. Structural eligibility was then reviewed against process history. Runs with background model loads, endpoint failure, identity mismatch, interruption, superseded configuration, or smoke-only scope were excluded. Raw outputs remain unchanged; this report uses a separate extraction with source paths and hashes."},
+      {"id": "limitations", "type": "markdown", "layout": "full", "body": "## Uncertainty is dominated by small suites, uneven repeats, and runtime confounds\n\n- Text repeat counts are uneven: Devstral has ten retained cases while the main finalists have twenty.\n- The code suite has ten synthetic cases; it does not establish repository-scale editing reliability.\n- Vision has only six configured cases and a three-way ceiling tie.\n- The loop ablation uses one solver/critic pairing and twelve tasks; it establishes a negative result for that design, not for every possible specialist loop.\n- Placement has two rounds; single-GPU variance is large.\n- Quantization, context length, templates, and runtime choices remain part of each result.\n- No matched frontier baseline exists, so Sol/Terra parity is unknown rather than false or true."},
+      {"id": "exclusions_finding", "type": "markdown", "layout": "full", "sourceId": "exclusion_evidence", "body": "## Incomplete and contaminated runs remain audit evidence, not leaderboard evidence\n\nThe exclusions below are deliberate. A validator can prove structural consistency, but it cannot retroactively remove a co-resident model, repair an interrupted run, or make a smoke test comparative. Keeping these artifacts visible prevents cherry-picking while stopping them from influencing role admission."},
+      {"id": "exclusions_table_block", "type": "table", "tableId": "exclusions_table", "layout": "full"},
+      {"id": "routing_finding", "type": "markdown", "layout": "full", "sourceId": "routing_inference_source", "body": "## A bounded role map is more defensible than one default model\n\n**Inference:** use E4B for fast planning and synthesis, Granite as the resident structured worker, GPT-OSS as the measured default code worker, and Devstral as a slow dual-GPU escalation. Keep vision and reasoning unresolved until clean tie-breaks finish. A critic is not a mandatory stage: deterministic checks run first, and E4B receives a fresh context plus one named defect only when the producing model is Granite or GPT-OSS. Every route below is provisional until it passes the target project's own held-out acceptance tests."},
+      {"id": "routing_table_block", "type": "table", "tableId": "routing_table", "layout": "full"},
+      {"id": "external_patterns_anthropic", "type": "markdown", "layout": "full", "sourceId": "anthropic_multi_agent", "body": "## External systems point to orchestration discipline, not unlimited debate\n\nAnthropic reports a **90.2% improvement** over a single-agent baseline on its internal breadth-heavy research evaluation, alongside roughly **15×** normal chat-token use and a warning that dependency-heavy coding is a poorer fit. That is source-backed evidence for independent research fan-out in one frontier system—not evidence that local loops inherit the same gain."},
+      {"id": "external_patterns", "type": "markdown", "layout": "full", "body": "The broader primary-source pattern is consistent: [OpenAI orchestration](https://developers.openai.com/api/docs/guides/agents/orchestration) keeps one manager responsible for the final answer and introduces specialists for real context, tool, instruction, or policy separation; [Microsoft Magentic-One](https://www.microsoft.com/en-us/research/publication/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks/) persists facts, plans, rounds, and stalls; [Google ADK](https://adk.dev/graphs/) places deterministic graph control around model nodes; [LangGraph](https://docs.langchain.com/oss/python/langgraph/persistence) separates checkpoints from durable stores; and [AFlow](https://proceedings.iclr.cc/paper_files/paper/2025/hash/5492ecbce4439401798dcd2c90be94cd-Abstract-Conference.html) optimizes workflows against evaluation feedback. Anthropic's [long-running harness](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) reinforces fresh sessions, progress files, tests, and Git. The local design should copy those control and evidence patterns while keeping inference endpoints replaceable."},
+      {"id": "operating_design", "type": "markdown", "layout": "full", "sourceId": "operating_playbook", "body": "## The recommended loop spends time only where evidence can improve\n\n1. A deterministic controller classifies task family, risk, verifiability, and resource fit.\n2. It routes one narrow task envelope to the measured specialist with a fresh context.\n3. Deterministic checks run before any model critique.\n4. If a check fails, the controller emits one repair envelope with the exact defect and unchanged constraints.\n5. A different-family critic is optional for judgment gaps; it cannot accept work or broaden scope.\n6. The producing worker repairs once, then checks rerun from clean state.\n7. The controller accepts, stops, or escalates under bounded attempts, failure-signature stall detection, and an append-only evidence ledger.\n\nThis architecture gains intelligence from decomposition, fresh context, tools, tests, and durable memory. Repetition without new evidence is a stop condition."},
+      {"id": "recommended_next_steps", "type": "markdown", "layout": "full", "body": "## Next steps should test the routing hypothesis, not celebrate it\n\n1. Run three or more clean repeats of project-specific planner, tool, code, vision, and verifier tasks with exact model/runtime/template hashes.\n2. Re-run the vision tie-break in true isolation and complete the native reasoning-profile suite.\n3. Compare direct execution against deterministic-verifier repair and selective cross-family critique on held-out tasks; retain a stage only when acceptance improves enough to justify its latency.\n4. Keep E4B and Granite as the two resident endpoints; schedule GPT-OSS swaps and dual-GPU Devstral escalation through one exclusive-residency controller.\n5. Admit routes per project only after hard checks pass, and store accepted artifacts, counterexamples, resource use, and stop reasons for future agents."},
+      {"id": "further_questions", "type": "markdown", "layout": "full", "body": "## Further questions\n\n- Does selective critique improve tasks that first fail a deterministic check, even though automatic critique did not?\n- Which repository-scale edit protocol lets GPT-OSS or Devstral retain constraints over long contexts?\n- Which vision finalist wins after clean isolated latency, memory, OCR, UI, and document tests?\n- How much concurrent throughput remains when both resident endpoints are active rather than tested serially?\n- What matched task set, budget, permissions, and scoring would be credible enough to compare the local system with Sol or Terra?"}
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "generatedAt": "2026-08-23T07:10:41Z",
+    "status": "ready",
+    "datasets": {
+      "text_screen": [
+        {"rank": 1, "model": "Devstral Small 2 24B", "normalizedScore": 0.96, "completedCases": 10, "failedCases": 0, "meanTokensPerSecond": 6.53},
+        {"rank": 2, "model": "Gemma 4 E4B", "normalizedScore": 0.8857142857142858, "completedCases": 20, "failedCases": 0, "meanTokensPerSecond": 67.94},
+        {"rank": 3, "model": "Granite 4.1 8B", "normalizedScore": 0.8666666666666668, "completedCases": 20, "failedCases": 0, "meanTokensPerSecond": 26.61},
+        {"rank": 4, "model": "GPT-OSS 20B", "normalizedScore": 0.8300000000000001, "completedCases": 17, "failedCases": 3, "meanTokensPerSecond": 35.19}
+      ],
+      "code_comparison": [
+        {"rank": 1, "model": "GPT-OSS 20B", "normalizedScore": 0.88, "fullyPassedCases": 8, "executedTests": 52, "passedTests": 48, "meanTokensPerSecond": 36.51},
+        {"rank": 2, "model": "Devstral Small 2 24B", "normalizedScore": 0.855, "fullyPassedCases": 7, "executedTests": 52, "passedTests": 47, "meanTokensPerSecond": 5.09},
+        {"rank": 3, "model": "Granite 4.1 8B", "normalizedScore": 0.8, "fullyPassedCases": 7, "executedTests": 52, "passedTests": 44, "meanTokensPerSecond": 24.65},
+        {"rank": 4, "model": "Gemma 4 E4B", "normalizedScore": 0.52, "fullyPassedCases": 5, "executedTests": 52, "passedTests": 26, "meanTokensPerSecond": 66.72}
+      ],
+      "vision_comparison": [
+        {"rank": 1, "model": "GLM-4.6V-Flash", "normalizedScore": 1, "score": 6, "possible": 6, "modelsTied": 3, "scope": "Configured sequential comparison"},
+        {"rank": 1, "model": "Qwen3.5 9B", "normalizedScore": 1, "score": 6, "possible": 6, "modelsTied": 3, "scope": "Configured sequential comparison"},
+        {"rank": 1, "model": "Gemma 4 12B", "normalizedScore": 1, "score": 6, "possible": 6, "modelsTied": 3, "scope": "Configured sequential comparison"},
+        {"rank": 4, "model": "Gemma 4 E4B", "normalizedScore": 0.8888888888888888, "score": 5.333333333333333, "possible": 6, "modelsTied": 3, "scope": "Configured sequential comparison"}
+      ],
+      "loop_ablation": [
+        {"protocol": "Direct", "normalizedScore": 0.5928571428571429, "crossSpecialistScore": 0.5869047619047619, "completedCases": 12, "failedCases": 0, "calls": 12, "wallSeconds": 165.8, "completionTokens": 1895},
+        {"protocol": "Cross-specialist", "normalizedScore": 0.5869047619047619, "crossSpecialistScore": 0.5869047619047619, "completedCases": 12, "failedCases": 0, "calls": 36, "wallSeconds": 250.98, "completionTokens": 5042},
+        {"protocol": "Self-refine", "normalizedScore": 0.19206349206349208, "crossSpecialistScore": 0.5869047619047619, "completedCases": 12, "failedCases": 0, "calls": 36, "wallSeconds": 978.24, "completionTokens": 9335}
+      ],
+      "placement_comparison": [
+        {"case": "Single GPU · round 1", "placement": "RTX 3070 only", "round": 1, "promptTokensPerSecond": 234.566, "generationTokensPerSecond": 6.328, "peakGpu0MiB": 6878, "peakGpu1MiB": 12, "wallSeconds": 56.11},
+        {"case": "Dual GPU · round 1", "placement": "5:4 layer split", "round": 1, "promptTokensPerSecond": 446.077, "generationTokensPerSecond": 14.573, "peakGpu0MiB": 6040, "peakGpu1MiB": 5571, "wallSeconds": 62.32},
+        {"case": "Dual GPU · round 2", "placement": "5:4 layer split", "round": 2, "promptTokensPerSecond": 441.073, "generationTokensPerSecond": 14.561, "peakGpu0MiB": 6040, "peakGpu1MiB": 5571, "wallSeconds": 56.48},
+        {"case": "Single GPU · round 2", "placement": "RTX 3070 only", "round": 2, "promptTokensPerSecond": 237.574, "generationTokensPerSecond": 1.704, "peakGpu0MiB": 6878, "peakGpu1MiB": 12, "wallSeconds": 124.2}
+      ],
+      "dual_residency": [
+        {"endpoint": "GPU 0 · LM Studio", "model": "Gemma 4 E4B", "normalizedScore": 0.8857142857142858, "completedCases": 10, "failedCases": 0, "wallSeconds": 31.26},
+        {"endpoint": "GPU 1 · llama.cpp", "model": "Granite 4.1 8B", "normalizedScore": 0.8666666666666668, "completedCases": 10, "failedCases": 0, "wallSeconds": 40.66}
+      ],
+      "routing_inference": [
+        {"role": "Planner / synthesizer", "provisionalModel": "Gemma 4 E4B", "placement": "GPU 0, exclusive residency", "evidenceLabel": "Inference", "basis": "88.6% text screen; full critique category; 67.94 generated tokens/s; weak code result", "admissionGate": "Project-specific planning and synthesis repetitions"},
+        {"role": "Structured tool worker", "provisionalModel": "Granite 4.1 8B", "placement": "GPU 1, resident llama.cpp server", "evidenceLabel": "Inference", "basis": "86.7% text screen; strong bounded task categories; failed critique category", "admissionGate": "Tool-semantic and extraction suite for each project"},
+        {"role": "Default code worker", "provisionalModel": "GPT-OSS 20B", "placement": "GPU 0, exclusive residency", "evidenceLabel": "Inference", "basis": "Highest isolated code score at 88%; 48 of 52 executable checks", "admissionGate": "Repository-specific tests, context, and edit protocol"},
+        {"role": "Slow code escalation", "provisionalModel": "Devstral Small 2 24B Q3_K_M", "placement": "Dual GPU 5:4 layer split", "evidenceLabel": "Inference", "basis": "85.5% code; 96% text; stable 14.56–14.57 generated tokens/s dual", "admissionGate": "Invoke only after a named failure or high-complexity classification"},
+        {"role": "Vision worker", "provisionalModel": "Unresolved: GLM / Qwen3.5 / Gemma 4 12B", "placement": "GPU 0, exclusive residency", "evidenceLabel": "Inference", "basis": "Three-way 6-of-6 configured tie; isolated Qwen artifact excluded", "admissionGate": "Clean isolated tie-break with latency and memory"},
+        {"role": "Judgment critic", "provisionalModel": "Gemma 4 E4B after Granite or GPT-OSS", "placement": "Fresh context on GPU 0", "evidenceLabel": "Inference", "basis": "Full critique category; automatic cross-specialist loop did not beat direct", "admissionGate": "Call only after a deterministic verifier names a defect"},
+        {"role": "Reasoning specialist", "provisionalModel": "Unresolved", "placement": "None admitted", "evidenceLabel": "Hypothesis", "basis": "Reasoning-profile artifacts were incomplete or identity-invalid", "admissionGate": "Complete clean native reasoning-profile benchmark"}
+      ],
+      "excluded_artifacts": [
+        {"artifact": "llamacpp-placement-devstral-b10566.json", "class": "Validator ineligible", "reason": "Terminal failed placement receipt"},
+        {"artifact": "llamacpp-placement-devstral-b10566-r2.json", "class": "Validator ineligible", "reason": "Terminal failed placement receipt"},
+        {"artifact": "reasoning-profiles-isolated-r2.json", "class": "Validator ineligible", "reason": "Unfinished run"},
+        {"artifact": "reasoning-profiles-isolated-clean-r2.json", "class": "Validator ineligible", "reason": "Unfinished run"},
+        {"artifact": "reasoning-profiles-native-v1-r2.json", "class": "Validator ineligible", "reason": "Model-instance identity mismatch"},
+        {"artifact": "screen-all-installed.json", "class": "Validator ineligible", "reason": "Unfinished run"},
+        {"artifact": "screen-qwen3.6-27b-thirdparty-r1.json", "class": "Validator ineligible", "reason": "Unfinished and process interference"},
+        {"artifact": "screen-qwen3.6-27b-thirdparty-r2.json", "class": "Validator ineligible", "reason": "Unfinished third-party Q2 run"},
+        {"artifact": "llamacpp-placement-devstral-r3.json", "class": "Manual confound", "reason": "Background model auto-loaded"},
+        {"artifact": "llamacpp-placement-devstral-r4.json", "class": "Manual confound", "reason": "Background model auto-loaded"},
+        {"artifact": "vision-qwen3.5-isolated-r3.json", "class": "Manual confound", "reason": "Another model observed co-resident"},
+        {"artifact": "loop-ablation-e4b-granite-r2.json", "class": "Manual confound", "reason": "Cross endpoint failed 11 of 12 cases"},
+        {"artifact": "screen-installed-bounded.json", "class": "Diagnostic", "reason": "Changed-suite screen superseded"},
+        {"artifact": "screen-configured-finalists.json", "class": "Diagnostic", "reason": "Superseded by isolated finalists"},
+        {"artifact": "smoke-gpt-oss.json", "class": "Diagnostic", "reason": "Single-model smoke test"},
+        {"artifact": "vision-finalists-isolated-r2.json", "class": "Configuration", "reason": "Stock output budget not comparable"}
+      ]
+    },
+    "accessIssues": []
+  },
+  "sources": [
+    {"id": "report_evidence_overview", "label": "Reviewed report evidence extraction", "path": "reports/local-specialist-loop-findings.evidence.json"},
+    {"id": "validation_receipt", "label": "Final suite-aware validation receipt", "path": "reports/result-validation-2026-08-23-final.json"},
+    {"id": "text_evidence", "label": "Selected clean text-screen extraction", "path": "reports/local-specialist-loop-findings.evidence.json", "query": {"engine": "SQLite", "language": "sql", "executed_at": "2026-08-23T07:10:41Z", "description": "Replays the reviewed text-screen rows extracted from three clean raw benchmark artifacts.", "sql": "WITH text_screen(rank, model, normalizedScore, completedCases, failedCases, meanTokensPerSecond) AS (VALUES (1, 'Devstral Small 2 24B', 0.96, 10, 0, 6.53), (2, 'Gemma 4 E4B', 0.8857142857142858, 20, 0, 67.94), (3, 'Granite 4.1 8B', 0.8666666666666668, 20, 0, 26.61), (4, 'GPT-OSS 20B', 0.8300000000000001, 17, 3, 35.19)) SELECT * FROM text_screen ORDER BY normalizedScore DESC;", "filters": ["Only selected valid, complete, comparison-eligible runs", "Manual process-confound review passed"], "metric_definitions": ["normalizedScore = score / possible inside the text suite", "meanTokensPerSecond is runtime-reported generation throughput"]}},
+    {"id": "code_evidence", "label": "Isolated executable-code extraction", "path": "reports/local-specialist-loop-findings.evidence.json", "query": {"engine": "SQLite", "language": "sql", "executed_at": "2026-08-23T07:10:41Z", "description": "Replays the reviewed model ranking from the isolated executable-code artifact.", "sql": "WITH code_comparison(rank, model, normalizedScore, fullyPassedCases, executedTests, passedTests, meanTokensPerSecond) AS (VALUES (1, 'GPT-OSS 20B', 0.88, 8, 52, 48, 36.51), (2, 'Devstral Small 2 24B', 0.855, 7, 52, 47, 5.09), (3, 'Granite 4.1 8B', 0.8, 7, 52, 44, 24.65), (4, 'Gemma 4 E4B', 0.52, 5, 52, 26, 66.72)) SELECT * FROM code_comparison ORDER BY normalizedScore DESC;", "filters": ["Ten completed cases per model", "Isolated finalist run"], "metric_definitions": ["normalizedScore is suite score divided by ten possible points", "passedTests counts deterministic executable checks"]}},
+    {"id": "vision_evidence", "label": "Configured vision extraction", "path": "reports/local-specialist-loop-findings.evidence.json", "query": {"engine": "SQLite", "language": "sql", "executed_at": "2026-08-23T07:10:41Z", "description": "Replays the configured six-case vision comparison; the confounded isolated Qwen artifact is not used.", "sql": "WITH vision_comparison(rank, model, normalizedScore, score, possible, modelsTied, scope) AS (VALUES (1, 'GLM-4.6V-Flash', 1.0, 6.0, 6.0, 3, 'Configured sequential comparison'), (1, 'Qwen3.5 9B', 1.0, 6.0, 6.0, 3, 'Configured sequential comparison'), (1, 'Gemma 4 12B', 1.0, 6.0, 6.0, 3, 'Configured sequential comparison'), (4, 'Gemma 4 E4B', 0.8888888888888888, 5.333333333333333, 6.0, 3, 'Configured sequential comparison')) SELECT * FROM vision_comparison ORDER BY normalizedScore DESC, model ASC;", "filters": ["Configured token budget", "Six scored cases per model", "Confounded isolated rerun excluded"], "metric_definitions": ["normalizedScore = score / six possible points"]}},
+    {"id": "loop_evidence", "label": "Clean dual-resident loop ablation extraction", "path": "reports/local-specialist-loop-findings.evidence.json", "query": {"engine": "SQLite", "language": "sql", "executed_at": "2026-08-23T07:10:41Z", "description": "Replays the three protocol summaries from the clean dual-endpoint loop ablation.", "sql": "WITH loop_ablation(protocol, normalizedScore, crossSpecialistScore, completedCases, failedCases, calls, wallSeconds, completionTokens) AS (VALUES ('Direct', 0.5928571428571429, 0.5869047619047619, 12, 0, 12, 165.8, 1895), ('Cross-specialist', 0.5869047619047619, 0.5869047619047619, 12, 0, 36, 250.98, 5042), ('Self-refine', 0.19206349206349208, 0.5869047619047619, 12, 0, 36, 978.24, 9335)) SELECT * FROM loop_ablation ORDER BY normalizedScore DESC;", "filters": ["Twelve shared cases", "Gemma 4 E4B solver", "Granite 4.1 8B cross-specialist critic", "Separate resident endpoints"], "metric_definitions": ["normalizedScore = aggregate score / 12 possible points", "calls counts all solver, critic, and finalizer calls"]}},
+    {"id": "placement_evidence", "label": "Clean llama.cpp placement extraction", "path": "reports/local-specialist-loop-findings.evidence.json", "query": {"engine": "SQLite", "language": "sql", "executed_at": "2026-08-23T07:10:41Z", "description": "Replays the four completed llama.cpp b10566 placement cases for Devstral Small 2 24B Q3_K_M.", "sql": "WITH placement_comparison(case_name, placement, round, promptTokensPerSecond, generationTokensPerSecond, peakGpu0MiB, peakGpu1MiB, wallSeconds) AS (VALUES ('Single GPU · round 1', 'RTX 3070 only', 1, 234.566, 6.328, 6878, 12, 56.11), ('Dual GPU · round 1', '5:4 layer split', 1, 446.077, 14.573, 6040, 5571, 62.32), ('Dual GPU · round 2', '5:4 layer split', 2, 441.073, 14.561, 6040, 5571, 56.48), ('Single GPU · round 2', 'RTX 3070 only', 2, 237.574, 1.704, 6878, 12, 124.2)) SELECT case_name AS caseName, placement, round, promptTokensPerSecond, generationTokensPerSecond, peakGpu0MiB, peakGpu1MiB, wallSeconds FROM placement_comparison;", "filters": ["llama.cpp b10566", "128 generated tokens", "512 prompt tokens", "5:4 layer split for dual placement", "Studio closed"], "metric_definitions": ["Throughput is llama-bench avg_ts", "Peak device memory is the maximum observed nvidia-smi sample in MiB"]}},
+    {"id": "residency_evidence", "label": "Dual-resident endpoint extraction", "path": "reports/local-specialist-loop-findings.evidence.json", "query": {"engine": "SQLite", "language": "sql", "executed_at": "2026-08-23T07:10:41Z", "description": "Replays the two ten-case text checks completed while both local specialists remained resident.", "sql": "WITH dual_residency(endpoint, model, normalizedScore, completedCases, failedCases, wallSeconds) AS (VALUES ('GPU 0 · LM Studio', 'Gemma 4 E4B', 0.8857142857142858, 10, 0, 31.26), ('GPU 1 · llama.cpp', 'Granite 4.1 8B', 0.8666666666666668, 10, 0, 40.66)) SELECT * FROM dual_residency ORDER BY normalizedScore DESC;", "filters": ["Both endpoints resident", "Ten text cases per endpoint"], "metric_definitions": ["normalizedScore is the retained text-suite score divided by ten possible points"]}},
+    {"id": "routing_inference_source", "label": "Provisional routing inference table", "path": "reports/local-specialist-loop-findings.evidence.json", "query": {"engine": "SQLite", "language": "sql", "executed_at": "2026-08-23T07:10:41Z", "description": "Materializes the report's provisional role recommendations and admission gates from selected evidence.", "sql": "WITH routing_inference(role, provisionalModel, placement, evidenceLabel, basis, admissionGate) AS (VALUES ('Planner / synthesizer', 'Gemma 4 E4B', 'GPU 0, exclusive residency', 'Inference', '88.6% text; full critique; fast; weak code', 'Project-specific planning and synthesis repetitions'), ('Structured tool worker', 'Granite 4.1 8B', 'GPU 1, resident llama.cpp server', 'Inference', '86.7% text; strong bounded categories; failed critique', 'Project tool-semantic and extraction suite'), ('Default code worker', 'GPT-OSS 20B', 'GPU 0, exclusive residency', 'Inference', '88% code; 48 of 52 executable checks', 'Repository-specific tests and edit protocol'), ('Slow code escalation', 'Devstral Small 2 24B Q3_K_M', 'Dual GPU 5:4 layer split', 'Inference', '85.5% code; 96% text; stable dual throughput', 'Invoke only after named failure or high complexity'), ('Vision worker', 'Unresolved: GLM / Qwen3.5 / Gemma 4 12B', 'GPU 0, exclusive residency', 'Inference', 'Three-way configured tie; isolated Qwen excluded', 'Clean isolated tie-break'), ('Judgment critic', 'Gemma 4 E4B after Granite or GPT-OSS', 'Fresh context on GPU 0', 'Inference', 'Full critique; automatic loop did not beat direct', 'Call only after deterministic verifier names defect'), ('Reasoning specialist', 'Unresolved', 'None admitted', 'Hypothesis', 'Reasoning profiles incomplete or identity-invalid', 'Complete clean native profile')) SELECT * FROM routing_inference ORDER BY role ASC;", "filters": ["Recommendations are inference, not production admission", "Only selected report evidence informs the basis"], "metric_definitions": ["Admission gate is the next evidence required before a route may be treated as project-ready"]}},
+    {"id": "exclusion_evidence", "label": "Reviewed report exclusions", "path": "reports/local-specialist-loop-findings.evidence.json", "query": {"engine": "SQLite", "language": "sql", "executed_at": "2026-08-23T07:10:41Z", "description": "Materializes the report exclusions; the evidence file retains each full raw-artifact path.", "sql": "WITH excluded_artifacts(artifact, class, reason) AS (VALUES ('llamacpp-placement-devstral-b10566.json', 'Validator ineligible', 'Terminal failed placement receipt'), ('llamacpp-placement-devstral-b10566-r2.json', 'Validator ineligible', 'Terminal failed placement receipt'), ('reasoning-profiles-isolated-r2.json', 'Validator ineligible', 'Unfinished run'), ('reasoning-profiles-isolated-clean-r2.json', 'Validator ineligible', 'Unfinished run'), ('reasoning-profiles-native-v1-r2.json', 'Validator ineligible', 'Model-instance identity mismatch'), ('screen-all-installed.json', 'Validator ineligible', 'Unfinished run'), ('screen-qwen3.6-27b-thirdparty-r1.json', 'Validator ineligible', 'Unfinished and process interference'), ('screen-qwen3.6-27b-thirdparty-r2.json', 'Validator ineligible', 'Unfinished third-party Q2 run'), ('llamacpp-placement-devstral-r3.json', 'Manual confound', 'Background model auto-loaded'), ('llamacpp-placement-devstral-r4.json', 'Manual confound', 'Background model auto-loaded'), ('vision-qwen3.5-isolated-r3.json', 'Manual confound', 'Another model observed co-resident'), ('loop-ablation-e4b-granite-r2.json', 'Manual confound', 'Cross endpoint failed 11 of 12 cases'), ('screen-installed-bounded.json', 'Diagnostic', 'Changed-suite screen superseded'), ('screen-configured-finalists.json', 'Diagnostic', 'Superseded by isolated finalists'), ('smoke-gpt-oss.json', 'Diagnostic', 'Single-model smoke test'), ('vision-finalists-isolated-r2.json', 'Configuration', 'Stock output budget not comparable')) SELECT * FROM excluded_artifacts ORDER BY artifact ASC;", "filters": ["All raw artifacts remain retained", "Exclusion affects report claims only"], "metric_definitions": ["Validator ineligible means valid, complete, comparisonEligible, and completed conditions were not all met", "Manual confound means structural validation passed but known process history invalidated comparison use"]}},
+    {"id": "repo_scope", "label": "Repository evidence and parity policy", "path": "README.md"},
+    {"id": "architecture_landscape", "label": "Local specialist-loop architecture landscape", "path": "docs/architecture-landscape.md"},
+    {"id": "operating_playbook", "label": "Local specialist-loop operating playbook", "path": "docs/local-loop-operating-playbook.md"},
+    {"id": "anthropic_multi_agent", "label": "Anthropic multi-agent research system", "href": "https://www.anthropic.com/engineering/multi-agent-research-system"},
+    {"id": "anthropic_long_running", "label": "Anthropic long-running agent harnesses", "href": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents"},
+    {"id": "openai_orchestration", "label": "OpenAI agent orchestration", "href": "https://developers.openai.com/api/docs/guides/agents/orchestration"},
+    {"id": "magentic_one", "label": "Microsoft Magentic-One", "href": "https://www.microsoft.com/en-us/research/publication/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks/"},
+    {"id": "google_adk", "label": "Google ADK graph workflows", "href": "https://adk.dev/graphs/"},
+    {"id": "langgraph_persistence", "label": "LangGraph persistence", "href": "https://docs.langchain.com/oss/python/langgraph/persistence"},
+    {"id": "aflow", "label": "AFlow, ICLR 2025", "href": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/5492ecbce4439401798dcd2c90be94cd-Abstract-Conference.html"},
+    {"id": "llamacpp_multi_gpu", "label": "llama.cpp multi-GPU documentation", "href": "https://github.com/ggml-org/llama.cpp/blob/master/docs/multi-gpu.md"}
+  ]
+}

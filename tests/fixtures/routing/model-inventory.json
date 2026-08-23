@@ -1,0 +1,67 @@
+{
+  "schema_version": "model-inventory/1.0",
+  "generated_at": "2026-08-23T00:00:00.000Z",
+  "generator": "tests/fixture",
+  "hash_algorithm": "sha256",
+  "privacy": {
+    "absolute_root_paths_persisted": false,
+    "symbolic_links_followed": false,
+    "recognized_secret_patterns_redacted": true,
+    "application_databases_read": false
+  },
+  "inventory_sha256": "c622690a2f4fa1a311d3d1130ebbdb732aa2e16e33ed0178e9949249d1b6ba40",
+  "summary": {
+    "root_count": 1,
+    "gguf_file_count": 2,
+    "valid_gguf_header_count": 2,
+    "invalid_gguf_header_count": 0,
+    "total_bytes": 13631488,
+    "hashed_file_count": 2,
+    "error_count": 0
+  },
+  "roots": [
+    {
+      "id": "fixture_models",
+      "kind": "lm_studio",
+      "root_path_disclosure": "omitted",
+      "status": "present",
+      "summary": {
+        "gguf_file_count": 2,
+        "valid_gguf_header_count": 2,
+        "invalid_gguf_header_count": 0,
+        "total_bytes": 13631488,
+        "hashed_file_count": 2,
+        "ignored_entry_count": 0,
+        "error_count": 0
+      },
+      "models": [
+        {
+          "artifact_id": "fixture_models:sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "relative_path": "fixture/model-a/model-a-Q4_K_M.gguf",
+          "file_name": "model-a-Q4_K_M.gguf",
+          "size_bytes": 12582912,
+          "modified_at": "2026-08-23T00:00:00.000Z",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "gguf": {"valid": true, "version": 3, "tensor_count": "1", "metadata_key_value_count": "1"},
+          "quantization_from_filename": "Q4_K_M",
+          "shard": null,
+          "lm_studio_identity": {"publisher": "fixture", "repository": "model-a", "model_key": "fixture/model-a", "artifact": "model-a-Q4_K_M.gguf"}
+        },
+        {
+          "artifact_id": "fixture_models:sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "relative_path": "fixture/unmapped/unmapped-Q4_K_M.gguf",
+          "file_name": "unmapped-Q4_K_M.gguf",
+          "size_bytes": 1048576,
+          "modified_at": "2026-08-23T00:00:00.000Z",
+          "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "gguf": {"valid": true, "version": 3, "tensor_count": "1", "metadata_key_value_count": "1"},
+          "quantization_from_filename": "Q4_K_M",
+          "shard": null,
+          "lm_studio_identity": {"publisher": "fixture", "repository": "unmapped", "model_key": "fixture/unmapped", "artifact": "unmapped-Q4_K_M.gguf"}
+        }
+      ],
+      "ignored_entries": [],
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-08-23T00:00:00.000Z",
+  "finishedAt": "2026-08-23T00:05:00.000Z",
+  "taskSuite": {
+    "hashSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "taskIds": ["plan", "research", "code", "verify", "synthesize", "vision"],
+    "repeats": 2
+  },
+  "environment": {
+    "apiBase": "http://127.0.0.1:1234"
+  },
+  "models": [
+    {
+      "model": "fixture/model-a",
+      "status": "completed",
+      "meta": {
+        "architecture": "fixture-family",
+        "quantization": {"name": "Q4_K_M"},
+        "maxContextLength": 16384
+      },
+      "measurementBindings": {
+        "modelArtifactSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "promptBundleSha256": "01f74c177c122bc8257088574b23174a0e7ca75d2ce5c7d1f74715568e01f534",
+        "templateSha256": "10c2bf3b690fa04a73085fba5b593bc5acb41c370e4561ecb70afdae5dfbf068",
+        "runtimeSettingsSha256": "d97676fa057407bcba33fff10ea26c728a0e693fee44b4015d221838badde371",
+        "runtimeBuildSha256": "c36b7be063f4b5560556596a7425093246282c17e00b3f4b7d820f439013213f",
+        "hardwareProfileId": "hardware_fixture_dual_gpu"
+      },
+      "resourceMeasurement": {
+        "quality": "peak",
+        "peakVramMib": 6000,
+        "peakRamMib": 10000
+      },
+      "cases": [
+        {"taskId": "plan", "category": "plan", "repeat": 0, "status": "completed", "score": 1, "response": {"wallMs": 1000, "runtime": {"name": "fixture-llama.cpp", "version": "2.29.1"}}},
+        {"taskId": "plan", "category": "plan", "repeat": 1, "status": "completed", "score": 1, "response": {"wallMs": 1100, "runtime": {"name": "fixture-llama.cpp", "version": "2.29.1"}}},
+        {"taskId": "research", "category": "research", "repeat": 0, "status": "completed", "score": 1, "response": {"wallMs": 1200, "runtime": {"name": "fixture-llama.cpp", "version": "2.29.1"}}},
+        {"taskId": "research", "category": "research", "repeat": 1, "status": "completed", "score": 1, "response": {"wallMs": 1300, "runtime": {"name": "fixture-llama.cpp", "version": "2.29.1"}}},
+        {"taskId": "code", "category": "code", "repeat": 0, "status": "completed", "score": 1, "response": {"wallMs": 1400, "runtime": {"name": "fixture-llama.cpp", "version": "2.29.1"}}},
+        {"taskId": "code", "category": "code", "repeat": 1, "status": "completed", "score": 1, "response": {"wallMs": 1500, "runtime": {"name": "fixture-llama.cpp", "version": "2.29.1"}}},
+        {"taskId": "verify", "category": "verify", "repeat": 0, "status": "completed", "score": 1, "response": {"wallMs": 1600, "runtime": {"name": "fixture-llama.cpp", "version": "2.29.1"}}},
+        {"taskId": "verify", "category": "verify", "repeat": 1, "status": "completed", "score": 1, "response": {"wallMs": 1700, "runtime": {"name": "fixture-llama.cpp", "version": "2.29.1"}}},
+        {"taskId": "synthesize", "category": "synthesize", "repeat": 0, "status": "completed", "score": 1, "response": {"wallMs": 1800, "runtime": {"name": "fixture-llama.cpp", "version": "2.29.1"}}},
+        {"taskId": "synthesize", "category": "synthesize", "repeat": 1, "status": "completed", "score": 1, "response": {"wallMs": 1900, "runtime": {"name": "fixture-llama.cpp", "version": "2.29.1"}}},
+        {"taskId": "vision", "category": "vision", "repeat": 0, "status": "completed", "score": 1, "response": {"wallMs": 2000, "runtime": {"name": "fixture-llama.cpp", "version": "2.29.1"}}},
+        {"taskId": "vision", "category": "vision", "repeat": 1, "status": "completed", "score": 1, "response": {"wallMs": 2100, "runtime": {"name": "fixture-llama.cpp", "version": "2.29.1"}}}
+      ]
+    }
+  ]
+}

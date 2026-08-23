@@ -1,0 +1,483 @@
+{
+  "schema_version": "model-inventory/1.0",
+  "generated_at": "2026-08-23T06:09:47.762Z",
+  "generator": "scripts/inventory-models.mjs",
+  "hash_algorithm": "sha256",
+  "privacy": {
+    "absolute_root_paths_persisted": false,
+    "symbolic_links_followed": false,
+    "recognized_secret_patterns_redacted": true,
+    "application_databases_read": false
+  },
+  "inventory_sha256": "f96b4b7ff66df8c3ea9df99decca11dac25b861af253ed551dde53396921aefc",
+  "summary": {
+    "root_count": 1,
+    "gguf_file_count": 20,
+    "valid_gguf_header_count": 20,
+    "invalid_gguf_header_count": 0,
+    "total_bytes": 105322544512,
+    "hashed_file_count": 20,
+    "error_count": 0
+  },
+  "roots": [
+    {
+      "id": "lm-studio",
+      "kind": "lm_studio",
+      "root_path_disclosure": "omitted",
+      "status": "present",
+      "summary": {
+        "gguf_file_count": 20,
+        "valid_gguf_header_count": 20,
+        "invalid_gguf_header_count": 0,
+        "total_bytes": 105322544512,
+        "hashed_file_count": 20,
+        "ignored_entry_count": 0,
+        "error_count": 0
+      },
+      "models": [
+        {
+          "artifact_id": "lm-studio:sha256:b46c271d20e9268f94a52cb865374de9ba59c75d7466bf6bd6a240763282af22",
+          "relative_path": "bartowski/mistralai_Devstral-Small-2-24B-Instruct-2512-GGUF/mistralai_Devstral-Small-2-24B-Instruct-2512-Q3_K_M.gguf",
+          "file_name": "mistralai_Devstral-Small-2-24B-Instruct-2512-Q3_K_M.gguf",
+          "size_bytes": 11474611072,
+          "modified_at": "2026-08-23T05:09:52.965Z",
+          "sha256": "b46c271d20e9268f94a52cb865374de9ba59c75d7466bf6bd6a240763282af22",
+          "gguf": {
+            "valid": true,
+            "version": 3,
+            "tensor_count": "363",
+            "metadata_key_value_count": "52"
+          },
+          "quantization_from_filename": "Q3_K_M",
+          "shard": null,
+          "lm_studio_identity": {
+            "publisher": "bartowski",
+            "repository": "mistralai_Devstral-Small-2-24B-Instruct-2512-GGUF",
+            "model_key": "bartowski/mistralai_Devstral-Small-2-24B-Instruct-2512-GGUF",
+            "artifact": "mistralai_Devstral-Small-2-24B-Instruct-2512-Q3_K_M.gguf"
+          }
+        },
+        {
+          "artifact_id": "lm-studio:sha256:1ff12ea31f50763b71aa476bace3c01f7527d0590d360c71a4c76069d3df2038",
+          "relative_path": "Brian6145/Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF/Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF-Q2_K.gguf",
+          "file_name": "Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF-Q2_K.gguf",
+          "size_bytes": 10864591328,
+          "modified_at": "2026-07-19T06:56:12.849Z",
+          "sha256": "1ff12ea31f50763b71aa476bace3c01f7527d0590d360c71a4c76069d3df2038",
+          "gguf": {
+            "valid": true,
+            "version": 3,
+            "tensor_count": "866",
+            "metadata_key_value_count": "44"
+          },
+          "quantization_from_filename": "Q2_K",
+          "shard": null,
+          "lm_studio_identity": {
+            "publisher": "Brian6145",
+            "repository": "Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF",
+            "model_key": "Brian6145/Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF",
+            "artifact": "Qwen3.6-27B-Claude-Opus-DeepSeek-Distilled-Imatrix-MTP-GGUF-Q2_K.gguf"
+          }
+        },
+        {
+          "artifact_id": "lm-studio:sha256:ed902ac9eb6adce5a90c6a08c8ea201b50e23fdc5976d1cd0362006afac5309e",
+          "relative_path": "ibm-granite/granite-4.1-8b-GGUF/granite-4.1-8b-Q4_K_M.gguf",
+          "file_name": "granite-4.1-8b-Q4_K_M.gguf",
+          "size_bytes": 5347914400,
+          "modified_at": "2026-08-23T04:59:00.057Z",
+          "sha256": "ed902ac9eb6adce5a90c6a08c8ea201b50e23fdc5976d1cd0362006afac5309e",
+          "gguf": {
+            "valid": true,
+            "version": 3,
+            "tensor_count": "363",
+            "metadata_key_value_count": "34"
+          },
+          "quantization_from_filename": "Q4_K_M",
+          "shard": null,
+          "lm_studio_identity": {
+            "publisher": "ibm-granite",
+            "repository": "granite-4.1-8b-GGUF",
+            "model_key": "ibm-granite/granite-4.1-8b-GGUF",
+            "artifact": "granite-4.1-8b-Q4_K_M.gguf"
+          }
+        },
+        {
+          "artifact_id": "lm-studio:sha256:713d3a7a93f306763a6de2b5e9f9350e3aeee3bbfe8c3ee0066b61939feaa332",
+          "relative_path": "lmstudio-community/DeepSeek-R1-0528-Qwen3-8B-GGUF/DeepSeek-R1-0528-Qwen3-8B-Q4_K_M.gguf",
+          "file_name": "DeepSeek-R1-0528-Qwen3-8B-Q4_K_M.gguf",
+          "size_bytes": 5027782720,
+          "modified_at": "2026-07-19T06:52:12.348Z",
+          "sha256": "713d3a7a93f306763a6de2b5e9f9350e3aeee3bbfe8c3ee0066b61939feaa332",
+          "gguf": {
+            "valid": true,
+            "version": 3,
+            "tensor_count": "399",
+            "metadata_key_value_count": "32"
+          },
+          "quantization_from_filename": "Q4_K_M",
+          "shard": null,
+          "lm_studio_identity": {
+            "publisher": "lmstudio-community",
+            "repository": "DeepSeek-R1-0528-Qwen3-8B-GGUF",
+            "model_key": "lmstudio-community/DeepSeek-R1-0528-Qwen3-8B-GGUF",
+            "artifact": "DeepSeek-R1-0528-Qwen3-8B-Q4_K_M.gguf"
+          }
+        },
+        {
+          "artifact_id": "lm-studio:sha256:e4db6f8c1e48f7297069fa23ca3ff34e0b0155f8de5485498ed9a0e59944bc8c",
+          "relative_path": "lmstudio-community/gemma-4-12B-it-GGUF/gemma-4-12B-it-Q4_K_M.gguf",
+          "file_name": "gemma-4-12B-it-Q4_K_M.gguf",
+          "size_bytes": 7381384864,
+          "modified_at": "2026-07-18T05:39:34.315Z",
+          "sha256": "e4db6f8c1e48f7297069fa23ca3ff34e0b0155f8de5485498ed9a0e59944bc8c",
+          "gguf": {
+            "valid": true,
+            "version": 3,
+            "tensor_count": "667",
+            "metadata_key_value_count": "45"
+          },
+          "quantization_from_filename": "Q4_K_M",
+          "shard": null,
+          "lm_studio_identity": {
+            "publisher": "lmstudio-community",
+            "repository": "gemma-4-12B-it-GGUF",
+            "model_key": "lmstudio-community/gemma-4-12B-it-GGUF",
+            "artifact": "gemma-4-12B-it-Q4_K_M.gguf"
+          }
+        },
+        {
+          "artifact_id": "lm-studio:sha256:7fd884a5f7d9ee60f6b88e5b51287151e547454b2b60a4a6270bb5434310ad0e",
+          "relative_path": "lmstudio-community/gemma-4-12B-it-GGUF/mmproj-gemma-4-12B-it-BF16.gguf",
+          "file_name": "mmproj-gemma-4-12B-it-BF16.gguf",
+          "size_bytes": 175115296,
+          "modified_at": "2026-07-18T04:27:58.630Z",
+          "sha256": "7fd884a5f7d9ee60f6b88e5b51287151e547454b2b60a4a6270bb5434310ad0e",
+          "gguf": {
+            "valid": true,
+            "version": 3,
+            "tensor_count": "11",
+            "metadata_key_value_count": "32"
+          },
+          "quantization_from_filename": null,
+          "shard": null,
+          "lm_studio_identity": {
+            "publisher": "lmstudio-community",
+            "repository": "gemma-4-12B-it-GGUF",
+            "model_key": "lmstudio-community/gemma-4-12B-it-GGUF",
+            "artifact": "mmproj-gemma-4-12B-it-BF16.gguf"
+          }
+        },
+        {
+          "artifact_id": "lm-studio:sha256:929fde4e951e520b74806268e8e8ffaa20a20fab955f3606d5ce7b2c35798501",
+          "relative_path": "lmstudio-community/gemma-4-12B-it-QAT-GGUF/gemma-4-12B-it-QAT-Q4_0.gguf",
+          "file_name": "gemma-4-12B-it-QAT-Q4_0.gguf",
+          "size_bytes": 6975878560,
+          "modified_at": "2026-07-18T04:30:09.691Z",
+          "sha256": "929fde4e951e520b74806268e8e8ffaa20a20fab955f3606d5ce7b2c35798501",
+          "gguf": {
+            "valid": true,
+            "version": 3,
+            "tensor_count": "667",
+            "metadata_key_value_count": "45"
+          },
+          "quantization_from_filename": "Q4_0",
+          "shard": null,
+          "lm_studio_identity": {
+            "publisher": "lmstudio-community",
+            "repository": "gemma-4-12B-it-QAT-GGUF",
+            "model_key": "lmstudio-community/gemma-4-12B-it-QAT-GGUF",
+            "artifact": "gemma-4-12B-it-QAT-Q4_0.gguf"
+          }
+        },
+        {
+          "artifact_id": "lm-studio:sha256:922168af5824a5df33cfeb0afa7ccac7e47355b4d268693a2b2bab517ac1d066",
+          "relative_path": "lmstudio-community/gemma-4-12B-it-QAT-GGUF/mmproj-gemma-4-12B-it-QAT-BF16.gguf",
+          "file_name": "mmproj-gemma-4-12B-it-QAT-BF16.gguf",
+          "size_bytes": 175115328,
+          "modified_at": "2026-07-18T04:27:52.275Z",
+          "sha256": "922168af5824a5df33cfeb0afa7ccac7e47355b4d268693a2b2bab517ac1d066",
+          "gguf": {
+            "valid": true,
+            "version": 3,
+            "tensor_count": "11",
+            "metadata_key_value_count": "32"
+          },
+          "quantization_from_filename": null,
+          "shard": null,
+          "lm_studio_identity": {
+            "publisher": "lmstudio-community",
+            "repository": "gemma-4-12B-it-QAT-GGUF",
+            "model_key": "lmstudio-community/gemma-4-12B-it-QAT-GGUF",
+            "artifact": "mmproj-gemma-4-12B-it-QAT-BF16.gguf"
+          }
+        },
+        {
+          "artifact_id": "lm-studio:sha256:71e6e8cb64a76da1a734fb8f6ba389d2784950d9902f5e87244fca0a15190c94",
+          "relative_path": "lmstudio-community/gemma-4-E2B-it-GGUF/gemma-4-E2B-it-Q4_K_M.gguf",
+          "file_name": "gemma-4-E2B-it-Q4_K_M.gguf",
+          "size_bytes": 3427880384,
+          "modified_at": "2026-07-21T20:45:08.414Z",
+          "sha256": "71e6e8cb64a76da1a734fb8f6ba389d2784950d9902f5e87244fca0a15190c94",
+          "gguf": {
+            "valid": true,
+            "version": 3,
+            "tensor_count": "601",
+            "metadata_key_value_count": "49"
+          },
+          "quantization_from_filename": "Q4_K_M",
+          "shard": null,
+          "lm_studio_identity": {
+            "publisher": "lmstudio-community",
+            "repository": "gemma-4-E2B-it-GGUF",
+            "model_key": "lmstudio-community/gemma-4-E2B-it-GGUF",
+            "artifact": "gemma-4-E2B-it-Q4_K_M.gguf"
+          }
+        },
+        {
+          "artifact_id": "lm-studio:sha256:04125f8e2a1135824e48064c32157356704e6681a9f3af669af321a3c70c39d7",
+          "relative_path": "lmstudio-community/gemma-4-E2B-it-GGUF/mmproj-gemma-4-E2B-it-BF16.gguf",
+          "file_name": "mmproj-gemma-4-E2B-it-BF16.gguf",
+          "size_bytes": 986833248,
+          "modified_at": "2026-07-21T20:38:54.564Z",
+          "sha256": "04125f8e2a1135824e48064c32157356704e6681a9f3af669af321a3c70c39d7",
+          "gguf": {
+            "valid": true,
+            "version": 3,
+            "tensor_count": "1411",
+            "metadata_key_value_count": "30"
+          },
+          "quantization_from_filename": null,
+          "shard": null,
+          "lm_studio_identity": {
+            "publisher": "lmstudio-community",
+            "repository": "gemma-4-E2B-it-GGUF",
+            "model_key": "lmstudio-community/gemma-4-E2B-it-GGUF",
+            "artifact": "mmproj-gemma-4-E2B-it-BF16.gguf"
+          }
+        },
+        {
+          "artifact_id": "lm-studio:sha256:3f72a20a06f626c78e6c475ae07a64c88b2663149c0f6197b56bf7cf1f37585c",
+          "relative_path": "lmstudio-community/gemma-4-E4B-it-GGUF/gemma-4-E4B-it-Q4_K_M.gguf",
+          "file_name": "gemma-4-E4B-it-Q4_K_M.gguf",
+          "size_bytes": 5335289664,
+          "modified_at": "2026-07-19T07:03:36.731Z",
+          "sha256": "3f72a20a06f626c78e6c475ae07a64c88b2663149c0f6197b56bf7cf1f37585c",
+          "gguf": {
+            "valid": true,
+            "version": 3,
+            "tensor_count": "720",
+            "metadata_key_value_count": "42"
+          },
+          "quantization_from_filename": "Q4_K_M",
+          "shard": null,
+          "lm_studio_identity": {
+            "publisher": "lmstudio-community",
+            "repository": "gemma-4-E4B-it-GGUF",
+            "model_key": "lmstudio-community/gemma-4-E4B-it-GGUF",
+            "artifact": "gemma-4-E4B-it-Q4_K_M.gguf"
+          }
+        },
+        {
+          "artifact_id": "lm-studio:sha256:68486d68176b924c5f126b0d25ab93e2b38458b607f46671d41c166f8c77c200",
+          "relative_path": "lmstudio-community/gemma-4-E4B-it-GGUF/mmproj-gemma-4-E4B-it-BF16.gguf",
+          "file_name": "mmproj-gemma-4-E4B-it-BF16.gguf",
+          "size_bytes": 991551840,
+          "modified_at": "2026-07-19T07:01:58.891Z",
+          "sha256": "68486d68176b924c5f126b0d25ab93e2b38458b607f46671d41c166f8c77c200",
+          "gguf": {
+            "valid": true,
+            "version": 3,
+            "tensor_count": "1411",
+            "metadata_key_value_count": "30"
+          },
+          "quantization_from_filename": null,
+          "shard": null,
+          "lm_studio_identity": {
+            "publisher": "lmstudio-community",
+            "repository": "gemma-4-E4B-it-GGUF",
+            "model_key": "lmstudio-community/gemma-4-E4B-it-GGUF",
+            "artifact": "mmproj-gemma-4-E4B-it-BF16.gguf"
+          }
+        },
+        {
+          "artifact_id": "lm-studio:sha256:71a9a5a518482637caa3422920a36f1676a9e1242c69e6a0bfbf02c8c4e8211c",
+          "relative_path": "lmstudio-community/GLM-4.6V-Flash-GGUF/GLM-4.6V-Flash-Q4_K_M.gguf",
+          "file_name": "GLM-4.6V-Flash-Q4_K_M.gguf",
+          "size_bytes": 6166577888,
+          "modified_at": "2026-07-19T07:03:26.514Z",
+          "sha256": "71a9a5a518482637caa3422920a36f1676a9e1242c69e6a0bfbf02c8c4e8211c",
+          "gguf": {
+            "valid": true,
+            "version": 3,
+            "tensor_count": "523",
+            "metadata_key_value_count": "32"
+          },
+          "quantization_from_filename": "Q4_K_M",
+          "shard": null,
+          "lm_studio_identity": {
+            "publisher": "lmstudio-community",
+            "repository": "GLM-4.6V-Flash-GGUF",
+            "model_key": "lmstudio-community/GLM-4.6V-Flash-GGUF",
+            "artifact": "GLM-4.6V-Flash-Q4_K_M.gguf"
+          }
+        },
+        {
+          "artifact_id": "lm-studio:sha256:da368b2f2283087aba599dba61afa7631f987d0140afc6dba4ea869a3d6d7c02",
+          "relative_path": "lmstudio-community/GLM-4.6V-Flash-GGUF/mmproj-GLM-4.6V-Flash-F16.gguf",
+          "file_name": "mmproj-GLM-4.6V-Flash-F16.gguf",
+          "size_bytes": 1786959488,
+          "modified_at": "2026-07-19T07:01:30.357Z",
+          "sha256": "da368b2f2283087aba599dba61afa7631f987d0140afc6dba4ea869a3d6d7c02",
+          "gguf": {
+            "valid": true,
+            "version": 3,
+            "tensor_count": "182",
+            "metadata_key_value_count": "24"
+          },
+          "quantization_from_filename": null,
+          "shard": null,
+          "lm_studio_identity": {
+            "publisher": "lmstudio-community",
+            "repository": "GLM-4.6V-Flash-GGUF",
+            "model_key": "lmstudio-community/GLM-4.6V-Flash-GGUF",
+            "artifact": "mmproj-GLM-4.6V-Flash-F16.gguf"
+          }
+        },
+        {
+          "artifact_id": "lm-studio:sha256:65d06d31a3977d553cb3af137b5c26b5f1e9297a6aaa29ae7caa98788cde53ab",
+          "relative_path": "lmstudio-community/gpt-oss-20b-GGUF/gpt-oss-20b-MXFP4.gguf",
+          "file_name": "gpt-oss-20b-MXFP4.gguf",
+          "size_bytes": 12109565632,
+          "modified_at": "2026-07-19T06:54:49.339Z",
+          "sha256": "65d06d31a3977d553cb3af137b5c26b5f1e9297a6aaa29ae7caa98788cde53ab",
+          "gguf": {
+            "valid": true,
+            "version": 3,
+            "tensor_count": "459",
+            "metadata_key_value_count": "33"
+          },
+          "quantization_from_filename": null,
+          "shard": null,
+          "lm_studio_identity": {
+            "publisher": "lmstudio-community",
+            "repository": "gpt-oss-20b-GGUF",
+            "model_key": "lmstudio-community/gpt-oss-20b-GGUF",
+            "artifact": "gpt-oss-20b-MXFP4.gguf"
+          }
+        },
+        {
+          "artifact_id": "lm-studio:sha256:8e923405207ebf1ae1d8bb8ce9452ba8a446321cee42028bf0ceab52b372ed41",
+          "relative_path": "lmstudio-community/Phi-4-mini-reasoning-GGUF/Phi-4-mini-reasoning-Q4_K_M.gguf",
+          "file_name": "Phi-4-mini-reasoning-Q4_K_M.gguf",
+          "size_bytes": 2491874560,
+          "modified_at": "2026-08-06T22:36:26.895Z",
+          "sha256": "8e923405207ebf1ae1d8bb8ce9452ba8a446321cee42028bf0ceab52b372ed41",
+          "gguf": {
+            "valid": true,
+            "version": 3,
+            "tensor_count": "196",
+            "metadata_key_value_count": "36"
+          },
+          "quantization_from_filename": "Q4_K_M",
+          "shard": null,
+          "lm_studio_identity": {
+            "publisher": "lmstudio-community",
+            "repository": "Phi-4-mini-reasoning-GGUF",
+            "model_key": "lmstudio-community/Phi-4-mini-reasoning-GGUF",
+            "artifact": "Phi-4-mini-reasoning-Q4_K_M.gguf"
+          }
+        },
+        {
+          "artifact_id": "lm-studio:sha256:6f10ded0197863aa0641e2451688ac8025c95ff7c948e23f1089d173e6834768",
+          "relative_path": "lmstudio-community/Phi-4-reasoning-plus-GGUF/Phi-4-reasoning-plus-Q4_K_M.gguf",
+          "file_name": "Phi-4-reasoning-plus-Q4_K_M.gguf",
+          "size_bytes": 9053116128,
+          "modified_at": "2026-08-06T22:37:19.202Z",
+          "sha256": "6f10ded0197863aa0641e2451688ac8025c95ff7c948e23f1089d173e6834768",
+          "gguf": {
+            "valid": true,
+            "version": 3,
+            "tensor_count": "243",
+            "metadata_key_value_count": "36"
+          },
+          "quantization_from_filename": "Q4_K_M",
+          "shard": null,
+          "lm_studio_identity": {
+            "publisher": "lmstudio-community",
+            "repository": "Phi-4-reasoning-plus-GGUF",
+            "model_key": "lmstudio-community/Phi-4-reasoning-plus-GGUF",
+            "artifact": "Phi-4-reasoning-plus-Q4_K_M.gguf"
+          }
+        },
+        {
+          "artifact_id": "lm-studio:sha256:712c0791d5124d3dd6d1e4968de1201207afeae49c6e10fbeb9c58fe00c58555",
+          "relative_path": "lmstudio-community/Qwen3-14B-GGUF/Qwen3-14B-Q4_K_M.gguf",
+          "file_name": "Qwen3-14B-Q4_K_M.gguf",
+          "size_bytes": 9001753376,
+          "modified_at": "2026-08-06T22:32:28.607Z",
+          "sha256": "712c0791d5124d3dd6d1e4968de1201207afeae49c6e10fbeb9c58fe00c58555",
+          "gguf": {
+            "valid": true,
+            "version": 3,
+            "tensor_count": "443",
+            "metadata_key_value_count": "27"
+          },
+          "quantization_from_filename": "Q4_K_M",
+          "shard": null,
+          "lm_studio_identity": {
+            "publisher": "lmstudio-community",
+            "repository": "Qwen3-14B-GGUF",
+            "model_key": "lmstudio-community/Qwen3-14B-GGUF",
+            "artifact": "Qwen3-14B-Q4_K_M.gguf"
+          }
+        },
+        {
+          "artifact_id": "lm-studio:sha256:330d17547bfdbcd0e7a0cb3f4b06b4ceeac0aaa1e449122d9d66ef957aeb74b3",
+          "relative_path": "lmstudio-community/Qwen3.5-9B-GGUF/mmproj-Qwen3.5-9B-BF16.gguf",
+          "file_name": "mmproj-Qwen3.5-9B-BF16.gguf",
+          "size_bytes": 921704480,
+          "modified_at": "2026-07-18T04:29:55.323Z",
+          "sha256": "330d17547bfdbcd0e7a0cb3f4b06b4ceeac0aaa1e449122d9d66ef957aeb74b3",
+          "gguf": {
+            "valid": true,
+            "version": 3,
+            "tensor_count": "334",
+            "metadata_key_value_count": "23"
+          },
+          "quantization_from_filename": null,
+          "shard": null,
+          "lm_studio_identity": {
+            "publisher": "lmstudio-community",
+            "repository": "Qwen3.5-9B-GGUF",
+            "model_key": "lmstudio-community/Qwen3.5-9B-GGUF",
+            "artifact": "mmproj-Qwen3.5-9B-BF16.gguf"
+          }
+        },
+        {
+          "artifact_id": "lm-studio:sha256:cd76ec205963b3b33350093e6904d9de16c4e666fd104e1f632d25c7f15f2a13",
+          "relative_path": "lmstudio-community/Qwen3.5-9B-GGUF/Qwen3.5-9B-Q4_K_M.gguf",
+          "file_name": "Qwen3.5-9B-Q4_K_M.gguf",
+          "size_bytes": 5627044256,
+          "modified_at": "2026-07-18T05:46:00.080Z",
+          "sha256": "cd76ec205963b3b33350093e6904d9de16c4e666fd104e1f632d25c7f15f2a13",
+          "gguf": {
+            "valid": true,
+            "version": 3,
+            "tensor_count": "427",
+            "metadata_key_value_count": "34"
+          },
+          "quantization_from_filename": "Q4_K_M",
+          "shard": null,
+          "lm_studio_identity": {
+            "publisher": "lmstudio-community",
+            "repository": "Qwen3.5-9B-GGUF",
+            "model_key": "lmstudio-community/Qwen3.5-9B-GGUF",
+            "artifact": "Qwen3.5-9B-Q4_K_M.gguf"
+          }
+        }
+      ],
+      "ignored_entries": [],
+      "errors": []
+    }
+  ]
+}
