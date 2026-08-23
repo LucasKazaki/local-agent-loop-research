@@ -10,8 +10,8 @@
   },
   "validationReceipt": {
     "path": "reports/result-validation-2026-08-23-final.json",
-    "receiptContentSha256": "c459341a7f8f01f05de2442a91a58b58a5eda0c9c595b188d59d89c1a5ea91dc",
-    "validatedAt": "2026-08-23T07:04:43.123Z",
+    "receiptContentSha256": "e53f26467e15b03ece9d10ae188f58623bab48b3320dd1d4427bc1eb55b233e7",
+    "validatedAt": "2026-08-23T07:57:37.264Z",
     "artifactCount": 25,
     "validatorValidCount": 24,
     "validatorCompleteCount": 20,

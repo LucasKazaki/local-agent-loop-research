@@ -2963,7 +2963,7 @@
       "hardwareLoaded": null,
       "cases": [],
       "summary": null,
-      "error": "Command failed: C:\\Users\\taol\\.lmstudio\\bin\\lms.exe load qwen/qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp --yes --context-length 8192 --parallel 1 --identifier qwen/qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp\nModel not found\n\nNo model found that matches model key \"qwen/qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp\".\n\nTo see a list of all downloaded models, run:\n\n    lms ls\n\nTo select a model interactively, remove the --yes flag:\n\n    lms load\n",
+      "error": "Command failed: <LM_STUDIO_HOME>\\bin\\lms.exe load qwen/qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp --yes --context-length 8192 --parallel 1 --identifier qwen/qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp\nModel not found\n\nNo model found that matches model key \"qwen/qwen3.6-27b-claude-opus-deepseek-distilled-imatrix-mtp\".\n\nTo see a list of all downloaded models, run:\n\n    lms ls\n\nTo select a model interactively, remove the --yes flag:\n\n    lms load\n",
       "hardwareAfter": {
         "sampledAt": "2026-08-23T04:30:12.085Z",
         "totalRamGiB": 63.17,

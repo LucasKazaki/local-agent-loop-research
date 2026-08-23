@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "validatorVersion": "suite-aware/1.1",
-  "validatedAt": "2026-08-23T07:04:43.123Z",
+  "validatedAt": "2026-08-23T07:57:37.264Z",
   "supportedFamilies": [
     "text",
     "code",
@@ -343,7 +343,7 @@
     },
     {
       "file": "results/screen-installed-bounded.json",
-      "artifactSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+      "artifactSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
       "family": "text",
       "valid": true,
       "complete": true,
@@ -450,5 +450,5 @@
       "findings": []
     }
   ],
-  "receiptContentSha256": "c459341a7f8f01f05de2442a91a58b58a5eda0c9c595b188d59d89c1a5ea91dc"
+  "receiptContentSha256": "e53f26467e15b03ece9d10ae188f58623bab48b3320dd1d4427bc1eb55b233e7"
 }

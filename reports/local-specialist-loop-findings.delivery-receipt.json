@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-08-23T07:36:47.2506344Z",
+  "generatedAt": "2026-08-23T07:59:34.4031919Z",
   "report": "Local Specialist Loops on a 3070 + 1080",
   "input": "reports/local-specialist-loop-findings.artifact.json",
   "output": "reports/local-specialist-loop-findings.html",
@@ -35,15 +35,15 @@
     "sourceInteraction": "keyboard_menu_semantic_click",
     "viewports": [1440, 390],
     "timingsMs": {
-      "validateAndPackage": 1611.7,
-      "staticChartExtraction": 1556.8,
-      "browserRun": 1278.6,
-      "readerReady": 88.4,
+      "validateAndPackage": 1579.5,
+      "staticChartExtraction": 1523.7,
+      "browserRun": 1263.9,
+      "readerReady": 86.8,
       "contentChecks": 32,
-      "sourceDialog": 32,
-      "responsiveChecks": 32,
-      "verification": 1328.4,
-      "total": 2951.8
+      "sourceDialog": 32.1,
+      "responsiveChecks": 31.9,
+      "verification": 1310.2,
+      "total": 2899.2
     }
   },
   "sourceQueryReplay": {
@@ -67,6 +67,18 @@
     "algorithm": "SHA-256",
     "note": "Every selected raw benchmark artifact matched the hash recorded in the reviewed evidence extraction."
   },
+  "validationReceiptHashCheck": {
+    "ok": true,
+    "path": "reports/result-validation-2026-08-23-final.json",
+    "validatedAt": "2026-08-23T07:57:37.264Z",
+    "receiptContentSha256": "e53f26467e15b03ece9d10ae188f58623bab48b3320dd1d4427bc1eb55b233e7",
+    "fileSha256": "0fa5b2524be43ddd4a39fbffdc7b448b4b93035794f284abadec8c8002509f5b",
+    "artifactCount": 25,
+    "validCount": 24,
+    "completeCount": 20,
+    "comparisonEligibleCount": 17,
+    "allReferencedArtifactHashesMatch": true
+  },
   "files": [
     {
       "path": "reports/local-specialist-loop-findings.html",
@@ -81,7 +93,7 @@
     {
       "path": "reports/local-specialist-loop-findings.evidence.json",
       "bytes": 18364,
-      "sha256": "73a5f403a5c03fdfa88c20d0d9cd4b372984b87856c7755a9eca6ad416d91012"
+      "sha256": "2aa022ce54ca10b0da214ce4e479512f2603ec4f7ab8ac4d0b4d19737c824276"
     },
     {
       "path": "reports/local-specialist-loop-findings.notes.md",

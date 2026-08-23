@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "validatorVersion": "suite-aware/1.1",
-  "validatedAt": "2026-08-23T07:34:52.125Z",
+  "validatedAt": "2026-08-23T08:04:58.586Z",
   "supportedFamilies": [
     "text",
     "code",
@@ -120,5 +120,5 @@
       "findings": []
     }
   ],
-  "receiptContentSha256": "66ebe7aa0b2b09b542d69605f901d0c375d7bc47e80d31328d56d43fa504f87f"
+  "receiptContentSha256": "431c253783fb4a465a3df3515a525a96a79195c06150239a9fc1433dc44623b6"
 }

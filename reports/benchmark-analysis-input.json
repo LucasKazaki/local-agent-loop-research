@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-23T07:05:39.640349Z",
+  "generatedAt": "2026-08-23T07:57:56.140007Z",
   "status": "provisional-measurements",
   "conclusionPolicy": {
     "finalModelWinnerDeclared": false,
@@ -17,7 +17,7 @@
   "source": {
     "root": "results",
     "validationReceipt": "reports/result-validation-2026-08-23-final.json",
-    "validationReceiptContentSha256": "c459341a7f8f01f05de2442a91a58b58a5eda0c9c595b188d59d89c1a5ea91dc",
+    "validationReceiptContentSha256": "e53f26467e15b03ece9d10ae188f58623bab48b3320dd1d4427bc1eb55b233e7",
     "files": [
       {
         "path": "results/code-finalists-isolated-r2.json",
@@ -41,6 +41,19 @@
         "path": "results/derived-stock/summary.json",
         "sizeBytes": 52804,
         "sha256": "c2db6cd49409587ef62417ed9b02b1e076cb14837ac3f4b1f90992dc3077e1fb",
+        "changedDuringRead": false,
+        "parseError": null,
+        "kind": "derived",
+        "schemaVersion": 1,
+        "startedAt": null,
+        "finishedAt": null,
+        "runComplete": false,
+        "includedInMeasurements": false
+      },
+      {
+        "path": "results/derived/summary.json",
+        "sizeBytes": 93805,
+        "sha256": "f3d36049a64c51c1552ed7f8af732a5406632438db4965297563f5cb547a225e",
         "changedDuringRead": false,
         "parseError": null,
         "kind": "derived",
@@ -331,8 +344,8 @@
       },
       {
         "path": "results/screen-installed-bounded.json",
-        "sizeBytes": 446506,
-        "sha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sizeBytes": 446496,
+        "sha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "changedDuringRead": false,
         "parseError": null,
         "kind": "text",
@@ -458,13 +471,13 @@
     ]
   },
   "dataQuality": {
-    "inputFileCount": 27,
-    "parsedFileCount": 27,
+    "inputFileCount": 28,
+    "parsedFileCount": 28,
     "parseErrorCount": 0,
     "changedDuringReadCount": 0,
     "fileKinds": {
       "code": 1,
-      "derived": 1,
+      "derived": 2,
       "loop": 2,
       "text": 11,
       "unknown": 9,
@@ -543,6 +556,19 @@
         "path": "results/derived-stock/summary.json",
         "sizeBytes": 52804,
         "sha256": "c2db6cd49409587ef62417ed9b02b1e076cb14837ac3f4b1f90992dc3077e1fb",
+        "changedDuringRead": false,
+        "parseError": null,
+        "kind": "derived",
+        "schemaVersion": 1,
+        "startedAt": null,
+        "finishedAt": null,
+        "runComplete": false,
+        "includedInMeasurements": false
+      },
+      {
+        "path": "results/derived/summary.json",
+        "sizeBytes": 93805,
+        "sha256": "f3d36049a64c51c1552ed7f8af732a5406632438db4965297563f5cb547a225e",
         "changedDuringRead": false,
         "parseError": null,
         "kind": "derived",
@@ -833,8 +859,8 @@
       },
       {
         "path": "results/screen-installed-bounded.json",
-        "sizeBytes": 446506,
-        "sha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sizeBytes": 446496,
+        "sha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "changedDuringRead": false,
         "parseError": null,
         "kind": "text",
@@ -10873,7 +10899,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "qwen/qwen3-14b",
@@ -10895,7 +10921,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "qwen/qwen3-14b",
@@ -10917,7 +10943,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "qwen/qwen3-14b",
@@ -10939,7 +10965,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "qwen/qwen3-14b",
@@ -10961,7 +10987,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "qwen/qwen3-14b",
@@ -10983,7 +11009,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "qwen/qwen3-14b",
@@ -11005,7 +11031,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "qwen/qwen3-14b",
@@ -11027,7 +11053,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "qwen/qwen3-14b",
@@ -11049,7 +11075,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "qwen/qwen3-14b",
@@ -11071,7 +11097,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "qwen/qwen3-14b",
@@ -11093,7 +11119,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-e2b",
@@ -11115,7 +11141,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-e2b",
@@ -11137,7 +11163,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-e2b",
@@ -11159,7 +11185,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-e2b",
@@ -11181,7 +11207,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-e2b",
@@ -11203,7 +11229,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-e2b",
@@ -11225,7 +11251,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-e2b",
@@ -11247,7 +11273,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-e2b",
@@ -11269,7 +11295,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-e2b",
@@ -11291,7 +11317,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-e2b",
@@ -11313,7 +11339,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-e4b",
@@ -11335,7 +11361,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-e4b",
@@ -11357,7 +11383,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-e4b",
@@ -11379,7 +11405,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-e4b",
@@ -11401,7 +11427,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-e4b",
@@ -11423,7 +11449,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-e4b",
@@ -11445,7 +11471,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-e4b",
@@ -11467,7 +11493,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-e4b",
@@ -11489,7 +11515,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-e4b",
@@ -11511,7 +11537,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-e4b",
@@ -11533,7 +11559,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "zai-org/glm-4.6v-flash",
@@ -11555,7 +11581,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "zai-org/glm-4.6v-flash",
@@ -11577,7 +11603,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "zai-org/glm-4.6v-flash",
@@ -11599,7 +11625,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "zai-org/glm-4.6v-flash",
@@ -11621,7 +11647,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "zai-org/glm-4.6v-flash",
@@ -11643,7 +11669,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "zai-org/glm-4.6v-flash",
@@ -11665,7 +11691,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "zai-org/glm-4.6v-flash",
@@ -11687,7 +11713,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "zai-org/glm-4.6v-flash",
@@ -11709,7 +11735,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "zai-org/glm-4.6v-flash",
@@ -11731,7 +11757,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "zai-org/glm-4.6v-flash",
@@ -11753,7 +11779,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "openai/gpt-oss-20b",
@@ -11775,7 +11801,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "openai/gpt-oss-20b",
@@ -11797,7 +11823,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "openai/gpt-oss-20b",
@@ -11819,7 +11845,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "openai/gpt-oss-20b",
@@ -11841,7 +11867,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "openai/gpt-oss-20b",
@@ -11863,7 +11889,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "openai/gpt-oss-20b",
@@ -11885,7 +11911,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "openai/gpt-oss-20b",
@@ -11907,7 +11933,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "openai/gpt-oss-20b",
@@ -11929,7 +11955,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "openai/gpt-oss-20b",
@@ -11951,7 +11977,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "openai/gpt-oss-20b",
@@ -11973,7 +11999,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "deepseek/deepseek-r1-0528-qwen3-8b",
@@ -11995,7 +12021,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "deepseek/deepseek-r1-0528-qwen3-8b",
@@ -12017,7 +12043,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "deepseek/deepseek-r1-0528-qwen3-8b",
@@ -12039,7 +12065,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "deepseek/deepseek-r1-0528-qwen3-8b",
@@ -12061,7 +12087,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "deepseek/deepseek-r1-0528-qwen3-8b",
@@ -12083,7 +12109,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "deepseek/deepseek-r1-0528-qwen3-8b",
@@ -12105,7 +12131,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "deepseek/deepseek-r1-0528-qwen3-8b",
@@ -12127,7 +12153,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "deepseek/deepseek-r1-0528-qwen3-8b",
@@ -12149,7 +12175,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "deepseek/deepseek-r1-0528-qwen3-8b",
@@ -12171,7 +12197,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "deepseek/deepseek-r1-0528-qwen3-8b",
@@ -12193,7 +12219,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "qwen/qwen3.5-9b",
@@ -12215,7 +12241,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "qwen/qwen3.5-9b",
@@ -12237,7 +12263,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "qwen/qwen3.5-9b",
@@ -12259,7 +12285,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "qwen/qwen3.5-9b",
@@ -12281,7 +12307,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "qwen/qwen3.5-9b",
@@ -12303,7 +12329,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "qwen/qwen3.5-9b",
@@ -12325,7 +12351,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "qwen/qwen3.5-9b",
@@ -12347,7 +12373,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "qwen/qwen3.5-9b",
@@ -12369,7 +12395,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "qwen/qwen3.5-9b",
@@ -12391,7 +12417,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "qwen/qwen3.5-9b",
@@ -12413,7 +12439,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-12b",
@@ -12435,7 +12461,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-12b",
@@ -12457,7 +12483,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-12b",
@@ -12479,7 +12505,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-12b",
@@ -12501,7 +12527,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-12b",
@@ -12523,7 +12549,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-12b",
@@ -12545,7 +12571,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-12b",
@@ -12567,7 +12593,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-12b",
@@ -12589,7 +12615,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-12b",
@@ -12611,7 +12637,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-12b",
@@ -12633,7 +12659,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-12b-qat",
@@ -12655,7 +12681,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-12b-qat",
@@ -12677,7 +12703,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-12b-qat",
@@ -12699,7 +12725,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-12b-qat",
@@ -12721,7 +12747,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-12b-qat",
@@ -12743,7 +12769,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-12b-qat",
@@ -12765,7 +12791,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-12b-qat",
@@ -12787,7 +12813,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-12b-qat",
@@ -12809,7 +12835,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-12b-qat",
@@ -12831,7 +12857,7 @@
       },
       {
         "source": "results/screen-installed-bounded.json",
-        "sourceSha256": "3fbedd38145353acd77991c6ec54aeeebf1b18fe80fd2c377da2cf890cf5d5b2",
+        "sourceSha256": "3d2c42e8ffe76494df591395924b7cd3692659a89b2ee8a9b8dd37e52565e4e3",
         "benchmarkKind": "text",
         "runComplete": true,
         "model": "google/gemma-4-12b-qat",
