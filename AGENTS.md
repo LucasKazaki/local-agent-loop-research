@@ -1,3 +1,15 @@
+# Mandatory project orientation
+
+Before searching or opening source files, read `PROJECT_GUIDE.md`. It is the compact navigation layer; the rules below remain controlling.
+
+## Local execution authority (2026-09-07)
+
+The operator authorizes these Agent Studio loops to access and change their whole project workspace and registered worktrees, and to run local commands, dependency setup from available packages, builds, tests, inference, model evaluation, training, benchmarks, media processing, and overnight experiments. Missing exact-file allowlists and long duration are not permission gates.
+
+Use the project-native executor (agentic-ai-research-project-executor) through Company Runtime: workflowId=project-execution, workflowVersion=1, actionScope=project_execution, requiresBrowser=false, input.commands=[{executable,args,timeoutMs:0}]. The default has no execution time limit. The existing durable runtime owns observation and recovery; retain task/job identity, inspect full logs under .agent-runtime/jobs, and never add a second scheduler or replay a retained job. Native jobs request the Windows offline profile, which on this host still allows loopback. Use local networking only for project test/model endpoints. Never use project code to access unrelated data, credentials or Studio operator APIs. Approved acquisition and external service actions use the existing scoped brokers.
+
+This current authority supersedes older instructions saying the project has no command/test/inference broker or is limited to planning and exact-file edits. Preserve disjoint worktrees and file ownership, evidence and independent review requirements, and the existing credentials, authentication, rights, paid-service, external-contact, submission, publication, destructive-action and main-merge gates. A zero exit code proves execution, not scientific validity or release readiness. When hosted inside Lucas Agent Studio, use its registered project-execution contract; standalone clones must use the execution policy configured on their own host.
+
 # Local Agent Research agent instructions
 
 These instructions apply to the entire repository.
@@ -63,3 +75,16 @@ Do not overwrite or hand-edit raw reports. Write corrected or derived artifacts 
 - [Raw and derived results area](results/)
 
 If documentation and a raw artifact disagree, preserve both, report the conflict, and resolve it through a new validated measurement. Do not rewrite history to make the evidence look settled.
+
+## Autonomous recovery and verified completion
+
+When hosted inside Lucas Agent Studio, inherit its registered autonomy policy. Standalone clones must not assume a particular workstation path, executor, or authorization profile. Capture and fingerprint every failed recovery; reject identical strategies; try at least three materially different evidence-based paths before exhaustion when safe. Use the configured local API, CLI, recorded artifacts, alternate adapters, or a fresh bounded investigator instead of asking the operator to debug. Workers route only structured human-only blockers through the central escalation gateway and continue independent work.
+
+- Doctor: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/doctor.ps1`
+- Reproduce: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/reproduce.ps1`
+- Test/verify: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify.ps1`
+- Smoke: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/smoke-test.ps1`
+- Safe reset preview: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/safe-reset.ps1`
+
+Completion requires real command receipts, applicable deterministic tests and validation, direct artifact inspection, non-reproduction, persistent evidence, and a different verifier for substantial changes. A benchmark parse, model agreement, diagnosis, or progress update cannot settle the task.
+
