@@ -45,3 +45,6 @@ Desktop.ini
 !evidence/**/*.ipynb
 !evidence/**/*.html
 !evidence/**/*.md
+
+# Local persistent job logs, scratch and temporary files
+.agent-runtime/

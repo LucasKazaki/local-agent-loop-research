@@ -1,0 +1,1 @@
+$ErrorActionPreference='Stop';. (Join-Path $PSScriptRoot 'resolve-node.ps1');$node=Resolve-ResearchNode;$root=[System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'));Push-Location $root;try{& $node --test tests/json-recovery.test.mjs tests/schema-json.test.mjs tests/routing-manifest-builder.test.mjs;exit $LASTEXITCODE}finally{Pop-Location}
